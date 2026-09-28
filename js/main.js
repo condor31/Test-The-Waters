@@ -1,3 +1,21 @@
+const announcementBar = document.getElementById("announcement-bar");
+if (announcementBar) {
+  const closeBtn = announcementBar.querySelector("[data-dismiss-bar]");
+  closeBtn?.addEventListener("click", () => {
+    announcementBar.classList.add("is-dismissing");
+    try {
+      sessionStorage.setItem("rworld-announcement-dismissed", "1");
+    } catch (e) {}
+    announcementBar.addEventListener(
+      "transitionend",
+      () => {
+        announcementBar.style.display = "none";
+      },
+      { once: true }
+    );
+  });
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", () => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -32,3 +50,59 @@ if (interestForm) {
     }
   });
 }
+
+document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector("[data-carousel-track]");
+  const prevBtn = carousel.querySelector("[data-carousel-prev]");
+  const nextBtn = carousel.querySelector("[data-carousel-next]");
+  const dots = [...(carousel.parentElement.querySelectorAll("[data-carousel-dot]") || [])];
+  const slides = [...track.children];
+
+  function closestIndex() {
+    const trackLeft = track.getBoundingClientRect().left;
+    let closest = 0;
+    let closestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const dist = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = i;
+      }
+    });
+    return closest;
+  }
+
+  function scrollToIndex(i) {
+    const slide = slides[Math.max(0, Math.min(slides.length - 1, i))];
+    if (slide) slide.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+  }
+
+  function updateUI() {
+    const idx = closestIndex();
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (prevBtn) prevBtn.disabled = track.scrollLeft <= 4;
+    if (nextBtn) nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
+    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === idx));
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", () => scrollToIndex(closestIndex() - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => scrollToIndex(closestIndex() + 1));
+  dots.forEach((dot, i) => dot.addEventListener("click", () => scrollToIndex(i)));
+
+  let ticking = false;
+  track.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateUI();
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", updateUI);
+  updateUI();
+});

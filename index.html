@@ -12,9 +12,17 @@
 </head>
 <body>
 
-<div class="announcement-bar">
+<div class="announcement-bar" id="announcement-bar">
   <p>Testing the waters. No money is being solicited and none will be accepted. Indicating interest carries no obligation of any kind. <strong>Full disclosure below.</strong></p>
+  <button class="announcement-bar__close" type="button" aria-label="Dismiss this message" data-dismiss-bar>&times;</button>
 </div>
+<script>
+  try {
+    if (sessionStorage.getItem("rworld-announcement-dismissed") === "1") {
+      document.getElementById("announcement-bar").style.display = "none";
+    }
+  } catch (e) {}
+</script>
 
 <header class="hero">
   <div class="hero__media">
@@ -27,8 +35,9 @@
     <h1 class="display">Help r.World Build<br />a Future Free of Single-Use Plastics</h1>
   </div>
 
-  <div class="hero__arrow" aria-hidden="true">
+  <div class="hero__arrow">
     <img src="public/assets/c410dc9b2eb81811114dd5c5f7e8a6440d1f957c.svg" alt="" />
+    <p class="hero__arrow-copy">Don&rsquo;t just divert waste. Prevent it by owning a part of the nation&rsquo;s #1 foodware reuse company.</p>
   </div>
 
   <div class="interest-card" id="interested">
@@ -199,26 +208,59 @@
 <section class="section section--grey">
   <div class="section-inner">
     <h2 class="h2 measure--wide">One proprietary operating system with four key parts that have to work together</h2>
+  </div>
 
-    <div class="card-row card-row--four">
-      <div class="info-card">
-        <h3 class="h3">Logistics</h3>
-        <p>The reverse-logistics network. We deliver. You serve. Guests return. We collect.</p>
-      </div>
-      <div class="info-card">
-        <h3 class="h3">Sanitization</h3>
-        <p>Regional centers running Ecolab Science Certified&trade; deep cleaning. Every item inspected, then sealed in a tub before it ships.</p>
-      </div>
-      <div class="info-card">
-        <h3 class="h3">Automation</h3>
-        <p>The industry's only automated AI quality check &mdash; the reason 90% is repeatable rather than lucky.</p>
-      </div>
-      <div class="info-card">
-        <h3 class="h3">Technology</h3>
-        <p>r.Turn, our QR- and RFID-enabled platform. Ordering, live inventory, item-level tracking, automatic impact reports.</p>
-      </div>
+  <div class="carousel-wrap">
+    <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Operating system components">
+      <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous slide" data-carousel-prev>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <ul class="carousel__track" data-carousel-track tabindex="0">
+        <li class="carousel__slide">
+          <img class="carousel__image" src="public/assets/c397339e4a0f606266950c546b327b841ccd62ae.jpg" alt="r.World driver loading reusable cups onto a delivery truck" loading="lazy" />
+          <div class="carousel__card">
+            <h3 class="h3">Logistics</h3>
+            <p>The reverse-logistics network. We deliver. You serve. Guests return. We collect.</p>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="public/assets/8148d440aa5eaa0969dd92fc8ffc5fbcf5a12635.jpg" alt="r.World staff member sanitizing reusable cups at a wash center" loading="lazy" />
+          <div class="carousel__card">
+            <h3 class="h3">Sanitization</h3>
+            <p>Regional centers running Ecolab Science Certified&trade; deep cleaning. Every item inspected, then sealed in a tub before it ships.</p>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="public/assets/e0cc720dc0c237c720e8c2bff195b6da3ae230c4.jpg" alt="Racks of washed reusable cups ready for automated quality inspection" loading="lazy" />
+          <div class="carousel__card">
+            <h3 class="h3">Automation</h3>
+            <p>The industry's only automated AI quality check &mdash; the reason 90% is repeatable rather than lucky.</p>
+          </div>
+        </li>
+        <li class="carousel__slide">
+          <img class="carousel__image" src="public/assets/6fad519a75d46d9cd68ef1bf0a98743897a50299.jpg" alt="Stacks of QR-code tracked r.World reusable cups in wash racks" loading="lazy" />
+          <div class="carousel__card">
+            <h3 class="h3">Technology</h3>
+            <p>r.Turn, our QR- and RFID-enabled platform. Ordering, live inventory, item-level tracking, automatic impact reports.</p>
+          </div>
+        </li>
+      </ul>
+
+      <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next slide" data-carousel-next>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
 
+    <div class="carousel__dots" data-carousel-dots>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 1" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 2" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 3" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 4" data-carousel-dot></button>
+    </div>
+  </div>
+
+  <div class="section-inner">
     <h3 class="h4">Two jobs for every dollar: Drive the cost down, and build what single-use can&rsquo;t.</h3>
 
     <div class="card-row card-row--three">
