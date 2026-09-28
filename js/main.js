@@ -15,3 +15,20 @@ document.querySelectorAll("[data-video-placeholder]").forEach((button) => {
     button.textContent = "Video coming soon";
   });
 });
+
+const interestForm = document.getElementById("interest-form");
+if (interestForm) {
+  interestForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!interestForm.reportValidity()) return;
+
+    // TODO: replace with a real submission endpoint (email capture service / CRM webhook).
+    const successMessage = document.getElementById("interest-form-success");
+    interestForm.hidden = true;
+    if (successMessage) {
+      successMessage.hidden = false;
+      successMessage.setAttribute("tabindex", "-1");
+      successMessage.focus();
+    }
+  });
+}

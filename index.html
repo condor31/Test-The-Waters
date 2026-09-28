@@ -66,7 +66,7 @@
       <p class="p-bold">The hard truth is that the system is failing. It was built to manage waste, not prevent it. Together, we can change that.</p>
       <p>Reuse is visionary, and r.World has been busy building the infrastructure to make it reality.</p>
     </div>
-    <a class="btn btn-outline-yellow cta-label" href="#interested" style="align-self:stretch;">Tell Us You&rsquo;re Interested</a>
+    <a class="btn btn-outline-yellow cta-label" href="#interested-form" style="align-self:stretch;">Tell Us You&rsquo;re Interested</a>
     <p>No payment. No commitment. We'll email you when the campaign opens.</p>
     <div class="sources">
       <p>Sources:</p>
@@ -326,7 +326,7 @@
   </div>
 </section>
 
-<section class="section section--grey" id="interested-form">
+<section class="section section--grey">
   <div class="section-inner">
     <h2 class="h2 measure--wide">Ok, Cool. What Happens Now?</h2>
     <ol class="numbered-list measure--wide">
@@ -335,6 +335,51 @@
       <li><p>3. We email you the morning it opens, before we announce it anywhere else. You decide then, with all the terms and the full risk disclosures in front of you.</p></li>
       <li><p>4. If you'd rather not hear from us, one click and you're off the list.</p></li>
     </ol>
+  </div>
+</section>
+
+<section class="section section--grey" id="interested-form">
+  <div class="section-inner section-inner--center">
+    <div class="cta-form-card">
+      <h3 class="h3 text-black">Tell us you&rsquo;re interested.</h3>
+
+      <form class="cta-form" id="interest-form" novalidate>
+        <div class="cta-form__row">
+          <label class="visually-hidden" for="interest-email">Email address</label>
+          <input class="cta-form__input" type="email" id="interest-email" name="email" placeholder="Email address" autocomplete="email" required />
+          <button class="btn btn-solid-blue cta-label" type="submit">Tell Us You&rsquo;re Interested &rarr;</button>
+        </div>
+
+        <fieldset class="range-group">
+          <legend class="range-group__legend">Optional: How much are you considering investing?</legend>
+          <div class="range-group__options">
+            <label class="range-pill">
+              <input type="radio" name="investment_range" value="500-1000" />
+              <span>$500&ndash;$1,000</span>
+            </label>
+            <label class="range-pill">
+              <input type="radio" name="investment_range" value="1000-5000" />
+              <span>$1,000&ndash;$5,000</span>
+            </label>
+            <label class="range-pill">
+              <input type="radio" name="investment_range" value="5000-25000" />
+              <span>$5,000&ndash;$25,000</span>
+            </label>
+            <label class="range-pill">
+              <input type="radio" name="investment_range" value="25000+" />
+              <span>$25,000+</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <p class="cta-form__disclaimer">No payment. No commitment. We&rsquo;ll email you when the campaign opens.</p>
+      </form>
+
+      <div class="cta-form__success" id="interest-form-success" hidden>
+        <p class="h5 text-black">You&rsquo;re on the list.</p>
+        <p>No payment. No commitment. We&rsquo;ll email you the morning the campaign opens &mdash; before we announce it anywhere else.</p>
+      </div>
+    </div>
   </div>
 </section>
 
