@@ -307,6 +307,20 @@ p:last-child {
   color: var(--black);
 }
 
+@media (max-width: 640px) {
+  .hero .eyebrow {
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: 0;
+  }
+
+  .hero .display {
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+}
+
 /* ---------- Interest form card ---------- */
 
 .section-inner--center {
@@ -613,6 +627,12 @@ p:last-child {
 
 .slide-arrow__body .p-bold {
   color: var(--grey);
+}
+
+@media (max-width: 640px) {
+  .slide-arrow--yellow {
+    margin-top: 64px;
+  }
 }
 
 .sources {
