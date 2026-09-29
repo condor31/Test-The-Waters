@@ -618,7 +618,7 @@ p:last-child {
   position: relative;
   z-index: 1;
   width: min(90%, 653px);
-  margin: calc(0.18803 * clamp(1000px, 117vw, 1686px)) auto 64px;
+  margin: calc(0.26 * clamp(1000px, 117vw, 1686px)) auto 64px;
   display: flex;
   flex-direction: column;
   gap: 48px;
