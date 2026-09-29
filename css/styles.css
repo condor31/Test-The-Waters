@@ -876,6 +876,28 @@ p:last-child {
   gap: 48px;
 }
 
+/* ---------- Two jobs diagonal stripe band ---------- */
+
+.jobs-band {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-block: 48px;
+  padding-inline: var(--section-pad-x);
+  padding-block: clamp(48px, 6vw, 80px);
+  overflow: hidden;
+  background: linear-gradient(
+    100deg,
+    var(--cyan) 0%,
+    var(--cyan) 32%,
+    var(--magenta) 32%,
+    var(--magenta) 66%,
+    var(--yellow) 66%,
+    var(--yellow) 100%
+  );
+}
+
 /* ---------- Operating system grid ---------- */
 
 .os-grid {
@@ -904,6 +926,7 @@ p:last-child {
   background: var(--white);
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
   gap: 24px;
   padding: clamp(24px, 4vw, 48px);
   box-shadow: 4px 8px 2px rgba(0, 0, 0, 0.1);
