@@ -38,19 +38,33 @@ const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxu3mwnTxu57bUPAMDQIQUrSecxFALut36hwXv3UvuY16wpr25j1p_etwoN4AaYvywgIg/exec";
 
 async function submitLeadToGoogleSheet(payload) {
-  // Pass fields in query string and as JSON in body so it works with either
-  // e.parameter or JSON.parse(e.postData.contents) in Google Apps Script.
-  // mode: "no-cors" prevents browser CORS preflight blocking.
   const query = new URLSearchParams(payload).toString();
   const endpoint = `${GOOGLE_SCRIPT_URL}?${query}`;
-  return fetch(endpoint, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8",
-    },
-    body: JSON.stringify(payload),
-  });
+
+  try {
+    // Primary: POST request with payload in body and query string
+    await fetch(endpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (postErr) {
+    console.warn("POST attempt failed, trying fallback ping:", postErr);
+    // Fallback: GET request (immune to most browser/localhost fetch restrictions)
+    try {
+      await fetch(endpoint, {
+        method: "GET",
+        mode: "no-cors",
+      });
+    } catch (getErr) {
+      // Last-resort fallback: Image ping (never blocked by CORS or file://)
+      const img = new Image();
+      img.src = endpoint;
+    }
+  }
 }
 
 const interestForm = document.getElementById("interest-form");
