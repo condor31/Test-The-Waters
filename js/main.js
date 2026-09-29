@@ -27,10 +27,10 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-document.querySelectorAll("[data-video-placeholder]").forEach((button) => {
+document.querySelectorAll("[data-video-thumb]").forEach((button) => {
   button.addEventListener("click", () => {
     button.setAttribute("aria-disabled", "true");
-    button.textContent = "Video coming soon";
+    button.setAttribute("title", "Video coming soon");
   });
 });
 
@@ -106,3 +106,70 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   window.addEventListener("resize", updateUI);
   updateUI();
 });
+
+const floatingCta = document.getElementById("floating-cta");
+if (floatingCta) {
+  const defaultView = floatingCta.querySelector("[data-floating-cta-default]");
+  const formView = floatingCta.querySelector("[data-floating-cta-form]");
+  const successView = floatingCta.querySelector("[data-floating-cta-success]");
+  const expandBtn = floatingCta.querySelector("[data-floating-cta-expand]");
+  const cancelBtn = floatingCta.querySelector("[data-floating-cta-cancel]");
+  const hideBtn = floatingCta.querySelector("[data-floating-cta-hide]");
+  const emailInput = floatingCta.querySelector("#floating-cta-email");
+  let dismissedForGood = false;
+
+  try {
+    if (sessionStorage.getItem("rworld-floating-cta-hidden") === "1") {
+      dismissedForGood = true;
+      floatingCta.classList.add("is-hidden");
+    }
+  } catch (e) {}
+
+  hideBtn?.addEventListener("click", () => {
+    dismissedForGood = true;
+    floatingCta.classList.add("is-hidden");
+    try {
+      sessionStorage.setItem("rworld-floating-cta-hidden", "1");
+    } catch (e) {}
+  });
+
+  const interestFormSection = document.getElementById("interested-form");
+  if (interestFormSection && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (dismissedForGood) return;
+        entries.forEach((entry) => {
+          floatingCta.classList.toggle("is-hidden", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(interestFormSection);
+  }
+
+  expandBtn?.addEventListener("click", () => {
+    defaultView.hidden = true;
+    formView.hidden = false;
+    emailInput?.focus();
+  });
+
+  cancelBtn?.addEventListener("click", () => {
+    formView.hidden = true;
+    formView.reset();
+    defaultView.hidden = false;
+    expandBtn?.focus();
+  });
+
+  formView?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!formView.reportValidity()) return;
+
+    // TODO: replace with a real submission endpoint (email capture service / CRM webhook).
+    formView.hidden = true;
+    successView.hidden = false;
+    dismissedForGood = true;
+    setTimeout(() => {
+      floatingCta.classList.add("is-hidden");
+    }, 2500);
+  });
+}
