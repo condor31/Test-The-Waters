@@ -45,10 +45,19 @@
     <button class="interest-card__video" type="button" data-video-thumb>
       <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="Watch: an r.cup reusable cup at a stadium, labeled &ldquo;Please return me, I&rsquo;m reusable!&rdquo;" />
     </button>
-    <div class="btn-row">
-      <a class="btn btn-solid-blue cta-label" href="#interested-form">Yes, please add my name to the list</a>
+    <form class="hero-form" id="hero-interest-form" novalidate>
+      <div class="hero-form__row">
+        <label class="visually-hidden" for="hero-interest-email">Email address</label>
+        <input class="hero-form__input" type="email" id="hero-interest-email" name="email" placeholder="Email address" autocomplete="email" required />
+        <button class="btn btn-solid-blue cta-label hero-form__submit" type="submit">Yes, please add my name to the list</button>
+      </div>
+      <p class="hero-form__disclaimer">No payment. No commitment. We&rsquo;ll email you when the campaign opens.</p>
+    </form>
+
+    <div class="hero-form__success" id="hero-interest-success" hidden>
+      <p class="h5 text-black">You&rsquo;re on the list.</p>
+      <p>No payment. No commitment. We&rsquo;ll email you the morning the campaign opens &mdash; before we announce it anywhere else.</p>
     </div>
-    <p>No payment. No commitment. We'll email you when the campaign opens.</p>
   </div>
 </header>
 
@@ -529,26 +538,6 @@
   </div>
 </footer>
 
-<div class="floating-cta" id="floating-cta" data-floating-cta>
-  <div class="floating-cta__default" data-floating-cta-default>
-    <p>Ready to help us build a world free of single-use plastic foodware?</p>
-    <div class="floating-cta__actions">
-      <button class="floating-cta__yes cta-label" type="button" data-floating-cta-expand>Yes, please add my name to the list</button>
-      <button class="floating-cta__hide" type="button" data-floating-cta-hide>Hide</button>
-    </div>
-  </div>
-
-  <form class="floating-cta__form" id="floating-cta-form" data-floating-cta-form hidden novalidate>
-    <label class="visually-hidden" for="floating-cta-email">Email address</label>
-    <input class="floating-cta__input" type="email" id="floating-cta-email" name="email" placeholder="Email address" autocomplete="email" required />
-    <button class="btn btn-solid-blue cta-label floating-cta__submit" type="submit">Submit</button>
-    <button class="floating-cta__cancel cta-label" type="button" data-floating-cta-cancel>Cancel</button>
-  </form>
-
-  <div class="floating-cta__success" data-floating-cta-success hidden>
-    <p>You&rsquo;re on the list. No payment. No commitment.</p>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 <script type="module" src="js/animations.js"></script>

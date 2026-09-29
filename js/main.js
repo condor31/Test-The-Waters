@@ -104,6 +104,42 @@ if (interestForm) {
   });
 }
 
+const heroInterestForm = document.getElementById("hero-interest-form");
+if (heroInterestForm) {
+  heroInterestForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!heroInterestForm.reportValidity()) return;
+
+    const submitBtn = heroInterestForm.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+    }
+
+    const emailInput = heroInterestForm.querySelector('[name="email"]');
+    const payload = {
+      email: emailInput ? emailInput.value.trim() : "",
+      investment_range: "None selected",
+      source: "Hero Interest Card",
+      timestamp: new Date().toLocaleString(),
+    };
+
+    try {
+      await submitLeadToGoogleSheet(payload);
+    } catch (err) {
+      console.error("Submission failed:", err);
+    }
+
+    const successMessage = document.getElementById("hero-interest-success");
+    heroInterestForm.hidden = true;
+    if (successMessage) {
+      successMessage.hidden = false;
+      successMessage.setAttribute("tabindex", "-1");
+      successMessage.focus();
+    }
+  });
+}
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector("[data-carousel-track]");
   const prevBtn = carousel.querySelector("[data-carousel-prev]");
@@ -160,90 +196,3 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   updateUI();
 });
 
-const floatingCta = document.getElementById("floating-cta");
-if (floatingCta) {
-  const defaultView = floatingCta.querySelector("[data-floating-cta-default]");
-  const formView = floatingCta.querySelector("[data-floating-cta-form]");
-  const successView = floatingCta.querySelector("[data-floating-cta-success]");
-  const expandBtn = floatingCta.querySelector("[data-floating-cta-expand]");
-  const cancelBtn = floatingCta.querySelector("[data-floating-cta-cancel]");
-  const hideBtn = floatingCta.querySelector("[data-floating-cta-hide]");
-  const emailInput = floatingCta.querySelector("#floating-cta-email");
-  let dismissedForGood = false;
-
-  try {
-    if (sessionStorage.getItem("rworld-floating-cta-hidden") === "1") {
-      dismissedForGood = true;
-      floatingCta.classList.add("is-hidden");
-    }
-  } catch (e) {}
-
-  hideBtn?.addEventListener("click", () => {
-    dismissedForGood = true;
-    floatingCta.classList.add("is-hidden");
-    try {
-      sessionStorage.setItem("rworld-floating-cta-hidden", "1");
-    } catch (e) {}
-  });
-
-  const interestFormSection = document.getElementById("interested-form");
-  if (interestFormSection && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (dismissedForGood) return;
-        entries.forEach((entry) => {
-          floatingCta.classList.toggle("is-hidden", entry.isIntersecting);
-        });
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(interestFormSection);
-  }
-
-  expandBtn?.addEventListener("click", () => {
-    defaultView.hidden = true;
-    formView.hidden = false;
-    emailInput?.focus();
-  });
-
-  cancelBtn?.addEventListener("click", () => {
-    formView.hidden = true;
-    formView.reset();
-    defaultView.hidden = false;
-    expandBtn?.focus();
-  });
-
-  formView?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    if (!formView.reportValidity()) return;
-
-    const submitBtn = formView.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-    }
-
-    const payload = {
-      email: emailInput ? emailInput.value.trim() : "",
-      investment_range: "N/A (Floating Bar)",
-      source: "Floating CTA Bar",
-      timestamp: new Date().toLocaleString(),
-    };
-
-    try {
-      await submitLeadToGoogleSheet(payload);
-    } catch (err) {
-      console.error("Submission failed:", err);
-    }
-
-    formView.hidden = true;
-    successView.hidden = false;
-    dismissedForGood = true;
-    try {
-      sessionStorage.setItem("rworld-floating-cta-hidden", "1");
-    } catch (e) {}
-    setTimeout(() => {
-      floatingCta.classList.add("is-hidden");
-    }, 2500);
-  });
-}
