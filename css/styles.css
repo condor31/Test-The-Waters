@@ -858,6 +858,10 @@ p:last-child {
 }
 
 @media (max-width: 900px) {
+  .whats-next {
+    padding-inline: var(--section-pad-x);
+  }
+
   .whats-next__arrow {
     display: none;
   }
@@ -896,6 +900,18 @@ p:last-child {
   gap: 48px;
 }
 
+/* ---------- Two jobs white panels ---------- */
+
+.jobs-panel {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: var(--white);
+  color: var(--black);
+  padding-inline: var(--section-pad-x);
+  padding-block: clamp(32px, 5vw, 56px);
+}
+
 /* ---------- Two jobs diagonal stripe band ---------- */
 
 .jobs-band {
@@ -903,7 +919,6 @@ p:last-child {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-block: 48px;
   padding-inline: var(--section-pad-x);
   padding-block: clamp(48px, 6vw, 80px);
   overflow: hidden;
