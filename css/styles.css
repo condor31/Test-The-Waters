@@ -630,8 +630,24 @@ p:last-child {
 }
 
 @media (max-width: 640px) {
+  .slide-arrow--cyan .slide-arrow__copy--cyan {
+    right: 7%;
+  }
+
+  .slide-arrow--magenta .slide-arrow__copy--stat {
+    left: auto;
+    right: 6%;
+    width: 62%;
+  }
+
   .slide-arrow--yellow {
     margin-top: 64px;
+    min-height: 1650px;
+  }
+
+  .slide-arrow--yellow .slide-arrow__body {
+    margin-top: 320px;
+    gap: 32px;
   }
 }
 
