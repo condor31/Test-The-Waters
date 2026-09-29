@@ -34,13 +34,52 @@ document.querySelectorAll("[data-video-thumb]").forEach((button) => {
   });
 });
 
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxu3mwnTxu57bUPAMDQIQUrSecxFALut36hwXv3UvuY16wpr25j1p_etwoN4AaYvywgIg/exec";
+
+async function submitLeadToGoogleSheet(payload) {
+  // Pass fields in query string and as JSON in body so it works with either
+  // e.parameter or JSON.parse(e.postData.contents) in Google Apps Script.
+  // mode: "no-cors" prevents browser CORS preflight blocking.
+  const query = new URLSearchParams(payload).toString();
+  const endpoint = `${GOOGLE_SCRIPT_URL}?${query}`;
+  return fetch(endpoint, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(payload),
+  });
+}
+
 const interestForm = document.getElementById("interest-form");
 if (interestForm) {
-  interestForm.addEventListener("submit", (event) => {
+  interestForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!interestForm.reportValidity()) return;
 
-    // TODO: replace with a real submission endpoint (email capture service / CRM webhook).
+    const submitBtn = interestForm.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+    }
+
+    const emailInput = interestForm.querySelector('[name="email"]');
+    const selectedRange = interestForm.querySelector('[name="investment_range"]:checked');
+    const payload = {
+      email: emailInput ? emailInput.value.trim() : "",
+      investment_range: selectedRange ? selectedRange.value : "None selected",
+      source: "Main Interest Form",
+      timestamp: new Date().toLocaleString(),
+    };
+
+    try {
+      await submitLeadToGoogleSheet(payload);
+    } catch (err) {
+      console.error("Submission failed:", err);
+    }
+
     const successMessage = document.getElementById("interest-form-success");
     interestForm.hidden = true;
     if (successMessage) {
@@ -160,14 +199,35 @@ if (floatingCta) {
     expandBtn?.focus();
   });
 
-  formView?.addEventListener("submit", (event) => {
+  formView?.addEventListener("submit", async (event) => {
     event.preventDefault();
     if (!formView.reportValidity()) return;
 
-    // TODO: replace with a real submission endpoint (email capture service / CRM webhook).
+    const submitBtn = formView.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+    }
+
+    const payload = {
+      email: emailInput ? emailInput.value.trim() : "",
+      investment_range: "N/A (Floating Bar)",
+      source: "Floating CTA Bar",
+      timestamp: new Date().toLocaleString(),
+    };
+
+    try {
+      await submitLeadToGoogleSheet(payload);
+    } catch (err) {
+      console.error("Submission failed:", err);
+    }
+
     formView.hidden = true;
     successView.hidden = false;
     dismissedForGood = true;
+    try {
+      sessionStorage.setItem("rworld-floating-cta-hidden", "1");
+    } catch (e) {}
     setTimeout(() => {
       floatingCta.classList.add("is-hidden");
     }, 2500);
