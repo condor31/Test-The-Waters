@@ -576,21 +576,21 @@ p:last-child {
 .slide-arrow__shape-rotated {
   position: absolute;
   left: 50%;
-  top: 2642.5px;
-  width: 6718.52px;
-  height: 1529.45px;
-  margin-left: -3359.26px;
+  top: calc(1.56844 * clamp(1000px, 117vw, 1686px));
+  width: calc(3.98773 * clamp(1000px, 117vw, 1686px));
+  height: calc(0.907792 * clamp(1000px, 117vw, 1686px));
+  margin-left: calc(-1.993865 * clamp(1000px, 117vw, 1686px));
   transform: rotate(-90deg) scaleY(-1);
 }
 
 .slide-arrow__shape-rotated--cyan {
   left: auto;
   top: 50%;
-  right: 2947.419px;
-  width: 744.482px;
-  height: 6639.32px;
+  right: calc(4.373025 * clamp(300px, 47vw, 674px));
+  width: calc(1.104573 * clamp(300px, 47vw, 674px));
+  height: calc(9.850623 * clamp(300px, 47vw, 674px));
   margin-left: 0;
-  margin-top: -3319.66px;
+  margin-top: calc(-4.925312 * clamp(300px, 47vw, 674px));
   transform: rotate(90deg);
 }
 
@@ -604,7 +604,7 @@ p:last-child {
   position: relative;
   z-index: 1;
   width: min(90%, 653px);
-  margin: clamp(210px, 22vw, 441px) auto 64px;
+  margin: calc(0.18803 * clamp(1000px, 117vw, 1686px)) auto 64px;
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -789,14 +789,58 @@ p:last-child {
   justify-content: center;
 }
 
-.rotated-image {
-  width: min(100%, 362px);
+.loop-diagrams {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
 }
 
-.rotated-image img {
+.loop-diagrams__img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 4px;
-  transform: rotate(90deg);
+}
+
+/* ---------- What happens now arrow ---------- */
+
+.whats-next {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  min-height: clamp(420px, 26vw, 520px);
+}
+
+.whats-next .measure--wide {
+  max-width: 600px;
+}
+
+.whats-next__arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(46vw, 660px);
+  pointer-events: none;
+}
+
+.whats-next__arrow img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px) {
+  .whats-next__arrow {
+    display: none;
+  }
 }
 
 /* ---------- Three card row (decisive leader) ---------- */
@@ -832,12 +876,62 @@ p:last-child {
   gap: 48px;
 }
 
-.card-row--leaders {
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* ---------- Operating system grid ---------- */
+
+.os-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-block: 48px;
 }
 
-/* ---------- Operating-system carousel ---------- */
+.os-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.os-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 563 / 699;
+  object-fit: cover;
+}
+
+.os-card__info {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: 4px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.os-card__info .h3 {
+  color: var(--black);
+  font-size: clamp(22px, 2.2vw, 28px);
+}
+
+.os-card__info p {
+  color: var(--grey);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .os-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .os-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Carousel (shared) ---------- */
 
 .carousel-wrap {
   width: 100vw;
@@ -993,26 +1087,65 @@ p:last-child {
   }
 }
 
-/* ---------- Leadership cards ---------- */
+/* ---------- Leadership carousel ---------- */
 
-.leader-card {
-  background: var(--white);
-  color: var(--grey);
-  border-radius: 16px;
-  padding: clamp(24px, 4vw, 48px);
-  box-shadow: 4px 8px 2px rgba(0, 0, 0, 0.1);
+.carousel--leader .carousel__track {
+  gap: 0;
+  align-items: stretch;
+}
+
+.carousel__slide--leader {
+  width: min(72.25vw, 487.9px);
+  aspect-ratio: auto;
+  overflow: visible;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  background: transparent;
 }
 
-.leader-card__avatar {
-  width: 136px;
-  height: 136px;
-  border-radius: 50%;
-  background: #d9d9d9;
+.carousel__slide--leader .carousel__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 574 / 813;
   object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: #d9d9d9;
 }
+
+.carousel__card--leader {
+  position: relative;
+  z-index: 1;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin-top: -48px;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  flex: 1 0 auto;
+  background: var(--white);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  gap: 24px;
+  color: var(--grey);
+}
+
+.carousel__card--leader .leader-card__name {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  .carousel__slide--leader {
+    width: 71.4vw;
+  }
+
+  .carousel__card--leader {
+    width: 100%;
+  }
+}
+
+/* ---------- Leadership cards ---------- */
 
 .leader-card__name {
   font-weight: 700;
@@ -1025,6 +1158,7 @@ p:last-child {
 .leader-card__title {
   font-weight: 700;
   color: var(--black);
+  margin: 0;
 }
 
 /* ---------- Numbered list ---------- */
@@ -1338,11 +1472,7 @@ p:last-child {
     flex-direction: column;
   }
 
-  .rotated-image img {
-    transform: none;
-  }
-
-  .rotated-image {
+  .loop-diagrams {
     max-width: 100%;
   }
 }
