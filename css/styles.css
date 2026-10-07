@@ -313,13 +313,17 @@ p:last-child {
   width: 100%;
   max-width: 100%;
   margin-inline: 0;
-  align-items: stretch;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .cta-form--hero .cta-form__disclaimer {
   margin: 0;
   text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--grey);
 }
 
 .cta-form--hero[hidden] {
@@ -329,41 +333,22 @@ p:last-child {
 .cta-form__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-}
-
-.cta-form__field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-  text-align: left;
-}
-
-.cta-form__label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--dark-gray);
-  line-height: 1.2;
-}
-
-.cta-form__label .required {
-  color: var(--magenta);
-}
-
-.cta-form__label .optional {
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--grey);
 }
 
 .cta-form__submit {
   width: 100%;
-  margin-top: 4px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.16px;
+  border: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .cta-form__grid {
     grid-template-columns: 1fr;
   }
@@ -400,17 +385,17 @@ p:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
 }
 
 .cta-form {
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .cta-form[hidden] {
@@ -421,24 +406,34 @@ p:last-child {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 10px;
 }
 
 .cta-form__input {
-  flex: 1 1 240px;
-  min-width: 0;
-  padding: 16px;
-  border-radius: 12px;
-  border: 2px solid var(--grey);
+  width: 100%;
+  height: 42px;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #c5c8cc;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--black);
   background: var(--white);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
 }
 
+.cta-form__input::placeholder {
+  color: #767b82;
+  opacity: 1;
+}
+
+.cta-form__input:focus,
 .cta-form__input:focus-visible {
-  outline: 2px solid var(--blue-cta);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--blue-cta);
+  box-shadow: 0 0 0 3px rgba(37, 0, 255, 0.15);
 }
 
 .cta-form__row .btn {
@@ -453,13 +448,13 @@ p:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .range-group__legend {
   padding: 0;
-  margin: 0 0 32px;
-  font-size: 16px;
+  margin: 0 0 12px;
+  font-size: 15px;
   color: var(--grey);
   text-align: center;
 }

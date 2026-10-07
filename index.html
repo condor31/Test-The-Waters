@@ -50,24 +50,18 @@
     <!-- TODO: [DECISION NEEDED] Confirm whether the form should collect credit card info per StartEngine guidance. If not, keep current contact-only fields. -->
     <form class="cta-form cta-form--hero" id="hero-interest-form" novalidate>
       <div class="cta-form__grid">
-        <div class="cta-form__field">
-          <label class="cta-form__label" for="hero-first-name">First name <span class="required" aria-hidden="true">*</span></label>
-          <input class="cta-form__input" type="text" id="hero-first-name" name="first_name" placeholder="First name" autocomplete="given-name" required />
-        </div>
-        <div class="cta-form__field">
-          <label class="cta-form__label" for="hero-last-name">Last name <span class="required" aria-hidden="true">*</span></label>
-          <input class="cta-form__input" type="text" id="hero-last-name" name="last_name" placeholder="Last name" autocomplete="family-name" required />
-        </div>
+        <label class="visually-hidden" for="hero-first-name">First name</label>
+        <input class="cta-form__input" type="text" id="hero-first-name" name="first_name" placeholder="First name *" autocomplete="given-name" required />
+
+        <label class="visually-hidden" for="hero-last-name">Last name</label>
+        <input class="cta-form__input" type="text" id="hero-last-name" name="last_name" placeholder="Last name *" autocomplete="family-name" required />
       </div>
       <div class="cta-form__grid">
-        <div class="cta-form__field">
-          <label class="cta-form__label" for="hero-interest-email">Email address <span class="required" aria-hidden="true">*</span></label>
-          <input class="cta-form__input" type="email" id="hero-interest-email" name="email" placeholder="Email address" autocomplete="email" required />
-        </div>
-        <div class="cta-form__field">
-          <label class="cta-form__label" for="hero-phone">Phone number <span class="optional">(optional)</span></label>
-          <input class="cta-form__input" type="tel" id="hero-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" />
-        </div>
+        <label class="visually-hidden" for="hero-interest-email">Email address</label>
+        <input class="cta-form__input" type="email" id="hero-interest-email" name="email" placeholder="Email address *" autocomplete="email" required />
+
+        <label class="visually-hidden" for="hero-phone">Phone number</label>
+        <input class="cta-form__input" type="tel" id="hero-phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" />
       </div>
       <button class="btn btn-solid-blue cta-label cta-form__submit" type="submit">Let Me Know When I Can Invest &rarr;</button>
       <p class="cta-form__disclaimer">No payment. No commitment. We&rsquo;ll email you when the campaign opens.</p>
@@ -837,24 +831,18 @@
 
       <form class="cta-form" id="interest-form" novalidate>
         <div class="cta-form__grid">
-          <div class="cta-form__field">
-            <label class="cta-form__label" for="interest-first-name">First name <span class="required" aria-hidden="true">*</span></label>
-            <input class="cta-form__input" type="text" id="interest-first-name" name="first_name" placeholder="First name" autocomplete="given-name" required />
-          </div>
-          <div class="cta-form__field">
-            <label class="cta-form__label" for="interest-last-name">Last name <span class="required" aria-hidden="true">*</span></label>
-            <input class="cta-form__input" type="text" id="interest-last-name" name="last_name" placeholder="Last name" autocomplete="family-name" required />
-          </div>
+          <label class="visually-hidden" for="interest-first-name">First name</label>
+          <input class="cta-form__input" type="text" id="interest-first-name" name="first_name" placeholder="First name *" autocomplete="given-name" required />
+
+          <label class="visually-hidden" for="interest-last-name">Last name</label>
+          <input class="cta-form__input" type="text" id="interest-last-name" name="last_name" placeholder="Last name *" autocomplete="family-name" required />
         </div>
         <div class="cta-form__grid">
-          <div class="cta-form__field">
-            <label class="cta-form__label" for="interest-email">Email address <span class="required" aria-hidden="true">*</span></label>
-            <input class="cta-form__input" type="email" id="interest-email" name="email" placeholder="Email address" autocomplete="email" required />
-          </div>
-          <div class="cta-form__field">
-            <label class="cta-form__label" for="interest-phone">Phone number <span class="optional">(optional)</span></label>
-            <input class="cta-form__input" type="tel" id="interest-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" />
-          </div>
+          <label class="visually-hidden" for="interest-email">Email address</label>
+          <input class="cta-form__input" type="email" id="interest-email" name="email" placeholder="Email address *" autocomplete="email" required />
+
+          <label class="visually-hidden" for="interest-phone">Phone number</label>
+          <input class="cta-form__input" type="tel" id="interest-phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" />
         </div>
 
         <fieldset class="range-group">
@@ -862,19 +850,19 @@
           <div class="range-group__options">
             <label class="range-pill">
               <input type="radio" name="investment_range" value="500-1000" />
-              <span>&ndash;,000</span>
+              <span>$500&ndash;$1,000</span>
             </label>
             <label class="range-pill">
               <input type="radio" name="investment_range" value="1000-5000" />
-              <span>,000&ndash;,000</span>
+              <span>$1,000&ndash;$5,000</span>
             </label>
             <label class="range-pill">
               <input type="radio" name="investment_range" value="5000-25000" />
-              <span>,000&ndash;,000</span>
+              <span>$5,000&ndash;$25,000</span>
             </label>
             <label class="range-pill">
               <input type="radio" name="investment_range" value="25000+" />
-              <span>,000+</span>
+              <span>$25,000+</span>
             </label>
           </div>
         </fieldset>
