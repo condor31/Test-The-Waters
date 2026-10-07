@@ -1,3 +1,5 @@
+import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES } from "./map-config.js";
+
 const announcementBar = document.getElementById("announcement-bar");
 if (announcementBar) {
   const closeBtn = announcementBar.querySelector("[data-dismiss-bar]");
@@ -67,6 +69,7 @@ async function submitLeadToGoogleSheet(payload) {
   }
 }
 
+// Main interest form (bottom)
 const interestForm = document.getElementById("interest-form");
 if (interestForm) {
   interestForm.addEventListener("submit", async (event) => {
@@ -79,10 +82,17 @@ if (interestForm) {
       submitBtn.textContent = "Submitting...";
     }
 
+    const firstNameInput = interestForm.querySelector('[name="first_name"]');
+    const lastNameInput = interestForm.querySelector('[name="last_name"]');
     const emailInput = interestForm.querySelector('[name="email"]');
+    const phoneInput = interestForm.querySelector('[name="phone"]');
     const selectedRange = interestForm.querySelector('[name="investment_range"]:checked');
+
     const payload = {
+      first_name: firstNameInput ? firstNameInput.value.trim() : "",
+      last_name: lastNameInput ? lastNameInput.value.trim() : "",
       email: emailInput ? emailInput.value.trim() : "",
+      phone: phoneInput ? phoneInput.value.trim() : "",
       investment_range: selectedRange ? selectedRange.value : "None selected",
       source: "Main Interest Form",
       timestamp: new Date().toLocaleString(),
@@ -104,6 +114,7 @@ if (interestForm) {
   });
 }
 
+// Hero interest form (top capture)
 const heroInterestForm = document.getElementById("hero-interest-form");
 if (heroInterestForm) {
   heroInterestForm.addEventListener("submit", async (event) => {
@@ -116,11 +127,18 @@ if (heroInterestForm) {
       submitBtn.textContent = "Submitting...";
     }
 
+    const firstNameInput = heroInterestForm.querySelector('[name="first_name"]');
+    const lastNameInput = heroInterestForm.querySelector('[name="last_name"]');
     const emailInput = heroInterestForm.querySelector('[name="email"]');
+    const phoneInput = heroInterestForm.querySelector('[name="phone"]');
+
     const payload = {
+      first_name: firstNameInput ? firstNameInput.value.trim() : "",
+      last_name: lastNameInput ? lastNameInput.value.trim() : "",
       email: emailInput ? emailInput.value.trim() : "",
+      phone: phoneInput ? phoneInput.value.trim() : "",
       investment_range: "None selected",
-      source: "Hero Interest Card",
+      source: "Hero Interest Form",
       timestamp: new Date().toLocaleString(),
     };
 
@@ -140,6 +158,7 @@ if (heroInterestForm) {
   });
 }
 
+// Carousel (Leadership & Impact stripes)
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector("[data-carousel-track]");
   const prevBtn = carousel.querySelector("[data-carousel-prev]");
@@ -196,3 +215,85 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   updateUI();
 });
 
+// US Reuse Legislation Map Component
+function initReuseMap() {
+  const mapSvg = document.querySelector(".reuse-map-svg");
+  const legendContainer = document.getElementById("reuse-map-legend");
+  if (!mapSvg) return;
+
+  const stateElements = mapSvg.querySelectorAll("[data-state]");
+
+  // Color each state based on STATE_STATUSES and MAP_CATEGORIES
+  stateElements.forEach((el) => {
+    const code = el.getAttribute("data-state")?.toLowerCase();
+    const status = STATE_STATUSES[code] || "other";
+    el.classList.add(`status-${status}`);
+    const cat = MAP_CATEGORIES.find((c) => c.id === status);
+    if (cat) {
+      el.setAttribute("fill", cat.color);
+    }
+  });
+
+  // Render dynamic legend
+  if (legendContainer) {
+    legendContainer.innerHTML = MAP_CATEGORIES.map((cat) => `
+      <div class="reuse-legend-item" data-category="${cat.id}" title="${cat.description}">
+        <span class="reuse-legend-swatch" style="background-color: ${cat.color};"></span>
+        <span class="reuse-legend-label"><strong>${cat.label}</strong></span>
+      </div>
+    `).join("");
+
+    // Interactive highlight on legend hover
+    legendContainer.querySelectorAll(".reuse-legend-item").forEach((item) => {
+      const catId = item.getAttribute("data-category");
+      item.addEventListener("mouseenter", () => {
+        stateElements.forEach((el) => {
+          const code = el.getAttribute("data-state")?.toLowerCase();
+          const stateCat = STATE_STATUSES[code] || "other";
+          el.style.opacity = stateCat === catId ? "1" : "0.35";
+        });
+      });
+      item.addEventListener("mouseleave", () => {
+        stateElements.forEach((el) => {
+          el.style.opacity = "1";
+        });
+      });
+    });
+  }
+
+  // Floating hover tooltip
+  let tooltip = document.querySelector(".reuse-map__tooltip");
+  if (!tooltip) {
+    tooltip = document.createElement("div");
+    tooltip.className = "reuse-map__tooltip";
+    document.body.appendChild(tooltip);
+  }
+
+  stateElements.forEach((el) => {
+    const code = el.getAttribute("data-state")?.toLowerCase();
+    const stateName = STATE_NAMES[code] || code.toUpperCase();
+    const statusId = STATE_STATUSES[code] || "other";
+    const category = MAP_CATEGORIES.find((c) => c.id === statusId);
+    const statusText = category ? category.label.replace(/\s*\(\d+\s*states\)/i, "") : "Other";
+
+    el.addEventListener("mouseenter", () => {
+      tooltip.textContent = `${stateName}: ${statusText}`;
+      tooltip.style.opacity = "1";
+    });
+
+    el.addEventListener("mousemove", (e) => {
+      tooltip.style.left = `${e.pageX}px`;
+      tooltip.style.top = `${e.pageY}px`;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      tooltip.style.opacity = "0";
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initReuseMap);
+} else {
+  initReuseMap();
+}
