@@ -1072,11 +1072,47 @@ p:last-child {
   font-weight: 700;
   font-size: 28px;
   line-height: 34px;
+  margin: 0;
 }
 
 .impact-stripe__label {
   font-size: 18px;
   line-height: 28px;
+  margin: 0;
+}
+
+/* Desktop: use CSS subgrid across all 8 bars so the subcopy's first line aligns horizontally */
+@media (min-width: 901px) {
+  .impact-stripes {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr auto auto auto 1fr;
+  }
+
+  .impact-stripe {
+    grid-row: span 5;
+    display: grid;
+    grid-template-rows: subgrid;
+    align-items: center;
+    justify-items: center;
+    padding: 48px 16px;
+    row-gap: 16px;
+  }
+
+  .impact-stripe__icon {
+    grid-row: 2;
+    align-self: end;
+  }
+
+  .impact-stripe__number {
+    grid-row: 3;
+    align-self: end;
+  }
+
+  .impact-stripe__label {
+    grid-row: 4;
+    align-self: start;
+  }
 }
 
 .impact-stripes-wrap .impact-dots {
