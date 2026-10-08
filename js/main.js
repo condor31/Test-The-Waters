@@ -293,7 +293,53 @@ function initReuseMap() {
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initReuseMap);
+  document.addEventListener("DOMContentLoaded", () => {
+    initReuseMap();
+    initPersistentCta();
+  });
 } else {
   initReuseMap();
+  initPersistentCta();
+}
+
+// Persistent / Sticky CTA Bar
+function initPersistentCta() {
+  const persistentCta = document.getElementById("persistent-cta");
+  if (!persistentCta) return;
+
+  const bottomFormSection = document.getElementById("interested-form");
+  let isBottomFormVisible = false;
+
+  function updateVisibility() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    // Persist as user scrolls down past the hero fold (250px)
+    // Only temporarily hide when directly viewing the bottom interest form card
+    const shouldShow = scrollY > 250 && !isBottomFormVisible;
+    persistentCta.classList.toggle("is-hidden", !shouldShow);
+  }
+
+  if (bottomFormSection && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isBottomFormVisible = entry.isIntersecting;
+          updateVisibility();
+        });
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(bottomFormSection);
+  }
+
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  window.addEventListener("resize", updateVisibility, { passive: true });
+  updateVisibility();
+
+  const persistentBtn = persistentCta.querySelector(".persistent-cta__btn");
+  persistentBtn?.addEventListener("click", () => {
+    const firstInput = document.getElementById("interest-first-name");
+    if (firstInput) {
+      setTimeout(() => firstInput.focus(), 600);
+    }
+  });
 }

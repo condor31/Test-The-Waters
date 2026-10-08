@@ -25,7 +25,7 @@ export const MAP_CATEGORIES = [
   {
     id: "other",
     label: "Other States",
-    color: "#e0e2e5", // Neutral Grey
+    color: "#d5dae0", // Neutral Slate Grey with clear visibility against white
     description: "Monitoring reuse policy or preparing legislation."
   }
 ];
