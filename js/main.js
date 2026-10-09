@@ -158,7 +158,7 @@ if (heroInterestForm) {
   });
 }
 
-// Carousel (Leadership & Impact stripes)
+// Carousels (Leadership, Impact stripes & Operating System)
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector("[data-carousel-track]");
   const prevBtn = carousel.querySelector("[data-carousel-prev]");
@@ -167,6 +167,10 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const slides = [...track.children];
 
   function closestIndex() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    if (maxScroll > 0 && track.scrollLeft >= maxScroll - 12) {
+      return slides.length - 1;
+    }
     const trackLeft = track.getBoundingClientRect().left;
     let closest = 0;
     let closestDist = Infinity;

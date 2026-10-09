@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Help r.World Build a World Free of Single-Use Waste</title>
 <meta name="description" content="r.World is building the turnkey reuse infrastructure to replace single-use waste. Reserve your early access — no payment, no commitment." />
-<link rel="icon" type="image/svg+xml" href="public/assets/4c5208ba0b02775022f892d83a69f2f9896270ea.svg" />
+<link rel="icon" type="image/png" href="public/assets/favicon.png" />
+<link rel="apple-touch-icon" href="public/assets/favicon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Help r.World build a world free of single-use waste." />
 <meta property="og:description" content="r.World operates the nation's leading turnkey reuse infrastructure to eliminate single-use waste across facilities, institutions and live events." />
@@ -671,35 +672,45 @@
     <h2 class="h2 measure--wide">One proprietary operating system with four key parts working together</h2>
   </div>
 
-  <div class="os-grid">
-      <div class="os-card">
-        <img class="os-card__image" src="public/assets/c397339e4a0f606266950c546b327b841ccd62ae.jpg" alt="r.World driver loading reusable cups onto a delivery truck" loading="lazy" />
-        <div class="os-card__info">
-          <h3 class="h3">Logistics</h3>
-          <p>The reverse-logistics network. r.World delivers. Partners serve. Guests return. r.World collects.</p>
+  <div class="os-carousel-wrap">
+    <div class="os-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="One proprietary operating system key parts">
+      <div class="os-grid" data-carousel-track tabindex="0">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="1 of 4: Logistics">
+          <img class="os-card__image" src="public/assets/c397339e4a0f606266950c546b327b841ccd62ae.jpg" alt="r.World driver loading reusable cups onto a delivery truck" loading="lazy" />
+          <div class="os-card__info">
+            <h3 class="h3">Logistics</h3>
+            <p>The reverse-logistics network. r.World delivers. Partners serve. Guests return. r.World collects.</p>
+          </div>
+        </div>
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="2 of 4: Sanitization">
+          <img class="os-card__image" src="public/assets/8148d440aa5eaa0969dd92fc8ffc5fbcf5a12635.jpg" alt="r.World staff member sanitizing reusable cups at a wash center" loading="lazy" />
+          <div class="os-card__info">
+            <h3 class="h3">Sanitization</h3>
+            <p>Regional centers running Ecolab Science Certified&trade; deep cleaning. Every item inspected, then sealed in a tub before it ships.</p>
+          </div>
+        </div>
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="3 of 4: Automation">
+          <img class="os-card__image" src="public/assets/e0cc720dc0c237c720e8c2bff195b6da3ae230c4.jpg" alt="Racks of washed reusable cups ready for automated quality inspection" loading="lazy" />
+          <div class="os-card__info">
+            <h3 class="h3">Automation</h3>
+            <p>The industry's only automated AI quality check &mdash; the reason 90% is repeatable rather than lucky.</p>
+          </div>
+        </div>
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="4 of 4: Technology">
+          <img class="os-card__image" src="public/assets/6fad519a75d46d9cd68ef1bf0a98743897a50299.jpg" alt="Stacks of QR-code tracked r.World reusable cups in wash racks" loading="lazy" />
+          <div class="os-card__info">
+            <h3 class="h3">Technology</h3>
+            <p>r.Turn, the QR- and RFID-enabled platform. Ordering, live inventory, item-level tracking, automatic impact reports.</p>
+          </div>
         </div>
       </div>
-      <div class="os-card">
-        <img class="os-card__image" src="public/assets/8148d440aa5eaa0969dd92fc8ffc5fbcf5a12635.jpg" alt="r.World staff member sanitizing reusable cups at a wash center" loading="lazy" />
-        <div class="os-card__info">
-          <h3 class="h3">Sanitization</h3>
-          <p>Regional centers running Ecolab Science Certified&trade; deep cleaning. Every item inspected, then sealed in a tub before it ships.</p>
-        </div>
-      </div>
-      <div class="os-card">
-        <img class="os-card__image" src="public/assets/e0cc720dc0c237c720e8c2bff195b6da3ae230c4.jpg" alt="Racks of washed reusable cups ready for automated quality inspection" loading="lazy" />
-        <div class="os-card__info">
-          <h3 class="h3">Automation</h3>
-          <p>The industry's only automated AI quality check &mdash; the reason 90% is repeatable rather than lucky.</p>
-        </div>
-      </div>
-      <div class="os-card">
-        <img class="os-card__image" src="public/assets/6fad519a75d46d9cd68ef1bf0a98743897a50299.jpg" alt="Stacks of QR-code tracked r.World reusable cups in wash racks" loading="lazy" />
-        <div class="os-card__info">
-          <h3 class="h3">Technology</h3>
-          <p>r.Turn, the QR- and RFID-enabled platform. Ordering, live inventory, item-level tracking, automatic impact reports.</p>
-        </div>
-      </div>
+    </div>
+    <div class="carousel__dots os-dots" data-carousel-dots aria-label="Operating system navigation">
+      <button class="carousel__dot is-active" type="button" aria-label="Go to part 1: Logistics" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to part 2: Sanitization" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to part 3: Automation" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to part 4: Technology" data-carousel-dot></button>
+    </div>
   </div>
 
   <div class="jobs-panel">
@@ -784,9 +795,8 @@
 
         <!-- Slide 4: Craig Swanson -->
         <!-- TODO: [CONFIRM] Ashwin bio and headshot details pending. When received, place Ashwin within the first 4 frames alongside Grace, Annie, and Craig. -->
-        <!-- TODO: [ASSET NEEDED] Higher-res headshot for Craig Swanson. -->
         <li class="carousel__slide carousel__slide--leader">
-          <img class="carousel__image" src="public/assets/8bae484ea06c92c47d59883be4ba0b8a8fe395ca.jpg" alt="Craig Swanson" loading="lazy" />
+          <img class="carousel__image" src="public/assets/craig-swanson.jpg" alt="Craig Swanson" loading="lazy" />
           <div class="carousel__card carousel__card--leader">
             <div>
               <h4 class="leader-card__name">Craig Swanson</h4>
@@ -879,7 +889,7 @@
 
         <!-- Slide 12: Daniel Yarano -->
         <li class="carousel__slide carousel__slide--leader">
-          <img class="carousel__image" src="public/assets/e753e51f7c3fc008b5a1ae50f640c26deb80c834.jpg" alt="Daniel Yarano" loading="lazy" />
+          <img class="carousel__image" src="public/assets/daniel-yarano.jpg" alt="Daniel Yarano" loading="lazy" />
           <div class="carousel__card carousel__card--leader">
             <h4 class="leader-card__name">Daniel Yarano</h4>
             <p class="leader-card__title">Board Member</p>
@@ -932,8 +942,13 @@
         <li><p>4. If you decide you&rsquo;d rather not hear from r.World, one click and you&rsquo;re off the list.</p></li>
       </ol>
     </div>
-    <div class="whats-next__arrow" aria-hidden="true">
-      <img src="public/assets/2282a2ff19d09fd7a199296bc17b977029c5c90a.svg" alt="" />
+    <div class="whats-next__visual">
+      <div class="whats-next__photo-frame">
+        <img class="whats-next__photo" src="public/assets/whats-next-concert.jpg" alt="Concertgoers celebrating with reusable r.cup cups" loading="lazy" />
+      </div>
+      <div class="whats-next__arrow" aria-hidden="true">
+        <img src="public/assets/2282a2ff19d09fd7a199296bc17b977029c5c90a.svg" alt="" />
+      </div>
     </div>
   </div>
 </section>
