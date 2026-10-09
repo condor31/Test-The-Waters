@@ -1,4 +1,5 @@
 import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES } from "./map-config.js";
+import confetti from "./confetti.js";
 
 const announcementBar = document.getElementById("announcement-bar");
 if (announcementBar) {
@@ -69,6 +70,71 @@ async function submitLeadToGoogleSheet(payload) {
   }
 }
 
+// Confetti burst originating from the submit button
+function triggerCelebrationConfetti(button) {
+  if (!button || typeof confetti !== "function") return;
+  const rect = button.getBoundingClientRect();
+  const originX = (rect.left + rect.width / 2) / window.innerWidth;
+  const originY = (rect.top + rect.height / 2) / window.innerHeight;
+
+  const brandColors = ["#01edff", "#ffd100", "#ff0099", "#2500ff", "#8a2be2", "#ffffff"];
+
+  // 1. Upward eruption straight from the button
+  confetti({
+    origin: { x: originX, y: originY },
+    particleCount: 55,
+    angle: 90,
+    spread: 65,
+    startVelocity: 42,
+    gravity: 0.9,
+    ticks: 240,
+    colors: brandColors,
+    zIndex: 99999,
+  });
+
+  // 2. Dual angled side poppers
+  setTimeout(() => {
+    confetti({
+      origin: { x: originX, y: originY },
+      particleCount: 35,
+      angle: 65,
+      spread: 60,
+      startVelocity: 46,
+      gravity: 0.95,
+      ticks: 250,
+      colors: brandColors,
+      zIndex: 99999,
+    });
+    confetti({
+      origin: { x: originX, y: originY },
+      particleCount: 35,
+      angle: 115,
+      spread: 60,
+      startVelocity: 46,
+      gravity: 0.95,
+      ticks: 250,
+      colors: brandColors,
+      zIndex: 99999,
+    });
+  }, 90);
+
+  // 3. Gentle lingering flutter
+  setTimeout(() => {
+    confetti({
+      origin: { x: originX, y: originY },
+      particleCount: 25,
+      angle: 90,
+      spread: 110,
+      startVelocity: 26,
+      gravity: 0.7,
+      decay: 0.92,
+      ticks: 300,
+      colors: brandColors,
+      zIndex: 99999,
+    });
+  }, 220);
+}
+
 // Main interest form (bottom)
 const interestForm = document.getElementById("interest-form");
 if (interestForm) {
@@ -77,6 +143,10 @@ if (interestForm) {
     if (!interestForm.reportValidity()) return;
 
     const submitBtn = interestForm.querySelector('button[type="submit"]');
+
+    // Trigger celebration confetti immediately from the button
+    triggerCelebrationConfetti(submitBtn);
+
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
@@ -88,28 +158,40 @@ if (interestForm) {
     const phoneInput = interestForm.querySelector('[name="phone"]');
     const selectedRange = interestForm.querySelector('[name="investment_range"]:checked');
 
+    const phoneVal = phoneInput ? phoneInput.value.trim() : "";
+    const firstNameVal = firstNameInput ? firstNameInput.value.trim() : "";
+    const lastNameVal = lastNameInput ? lastNameInput.value.trim() : "";
+    const emailVal = emailInput ? emailInput.value.trim() : "";
+
     const payload = {
-      first_name: firstNameInput ? firstNameInput.value.trim() : "",
-      last_name: lastNameInput ? lastNameInput.value.trim() : "",
-      email: emailInput ? emailInput.value.trim() : "",
-      phone: phoneInput ? phoneInput.value.trim() : "",
+      first_name: firstNameVal,
+      firstName: firstNameVal,
+      last_name: lastNameVal,
+      lastName: lastNameVal,
+      email: emailVal,
+      phone: phoneVal,
+      phone_number: phoneVal,
+      phoneNumber: phoneVal,
       investment_range: selectedRange ? selectedRange.value : "None selected",
       source: "Main Interest Form",
       timestamp: new Date().toLocaleString(),
     };
 
-    try {
-      await submitLeadToGoogleSheet(payload);
-    } catch (err) {
-      console.error("Submission failed:", err);
-    }
-
+    // Transition to celebratory success state
     const successMessage = document.getElementById("interest-form-success");
+    const promptHeading = document.getElementById("interest-card-prompt");
+    if (promptHeading) promptHeading.hidden = true;
     interestForm.hidden = true;
     if (successMessage) {
       successMessage.hidden = false;
       successMessage.setAttribute("tabindex", "-1");
       successMessage.focus();
+    }
+
+    try {
+      await submitLeadToGoogleSheet(payload);
+    } catch (err) {
+      console.error("Submission failed:", err);
     }
   });
 }
@@ -122,6 +204,10 @@ if (heroInterestForm) {
     if (!heroInterestForm.reportValidity()) return;
 
     const submitBtn = heroInterestForm.querySelector('button[type="submit"]');
+
+    // Trigger celebration confetti immediately from the button
+    triggerCelebrationConfetti(submitBtn);
+
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
@@ -132,28 +218,40 @@ if (heroInterestForm) {
     const emailInput = heroInterestForm.querySelector('[name="email"]');
     const phoneInput = heroInterestForm.querySelector('[name="phone"]');
 
+    const heroPhoneVal = phoneInput ? phoneInput.value.trim() : "";
+    const heroFirstNameVal = firstNameInput ? firstNameInput.value.trim() : "";
+    const heroLastNameVal = lastNameInput ? lastNameInput.value.trim() : "";
+    const heroEmailVal = emailInput ? emailInput.value.trim() : "";
+
     const payload = {
-      first_name: firstNameInput ? firstNameInput.value.trim() : "",
-      last_name: lastNameInput ? lastNameInput.value.trim() : "",
-      email: emailInput ? emailInput.value.trim() : "",
-      phone: phoneInput ? phoneInput.value.trim() : "",
+      first_name: heroFirstNameVal,
+      firstName: heroFirstNameVal,
+      last_name: heroLastNameVal,
+      lastName: heroLastNameVal,
+      email: heroEmailVal,
+      phone: heroPhoneVal,
+      phone_number: heroPhoneVal,
+      phoneNumber: heroPhoneVal,
       investment_range: "None selected",
       source: "Hero Interest Form",
       timestamp: new Date().toLocaleString(),
     };
 
-    try {
-      await submitLeadToGoogleSheet(payload);
-    } catch (err) {
-      console.error("Submission failed:", err);
-    }
-
+    // Transition to celebratory success state
     const successMessage = document.getElementById("hero-interest-success");
+    const heroPrompt = document.getElementById("hero-interest-prompt");
+    if (heroPrompt) heroPrompt.hidden = true;
     heroInterestForm.hidden = true;
     if (successMessage) {
       successMessage.hidden = false;
       successMessage.setAttribute("tabindex", "-1");
       successMessage.focus();
+    }
+
+    try {
+      await submitLeadToGoogleSheet(payload);
+    } catch (err) {
+      console.error("Hero submission failed:", err);
     }
   });
 }

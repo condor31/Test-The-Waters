@@ -121,6 +121,11 @@ p:last-child {
   font-weight: 700;
 }
 
+.p-small {
+  font-size: 14px;
+  line-height: 22px;
+}
+
 .cta-label {
   font-weight: 700;
   font-size: 16px;
@@ -518,11 +523,105 @@ p:last-child {
 
 .cta-form__disclaimer {
   color: var(--grey);
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-.cta-form__success p {
+/* ---------- Form Success State ---------- */
+
+.cta-form__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  animation: successAppear 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cta-form__success[hidden] {
+  display: none !important;
+}
+
+/* Hero card specific padding and styling */
+.interest-card .cta-form__success {
+  min-height: 230px;
+  padding: clamp(32px, 4.5vw, 44px) clamp(20px, 3.5vw, 32px);
+  background: rgba(1, 237, 255, 0.05);
+  border: 1.5px solid rgba(1, 237, 255, 0.3);
+  border-radius: 24px;
+}
+
+/* Bottom card specific: fills the large footprint of the card comfortably with generous padding */
+.cta-form-card .cta-form__success {
+  min-height: 340px;
+  padding: clamp(56px, 8vw, 88px) clamp(28px, 6vw, 64px);
+  background: transparent;
+  border: none;
+}
+
+.cta-form__success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--blue-cta);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 24px rgba(37, 0, 255, 0.28);
+  animation: checkmarkPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.cta-form__success .cta-form__success-title,
+.interest-card .cta-form__success .cta-form__success-title,
+.cta-form-card .cta-form__success .cta-form__success-title {
+  margin: 0 0 12px 0;
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--black);
+}
+
+.cta-form__success .cta-form__success-desc,
+.interest-card .cta-form__success .cta-form__success-desc,
+.cta-form-card .cta-form__success .cta-form__success-desc {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--grey);
+  max-width: 460px;
+}
+
+@keyframes successAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes checkmarkPop {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15) rotate(4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
 }
 
 /* ---------- Generic sections ---------- */
@@ -1096,7 +1195,7 @@ p:last-child {
 }
 
 .impact-stripe__icon {
-  width: clamp(56px, 5.5vw, 80px);
+  width: clamp(70px, 6.875vw, 100px);
   aspect-ratio: 1;
 }
 
@@ -1317,10 +1416,44 @@ p:last-child {
   .whats-next {
     padding-inline: var(--section-pad-x);
     min-height: auto;
+    padding-top: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .whats-next .section-inner {
+    width: 100%;
+  }
+
+  .whats-next .measure--wide {
+    max-width: 100%;
   }
 
   .whats-next__visual {
-    display: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: min(80vw, 350px);
+    margin-top: clamp(140px, 34vw, 175px);
+    margin-bottom: 24px;
+    margin-inline: auto;
+    display: block;
+  }
+
+  .whats-next__photo-frame {
+    left: 5%;
+    top: -72%;
+    width: 72%;
+  }
+}
+
+@media (max-width: 480px) {
+  .whats-next__visual {
+    width: min(84vw, 290px);
+    margin-top: clamp(120px, 32vw, 145px);
   }
 }
 
@@ -1378,6 +1511,91 @@ p:last-child {
   margin-top: 12px !important;
 }
 
+/* ---------- Why r.World? Why Now? circular photo accents ---------- */
+
+.why-now-section {
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.why-now-inner {
+  position: relative;
+  width: 100%;
+}
+
+.why-now__wrap {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.why-now__circle {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .why-now__wrap {
+    max-width: clamp(840px, 68vw, 1040px);
+  }
+
+  .why-now__wrap .card-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-now__circle {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16), 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+    pointer-events: none;
+    background: #ffffff;
+  }
+
+  .why-now__circle img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .why-now__circle--left-top {
+    width: clamp(120px, 10vw, 160px);
+    height: clamp(120px, 10vw, 160px);
+    top: 30px;
+    right: calc(100% + clamp(12px, 1.4vw, 24px));
+  }
+
+  .why-now__circle--left-top img {
+    object-position: center 65%;
+  }
+
+  .why-now__circle--left-bottom {
+    width: clamp(100px, 8.5vw, 135px);
+    height: clamp(100px, 8.5vw, 135px);
+    top: 270px;
+    right: calc(100% + clamp(20px, 2.5vw, 42px));
+  }
+
+  .why-now__circle--left-bottom img {
+    object-position: center center;
+  }
+
+  .why-now__circle--right {
+    width: clamp(130px, 11vw, 175px);
+    height: clamp(130px, 11vw, 175px);
+    top: 130px;
+    left: calc(100% + clamp(12px, 1.4vw, 24px));
+  }
+
+  .why-now__circle--right img {
+    object-position: center 40%;
+  }
+}
+
 /* ---------- Two jobs white panels ---------- */
 
 .jobs-panel {
@@ -1388,6 +1606,15 @@ p:last-child {
   color: var(--black);
   padding-inline: var(--section-pad-x);
   padding-block: clamp(32px, 5vw, 56px);
+}
+
+.jobs-panel--disclaimer {
+  padding-block: clamp(16px, 2.5vw, 24px);
+}
+
+.jobs-panel--disclaimer p {
+  color: var(--grey);
+  margin: 0;
 }
 
 /* ---------- Two jobs diagonal stripe band ---------- */
@@ -1808,15 +2035,19 @@ p:last-child {
 }
 
 .site-footer__legal {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.96px;
-  text-transform: uppercase;
   max-width: 820px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.site-footer__legal p {
+  font-weight: 400;
+  font-size: clamp(11px, 1.1vw, 12px);
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-transform: none;
+  margin: 0;
 }
 
 .site-footer__address {

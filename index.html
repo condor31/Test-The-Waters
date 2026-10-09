@@ -48,7 +48,7 @@
   <div class="interest-card" id="interested">
     <p>r.World operates the nation&rsquo;s leading reuse infrastructure wherever single-use waste is created &mdash; across corporate campuses, universities, healthcare systems, airlines and hospitality, with major live events and sports as proof points.</p>
     <p class="p-bold">For the first time in nine years, r.World is opening up a public opportunity to invest.</p>
-    <p class="h5">Ready to be the first to know when the investment round opens?</p>
+    <p class="h5" id="hero-interest-prompt">Ready to be the first to know when the investment round opens?</p>
 
     <!-- TODO: [DECISION NEEDED] Confirm whether the form should collect credit card info per StartEngine guidance. If not, keep current contact-only fields. -->
     <form class="cta-form cta-form--hero" id="hero-interest-form" novalidate>
@@ -67,12 +67,17 @@
         <input class="cta-form__input" type="tel" id="hero-phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" />
       </div>
       <button class="btn btn-solid-blue cta-label cta-form__submit" type="submit">Reserve My Early Access</button>
-      <p class="cta-form__disclaimer">No payment. No commitment. r.World will email you when the campaign opens.</p>
+      <p class="cta-form__disclaimer p-small">No payment. No commitment. r.World will email you when the campaign opens.</p>
     </form>
 
     <div class="cta-form__success" id="hero-interest-success" hidden>
-      <p class="h5 text-black">You&rsquo;re on the list.</p>
-      <p>No payment. No commitment. r.World will email you the morning the campaign opens &mdash; before r.World announces it anywhere else.</p>
+      <div class="cta-form__success-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <p class="cta-form__success-title">You&rsquo;re on the list.</p>
+      <p class="cta-form__success-desc">No payment. No commitment. r.World will email you the morning the campaign opens &mdash; before r.World announces it anywhere else.</p>
     </div>
 
     <button class="interest-card__video" type="button" data-video-thumb aria-label="Watch video: an r.cup reusable cup">
@@ -111,7 +116,7 @@
       </div>
     </div>
     <div class="slide-arrow__body">
-      <h2 class="h3 slide-arrow__heading"><strong>The single-use system is failing.</strong></h2>
+      <h2 class="slide-arrow__heading"><strong>Single-use waste recycling is largely a myth</strong></h2>
       <p>Across facilities and institutions, hundreds of thousands of single-use cups and containers are produced every year. You use them once and, rather than throwing them away, do the right thing by recycling them.</p>
       <p><strong>But there is no &ldquo;away.&rdquo;</strong></p>
       <p>Across campuses, cafeterias, airports and live events, unless someone hand-sorts the waste stream, the recycling rate for single-use items runs between 0 and 20%. And it goes to incinerators, the environment or landfills rapidly filling up. Sadly, the bins are mostly for show.</p>
@@ -119,7 +124,7 @@
       <p>Reuse is visionary, and r.World has been busy building the infrastructure to make it reality.</p>
 
       <div class="mid-page-cta">
-        <h2 class="h2 mid-page-cta__heading">Single-use waste recycling is largely a myth</h2>
+        <h3 class="mid-page-cta__heading">Join the reuse movement and reserve your spot</h3>
         <p class="mid-page-cta__copy">Fifteen cities have asked us to come build. Getting there takes capital, and we&rsquo;d rather raise it from the people who actually go to the shows.</p>
         <a class="btn btn-solid-blue cta-label mid-page-cta__btn" href="#interested-form">Notify me first</a>
         <p class="mid-page-cta__disclaimer">No payment. No commitment. You&rsquo;ll be notified when the offering opens.</p>
@@ -643,25 +648,36 @@
   </div>
 </section>
 
-<section class="section section--yellow">
-  <div class="section-inner">
+<section class="section section--yellow why-now-section">
+  <div class="section-inner why-now-inner">
     <h2 class="h2">Why r.World? Why Now?</h2>
-    <div class="card-row">
-      <div class="info-card">
-        <h3 class="h3">r.World Is the Decisive Leader</h3>
-        <p>r.World operates the nation&rsquo;s first, largest and most advanced reuse network, processing more reusable foodware annually than anyone else and active in roughly 10 times more facilities than the next-largest provider.</p>
+    <div class="why-now__wrap">
+      <div class="why-now__circle why-now__circle--left-top" aria-hidden="true">
+        <img src="public/assets/why-now-stadium.jpg" alt="r.World reusable cup in stadium seating" loading="lazy" />
       </div>
-      <div class="info-card">
-        <h3 class="h3">Several States Now Require What r.World Has Been Working On Since 2017</h3>
-        <p>r.World saw it coming. r.World built nine years ahead of regulations. Now, the regulations are kicking in.</p>
-        <p>Seven states have passed extended producer responsibility (EPR) legislation, and 10 more have bills in progress to enact EPR laws with fines for single-use.</p>
-        <p>Extended producer responsibility (EPR) laws are requiring producers to pay fees based on the packaging they put into the market. California&rsquo;s SB 54 requires a 25% reduction in plastic packaging by 2032. At least 10 points of that must come from eliminating plastic components or shifting to refillable and reusable systems. Reuse is written into the statute as a compliance pathway. Noncompliance carries penalties of up to $50,000 a day.</p>
-        <p class="source-credit">Holland &amp; Knight, January 2026 &middot; EPR Atlas, state-by-state &middot; Source reduction requirements analysis (JD Supra) &middot; EPR Atlas, California &middot; Benesch, SB 54 compliance alert</p>
+      <div class="why-now__circle why-now__circle--left-bottom" aria-hidden="true">
+        <img src="public/assets/why-now-crowd.jpg" alt="Crowd at an outdoor music festival" loading="lazy" />
       </div>
-      <div class="info-card">
-        <h3 class="h3">Wash Hubs Aren&rsquo;t Sexy. Neither Were Cell Phone Towers</h3>
-        <p>r.World has a nine-year head start building the physical layer before reuse becomes ordinary: regional wash hubs, reverse logistics, RFID tracking and per-item contracts across 10,000+ events, with 90%+ client retention. r.World&rsquo;s technology and the markets we&rsquo;ve secured are hard to replicate.</p>
-        <p class="source-credit">Source: r.World System Data</p>
+      <div class="why-now__circle why-now__circle--right" aria-hidden="true">
+        <img src="public/assets/why-now-anthem.jpg" alt="r.World reusable cup at The Anthem venue" loading="lazy" />
+      </div>
+      <div class="card-row">
+        <div class="info-card">
+          <h3 class="h3">r.World Is the Decisive Leader</h3>
+          <p>r.World operates the nation&rsquo;s first, largest and most advanced reuse network, processing more reusable foodware annually than anyone else and active in roughly 10 times more facilities than the next-largest provider.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="h3">Several States Now Require What r.World Has Been Working On Since 2017</h3>
+          <p>r.World saw it coming. r.World built nine years ahead of regulations. Now, the regulations are kicking in.</p>
+          <p>Seven states have passed extended producer responsibility (EPR) legislation, and 10 more have bills in progress to enact EPR laws with fines for single-use.</p>
+          <p>Extended producer responsibility (EPR) laws are requiring producers to pay fees based on the packaging they put into the market. California&rsquo;s SB 54 requires a 25% reduction in plastic packaging by 2032. At least 10 points of that must come from eliminating plastic components or shifting to refillable and reusable systems. Reuse is written into the statute as a compliance pathway. Noncompliance carries penalties of up to $50,000 a day.</p>
+          <p class="source-credit">Holland &amp; Knight, January 2026 &middot; EPR Atlas, state-by-state &middot; Source reduction requirements analysis (JD Supra) &middot; EPR Atlas, California &middot; Benesch, SB 54 compliance alert</p>
+        </div>
+        <div class="info-card">
+          <h3 class="h3">Wash Hubs Aren&rsquo;t Sexy. Neither Were Cell Phone Towers</h3>
+          <p>r.World has a nine-year head start building the physical layer before reuse becomes ordinary: regional wash hubs, reverse logistics, RFID tracking and per-item contracts across 10,000+ events, with 90%+ client retention. r.World&rsquo;s technology and the markets we&rsquo;ve secured are hard to replicate.</p>
+          <p class="source-credit">Source: r.World System Data</p>
+        </div>
       </div>
     </div>
   </div>
@@ -734,9 +750,9 @@
     </div>
   </div>
 
-  <div class="jobs-panel">
+  <div class="jobs-panel jobs-panel--disclaimer">
     <div class="section-inner">
-      <p class="h4 measure--wide">The full allocation will be in r.World&rsquo;s offering statement when filed with the SEC.</p>
+      <p class="p-small measure--wide">The full allocation will be in r.World&rsquo;s offering statement when filed with the SEC.</p>
     </div>
   </div>
 </section>
@@ -931,7 +947,7 @@
   </div>
 </section>
 
-<section class="section section--grey">
+<section class="section section--grey" id="whats-next">
   <div class="whats-next">
     <div class="section-inner">
       <h2 class="h2 measure--wide">Ok, Cool. What Happens Now?</h2>
@@ -957,7 +973,7 @@
 <section class="section section--grey" id="interested-form">
   <div class="section-inner section-inner--center">
     <div class="cta-form-card">
-      <h3 class="h3 text-black">Want to be the first to know when the raise goes live?</h3>
+      <h3 class="h3 text-black" id="interest-card-prompt">Want to be the first to know when the raise goes live?</h3>
 
       <form class="cta-form" id="interest-form" novalidate>
         <div class="cta-form__grid">
@@ -998,12 +1014,17 @@
         </fieldset>
 
         <button class="btn btn-solid-blue cta-label cta-form__submit" type="submit">Alert Me When The Opportunity Opens</button>
-        <p class="cta-form__disclaimer">No payment. No commitment. r.World will email you when the campaign opens.</p>
+        <p class="cta-form__disclaimer p-small">No payment. No commitment. r.World will email you when the campaign opens.</p>
       </form>
 
       <div class="cta-form__success" id="interest-form-success" hidden>
-        <p class="h5 text-black">You&rsquo;re on the list.</p>
-        <p>No payment. No commitment. r.World will email you the morning the campaign opens &mdash; before r.World announces it anywhere else.</p>
+        <div class="cta-form__success-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <p class="cta-form__success-title">You&rsquo;re on the list.</p>
+        <p class="cta-form__success-desc">No payment. No commitment. r.World will email you the morning the campaign opens &mdash; before r.World announces it anywhere else.</p>
       </div>
     </div>
   </div>
