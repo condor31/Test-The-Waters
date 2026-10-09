@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 430" width="100%" height="auto" role="img" aria-label="Closed Loop reuse diagram: inside the facility, items cycle continuously from delivery to collection and washing with 90% return rate">
+  <defs>
+    <!-- Oval capsule track: top horizontal line, right arc, bottom horizontal line, left arc -->
+    <path id="closed-loop-track" d="M 160 135 L 320 135 A 80 80 0 0 1 320 295 L 160 295 A 80 80 0 0 1 160 135 Z" fill="none" />
+    <style>
+      .loop-bg { fill: #151515; }
+      .loop-title { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .loop-subtitle { fill: #8e8e8e; font-family: 'Inclusive Sans', -apple-system, monospace, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-anchor: middle; }
+      .loop-dashed-box { fill: none; stroke: #3e3e3e; stroke-width: 1.5; stroke-dasharray: 6 6; }
+      .loop-center-text { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 14px; font-weight: 400; text-anchor: middle; }
+      .loop-step-label { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 14px; font-weight: 400; text-anchor: middle; }
+      .loop-step-num { fill: #000000; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .loop-footer { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 14px; font-weight: 500; text-anchor: middle; }
+      @media (prefers-reduced-motion: reduce) {
+        .animated-arrow { display: none; }
+        .static-arrow { display: block !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect class="loop-bg" width="480" height="430" rx="16" />
+
+  <!-- Title & Subtitle -->
+  <text class="loop-title" x="240" y="44">Closed Loop</text>
+  <text class="loop-subtitle" x="240" y="66">INSIDE THE FACILITY</text>
+
+  <!-- Dashed Bounding Box -->
+  <rect class="loop-dashed-box" x="36" y="86" width="408" height="280" rx="16" />
+
+  <!-- Yellow Oval Track -->
+  <use href="#closed-loop-track" stroke="#FFD100" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Center Text -->
+  <text class="loop-center-text" x="240" y="220">Both ends under one roof</text>
+
+  <!-- Animated Clockwise Flow Arrow 1 -->
+  <g class="animated-arrow">
+    <path d="M -9 -7 L 7 0 L -9 7 Z" fill="#FFD100" />
+    <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#closed-loop-track" />
+    </animateMotion>
+  </g>
+
+  <!-- Animated Clockwise Flow Arrow 2 (180deg offset for balanced continuous flow) -->
+  <g class="animated-arrow">
+    <path d="M -9 -7 L 7 0 L -9 7 Z" fill="#FFD100" />
+    <animateMotion dur="8s" begin="-4s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#closed-loop-track" />
+    </animateMotion>
+  </g>
+
+  <!-- Static Fallback Arrow (for reduced motion or fallback) -->
+  <path class="static-arrow" d="M 235 128 L 249 135 L 235 142 Z" fill="#FFD100" style="display: none;" />
+
+  <!-- Step 1: We deliver -->
+  <text class="loop-step-label" x="160" y="112">We deliver</text>
+  <circle cx="160" cy="135" r="16" fill="#FFD100" />
+  <text class="loop-step-num" x="160" y="135">1</text>
+
+  <!-- Step 2: You're served -->
+  <text class="loop-step-label" x="320" y="112">You’re served</text>
+  <circle cx="320" cy="135" r="16" fill="#FFD100" />
+  <text class="loop-step-num" x="320" y="135">2</text>
+
+  <!-- Step 3: You hand it back -->
+  <text class="loop-step-label" x="320" y="335">You hand it back</text>
+  <circle cx="320" cy="295" r="16" fill="#FFD100" />
+  <text class="loop-step-num" x="320" y="295">3</text>
+
+  <!-- Step 4: We collect + wash -->
+  <text class="loop-step-label" x="160" y="335">We collect + wash</text>
+  <circle cx="160" cy="295" r="16" fill="#FFD100" />
+  <text class="loop-step-num" x="160" y="295">4</text>
+
+  <!-- Footer Status -->
+  <text class="loop-footer" x="240" y="396">Works today · 90% return rate</text>
+</svg>

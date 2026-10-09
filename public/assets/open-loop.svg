@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 475" width="100%" height="auto" role="img" aria-label="Open Loop reuse diagram: illustrating the frontier where the return loop from your home back to the business is not yet solved at scale">
+  <defs>
+    <!-- Solid active path: from Node 4 up around 1, across to 2, down around 3 -->
+    <path id="open-loop-active-track" d="M 160 355 A 80 80 0 0 1 160 195 L 320 195 A 80 80 0 0 1 320 355" fill="none" />
+    <!-- Full track for continuous motion calculation -->
+    <path id="open-loop-full-track" d="M 160 195 L 320 195 A 80 80 0 0 1 320 355 L 160 355 A 80 80 0 0 1 160 195 Z" fill="none" />
+    <style>
+      .open-loop-bg { fill: #151515; stroke: #FFD100; stroke-width: 2.5; }
+      .open-loop-title { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .open-loop-subtitle { fill: #8e8e8e; font-family: 'Inclusive Sans', -apple-system, monospace, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-anchor: middle; }
+      .open-loop-dashed-box { fill: none; stroke: #3e3e3e; stroke-width: 1.5; stroke-dasharray: 6 6; }
+      .open-loop-step-label { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 14px; font-weight: 400; text-anchor: middle; }
+      .open-loop-step-num { fill: #000000; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .open-loop-footer { fill: #ffffff; font-family: 'Inclusive Sans', -apple-system, sans-serif; font-size: 14px; font-weight: 500; text-anchor: middle; }
+      @media (prefers-reduced-motion: reduce) {
+        .animated-arrow-open { display: none; }
+        .static-arrow-open { display: block !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background with Yellow Border -->
+  <rect class="open-loop-bg" x="1.5" y="1.5" width="477" height="472" rx="16" />
+
+  <!-- Title -->
+  <text class="open-loop-title" x="240" y="44">Open Loop</text>
+
+  <!-- Column Subtitles -->
+  <text class="open-loop-subtitle" x="145" y="76">THE BUSINESS</text>
+  <text class="open-loop-subtitle" x="335" y="76">YOUR HOME</text>
+
+  <!-- Dashed Bounding Box -->
+  <rect class="open-loop-dashed-box" x="36" y="96" width="408" height="320" rx="16" />
+
+  <!-- Center Vertical Dividing Dashed Line -->
+  <line class="open-loop-dashed-box" x1="240" y1="96" x2="240" y2="416" />
+
+  <!-- Active Solid Yellow Track (4 -> 1 -> 2 -> 3) -->
+  <use href="#open-loop-active-track" stroke="#FFD100" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Dashed Grey Return Track (3 -> 4: The Unsolved Frontier) -->
+  <line x1="320" y1="355" x2="160" y2="355" stroke="#555555" stroke-width="4.5" stroke-dasharray="14 10" />
+
+  <!-- Animated Flow Arrow: travels clockwise, dimming over the dashed return line to symbolize the broken loop -->
+  <g class="animated-arrow-open">
+    <path d="M -9 -7 L 7 0 L -9 7 Z" fill="#FFD100" />
+    <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#open-loop-full-track" />
+    </animateMotion>
+    <animate attributeName="opacity" values="1; 1; 0.2; 0.2; 1" keyTimes="0; 0.58; 0.65; 0.88; 1" dur="8s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Static Fallback Arrow (pointing right across center divider) -->
+  <path class="static-arrow-open" d="M 235 188 L 249 195 L 235 202 Z" fill="#FFD100" style="display: none;" />
+
+  <!-- Step 1: Restaurant serves -->
+  <text class="open-loop-step-label" x="145" y="170">Restaurant serves</text>
+  <circle cx="160" cy="195" r="16" fill="#FFD100" />
+  <text class="open-loop-step-num" x="160" y="195">1</text>
+
+  <!-- Step 2: You take it home -->
+  <text class="open-loop-step-label" x="335" y="170">You take it home</text>
+  <circle cx="320" cy="195" r="16" fill="#FFD100" />
+  <text class="open-loop-step-num" x="320" y="195">2</text>
+
+  <!-- Step 3: Bin by your door -->
+  <text class="open-loop-step-label" x="320" y="396">Bin by your door</text>
+  <circle cx="320" cy="355" r="16" fill="#FFD100" />
+  <text class="open-loop-step-num" x="320" y="355">3</text>
+
+  <!-- Step 4: Collected + washed -->
+  <text class="open-loop-step-label" x="160" y="396">Collected + washed</text>
+  <circle cx="160" cy="355" r="16" fill="#FFD100" />
+  <text class="open-loop-step-num" x="160" y="355">4</text>
+
+  <!-- Footer Status -->
+  <text class="open-loop-footer" x="240" y="446">The frontier, nobody has solved it at scale</text>
+</svg>
