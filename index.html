@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/styles.css?v=20261015_05" />
 </head>
 <body>
 
@@ -51,22 +51,50 @@
     <p class="h5" id="hero-interest-prompt">Ready to be the first to know when the investment round opens?</p>
 
     <!-- TODO: [DECISION NEEDED] Confirm whether the form should collect credit card info per StartEngine guidance. If not, keep current contact-only fields. -->
-    <form class="cta-form cta-form--hero" id="hero-interest-form" novalidate>
+    <form
+      class="cta-form cta-form--hero validate"
+      id="hero-interest-form"
+      action="https://rworldreuse.us15.list-manage.com/subscribe/post?u=d16d76c3bd0a764ea148af923&amp;id=23a13695bf&amp;f_id=00ad9fe1f0"
+      method="post"
+      name="mc-embedded-subscribe-form"
+      target="_blank"
+      novalidate
+    >
       <div class="cta-form__grid">
-        <label class="visually-hidden" for="hero-first-name">First name</label>
-        <input class="cta-form__input" type="text" id="hero-first-name" name="first_name" placeholder="First name *" autocomplete="given-name" required />
-
-        <label class="visually-hidden" for="hero-last-name">Last name</label>
-        <input class="cta-form__input" type="text" id="hero-last-name" name="last_name" placeholder="Last name *" autocomplete="family-name" required />
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-first-name">First name *</label>
+          <input class="cta-form__input required text" type="text" id="hero-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required value="" />
+        </div>
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-last-name">Last name *</label>
+          <input class="cta-form__input required text" type="text" id="hero-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required value="" />
+        </div>
       </div>
       <div class="cta-form__grid">
-        <label class="visually-hidden" for="hero-interest-email">Email address</label>
-        <input class="cta-form__input" type="email" id="hero-interest-email" name="email" placeholder="Email address *" autocomplete="email" required />
-
-        <label class="visually-hidden" for="hero-phone">Phone number</label>
-        <input class="cta-form__input" type="tel" id="hero-phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" />
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-interest-email">Email address *</label>
+          <input class="cta-form__input required email" type="email" id="hero-interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required value="" />
+        </div>
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-phone">Phone number</label>
+          <input class="cta-form__input text" type="tel" id="hero-phone" name="MMERGE4" placeholder="Phone (optional)" autocomplete="tel" value="" />
+          <input type="hidden" name="MMERGE4[area]" id="hero-phone-area" value="" />
+          <input type="hidden" name="MMERGE4[detail1]" id="hero-phone-detail1" value="" />
+          <input type="hidden" name="MMERGE4[detail2]" id="hero-phone-detail2" value="" />
+        </div>
       </div>
-      <button class="btn btn-solid-blue cta-label cta-form__submit" type="submit">Reserve My Early Access</button>
+
+      <!-- Mailchimp Audience Tags -->
+      <div hidden><input type="hidden" name="tags" value="1743734" /></div>
+
+      <!-- Mailchimp Bot Protection Honeypot -->
+      <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        <input type="text" name="b_d16d76c3bd0a764ea148af923_23a13695bf" tabindex="-1" value="" />
+      </div>
+
+      <div class="cta-form__error" id="hero-form-error" role="alert" hidden></div>
+
+      <button class="btn btn-solid-blue cta-label cta-form__submit button" type="submit" name="subscribe" id="hero-subscribe-btn">Reserve My Early Access</button>
       <p class="cta-form__disclaimer p-small">No payment. No commitment. r.World will email you when the campaign opens.</p>
     </form>
 
@@ -444,7 +472,20 @@
 
 </svg>
           </div>
-          <div class="reuse-map__legend" id="reuse-map-legend"></div>
+          <div class="reuse-map__legend" id="reuse-map-legend">
+            <div class="reuse-legend-item reuse-legend-item--passed" data-category="passed" title="Extended Producer Responsibility legislation enacted requiring reuse infrastructure.">
+              <span class="reuse-legend-swatch reuse-legend-swatch--passed" style="background-color: #8a2be2;"></span>
+              <span class="reuse-legend-label"><strong>EPR Legislation Passed (7 states)</strong></span>
+            </div>
+            <div class="reuse-legend-item reuse-legend-item--pending" data-category="pending" title="Active EPR or reuse legislation currently introduced or moving through committee.">
+              <span class="reuse-legend-swatch reuse-legend-swatch--pending" style="background-color: #ff0099;"></span>
+              <span class="reuse-legend-label"><strong>Bills Introduced / In Process (10 states)</strong></span>
+            </div>
+            <div class="reuse-legend-item reuse-legend-item--other" data-category="other" title="Monitoring reuse policy or preparing legislation.">
+              <span class="reuse-legend-swatch reuse-legend-swatch--other" style="background-color: #d5dae0;"></span>
+              <span class="reuse-legend-label"><strong>Other States</strong></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -661,19 +702,19 @@
       <div class="why-now__circle why-now__circle--right" aria-hidden="true">
         <img src="public/assets/why-now-anthem.jpg" alt="r.World reusable cup at The Anthem venue" loading="lazy" />
       </div>
-      <div class="card-row">
-        <div class="info-card">
+      <div class="card-row why-now__card-row">
+        <div class="info-card why-now__card why-now__card--leader">
           <h3 class="h3">r.World Is the Decisive Leader</h3>
           <p>r.World operates the nation&rsquo;s first, largest and most advanced reuse network, processing more reusable foodware annually than anyone else and active in roughly 10 times more facilities than the next-largest provider.</p>
         </div>
-        <div class="info-card">
+        <div class="info-card why-now__card why-now__card--states">
           <h3 class="h3">Several States Now Require What r.World Has Been Working On Since 2017</h3>
           <p>r.World saw it coming. r.World built nine years ahead of regulations. Now, the regulations are kicking in.</p>
           <p>Seven states have passed extended producer responsibility (EPR) legislation, and 10 more have bills in progress to enact EPR laws with fines for single-use.</p>
           <p>Extended producer responsibility (EPR) laws are requiring producers to pay fees based on the packaging they put into the market. California&rsquo;s SB 54 requires a 25% reduction in plastic packaging by 2032. At least 10 points of that must come from eliminating plastic components or shifting to refillable and reusable systems. Reuse is written into the statute as a compliance pathway. Noncompliance carries penalties of up to $50,000 a day.</p>
           <p class="source-credit">Holland &amp; Knight, January 2026 &middot; EPR Atlas, state-by-state &middot; Source reduction requirements analysis (JD Supra) &middot; EPR Atlas, California &middot; Benesch, SB 54 compliance alert</p>
         </div>
-        <div class="info-card">
+        <div class="info-card why-now__card why-now__card--wash">
           <h3 class="h3">Wash Hubs Aren&rsquo;t Sexy. Neither Were Cell Phone Towers</h3>
           <p>r.World has a nine-year head start building the physical layer before reuse becomes ordinary: regional wash hubs, reverse logistics, RFID tracking and per-item contracts across 10,000+ events, with 90%+ client retention. r.World&rsquo;s technology and the markets we&rsquo;ve secured are hard to replicate.</p>
           <p class="source-credit">Source: r.World System Data</p>
@@ -699,7 +740,7 @@
           </div>
         </div>
         <div class="os-card" role="group" aria-roledescription="slide" aria-label="2 of 4: Sanitization">
-          <img class="os-card__image" src="public/assets/8148d440aa5eaa0969dd92fc8ffc5fbcf5a12635.jpg" alt="r.World staff member sanitizing reusable cups at a wash center" loading="lazy" />
+          <img class="os-card__image" src="public/assets/sanitization.jpg" alt="r.World staff member sanitizing reusable cups at an r.World wash center machine" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Sanitization</h3>
             <p>Regional centers running Ecolab Science Certified&trade; deep cleaning. Every item inspected, then sealed in a tub before it ships.</p>
@@ -747,12 +788,9 @@
           <p>This enables sponsorship a facility can actually sell against. As extended producer responsibility rules land, with California first in line, reuse will be built for those categories without it, including consumer packaged goods.</p>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="jobs-panel jobs-panel--disclaimer">
-    <div class="section-inner">
-      <p class="p-small measure--wide">The full allocation will be in r.World&rsquo;s offering statement when filed with the SEC.</p>
+      <div class="jobs-disclaimer-wrap">
+        <p class="jobs-disclaimer-pill">The full allocation will be in r.World&rsquo;s offering statement when filed with the SEC.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -974,45 +1012,72 @@
     <div class="cta-form-card">
       <h3 class="h3 text-black" id="interest-card-prompt">Want to be the first to know when the raise goes live?</h3>
 
-      <form class="cta-form" id="interest-form" novalidate>
+      <form
+        class="cta-form validate"
+        id="interest-form"
+        action="https://rworldreuse.us15.list-manage.com/subscribe/post?u=d16d76c3bd0a764ea148af923&amp;id=23a13695bf&amp;f_id=00ad9fe1f0"
+        method="post"
+        name="mc-embedded-subscribe-form"
+        target="_blank"
+        novalidate
+      >
         <div class="cta-form__grid">
-          <label class="visually-hidden" for="interest-first-name">First name</label>
-          <input class="cta-form__input" type="text" id="interest-first-name" name="first_name" placeholder="First name *" autocomplete="given-name" required />
-
-          <label class="visually-hidden" for="interest-last-name">Last name</label>
-          <input class="cta-form__input" type="text" id="interest-last-name" name="last_name" placeholder="Last name *" autocomplete="family-name" required />
+          <div class="mc-field-group">
+            <label class="visually-hidden" for="interest-first-name">First name *</label>
+            <input class="cta-form__input required text" type="text" id="interest-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required value="" />
+          </div>
+          <div class="mc-field-group">
+            <label class="visually-hidden" for="interest-last-name">Last name *</label>
+            <input class="cta-form__input required text" type="text" id="interest-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required value="" />
+          </div>
         </div>
         <div class="cta-form__grid">
-          <label class="visually-hidden" for="interest-email">Email address</label>
-          <input class="cta-form__input" type="email" id="interest-email" name="email" placeholder="Email address *" autocomplete="email" required />
-
-          <label class="visually-hidden" for="interest-phone">Phone number</label>
-          <input class="cta-form__input" type="tel" id="interest-phone" name="phone" placeholder="Phone (optional)" autocomplete="tel" />
+          <div class="mc-field-group">
+            <label class="visually-hidden" for="interest-email">Email address *</label>
+            <input class="cta-form__input required email" type="email" id="interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required value="" />
+          </div>
+          <div class="mc-field-group">
+            <label class="visually-hidden" for="interest-phone">Phone number</label>
+            <input class="cta-form__input text" type="tel" id="interest-phone" name="MMERGE4" placeholder="Phone (optional)" autocomplete="tel" value="" />
+            <input type="hidden" name="MMERGE4[area]" id="interest-phone-area" value="" />
+            <input type="hidden" name="MMERGE4[detail1]" id="interest-phone-detail1" value="" />
+            <input type="hidden" name="MMERGE4[detail2]" id="interest-phone-detail2" value="" />
+          </div>
         </div>
 
-        <fieldset class="range-group">
+        <!-- Mailchimp Audience Tags -->
+        <div hidden><input type="hidden" name="tags" value="1743734" /></div>
+
+        <fieldset class="range-group mc-field-group input-group">
           <legend class="range-group__legend">Optional: How much are you considering investing?</legend>
           <div class="range-group__options">
-            <label class="range-pill">
-              <input type="radio" name="investment_range" value="500-1000" />
+            <label class="range-pill" for="mce-MMERGE50">
+              <input type="radio" name="MMERGE5" id="mce-MMERGE50" value="500-1000" />
               <span>$500&ndash;$1,000</span>
             </label>
-            <label class="range-pill">
-              <input type="radio" name="investment_range" value="1000-5000" />
+            <label class="range-pill" for="mce-MMERGE51">
+              <input type="radio" name="MMERGE5" id="mce-MMERGE51" value="1000-5000" />
               <span>$1,000&ndash;$5,000</span>
             </label>
-            <label class="range-pill">
-              <input type="radio" name="investment_range" value="5000-25000" />
+            <label class="range-pill" for="mce-MMERGE52">
+              <input type="radio" name="MMERGE5" id="mce-MMERGE52" value="5000-25000" />
               <span>$5,000&ndash;$25,000</span>
             </label>
-            <label class="range-pill">
-              <input type="radio" name="investment_range" value="25000+" />
+            <label class="range-pill" for="mce-MMERGE53">
+              <input type="radio" name="MMERGE5" id="mce-MMERGE53" value="25000+" />
               <span>$25,000+</span>
             </label>
           </div>
         </fieldset>
 
-        <button class="btn btn-solid-blue cta-label cta-form__submit" type="submit">Alert Me When The Opportunity Opens</button>
+        <!-- Mailchimp Bot Protection Honeypot -->
+        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+          <input type="text" name="b_d16d76c3bd0a764ea148af923_23a13695bf" tabindex="-1" value="" />
+        </div>
+
+        <div class="cta-form__error" id="interest-form-error" role="alert" hidden></div>
+
+        <button class="btn btn-solid-blue cta-label cta-form__submit button" type="submit" name="subscribe" id="interest-subscribe-btn">Alert Me When The Opportunity Opens</button>
         <p class="cta-form__disclaimer p-small">No payment. No commitment. r.World will email you when the campaign opens.</p>
       </form>
 
@@ -1058,7 +1123,7 @@
   </div>
 </aside>
 
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/main.js?v=20261015_03"></script>
 <script type="module" src="js/animations.js"></script>
 </body>
 </html>

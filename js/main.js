@@ -1,4 +1,4 @@
-import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES } from "./map-config.js";
+import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES } from "./map-config.js?v=20261015_03";
 import confetti from "./confetti.js";
 
 const announcementBar = document.getElementById("announcement-bar");
@@ -36,6 +36,141 @@ document.querySelectorAll("[data-video-thumb]").forEach((button) => {
     button.setAttribute("title", "Video coming soon");
   });
 });
+
+const MAILCHIMP_URL =
+  "https://rworldreuse.us15.list-manage.com/subscribe/post-json?u=d16d76c3bd0a764ea148af923&id=23a13695bf&f_id=00ad9fe1f0";
+const MAILCHIMP_POST_ACTION =
+  "https://rworldreuse.us15.list-manage.com/subscribe/post?u=d16d76c3bd0a764ea148af923&id=23a13695bf&f_id=00ad9fe1f0";
+
+function submitLeadToMailchimp(params) {
+  return new Promise((resolve, reject) => {
+    const callbackName = "mc_cb_" + Math.random().toString(36).substring(2, 10);
+    const query = new URLSearchParams(params);
+    query.set("c", callbackName);
+
+    const script = document.createElement("script");
+    script.src = `${MAILCHIMP_URL}&${query.toString()}`;
+
+    let resolved = false;
+
+    const cleanup = () => {
+      clearTimeout(timer);
+      try {
+        delete window[callbackName];
+      } catch (e) {
+        window[callbackName] = undefined;
+      }
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      if (!resolved) {
+        resolved = true;
+        cleanup();
+        reject(new Error("Mailchimp request timed out"));
+      }
+    }, 4500);
+
+    window[callbackName] = (response) => {
+      if (!resolved) {
+        resolved = true;
+        cleanup();
+        resolve(response);
+      }
+    };
+
+    script.onerror = (err) => {
+      if (!resolved) {
+        resolved = true;
+        cleanup();
+        reject(err || new Error("Mailchimp request failed"));
+      }
+    };
+
+    document.head.appendChild(script);
+  });
+}
+
+function formatMailchimpError(rawMsg) {
+  if (!rawMsg) return "An error occurred. Please check your information and try again.";
+  let clean = rawMsg.replace(/^\d+\s*-\s*/, "");
+  clean = clean.replace(/<[^>]*>/g, " ").replace(/\s{2,}/g, " ").trim();
+  return clean;
+}
+
+function submitViaHiddenIframe(params) {
+  let iframe = document.getElementById("mc-hidden-iframe");
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.name = "mc-hidden-iframe";
+    iframe.id = "mc-hidden-iframe";
+    iframe.style.position = "absolute";
+    iframe.style.left = "-9999px";
+    iframe.style.top = "-9999px";
+    iframe.style.width = "1px";
+    iframe.style.height = "1px";
+    iframe.setAttribute("aria-hidden", "true");
+    document.body.appendChild(iframe);
+  }
+
+  // Create an off-screen form with exact payload to ensure delivery even if visible form is hidden
+  const hiddenForm = document.createElement("form");
+  hiddenForm.method = "POST";
+  hiddenForm.action = MAILCHIMP_POST_ACTION;
+  hiddenForm.target = "mc-hidden-iframe";
+  hiddenForm.style.display = "none";
+
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== "") {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      hiddenForm.appendChild(input);
+    }
+  });
+
+  document.body.appendChild(hiddenForm);
+  try {
+    HTMLFormElement.prototype.submit.call(hiddenForm);
+  } catch (e) {
+    hiddenForm.submit();
+  }
+
+  setTimeout(() => {
+    if (hiddenForm.parentNode) {
+      hiddenForm.parentNode.removeChild(hiddenForm);
+    }
+  }, 3000);
+}
+
+function addPhoneParams(params, phoneVal, form = null) {
+  if (!phoneVal) return;
+  params.MMERGE4 = phoneVal;
+  let digits = phoneVal.replace(/\D/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) {
+    digits = digits.substring(1);
+  }
+  if (digits.length === 10) {
+    const area = digits.substring(0, 3);
+    const detail1 = digits.substring(3, 6);
+    const detail2 = digits.substring(6, 10);
+    params["MMERGE4[area]"] = area;
+    params["MMERGE4[detail1]"] = detail1;
+    params["MMERGE4[detail2]"] = detail2;
+
+    if (form) {
+      const areaInput = form.querySelector('[name="MMERGE4[area]"]');
+      const d1Input = form.querySelector('[name="MMERGE4[detail1]"]');
+      const d2Input = form.querySelector('[name="MMERGE4[detail2]"]');
+      if (areaInput) areaInput.value = area;
+      if (d1Input) d1Input.value = detail1;
+      if (d2Input) d2Input.value = detail2;
+    }
+  }
+}
 
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxu3mwnTxu57bUPAMDQIQUrSecxFALut36hwXv3UvuY16wpr25j1p_etwoN4AaYvywgIg/exec";
@@ -143,27 +278,52 @@ if (interestForm) {
     if (!interestForm.reportValidity()) return;
 
     const submitBtn = interestForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : "Alert Me When The Opportunity Opens";
+    const errorEl = document.getElementById("interest-form-error");
 
-    // Trigger celebration confetti immediately from the button
-    triggerCelebrationConfetti(submitBtn);
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = "";
+    }
 
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
     }
 
-    const firstNameInput = interestForm.querySelector('[name="first_name"]');
-    const lastNameInput = interestForm.querySelector('[name="last_name"]');
-    const emailInput = interestForm.querySelector('[name="email"]');
-    const phoneInput = interestForm.querySelector('[name="phone"]');
-    const selectedRange = interestForm.querySelector('[name="investment_range"]:checked');
+    const firstNameInput = interestForm.querySelector('[name="FNAME"]');
+    const lastNameInput = interestForm.querySelector('[name="LNAME"]');
+    const emailInput = interestForm.querySelector('[name="EMAIL"]');
+    const phoneInput =
+      interestForm.querySelector('[name="MMERGE4"]') ||
+      interestForm.querySelector('[name="COMPANY"]');
+    const selectedRange =
+      interestForm.querySelector('[name="MMERGE5"]:checked') ||
+      interestForm.querySelector('[name="investment_range"]:checked');
+    const honeypotInput = interestForm.querySelector('[name="b_d16d76c3bd0a764ea148af923_23a13695bf"]');
 
-    const phoneVal = phoneInput ? phoneInput.value.trim() : "";
     const firstNameVal = firstNameInput ? firstNameInput.value.trim() : "";
     const lastNameVal = lastNameInput ? lastNameInput.value.trim() : "";
     const emailVal = emailInput ? emailInput.value.trim() : "";
+    const phoneVal = phoneInput ? phoneInput.value.trim() : "";
+    const honeypotVal = honeypotInput ? honeypotInput.value.trim() : "";
+    const rangeVal = selectedRange ? selectedRange.value : "";
 
-    const payload = {
+    const mailchimpParams = {
+      EMAIL: emailVal,
+      FNAME: firstNameVal,
+      LNAME: lastNameVal,
+      tags: "1743734",
+      b_d16d76c3bd0a764ea148af923_23a13695bf: honeypotVal,
+    };
+
+    addPhoneParams(mailchimpParams, phoneVal, interestForm);
+
+    if (rangeVal) {
+      mailchimpParams.MMERGE5 = rangeVal;
+    }
+
+    const googlePayload = {
       first_name: firstNameVal,
       firstName: firstNameVal,
       last_name: lastNameVal,
@@ -172,12 +332,37 @@ if (interestForm) {
       phone: phoneVal,
       phone_number: phoneVal,
       phoneNumber: phoneVal,
-      investment_range: selectedRange ? selectedRange.value : "None selected",
-      source: "Main Interest Form",
+      investment_range: rangeVal || "None selected",
+      source: "Main Interest Form (Mailchimp)",
       timestamp: new Date().toLocaleString(),
     };
 
-    // Transition to celebratory success state
+    try {
+      console.log("[Mailchimp] Submitting Bottom Form payload:", mailchimpParams);
+      const response = await submitLeadToMailchimp(mailchimpParams);
+      console.log("[Mailchimp] Bottom Form Response:", response);
+      window.__lastBottomResponse = response;
+
+      if (response && response.result === "error") {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        if (errorEl) {
+          errorEl.textContent = formatMailchimpError(response.msg);
+          errorEl.hidden = false;
+          errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        return;
+      }
+    } catch (err) {
+      console.warn("[Mailchimp] JSONP blocked or failed, falling back to iframe POST:", err);
+      submitViaHiddenIframe(mailchimpParams);
+    }
+
+    // Success transition & celebration confetti
+    triggerCelebrationConfetti(submitBtn);
+
     const successMessage = document.getElementById("interest-form-success");
     const promptHeading = document.getElementById("interest-card-prompt");
     if (promptHeading) promptHeading.hidden = true;
@@ -189,9 +374,9 @@ if (interestForm) {
     }
 
     try {
-      await submitLeadToGoogleSheet(payload);
+      submitLeadToGoogleSheet(googlePayload);
     } catch (err) {
-      console.error("Submission failed:", err);
+      console.error("Backup Google Sheet submission failed:", err);
     }
   });
 }
@@ -204,26 +389,44 @@ if (heroInterestForm) {
     if (!heroInterestForm.reportValidity()) return;
 
     const submitBtn = heroInterestForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : "Reserve My Early Access";
+    const errorEl = document.getElementById("hero-form-error");
 
-    // Trigger celebration confetti immediately from the button
-    triggerCelebrationConfetti(submitBtn);
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = "";
+    }
 
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = "Submitting...";
     }
 
-    const firstNameInput = heroInterestForm.querySelector('[name="first_name"]');
-    const lastNameInput = heroInterestForm.querySelector('[name="last_name"]');
-    const emailInput = heroInterestForm.querySelector('[name="email"]');
-    const phoneInput = heroInterestForm.querySelector('[name="phone"]');
+    const firstNameInput = heroInterestForm.querySelector('[name="FNAME"]');
+    const lastNameInput = heroInterestForm.querySelector('[name="LNAME"]');
+    const emailInput = heroInterestForm.querySelector('[name="EMAIL"]');
+    const phoneInput =
+      heroInterestForm.querySelector('[name="MMERGE4"]') ||
+      heroInterestForm.querySelector('[name="COMPANY"]');
+    const honeypotInput = heroInterestForm.querySelector('[name="b_d16d76c3bd0a764ea148af923_23a13695bf"]');
 
-    const heroPhoneVal = phoneInput ? phoneInput.value.trim() : "";
     const heroFirstNameVal = firstNameInput ? firstNameInput.value.trim() : "";
     const heroLastNameVal = lastNameInput ? lastNameInput.value.trim() : "";
     const heroEmailVal = emailInput ? emailInput.value.trim() : "";
+    const heroPhoneVal = phoneInput ? phoneInput.value.trim() : "";
+    const honeypotVal = honeypotInput ? honeypotInput.value.trim() : "";
 
-    const payload = {
+    const mailchimpParams = {
+      EMAIL: heroEmailVal,
+      FNAME: heroFirstNameVal,
+      LNAME: heroLastNameVal,
+      tags: "1743734",
+      b_d16d76c3bd0a764ea148af923_23a13695bf: honeypotVal,
+    };
+
+    addPhoneParams(mailchimpParams, heroPhoneVal, heroInterestForm);
+
+    const googlePayload = {
       first_name: heroFirstNameVal,
       firstName: heroFirstNameVal,
       last_name: heroLastNameVal,
@@ -233,11 +436,36 @@ if (heroInterestForm) {
       phone_number: heroPhoneVal,
       phoneNumber: heroPhoneVal,
       investment_range: "None selected",
-      source: "Hero Interest Form",
+      source: "Hero Interest Form (Mailchimp)",
       timestamp: new Date().toLocaleString(),
     };
 
-    // Transition to celebratory success state
+    try {
+      console.log("[Mailchimp] Submitting Hero Form payload:", mailchimpParams);
+      const response = await submitLeadToMailchimp(mailchimpParams);
+      console.log("[Mailchimp] Hero Form Response:", response);
+      window.__lastHeroResponse = response;
+
+      if (response && response.result === "error") {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        if (errorEl) {
+          errorEl.textContent = formatMailchimpError(response.msg);
+          errorEl.hidden = false;
+          errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        return;
+      }
+    } catch (err) {
+      console.warn("[Mailchimp] JSONP blocked or failed, falling back to iframe POST:", err);
+      submitViaHiddenIframe(mailchimpParams);
+    }
+
+    // Success transition & celebration confetti
+    triggerCelebrationConfetti(submitBtn);
+
     const successMessage = document.getElementById("hero-interest-success");
     const heroPrompt = document.getElementById("hero-interest-prompt");
     if (heroPrompt) heroPrompt.hidden = true;
@@ -249,9 +477,9 @@ if (heroInterestForm) {
     }
 
     try {
-      await submitLeadToGoogleSheet(payload);
+      submitLeadToGoogleSheet(googlePayload);
     } catch (err) {
-      console.error("Hero submission failed:", err);
+      console.error("Backup Google Sheet submission failed:", err);
     }
   });
 }
@@ -339,8 +567,8 @@ function initReuseMap() {
   // Render dynamic legend
   if (legendContainer) {
     legendContainer.innerHTML = MAP_CATEGORIES.map((cat) => `
-      <div class="reuse-legend-item" data-category="${cat.id}" title="${cat.description}">
-        <span class="reuse-legend-swatch" style="background-color: ${cat.color};"></span>
+      <div class="reuse-legend-item reuse-legend-item--${cat.id}" data-category="${cat.id}" title="${cat.description}">
+        <span class="reuse-legend-swatch reuse-legend-swatch--${cat.id}" style="background-color: ${cat.color};"></span>
         <span class="reuse-legend-label"><strong>${cat.label}</strong></span>
       </div>
     `).join("");

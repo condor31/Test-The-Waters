@@ -13,7 +13,7 @@ export const MAP_CATEGORIES = [
   {
     id: "passed",
     label: "EPR Legislation Passed (7 states)",
-    color: "#2500ff", // r.World Royal Blue
+    color: "#8a2be2", // r.World Purple
     description: "Extended Producer Responsibility legislation enacted requiring reuse infrastructure."
   },
   {
