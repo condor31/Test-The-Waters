@@ -389,7 +389,7 @@ if (heroInterestForm) {
     if (!heroInterestForm.reportValidity()) return;
 
     const submitBtn = heroInterestForm.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn ? submitBtn.textContent : "Reserve My Early Access";
+    const originalBtnText = submitBtn ? submitBtn.textContent : "Join the Notification List";
     const errorEl = document.getElementById("hero-form-error");
 
     if (errorEl) {
