@@ -1,0 +1,629 @@
+{
+  "targetUrl": "http://localhost:8080/",
+  "mode": "EDITED_PAGE",
+  "timestamp": "2026-10-19T22:24:09.388Z",
+  "checks": [
+    {
+      "id": "check-row-3-sources-list",
+      "name": "Sources list exists with matching entries",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-3-grouped-sources-absent",
+      "name": "Old grouped source lines absent",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-4-unused-sources-retained",
+      "name": "Reuse Wins at Events & WEF/Kearney links retained",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-6-footer-legend",
+      "name": "Footer matches exact 3-bullet legend and citation",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-6-old-wording-absent",
+      "name": "Old footer phrase \"involves no obligation\" absent",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-7-forms-legend",
+      "name": "Full Rule 206 legend sits adjacent to every form",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "forms: 2, legends: 2"
+    },
+    {
+      "id": "check-row-8-banner-anchor",
+      "name": "Banner \"Full disclosure below\" is a working anchor link",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "href: #legal-legend"
+    },
+    {
+      "id": "check-row-9-cta-buttons",
+      "name": "All CTA buttons changed to \"Join the Notification List\"",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "{\"hero\":\"Join the Notification List\",\"interest\":\"Join the Notification List\",\"mid\":\"Join the Notification List\",\"persist\":\"Join the Notification List\"}"
+    },
+    {
+      "id": "check-row-10-form-disclaimer",
+      "name": "Mandated disclaimer directly under form submit buttons",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "Count: 2"
+    },
+    {
+      "id": "check-row-11-investment-bands",
+      "name": "Investment bands relabeled \"Optional, nonbinding: How much might you consider investing?\"",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "Optional, nonbinding: How much might you consider investing?"
+    },
+    {
+      "id": "check-row-12-step1",
+      "name": "Step 1: \"join the notification list\" replaces \"sign up for early access\"",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "1. You join the notification list with your name and email. No payment, no commitment, no obligation of any kind."
+    },
+    {
+      "id": "check-row-13-step2",
+      "name": "Step 2: Form C offering statement wording exactly present",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-14-email-promise",
+      "name": "Step 3 / success copy softened, priority implications removed",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-19-10-times-cut",
+      "name": "Active in roughly 10 times deleted without 3x replacement",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": "tenTimesAbsent=true, threeXNotInserted=true"
+    },
+    {
+      "id": "check-row-20-automation",
+      "name": "Automation copy updated to 14M capacity wording",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "A single automated dish line can handle up to 14M items a year on one shift, with capacity in place for the demand ahead."
+    },
+    {
+      "id": "check-row-21-regulatory-timing",
+      "name": "Timing claim updated to 2017 infrastructure wording and \"nine years ahead\" absent",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.5 Now, the regulations are kicking in."
+    },
+    {
+      "id": "check-row-26-return-rate-footnote",
+      "name": "90% return rate has superscript footnote ref",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "sup: 1"
+    },
+    {
+      "id": "check-row-27-retention",
+      "name": "Retention shows 90% everywhere without \"+\" and has footnote ref",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "retentionPlusAbsent: true, sup: 2"
+    },
+    {
+      "id": "check-row-28-cities-footnote",
+      "name": "150+ cities retained and has footnote ref",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "citiesNumberKept: true, sup: 3"
+    },
+    {
+      "id": "check-row-29-states-footnote",
+      "name": "Across 35 states retained and has footnote ref",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "statesNumberKept: true, sup: 4"
+    },
+    {
+      "id": "check-row-34-bins-unchanged",
+      "name": "Row 34 copy intact (SKIPPED-not-actionable)",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-36-epr-states",
+      "name": "EPR states have \"as of [month 2026]\" placeholder and individual state footnotes",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "monthPlaceholder: true"
+    },
+    {
+      "id": "check-row-38-sb54-target",
+      "name": "SB 54 target revised verbatim with 2023 levels",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-39-sb54-reuse",
+      "name": "SB 54 reuse compliance disclaimer added verbatim",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-40-penalties",
+      "name": "Penalties revised verbatim and old phrase absent",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-41-fifteen-cities",
+      "name": "Fifteen cities deleted from page",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-42-markets",
+      "name": "Markets softened and operating footprint wording present",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-43-open-loop",
+      "name": "Open loop softened copy present and old claim absent",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-5-venue-photos",
+      "name": "Row 5 (Images): Venue photos untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-16-hero-superlative",
+      "name": "Row 16 (Hero superlative): Leading reuse infrastructure copy untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-17-network-superlatives",
+      "name": "Row 17 (Superlatives): First, largest and most advanced untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-18-annually-superlative",
+      "name": "Row 18 (Superlatives): processing more reusable foodware annually untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-22-items-metric",
+      "name": "Row 22 (Metrics): Over 30 million single-use items untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-23-events-metric",
+      "name": "Row 23 (Metrics): 10,000 events untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-24-waste-metric",
+      "name": "Row 24 (Metrics): 145 tons untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-25-water-metric",
+      "name": "Row 25 (Metrics): 5.89M gallons untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-30-recycling-rate",
+      "name": "Row 30 (Recycling rate): Only 9% of plastic waste is successfully recycled untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-31-single-use-recycling",
+      "name": "Row 31 (Recycling range): runs between 0 and 20% untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-32-volume",
+      "name": "Row 32 (Volume): hundreds of thousands untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-33-rapidly-filling",
+      "name": "Row 33 (Disposal): rapidly filling up untouched per Hard Rule 3",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-35-regulatory-intro",
+      "name": "Row 35 (Regulatory): Several states are asking for it untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-37-pending-bills",
+      "name": "Row 37 (Pending bills): 10 more have bills in progress untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-44-closed-loop-soften",
+      "name": "Row 44 (Closed loop): r.World has solved for Closed Loop Reuse untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-45-loss-fees",
+      "name": "Row 45 (Terms): No upfront cost and no loss fees untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-46-ecolab",
+      "name": "Row 46 (Sanitization): Ecolab Science Certified untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-47-rfid",
+      "name": "Row 47 (Technology): RFID untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-49-why-now-h3",
+      "name": "Row 49 (Malformed row): Several States Now Require H3 untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-50-two-jobs",
+      "name": "Row 50 (Malformed row): Two jobs for every dollar untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-global-footnotes-sequence",
+      "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"totalRefs\":19,\"uniqueRefs\":15,\"maxRef\":15,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],\"sourceItemCount\":15}"
+    },
+    {
+      "id": "check-footnote-not-bare-https://olis.oregonlegislature",
+      "name": "Footnote link is not a bare homepage: https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://olis.oregonlegislature",
+      "name": "HTTP 200 for https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.maine.gov/dep/wast",
+      "name": "Footnote link is not a bare homepage: https://www.maine.gov/dep/waste/recycle/epr.html",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.maine.gov/dep/wast",
+      "name": "HTTP 200 for https://www.maine.gov/dep/waste/recycle/epr.html",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://leginfo.legislature.ca",
+      "name": "Footnote link is not a bare homepage: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB54",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://leginfo.legislature.ca",
+      "name": "HTTP check for https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB54",
+      "type": "PRESENT",
+      "status": "UNVERIFIED",
+      "details": "status: 403, error: HTTP 403"
+    },
+    {
+      "id": "check-footnote-not-bare-https://leg.colorado.gov/bills",
+      "name": "Footnote link is not a bare homepage: https://leg.colorado.gov/bills/hb22-1355",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://leg.colorado.gov/bills",
+      "name": "HTTP 200 for https://leg.colorado.gov/bills/hb22-1355",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://olis.oregonlegislature",
+      "name": "Footnote link is not a bare homepage: https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://olis.oregonlegislature",
+      "name": "HTTP 200 for https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.revisor.mn.gov/bil",
+      "name": "Footnote link is not a bare homepage: https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF3911&ssn=0&y=2024",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.revisor.mn.gov/bil",
+      "name": "HTTP 200 for https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF3911&ssn=0&y=2024",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 301"
+    },
+    {
+      "id": "check-footnote-not-bare-https://mgaleg.maryland.gov/mg",
+      "name": "Footnote link is not a bare homepage: https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://mgaleg.maryland.gov/mg",
+      "name": "HTTP 200 for https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://app.leg.wa.gov/billsum",
+      "name": "Footnote link is not a bare homepage: https://app.leg.wa.gov/billsummary?BillNumber=5284&Year=2025",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://app.leg.wa.gov/billsum",
+      "name": "HTTP 200 for https://app.leg.wa.gov/billsummary?BillNumber=5284&Year=2025",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.maine.gov/dep/wast",
+      "name": "Footnote link is not a bare homepage: https://www.maine.gov/dep/waste/recycle/epr.html",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.maine.gov/dep/wast",
+      "name": "HTTP 200 for https://www.maine.gov/dep/waste/recycle/epr.html",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://epratlas.com/epr-laws-",
+      "name": "Footnote link is not a bare homepage: https://epratlas.com/epr-laws-by-state/",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://epratlas.com/epr-laws-",
+      "name": "HTTP 200 for https://epratlas.com/epr-laws-by-state/",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://content.govdelivery.co",
+      "name": "Footnote link is not a bare homepage: https://content.govdelivery.com/accounts/CALRECYCLE/bulletins/4157d91",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://content.govdelivery.co",
+      "name": "HTTP 200 for https://content.govdelivery.com/accounts/CALRECYCLE/bulletins/4157d91",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://oceanconservancy.org/w",
+      "name": "Footnote link is not a bare homepage: https://oceanconservancy.org/wp-content/uploads/2024/02/24.02.25-OC-SB-54-Source-Reduction-Fact-Sheet.pdf",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://oceanconservancy.org/w",
+      "name": "HTTP 200 for https://oceanconservancy.org/wp-content/uploads/2024/02/24.02.25-OC-SB-54-Source-Reduction-Fact-Sheet.pdf",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://california.public.law/",
+      "name": "Footnote link is not a bare homepage: https://california.public.law/codes/public_resources_code_section_42081",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://california.public.law/",
+      "name": "HTTP 200 for https://california.public.law/codes/public_resources_code_section_42081",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-banned-reserve",
+      "name": "Banned phrase absent: \"reserve\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-early-access",
+      "name": "Banned phrase absent: \"early access\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-spot",
+      "name": "Banned phrase absent: \"spot\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-Notify-me-first",
+      "name": "Banned phrase absent: \"Notify me first\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-before-r.World-announces",
+      "name": "Banned phrase absent: \"before r.World announces\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-nine-years-ahead",
+      "name": "Banned phrase absent: \"nine years ahead\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-banned-10-times",
+      "name": "Banned phrase absent: \"10 times\"",
+      "type": "ABSENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-global-banner-scroll",
+      "name": "Clicking banner anchor scrolls toward legend target",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"scrolled\":true,\"scrollY\":696,\"targetTop\":14199.859375}"
+    },
+    {
+      "id": "check-viewport-390px",
+      "name": "Viewport 390px no overflow, banner & legend visible",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"clientWidth\":390,\"scrollWidth\":390,\"hasHorizontalOverflow\":false,\"barVisible\":true,\"legendVisible\":true}"
+    },
+    {
+      "id": "check-viewport-1440px",
+      "name": "Viewport 1440px no overflow, banner & legend visible",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"clientWidth\":1440,\"scrollWidth\":1440,\"hasHorizontalOverflow\":false,\"barVisible\":true,\"legendVisible\":true}"
+    },
+    {
+      "id": "check-console-errors",
+      "name": "No console errors during navigation",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "errors: 0"
+    },
+    {
+      "id": "check-page-errors",
+      "name": "No unhandled page errors during navigation",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "errors: 0"
+    },
+    {
+      "id": "check-broken-images",
+      "name": "All rendered <img> tags loaded successfully",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "broken: 0"
+    }
+  ],
+  "summary": {
+    "total": 88,
+    "passed": 87,
+    "failed": 0,
+    "unverified": 1
+  }
+}

@@ -1,0 +1,540 @@
+{
+  "metadata": {
+    "spec": "Crowdcheck Data Claims - TTW Changes.csv",
+    "total_records": 50,
+    "ready_records_count": 26,
+    "non_ready_records_count": 24,
+    "timestamp": "2026-10-19T17:15:00Z"
+  },
+  "ready_rows": [
+    {
+      "id": "row-3",
+      "row_number": 3,
+      "section": "Global \u2013 footnotes",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #sources-list, .source-credit, sup.footnote-ref",
+      "before_text": "Holland & Knight, January 2026 \u00b7 EPR Atlas... / Source: r.World System Data",
+      "after_text": "Numbered superscript footnotes 1..15 and Sources list at bottom of page",
+      "checks": [
+        "check-row-3-sources-list-present",
+        "check-row-3-grouped-sources-absent",
+        "check-global-footnotes-order"
+      ]
+    },
+    {
+      "id": "row-4",
+      "row_number": 4,
+      "section": "Global \u2013 unused sources",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .sources",
+      "before_text": "Reuse Wins at Events (PDF) and WEF/Kearney",
+      "after_text": "Reuse Wins at Events (PDF) and WEF/Kearney (retained in place; flagged unresolved per prompt)",
+      "checks": [
+        "check-row-4-retained-present"
+      ]
+    },
+    {
+      "id": "row-6",
+      "row_number": 6,
+      "section": "Legend \u2013 footer",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #legal-legend",
+      "before_text": "No money or other consideration is being solicited... only through an intermediary's platform. A person's indication of interest involves no obligation or commitment of any kind.",
+      "after_text": "This communication is being used for \u201ctesting the waters\u201d pursuant to 17 CFR \u00a7 227.206.\n\nNo money or other consideration is being solicited, and if sent in response, will not be accepted;\n\nNo offer to buy the securities can be accepted and no part of the purchase price can be received until the offering statement is filed and only through the platform of an intermediary (funding portal or broker-dealer); and\n\nA person's indication of interest includes no obligation or commitment of any kind.",
+      "checks": [
+        "check-row-6-citation-present",
+        "check-row-6-bullet1-present",
+        "check-row-6-bullet2-present",
+        "check-row-6-bullet3-present",
+        "check-row-6-old-legend-absent"
+      ]
+    },
+    {
+      "id": "row-7",
+      "row_number": 7,
+      "section": "Legend \u2013 near each form",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #hero-interest-form ~ .rule-206-legend, #interest-form ~ .rule-206-legend",
+      "before_text": "Only footer had full legal legend; forms lacked adjacent full Rule 206 legend",
+      "after_text": "Full Rule 206 legend (citation + 3 bullets) adjacent to every indication-of-interest form",
+      "checks": [
+        "check-row-7-form-legend-count",
+        "check-row-7-hero-form-legend-present",
+        "check-row-7-bottom-form-legend-present"
+      ]
+    },
+    {
+      "id": "row-8",
+      "row_number": 8,
+      "section": "Legend \u2013 top banner",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #announcement-bar a[href=\"#legal-legend\"]",
+      "before_text": "<strong>Full disclosure below.</strong>",
+      "after_text": "<a href=\"#legal-legend\" class=\"announcement-bar__link\">Full disclosure below.</a>",
+      "checks": [
+        "check-row-8-anchor-exists",
+        "check-row-8-anchor-target-exists",
+        "check-row-8-static-disclosure-absent"
+      ]
+    },
+    {
+      "id": "row-9",
+      "row_number": 9,
+      "section": "CTA buttons",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #hero-subscribe-btn, #interest-subscribe-btn, .mid-page-cta__btn, .persistent-cta__btn",
+      "before_text": "Reserve My Early Access / reserve your spot / Notify me first / Alert Me When The Opportunity Opens",
+      "after_text": "Join the Notification List",
+      "checks": [
+        "check-row-9-hero-btn-present",
+        "check-row-9-interest-btn-present",
+        "check-row-9-mid-btn-present",
+        "check-row-9-persistent-btn-present",
+        "check-row-9-banned-ctas-absent"
+      ]
+    },
+    {
+      "id": "row-10",
+      "row_number": 10,
+      "section": "Form \u2013 disclaimer",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #hero-interest-form .form-disclaimer, #interest-form .form-disclaimer",
+      "before_text": "No mandated disclaimer directly under button",
+      "after_text": "Joining this list does not reserve shares, allocations, pricing, priority or any investment rights. No money will be accepted.",
+      "checks": [
+        "check-row-10-hero-disclaimer-present",
+        "check-row-10-interest-disclaimer-present",
+        "check-row-10-count"
+      ]
+    },
+    {
+      "id": "row-11",
+      "row_number": 11,
+      "section": "Form \u2013 investment bands",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> #interest-form .range-group__legend",
+      "before_text": "Optional: How much are you considering investing?",
+      "after_text": "Optional, nonbinding: How much might you consider investing?",
+      "checks": [
+        "check-row-11-legend-present",
+        "check-row-11-old-legend-absent",
+        "check-row-11-still-optional"
+      ]
+    },
+    {
+      "id": "row-12",
+      "row_number": 12,
+      "section": "What happens now \u2013 Step 1",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .numbered-list li:nth-child(1) p",
+      "before_text": "1. You sign up for early access with your name and email. No payment, no commitment, no obligation of any kind.",
+      "after_text": "1. You join the notification list with your name and email. No payment, no commitment, no obligation of any kind.",
+      "checks": [
+        "check-row-12-step1-present",
+        "check-row-12-step1-old-absent"
+      ]
+    },
+    {
+      "id": "row-13",
+      "row_number": 13,
+      "section": "What happens now \u2013 Step 2",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .numbered-list li:nth-child(2) p",
+      "before_text": "2. r.World files the offering statement with the SEC. When it's public, the campaign opens on StartEngine.",
+      "after_text": "2. r.World files its Form C offering statement with the SEC. Once the Form C is filed, the offering opens on StartEngine, a registered intermediary, where investments can be made.",
+      "checks": [
+        "check-row-13-step2-present",
+        "check-row-13-step2-old-absent"
+      ]
+    },
+    {
+      "id": "row-14",
+      "row_number": 14,
+      "section": "What happens now \u2013 Step 3 / email promise",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .numbered-list li:nth-child(3) p, .cta-form__success-desc",
+      "before_text": "3. An email goes out the morning it opens, before the public announcement anywhere else. You decide then, with all the terms and the full risk disclosures in front of you. / before r.World announces it anywhere else.",
+      "after_text": "3. We'll email you when the offering opens. You decide then, with all the terms and the full risk disclosures in front of you. / We'll email you when the offering opens.",
+      "checks": [
+        "check-row-14-step3-present",
+        "check-row-14-success-desc-present",
+        "check-row-14-priority-old-absent"
+      ]
+    },
+    {
+      "id": "row-19",
+      "row_number": 19,
+      "section": "Superlatives",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .why-now__card--leader p",
+      "before_text": "processing more reusable foodware annually than anyone else and active in roughly 10 times more facilities than the next-largest provider.",
+      "after_text": "processing more reusable foodware annually than anyone else.",
+      "checks": [
+        "check-row-19-10times-absent",
+        "check-row-19-3x-not-inserted",
+        "check-row-19-remaining-present"
+      ]
+    },
+    {
+      "id": "row-20",
+      "row_number": 20,
+      "section": "Operating system \u2013 Automation",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .os-card:nth-of-type(3) .os-card__info p",
+      "before_text": "The industry's only automated AI quality check \u2014 the reason 90% is repeatable rather than lucky.",
+      "after_text": "A single automated dish line can handle up to 14M items a year on one shift, with capacity in place for the demand ahead.",
+      "checks": [
+        "check-row-20-automation-present",
+        "check-row-20-ai-check-absent"
+      ]
+    },
+    {
+      "id": "row-21",
+      "row_number": 21,
+      "section": "Regulatory timing claim",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .why-now__card--states p:first-of-type",
+      "before_text": "r.World saw it coming. r.World built nine years ahead of regulations. Now, the regulations are kicking in.",
+      "after_text": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed. Now, the regulations are kicking in.",
+      "checks": [
+        "check-row-21-timing-present",
+        "check-row-21-nine-years-absent",
+        "check-row-21-footnote-linked"
+      ]
+    },
+    {
+      "id": "row-26",
+      "row_number": 26,
+      "section": "Impact metrics \u2013 return rate",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .impact-stripe__item:nth-child(3)",
+      "before_text": "90% average return rate",
+      "after_text": "90% average return rate (with footnote 1, reused at later mention)",
+      "checks": [
+        "check-row-26-footnote-present",
+        "check-row-26-reuse-footnote-present",
+        "check-row-26-sources-entry"
+      ]
+    },
+    {
+      "id": "row-27",
+      "row_number": 27,
+      "section": "Impact metrics \u2013 retention",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .impact-stripe__item:nth-child(4), .why-now__body p, .leadership-card p",
+      "before_text": "90%+ client retention / 90% average customer retention",
+      "after_text": "90% client retention / 90% customer retention (+ removed everywhere)",
+      "checks": [
+        "check-row-27-plus-removed-absent",
+        "check-row-27-retention-present",
+        "check-row-27-sources-entry"
+      ]
+    },
+    {
+      "id": "row-28",
+      "row_number": 28,
+      "section": "Impact metrics \u2013 cities",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .impact-stripe__item:nth-child(5)",
+      "before_text": "150+ cities have implemented r.World reuse programs",
+      "after_text": "150+ cities have implemented r.World reuse programs (footnote added, count retained)",
+      "checks": [
+        "check-row-28-cities-present",
+        "check-row-28-footnote-present",
+        "check-row-28-sources-entry"
+      ]
+    },
+    {
+      "id": "row-29",
+      "row_number": 29,
+      "section": "Impact metrics \u2013 states",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .impact-stripe__item:nth-child(6)",
+      "before_text": "Across 35 states",
+      "after_text": "Across 35 states (footnote added, count 35 retained)",
+      "checks": [
+        "check-row-29-states-present",
+        "check-row-29-footnote-present",
+        "check-row-29-sources-entry"
+      ]
+    },
+    {
+      "id": "row-34",
+      "row_number": 34,
+      "section": "Problem \u2013 'bins are mostly for show'",
+      "status": "Ready",
+      "disposition": "SKIPPED-not-actionable",
+      "locator": "index.html -> .slide-arrow__body p:nth-child(4)",
+      "before_text": "Sadly, the bins are mostly for show.",
+      "after_text": "Sadly, the bins are mostly for show.",
+      "checks": [
+        "check-row-34-unchanged"
+      ]
+    },
+    {
+      "id": "row-36",
+      "row_number": 36,
+      "section": "Regulatory \u2013 EPR states (text + chart)",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .why-now__card--states, #reuse-map-legend",
+      "before_text": "Seven states have passed extended producer responsibility (EPR) legislation / EPR Legislation Passed (7 states)",
+      "after_text": "Seven states have passed extended producer responsibility (EPR) legislation as of [month 2026] / EPR Legislation Passed (7 states) as of [month 2026] with individual state footnotes",
+      "checks": [
+        "check-row-36-month-placeholder-present",
+        "check-row-36-individual-state-refs-present",
+        "check-row-36-chart-label-present"
+      ]
+    },
+    {
+      "id": "row-38",
+      "row_number": 38,
+      "section": "Regulatory \u2013 SB 54 target",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .why-now__card--states p:nth-child(4)",
+      "before_text": "California\u2019s SB 54 requires a 25% reduction in plastic packaging by 2032.",
+      "after_text": "California's SB 54 requires producers to reduce single-use plastic packaging and plastic food service ware 25% by 2032, compared with 2023 levels.",
+      "checks": [
+        "check-row-38-target-present",
+        "check-row-38-old-target-absent",
+        "check-row-38-sources-entry"
+      ]
+    },
+    {
+      "id": "row-39",
+      "row_number": 39,
+      "section": "Regulatory \u2013 SB 54 reuse",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .why-now__card--states p:nth-child(4)",
+      "before_text": "At least 10 points of that must come from eliminating plastic components or shifting to refillable and reusable systems. Reuse is written into the statute as a compliance pathway.",
+      "after_text": "At least 10 points of that must come from eliminating plastic components or shifting to refillable and reusable systems. Reuse is written into the statute as a compliance pathway. SB 54 does not require any producer or venue to use r.World or any particular reuse provider. We believe reuse systems like ours can help producers meet these targets.",
+      "checks": [
+        "check-row-39-disclaimer-present",
+        "check-row-39-reuses-sb54-ref"
+      ]
+    },
+    {
+      "id": "row-40",
+      "row_number": 40,
+      "section": "Regulatory \u2013 penalties",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .why-now__card--states p:nth-child(4)",
+      "before_text": "Noncompliance carries penalties of up to ,000 a day.",
+      "after_text": "CalRecycle may impose administrative civil penalties of up to ,000 per day, per violation, on noncompliant producers or producer responsibility organizations.",
+      "checks": [
+        "check-row-40-penalties-present",
+        "check-row-40-old-penalties-absent",
+        "check-row-40-california-public-law-link"
+      ]
+    },
+    {
+      "id": "row-41",
+      "row_number": 41,
+      "section": "Pipeline \u2013 cities",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .mid-page-cta__copy",
+      "before_text": "Fifteen cities have asked us to come build.",
+      "after_text": "[DELETED from page]",
+      "checks": [
+        "check-row-41-fifteen-cities-absent"
+      ]
+    },
+    {
+      "id": "row-42",
+      "row_number": 42,
+      "section": "Pipeline \u2013 markets",
+      "status": "Ready",
+      "disposition": "VERIFIED",
+      "locator": "index.html -> .why-now__body p",
+      "before_text": "r.World\u2019s technology and the markets we\u2019ve secured are hard to replicate.",
+      "after_text": "We believe r.World's technology and operating footprint would be hard to replicate.",
+      "checks": [
+        "check-row-42-markets-present",
+        "check-row-42-old-markets-absent",
+        "check-row-42-sources-entry"
+      ]
+    },
+    {
+      "id": "row-43",
+      "row_number": 43,
+      "section": "Pipeline \u2013 open loop",
+      "status": "Ready",
+      "disposition": "EXECUTED-WITH-FLAG",
+      "locator": "index.html -> .loop-card--open p.p-bold",
+      "before_text": "r.World\u2019s infrastructure and technology can deliver open-loop reuse at scale, and it\u2019s the version changing everything.",
+      "after_text": "Over the long term, we hope to extend our infrastructure to open-loop reuse. This would require additional capital, partners and execution, and may not occur.",
+      "checks": [
+        "check-row-43-open-loop-present",
+        "check-row-43-old-open-loop-absent"
+      ]
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "row-1",
+      "section": "Hero Copy",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "r.World operates the nation\u2019s leading reuse infrastructure"
+    },
+    {
+      "id": "row-2",
+      "section": "Open Loop/Closed Loop",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "r.World has solved for Closed Loop Reuse"
+    },
+    {
+      "id": "row-5",
+      "section": "Global \u2013 images",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Crowd at an outdoor music festival"
+    },
+    {
+      "id": "row-15",
+      "section": "Post-filing (future)",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "17 CFR \u00a7 227.206"
+    },
+    {
+      "id": "row-16",
+      "section": "Hero \u2013 superlative",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "nation\u2019s leading reuse infrastructure"
+    },
+    {
+      "id": "row-17",
+      "section": "Superlatives",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "first, largest and most advanced reuse network"
+    },
+    {
+      "id": "row-18",
+      "section": "Superlatives",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "processing more reusable foodware annually than anyone else"
+    },
+    {
+      "id": "row-22",
+      "section": "Impact metrics \u2013 items",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Over 30 million single-use items"
+    },
+    {
+      "id": "row-23",
+      "section": "Impact metrics \u2013 events",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "10,000 events"
+    },
+    {
+      "id": "row-24",
+      "section": "Impact metrics \u2013 waste diverted",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "145 tons of single-use waste"
+    },
+    {
+      "id": "row-25",
+      "section": "Impact metrics \u2013 water",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "5.89M"
+    },
+    {
+      "id": "row-30",
+      "section": "Problem \u2013 recycling rate",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Only 9% of plastic waste is successfully recycled."
+    },
+    {
+      "id": "row-31",
+      "section": "Problem \u2013 recycling rate",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "recycling rate for single-use items runs between 0 and 20%"
+    },
+    {
+      "id": "row-32",
+      "section": "Problem \u2013 volume",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Across facilities and institutions, hundreds of thousands of single-use cups and containers are produced every year."
+    },
+    {
+      "id": "row-33",
+      "section": "Problem \u2013 disposal",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "landfills rapidly filling up"
+    },
+    {
+      "id": "row-35",
+      "section": "Regulatory \u2013 intro",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Several states are asking for it and enacting legislation requiring it."
+    },
+    {
+      "id": "row-37",
+      "section": "Regulatory \u2013 pending bills (text + chart)",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Bills Introduced / In Process (10 states)"
+    },
+    {
+      "id": "row-44",
+      "section": "Closed vs. open loop \u2013 soften",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "r.World has solved for Closed Loop Reuse."
+    },
+    {
+      "id": "row-45",
+      "section": "Business model \u2013 terms",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "No upfront cost and no loss fees."
+    },
+    {
+      "id": "row-46",
+      "section": "Operating system \u2013 Sanitization",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "Regional centers running Ecolab Science Certified"
+    },
+    {
+      "id": "row-47",
+      "section": "Operating system \u2013 Technology",
+      "disposition": "SKIPPED-not-ready",
+      "expected_text": "r.Turn, the QR- and RFID-enabled platform"
+    },
+    {
+      "id": "row-48",
+      "section": "Why r.World? Why Now?",
+      "disposition": "SKIPPED-malformed",
+      "expected_text": "r.World Is the Decisive Leader"
+    },
+    {
+      "id": "row-49",
+      "section": "Why r.World? Why Now?",
+      "disposition": "SKIPPED-malformed",
+      "expected_text": "Several States Now Require What r.World Has Been Working On Since 2017"
+    },
+    {
+      "id": "row-50",
+      "section": "Two jobs for every dollar",
+      "disposition": "SKIPPED-malformed",
+      "expected_text": "Two jobs for every dollar: Drive the cost down, and build what single-use can\u2019t"
+    }
+  ]
+}

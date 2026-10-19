@@ -1,0 +1,447 @@
+{
+  "targetUrl": "http://localhost:8080/snapshot/index.html",
+  "mode": "UNEDITED_SNAPSHOT",
+  "timestamp": "2026-10-19T22:22:58.134Z",
+  "checks": [
+    {
+      "id": "check-row-3-sources-list",
+      "name": "Sources list exists with matching entries",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-3-grouped-sources-absent",
+      "name": "Old grouped source lines absent",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-4-unused-sources-retained",
+      "name": "Reuse Wins at Events & WEF/Kearney links retained",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-6-footer-legend",
+      "name": "Footer matches exact 3-bullet legend and citation",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-6-old-wording-absent",
+      "name": "Old footer phrase \"involves no obligation\" absent",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-7-forms-legend",
+      "name": "Full Rule 206 legend sits adjacent to every form",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": "forms: 2, legends: 0"
+    },
+    {
+      "id": "check-row-8-banner-anchor",
+      "name": "Banner \"Full disclosure below\" is a working anchor link",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": "href: undefined"
+    },
+    {
+      "id": "check-row-9-cta-buttons",
+      "name": "All CTA buttons changed to \"Join the Notification List\"",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "{\"hero\":\"Reserve My Early Access\",\"interest\":\"Alert Me When The Opportunity Opens\",\"mid\":\"Notify me first\",\"persist\":\"Alert Me When The Opportunity Opens\"}"
+    },
+    {
+      "id": "check-row-10-form-disclaimer",
+      "name": "Mandated disclaimer directly under form submit buttons",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "Count: 2"
+    },
+    {
+      "id": "check-row-11-investment-bands",
+      "name": "Investment bands relabeled \"Optional, nonbinding: How much might you consider investing?\"",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "Optional: How much are you considering investing?"
+    },
+    {
+      "id": "check-row-12-step1",
+      "name": "Step 1: \"join the notification list\" replaces \"sign up for early access\"",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "1. You sign up for early access with your name and email. No payment, no commitment, no obligation of any kind."
+    },
+    {
+      "id": "check-row-13-step2",
+      "name": "Step 2: Form C offering statement wording exactly present",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-14-email-promise",
+      "name": "Step 3 / success copy softened, priority implications removed",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-19-10-times-cut",
+      "name": "Active in roughly 10 times deleted without 3x replacement",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": "tenTimesAbsent=false, threeXNotInserted=true"
+    },
+    {
+      "id": "check-row-20-automation",
+      "name": "Automation copy updated to 14M capacity wording",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "The industry's only automated AI quality check — the reason 90% is repeatable rather than lucky."
+    },
+    {
+      "id": "check-row-21-regulatory-timing",
+      "name": "Timing claim updated to 2017 infrastructure wording and \"nine years ahead\" absent",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "r.World saw it coming. r.World built nine years ahead of regulations. Now, the regulations are kicking in."
+    },
+    {
+      "id": "check-row-26-return-rate-footnote",
+      "name": "90% return rate has superscript footnote ref",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "sup: "
+    },
+    {
+      "id": "check-row-27-retention",
+      "name": "Retention shows 90% everywhere without \"+\" and has footnote ref",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "retentionPlusAbsent: false, sup: "
+    },
+    {
+      "id": "check-row-28-cities-footnote",
+      "name": "150+ cities retained and has footnote ref",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "citiesNumberKept: true, sup: "
+    },
+    {
+      "id": "check-row-29-states-footnote",
+      "name": "Across 35 states retained and has footnote ref",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "statesNumberKept: true, sup: "
+    },
+    {
+      "id": "check-row-34-bins-unchanged",
+      "name": "Row 34 copy intact (SKIPPED-not-actionable)",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-36-epr-states",
+      "name": "EPR states have \"as of [month 2026]\" placeholder and individual state footnotes",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": "monthPlaceholder: true"
+    },
+    {
+      "id": "check-row-38-sb54-target",
+      "name": "SB 54 target revised verbatim with 2023 levels",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-39-sb54-reuse",
+      "name": "SB 54 reuse compliance disclaimer added verbatim",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-40-penalties",
+      "name": "Penalties revised verbatim and old phrase absent",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-41-fifteen-cities",
+      "name": "Fifteen cities deleted from page",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-42-markets",
+      "name": "Markets softened and operating footprint wording present",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-row-43-open-loop",
+      "name": "Open loop softened copy present and old claim absent",
+      "type": "PRESENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "neg-row-5-venue-photos",
+      "name": "Row 5 (Images): Venue photos untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-16-hero-superlative",
+      "name": "Row 16 (Hero superlative): Leading reuse infrastructure copy untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-17-network-superlatives",
+      "name": "Row 17 (Superlatives): First, largest and most advanced untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-18-annually-superlative",
+      "name": "Row 18 (Superlatives): processing more reusable foodware annually untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-22-items-metric",
+      "name": "Row 22 (Metrics): Over 30 million single-use items untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-23-events-metric",
+      "name": "Row 23 (Metrics): 10,000 events untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-24-waste-metric",
+      "name": "Row 24 (Metrics): 145 tons untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-25-water-metric",
+      "name": "Row 25 (Metrics): 5.89M gallons untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-30-recycling-rate",
+      "name": "Row 30 (Recycling rate): Only 9% of plastic waste is successfully recycled untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-31-single-use-recycling",
+      "name": "Row 31 (Recycling range): runs between 0 and 20% untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-32-volume",
+      "name": "Row 32 (Volume): hundreds of thousands untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-33-rapidly-filling",
+      "name": "Row 33 (Disposal): rapidly filling up untouched per Hard Rule 3",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-35-regulatory-intro",
+      "name": "Row 35 (Regulatory): Several states are asking for it untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-37-pending-bills",
+      "name": "Row 37 (Pending bills): 10 more have bills in progress untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-44-closed-loop-soften",
+      "name": "Row 44 (Closed loop): r.World has solved for Closed Loop Reuse untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-45-loss-fees",
+      "name": "Row 45 (Terms): No upfront cost and no loss fees untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-46-ecolab",
+      "name": "Row 46 (Sanitization): Ecolab Science Certified untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-47-rfid",
+      "name": "Row 47 (Technology): RFID untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-49-why-now-h3",
+      "name": "Row 49 (Malformed row): Several States Now Require H3 untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "neg-row-50-two-jobs",
+      "name": "Row 50 (Malformed row): Two jobs for every dollar untouched",
+      "type": "UNCHANGED",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-global-footnotes-sequence",
+      "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": "{\"totalRefs\":0,\"uniqueRefs\":0,\"maxRef\":0,\"continuous\":true,\"uniqueInOrder\":[],\"sourceItemCount\":0}"
+    },
+    {
+      "id": "check-banned-reserve",
+      "name": "Banned phrase absent: \"reserve\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-early-access",
+      "name": "Banned phrase absent: \"early access\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-spot",
+      "name": "Banned phrase absent: \"spot\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-Notify-me-first",
+      "name": "Banned phrase absent: \"Notify me first\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-before-r.World-announces",
+      "name": "Banned phrase absent: \"before r.World announces\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-nine-years-ahead",
+      "name": "Banned phrase absent: \"nine years ahead\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-banned-10-times",
+      "name": "Banned phrase absent: \"10 times\"",
+      "type": "ABSENT",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-global-banner-scroll",
+      "name": "Clicking banner anchor scrolls toward legend target",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": "{\"scrolled\":false,\"reason\":\"no link\"}"
+    },
+    {
+      "id": "check-viewport-390px",
+      "name": "Viewport 390px no overflow, banner & legend visible",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"clientWidth\":390,\"scrollWidth\":390,\"hasHorizontalOverflow\":false,\"barVisible\":true,\"legendVisible\":true}"
+    },
+    {
+      "id": "check-viewport-1440px",
+      "name": "Viewport 1440px no overflow, banner & legend visible",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "{\"clientWidth\":1440,\"scrollWidth\":1440,\"hasHorizontalOverflow\":false,\"barVisible\":true,\"legendVisible\":true}"
+    },
+    {
+      "id": "check-console-errors",
+      "name": "No console errors during navigation",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": "errors: 3"
+    },
+    {
+      "id": "check-page-errors",
+      "name": "No unhandled page errors during navigation",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "errors: 0"
+    },
+    {
+      "id": "check-broken-images",
+      "name": "All rendered <img> tags loaded successfully",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": "broken: 0"
+    }
+  ],
+  "summary": {
+    "total": 62,
+    "passed": 26,
+    "failed": 36,
+    "unverified": 0
+  }
+}
