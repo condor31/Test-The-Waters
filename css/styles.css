@@ -529,12 +529,13 @@ p:last-child {
 
 .cta-form__error {
   width: 100%;
-  padding: 10px 14px;
-  background: rgba(235, 30, 75, 0.08);
-  border: 1px solid rgba(235, 30, 75, 0.4);
-  color: #c9143d;
+  padding: 11px 16px;
+  background: #fdf2f4;
+  border: 1px solid #f5b5c2;
+  color: #940a28;
   border-radius: 8px;
-  font-size: 13.5px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.4;
   text-align: left;
   box-sizing: border-box;
@@ -545,9 +546,9 @@ p:last-child {
 }
 
 .cta-form--hero .cta-form__error {
-  background: rgba(255, 60, 60, 0.15);
-  border-color: rgba(255, 100, 100, 0.4);
-  color: #ffadb6;
+  background: #fdf2f4;
+  border-color: #f5b5c2;
+  color: #940a28;
 }
 
 /* ---------- Form Success State ---------- */

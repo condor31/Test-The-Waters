@@ -95,7 +95,7 @@ function submitLeadToMailchimp(params) {
 
 function formatMailchimpError(rawMsg) {
   if (!rawMsg) return "An error occurred. Please check your information and try again.";
-  let clean = rawMsg.replace(/^\d+\s*-\s*/, "");
+  let clean = rawMsg.replace(/^\d+\s*[-:]*\s*/, "");
   clean = clean.replace(/<[^>]*>/g, " ").replace(/\s{2,}/g, " ").trim();
   return clean;
 }

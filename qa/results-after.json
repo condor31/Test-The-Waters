@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-20T01:29:23.290Z",
+  "timestamp": "2026-10-20T13:29:46.899Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -113,35 +113,35 @@
       "name": "Timing claim updated to 2017 infrastructure wording and \"nine years ahead\" absent",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.5 Now, the regulations are kicking in."
+      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.6 Now, the regulations are kicking in."
     },
     {
       "id": "check-row-26-return-rate-footnote",
       "name": "90% return rate has superscript footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "sup: 1"
+      "details": "sup: 2"
     },
     {
       "id": "check-row-27-retention",
       "name": "Retention shows 90% everywhere without \"+\" and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "retentionPlusAbsent: true, sup: 2"
+      "details": "retentionPlusAbsent: true, sup: 3"
     },
     {
       "id": "check-row-28-cities-footnote",
       "name": "150+ cities retained and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "citiesNumberKept: true, sup: 3"
+      "details": "citiesNumberKept: true, sup: 4"
     },
     {
       "id": "check-row-29-states-footnote",
       "name": "Across 35 states retained and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "statesNumberKept: true, sup: 4"
+      "details": "statesNumberKept: true, sup: 5"
     },
     {
       "id": "check-row-34-bins-unchanged",
@@ -195,6 +195,13 @@
     {
       "id": "check-row-43-open-loop",
       "name": "Open loop softened copy present and old claim absent",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-row-50-use-of-funds",
+      "name": "Row 50: \"How r.World plans to use the funds\" heading updated and old copy absent",
       "type": "PRESENT",
       "status": "PASS",
       "details": ""
@@ -333,18 +340,11 @@
       "details": ""
     },
     {
-      "id": "neg-row-50-two-jobs",
-      "name": "Row 50 (Malformed row): Two jobs for every dollar untouched",
-      "type": "UNCHANGED",
-      "status": "PASS",
-      "details": ""
-    },
-    {
       "id": "check-global-footnotes-sequence",
       "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"totalRefs\":19,\"uniqueRefs\":15,\"maxRef\":15,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],\"sourceItemCount\":15}"
+      "details": "{\"totalRefs\":20,\"uniqueRefs\":16,\"maxRef\":16,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],\"sourceItemCount\":16}"
     },
     {
       "id": "check-footnote-not-bare-https://olis.oregonlegislature",
@@ -582,7 +582,7 @@
       "name": "Clicking banner anchor scrolls toward legend target",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"scrolled\":true,\"scrollY\":882,\"targetTop\":14152.109375}"
+      "details": "{\"scrolled\":true,\"scrollY\":703,\"targetTop\":14341.4375}"
     },
     {
       "id": "check-viewport-390px",

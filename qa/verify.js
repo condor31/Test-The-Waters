@@ -411,6 +411,12 @@ async function checkUrlStatus(url) {
   const row43Pass = openLoopPresent && oldOpenLoopAbsent;
   addResult('check-row-43-open-loop', 'Open loop softened copy present and old claim absent', 'PRESENT', row43Pass);
 
+  // Row 50: Two jobs for every dollar
+  const expectedUseOfFunds = "How r.World plans to use the funds";
+  const useOfFundsPresent = normalize(renderedBodyText).includes(normalize(expectedUseOfFunds));
+  const oldTwoJobsAbsent = !normalize(renderedBodyText).includes("Two jobs for every dollar");
+  addResult('check-row-50-use-of-funds', 'Row 50: "How r.World plans to use the funds" heading updated and old copy absent', 'PRESENT', useOfFundsPresent && oldTwoJobsAbsent);
+
   // ---------------------------------------------------------
   // NEGATIVE CONTROLS (NON-READY ROWS)
   // ---------------------------------------------------------
@@ -433,8 +439,7 @@ async function checkUrlStatus(url) {
     { id: 'neg-row-45-loss-fees', name: 'Row 45 (Terms): No upfront cost and no loss fees untouched', text: 'No upfront cost and no loss fees.' },
     { id: 'neg-row-46-ecolab', name: 'Row 46 (Sanitization): Ecolab Science Certified untouched', text: 'Regional centers running Ecolab Science Certified' },
     { id: 'neg-row-47-rfid', name: 'Row 47 (Technology): RFID untouched', text: 'r.Turn, the QR- and RFID-enabled platform' },
-    { id: 'neg-row-49-why-now-h3', name: 'Row 49 (Malformed row): Several States Now Require H3 untouched', text: 'Several States Now Require What r.World Has Been Working On Since 2017' },
-    { id: 'neg-row-50-two-jobs', name: 'Row 50 (Malformed row): Two jobs for every dollar untouched', text: "Two jobs for every dollar: Drive the cost down, and build what single-use can't" }
+    { id: 'neg-row-49-why-now-h3', name: 'Row 49 (Malformed row): Several States Now Require H3 untouched', text: 'Several States Now Require What r.World Has Been Working On Since 2017' }
   ];
 
   for (const nc of negativeControls) {
