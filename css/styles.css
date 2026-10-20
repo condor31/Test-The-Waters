@@ -1161,6 +1161,7 @@ p:last-child {
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   position: relative;
+  text-decoration: none;
 }
 
 .interest-card__video:hover {

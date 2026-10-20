@@ -30,13 +30,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-document.querySelectorAll("[data-video-thumb]").forEach((button) => {
-  button.addEventListener("click", () => {
-    button.setAttribute("aria-disabled", "true");
-    button.setAttribute("title", "Video coming soon");
-  });
-});
-
 const MAILCHIMP_URL =
   "https://rworldreuse.us15.list-manage.com/subscribe/post-json?u=d16d76c3bd0a764ea148af923&id=23a13695bf&f_id=00ad9fe1f0";
 const MAILCHIMP_POST_ACTION =
