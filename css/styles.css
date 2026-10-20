@@ -2339,7 +2339,7 @@ p:last-child {
 }
 
 .form-disclaimer {
-  color: var(--grey, #666);
+  color: #333333;
   font-size: 13px;
   line-height: 1.45;
   margin-top: 8px;
@@ -2347,28 +2347,29 @@ p:last-child {
 }
 
 .cta-form--hero .form-disclaimer {
-  color: rgba(255, 255, 255, 0.85);
+  color: #333333;
 }
 
 .rule-206-legend {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 12px;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.7);
+  color: #333333;
   text-align: left;
 }
 
 .cta-form--hero .rule-206-legend {
-  border-top-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.8);
+  border-top-color: rgba(0, 0, 0, 0.15);
+  color: #333333;
 }
 
 .legend-citation {
   font-weight: 700;
   margin-bottom: 6px;
   font-size: 12px;
+  color: #111111;
 }
 
 .legend-bullets {
@@ -2378,10 +2379,12 @@ p:last-child {
   flex-direction: column;
   gap: 6px;
   list-style-type: disc;
+  color: #333333;
 }
 
 .legend-bullets li {
   line-height: 1.45;
+  color: #333333;
 }
 
 .site-footer__legal .legend-bullets {
