@@ -23,7 +23,7 @@
   <rect class="open-loop-bg" x="1.5" y="1.5" width="477" height="472" rx="16" />
 
   <!-- Title -->
-  <text class="open-loop-title" x="240" y="44">Open Loop</text>
+  <text class="open-loop-title" x="240" y="44">Open-Loop Reuse</text>
 
   <!-- Column Subtitles -->
   <text class="open-loop-subtitle" x="145" y="76">THE BUSINESS</text>

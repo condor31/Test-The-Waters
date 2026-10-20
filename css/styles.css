@@ -718,6 +718,25 @@ p:last-child {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
+.how-it-works__loop-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+.how-it-works__loop-svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.loop-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .reuse-grid__right {
   display: flex;
   flex-direction: column;
@@ -1779,7 +1798,7 @@ p:last-child {
   margin: 0;
 }
 
-.os-dots {
+.os-carousel-wrap .os-dots {
   display: none;
 }
 
@@ -1846,7 +1865,7 @@ p:last-child {
     line-height: 1.45;
   }
 
-  .os-dots {
+  .os-carousel-wrap .os-dots {
     display: flex;
     justify-content: center;
     gap: 10px;
