@@ -1,4 +1,4 @@
-import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES } from "./map-config.js?v=20261015_03";
+import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES, WASH_HUBS } from "./map-config.js?v=20261015_03";
 import confetti from "./confetti.js";
 
 const announcementBar = document.getElementById("announcement-bar");
@@ -559,17 +559,34 @@ function initReuseMap() {
 
   // Render dynamic legend
   if (legendContainer) {
-    legendContainer.innerHTML = MAP_CATEGORIES.map((cat) => `
+    const categoriesHtml = MAP_CATEGORIES.map((cat) => `
       <div class="reuse-legend-item reuse-legend-item--${cat.id}" data-category="${cat.id}" title="${cat.description}">
         <span class="reuse-legend-swatch reuse-legend-swatch--${cat.id}" style="background-color: ${cat.color};"></span>
         <span class="reuse-legend-label"><strong>${cat.label}</strong></span>
       </div>
     `).join("");
 
+    const hubLegendHtml = `
+      <div class="reuse-legend-item reuse-legend-item--hubs" data-category="hubs" title="r.World regional wash hubs operating in 5 major metro areas.">
+        <span class="reuse-legend-swatch reuse-legend-swatch--hub"></span>
+        <span class="reuse-legend-label"><strong>r.World Wash Hubs (5 locations)</strong></span>
+      </div>
+    `;
+
+    legendContainer.innerHTML = categoriesHtml + hubLegendHtml;
+
     // Interactive highlight on legend hover
     legendContainer.querySelectorAll(".reuse-legend-item").forEach((item) => {
       const catId = item.getAttribute("data-category");
       item.addEventListener("mouseenter", () => {
+        if (catId === "hubs") {
+          const hubs = mapSvg.querySelectorAll(".wash-hub-marker");
+          hubs.forEach(h => {
+            const pin = h.querySelector(".wash-hub-pin");
+            if (pin) pin.style.transform = "scale(1.4)";
+          });
+          return;
+        }
         stateElements.forEach((el) => {
           const code = el.getAttribute("data-state")?.toLowerCase();
           const stateCat = STATE_STATUSES[code] || "other";
@@ -577,10 +594,95 @@ function initReuseMap() {
         });
       });
       item.addEventListener("mouseleave", () => {
+        if (catId === "hubs") {
+          const hubs = mapSvg.querySelectorAll(".wash-hub-marker");
+          hubs.forEach(h => {
+            const pin = h.querySelector(".wash-hub-pin");
+            if (pin) pin.style.transform = "scale(1)";
+          });
+          return;
+        }
         stateElements.forEach((el) => {
           el.style.opacity = "1";
         });
       });
+    });
+  }
+
+  // Layer r.World wash hub locations onto the map
+  if (WASH_HUBS && WASH_HUBS.length) {
+    let hubsGroup = mapSvg.querySelector(".wash-hubs-group");
+    if (!hubsGroup) {
+      hubsGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      hubsGroup.setAttribute("class", "wash-hubs-group");
+      mapSvg.appendChild(hubsGroup);
+    }
+    hubsGroup.innerHTML = "";
+
+    WASH_HUBS.forEach((hub) => {
+      const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g.setAttribute("class", "wash-hub-marker");
+      g.setAttribute("data-hub", hub.id);
+
+      // Pulse ring
+      const pulse = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      pulse.setAttribute("class", "wash-hub-pulse");
+      pulse.setAttribute("cx", hub.x);
+      pulse.setAttribute("cy", hub.y);
+      pulse.setAttribute("r", "7");
+      pulse.setAttribute("fill", "none");
+      pulse.setAttribute("stroke", "#FFD100");
+      pulse.setAttribute("stroke-width", "2");
+
+      // Pin body
+      const pin = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      pin.setAttribute("class", "wash-hub-pin");
+
+      const outerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      outerDot.setAttribute("cx", hub.x);
+      outerDot.setAttribute("cy", hub.y);
+      outerDot.setAttribute("r", "7");
+      outerDot.setAttribute("fill", "#FFD100");
+      outerDot.setAttribute("stroke", "#ff0099");
+      outerDot.setAttribute("stroke-width", "2");
+
+      const innerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      innerDot.setAttribute("cx", hub.x);
+      innerDot.setAttribute("cy", hub.y);
+      innerDot.setAttribute("r", "3");
+      innerDot.setAttribute("fill", "#151515");
+
+      const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+      title.textContent = `r.World Wash Hub: ${hub.name}`;
+
+      pin.appendChild(outerDot);
+      pin.appendChild(innerDot);
+      g.appendChild(title);
+      g.appendChild(pulse);
+      g.appendChild(pin);
+
+      g.addEventListener("mouseenter", () => {
+        let tt = document.querySelector(".reuse-map__tooltip");
+        if (tt) {
+          tt.textContent = `r.World Wash Hub: ${hub.name}`;
+          tt.style.opacity = "1";
+        }
+      });
+      g.addEventListener("mousemove", (e) => {
+        let tt = document.querySelector(".reuse-map__tooltip");
+        if (tt) {
+          tt.style.left = `${e.pageX}px`;
+          tt.style.top = `${e.pageY}px`;
+        }
+      });
+      g.addEventListener("mouseleave", () => {
+        let tt = document.querySelector(".reuse-map__tooltip");
+        if (tt) {
+          tt.style.opacity = "0";
+        }
+      });
+
+      hubsGroup.appendChild(g);
     });
   }
 

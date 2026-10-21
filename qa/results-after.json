@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-20T19:28:49.007Z",
+  "timestamp": "2026-10-21T14:01:47.150Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -18,9 +18,9 @@
       "details": ""
     },
     {
-      "id": "check-row-4-unused-sources-retained",
-      "name": "Reuse Wins at Events & WEF/Kearney links retained",
-      "type": "PRESENT",
+      "id": "check-inline-sources-removed",
+      "name": "Inline sources under problem CTA removed in favor of footnotes",
+      "type": "ABSENT",
       "status": "PASS",
       "details": ""
     },
@@ -102,6 +102,13 @@
       "details": "tenTimesAbsent=true, threeXNotInserted=true"
     },
     {
+      "id": "check-superlative-leader-footnote",
+      "name": "Decisive leader annual volume claim has footnote ref 1",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "{\"found\":true,\"text\":\"1\",\"href\":\"#fn1\"}"
+    },
+    {
       "id": "check-row-20-automation",
       "name": "Automation copy updated to 14M capacity wording",
       "type": "PRESENT",
@@ -113,35 +120,35 @@
       "name": "Timing claim updated to 2017 infrastructure wording and \"nine years ahead\" absent",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.6 Now, the regulations are kicking in."
+      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.16 Now, the regulations are kicking in."
     },
     {
       "id": "check-row-26-return-rate-footnote",
       "name": "90% return rate has superscript footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "sup: 2"
+      "details": "sup: 12"
     },
     {
       "id": "check-row-27-retention",
       "name": "Retention shows 90% everywhere without \"+\" and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "retentionPlusAbsent: true, sup: 3"
+      "details": "retentionPlusAbsent: true, sup: 13"
     },
     {
       "id": "check-row-28-cities-footnote",
       "name": "150+ cities retained and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "citiesNumberKept: true, sup: 4"
+      "details": "citiesNumberKept: true, sup: 14"
     },
     {
       "id": "check-row-29-states-footnote",
       "name": "Across 35 states retained and has footnote ref",
       "type": "PRESENT",
       "status": "PASS",
-      "details": "statesNumberKept: true, sup: 5"
+      "details": "statesNumberKept: true, sup: 15"
     },
     {
       "id": "check-row-34-bins-unchanged",
@@ -207,135 +214,128 @@
       "details": ""
     },
     {
-      "id": "neg-row-5-venue-photos",
-      "name": "Row 5 (Images): Venue photos untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-16-hero-superlative",
+      "name": "Row 16: Leading reuse infrastructure copy present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-16-hero-superlative",
-      "name": "Row 16 (Hero superlative): Leading reuse infrastructure copy untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-17-network-superlatives",
+      "name": "Row 17: First, largest and most advanced present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-17-network-superlatives",
-      "name": "Row 17 (Superlatives): First, largest and most advanced untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-18-annually-superlative",
+      "name": "Row 18: processing more reusable foodware annually present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-18-annually-superlative",
-      "name": "Row 18 (Superlatives): processing more reusable foodware annually untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-22-items-metric",
+      "name": "Row 22: Over 30 million items replaced present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-22-items-metric",
-      "name": "Row 22 (Metrics): Over 30 million single-use items untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-23-events-metric",
+      "name": "Row 23: 10,000+ events standardized",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-23-events-metric",
-      "name": "Row 23 (Metrics): 10,000 events untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-24-waste-metric",
+      "name": "Row 24: 145 tons present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-24-waste-metric",
-      "name": "Row 24 (Metrics): 145 tons untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-25-water-metric",
+      "name": "Row 25: 5.89M gallons present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-25-water-metric",
-      "name": "Row 25 (Metrics): 5.89M gallons untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-30-recycling-rate",
+      "name": "Row 30: Only 9% recycled globally present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-30-recycling-rate",
-      "name": "Row 30 (Recycling rate): Only 9% of plastic waste is successfully recycled untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-31-single-use-recycling",
+      "name": "Row 31: U.S. 9% in 2018 present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-31-single-use-recycling",
-      "name": "Row 31 (Recycling range): runs between 0 and 20% untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-32-volume",
+      "name": "Row 32: billions of single-use cups present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-32-volume",
-      "name": "Row 32 (Volume): hundreds of thousands untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-33-rapidly-filling",
+      "name": "Row 33: landfills rapidly reaching capacity present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-33-rapidly-filling",
-      "name": "Row 33 (Disposal): rapidly filling up untouched per Hard Rule 3",
-      "type": "UNCHANGED",
+      "id": "check-row-35-regulatory-intro",
+      "name": "Row 35: recognize reuse compliance pathway present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-35-regulatory-intro",
-      "name": "Row 35 (Regulatory): Several states are asking for it untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-37-pending-bills",
+      "name": "Row 37: 12+ other states present without fines",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-37-pending-bills",
-      "name": "Row 37 (Pending bills): 10 more have bills in progress untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-44-closed-loop-soften",
+      "name": "Row 44: We believe r.World has solved closed-loop reuse present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-44-closed-loop-soften",
-      "name": "Row 44 (Closed loop): r.World has solved for Closed Loop Reuse untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-45-loss-fees",
+      "name": "Row 45: No upfront cost and no loss fees present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-45-loss-fees",
-      "name": "Row 45 (Terms): No upfront cost and no loss fees untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-46-ecolab",
+      "name": "Row 46: Ecolab Science Certified link present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-46-ecolab",
-      "name": "Row 46 (Sanitization): Ecolab Science Certified untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-47-rfid",
+      "name": "Row 47: item tracking and automated impact reports present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
     {
-      "id": "neg-row-47-rfid",
-      "name": "Row 47 (Technology): RFID untouched",
-      "type": "UNCHANGED",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "neg-row-49-why-now-h3",
-      "name": "Row 49 (Malformed row): Several States Now Require H3 untouched",
-      "type": "UNCHANGED",
+      "id": "check-row-49-why-now-h3",
+      "name": "Row 49: Several States Now Require H3 present",
+      "type": "PRESENT",
       "status": "PASS",
       "details": ""
     },
@@ -344,7 +344,77 @@
       "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"totalRefs\":20,\"uniqueRefs\":16,\"maxRef\":16,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],\"sourceItemCount\":16}"
+      "details": "{\"totalRefs\":33,\"uniqueRefs\":28,\"maxRef\":28,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],\"sourceItemCount\":28}"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.boldreuse.com/",
+      "name": "Footnote link is pending specific competitor page/press release (Kate/Annie): https://www.boldreuse.com/",
+      "type": "STRUCTURE",
+      "status": "UNVERIFIED",
+      "details": "Open pending specific competitor press release/page from Annie/Kate"
+    },
+    {
+      "id": "check-footnote-http-https://www.boldreuse.com/",
+      "name": "HTTP 200 for https://www.boldreuse.com/",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.oecd.org/content/d",
+      "name": "Footnote link is not a bare homepage: https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.oecd.org/content/d",
+      "name": "HTTP 200 for https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://upstreamsolutions.org/",
+      "name": "Footnote link is not a bare homepage: https://upstreamsolutions.org/reuse-wins-report",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://upstreamsolutions.org/",
+      "name": "HTTP 200 for https://upstreamsolutions.org/reuse-wins-report",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://www.epa.gov/facts-and-",
+      "name": "Footnote link is not a bare homepage: https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.epa.gov/facts-and-",
+      "name": "HTTP 200 for https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-https://foodcyclescience.com/b",
+      "name": "Footnote link is not a bare homepage: https://foodcyclescience.com/blogs/food-waste-industry/trash-trouble-our-landfills-are-rapidly-reaching-capacity",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://foodcyclescience.com/b",
+      "name": "HTTP 200 for https://foodcyclescience.com/blogs/food-waste-industry/trash-trouble-our-landfills-are-rapidly-reaching-capacity",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
     },
     {
       "id": "check-footnote-not-bare-https://olis.oregonlegislature",
@@ -529,6 +599,20 @@
       "details": "status: 200"
     },
     {
+      "id": "check-footnote-not-bare-https://www.ecolab.com/en-us/o",
+      "name": "Footnote link is not a bare homepage: https://www.ecolab.com/en-us/offerings/inst/science-certified-program",
+      "type": "STRUCTURE",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-https://www.ecolab.com/en-us/o",
+      "name": "HTTP check for https://www.ecolab.com/en-us/offerings/inst/science-certified-program",
+      "type": "PRESENT",
+      "status": "UNVERIFIED",
+      "details": "status: 403, error: HTTP 403"
+    },
+    {
       "id": "check-banned-reserve",
       "name": "Banned phrase absent: \"reserve\"",
       "type": "ABSENT",
@@ -582,7 +666,7 @@
       "name": "Clicking banner anchor scrolls toward legend target",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"scrolled\":true,\"scrollY\":883,\"targetTop\":14161.4375}"
+      "details": "{\"scrolled\":true,\"scrollY\":778,\"targetTop\":15836.046875}"
     },
     {
       "id": "check-viewport-390px",
@@ -621,9 +705,9 @@
     }
   ],
   "summary": {
-    "total": 88,
-    "passed": 87,
+    "total": 100,
+    "passed": 97,
     "failed": 0,
-    "unverified": 1
+    "unverified": 3
   }
 }

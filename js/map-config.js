@@ -18,7 +18,7 @@ export const MAP_CATEGORIES = [
   },
   {
     id: "pending",
-    label: "Bills Introduced / In Process (10 states)",
+    label: "Bills Introduced / In Process (12+ states)",
     color: "#ff0099", // r.World Magenta
     description: "Active EPR or reuse legislation currently introduced or moving through committee."
   },
@@ -38,20 +38,30 @@ export const STATE_STATUSES = {
   or: "passed",
   mn: "passed",
   md: "passed",
-  il: "passed",
+  wa: "passed",
 
-  // Bills Introduced / In Process (10 states)
-  ny: "pending",
-  wa: "pending",
-  nj: "pending",
-  ma: "pending",
+  // Bills Introduced / In Process (12 states)
   ct: "pending",
+  ga: "pending",
+  hi: "pending",
+  il: "pending",
+  ma: "pending",
+  ne: "pending",
+  nj: "pending",
+  ny: "pending",
   nc: "pending",
+  ri: "pending",
   tn: "pending",
-  pa: "pending",
-  va: "pending",
-  hi: "pending"
+  wi: "pending"
 };
+
+export const WASH_HUBS = [
+  { id: "la", name: "Los Angeles", x: 122, y: 378 },
+  { id: "sf", name: "San Francisco Bay Area", x: 58, y: 262 },
+  { id: "den", name: "Denver", x: 366, y: 262 },
+  { id: "msp", name: "Minneapolis", x: 538, y: 178 },
+  { id: "dc", name: "Baltimore / D.C.", x: 806, y: 248 }
+];
 
 export const STATE_NAMES = {
   al: "Alabama", ak: "Alaska", az: "Arizona", ar: "Arkansas", ca: "California",

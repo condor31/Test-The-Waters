@@ -140,10 +140,11 @@ async function checkUrlStatus(url) {
   const groupedSourcesAbsent = !renderedBodyHtml.includes('Holland & Knight, January 2026') && !renderedBodyHtml.includes('Source: r.World System Data');
   addResult('check-row-3-grouped-sources-absent', 'Old grouped source lines absent', 'ABSENT', groupedSourcesAbsent);
 
-  // Row 4: Global - unused sources
-  const reuseWinsPresent = normalizedAllText.includes('Reuse Wins at Events (PDF)');
-  const wefKearneyPresent = normalizedAllText.includes('WEF/Kearney');
-  addResult('check-row-4-unused-sources-retained', 'Reuse Wins at Events & WEF/Kearney links retained', 'PRESENT', reuseWinsPresent && wefKearneyPresent);
+  // Inline sources block under problem CTA removed in favor of footnotes
+  const inlineSourcesAbsent = !renderedBodyHtml.includes('class="sources"') &&
+                              !normalizedAllText.includes('Reuse Wins at Events (PDF)') &&
+                              !normalizedAllText.includes('WEF/Kearney');
+  addResult('check-inline-sources-removed', 'Inline sources under problem CTA removed in favor of footnotes', 'ABSENT', inlineSourcesAbsent);
 
   // Row 6: Legend - footer
   const footerLegalText = normalize(await page.evaluate(() => {
@@ -289,6 +290,20 @@ async function checkUrlStatus(url) {
   });
   const row19Pass = tenTimesAbsent && threeXNotInserted && normalize(superlativeRowText).includes('processing more reusable foodware annually than anyone else');
   addResult('check-row-19-10-times-cut', 'Active in roughly 10 times deleted without 3x replacement', 'ABSENT', row19Pass, `tenTimesAbsent=${tenTimesAbsent}, threeXNotInserted=${threeXNotInserted}`);
+
+  // Decisive Leader annual volume footnote check
+  const leaderFootnoteCheck = await page.evaluate(() => {
+    const el = document.querySelector('.why-now__card--leader p');
+    if (!el) return { found: false };
+    const link = el.querySelector('a[href="#fn1"]');
+    return {
+      found: !!link,
+      text: link ? link.innerText.trim() : '',
+      href: link ? link.getAttribute('href') : ''
+    };
+  });
+  const leaderFootnotePass = leaderFootnoteCheck.found && leaderFootnoteCheck.text === '1' && leaderFootnoteCheck.href === '#fn1';
+  addResult('check-superlative-leader-footnote', 'Decisive leader annual volume claim has footnote ref 1', 'PRESENT', leaderFootnotePass, JSON.stringify(leaderFootnoteCheck));
 
   // Row 20: Operating system - Automation
   const automationText = await page.evaluate(() => {
@@ -442,9 +457,38 @@ async function checkUrlStatus(url) {
     { id: 'neg-row-49-why-now-h3', name: 'Row 49 (Malformed row): Several States Now Require H3 untouched', text: 'Several States Now Require What r.World Has Been Working On Since 2017' }
   ];
 
-  for (const nc of negativeControls) {
-    const present = normalizedAllText.toLowerCase().includes(normalize(nc.text).toLowerCase());
-    addResult(nc.id, nc.name, 'UNCHANGED', present);
+  if (isSnapshot) {
+    for (const nc of negativeControls) {
+      const present = normalizedAllText.toLowerCase().includes(normalize(nc.text).toLowerCase());
+      addResult(nc.id, nc.name, 'UNCHANGED', present);
+    }
+  } else {
+    // Assert newly executed Ready rows on active page
+    const updatedChecks = [
+      { id: 'check-row-16-hero-superlative', name: 'Row 16: Leading reuse infrastructure copy present', text: "r.World operates the nation's leading reuse infrastructure wherever single-use waste is created" },
+      { id: 'check-row-17-network-superlatives', name: 'Row 17: First, largest and most advanced present', text: 'first, largest and most advanced reuse network' },
+      { id: 'check-row-18-annually-superlative', name: 'Row 18: processing more reusable foodware annually present', text: 'processing more reusable foodware annually than anyone else' },
+      { id: 'check-row-22-items-metric', name: 'Row 22: Over 30 million items replaced present', text: 'single-use items replaced' },
+      { id: 'check-row-23-events-metric', name: 'Row 23: 10,000+ events standardized', text: '10,000+ events' },
+      { id: 'check-row-24-waste-metric', name: 'Row 24: 145 tons present', text: '145 tons of single-use waste' },
+      { id: 'check-row-25-water-metric', name: 'Row 25: 5.89M gallons present', text: '5.89M' },
+      { id: 'check-row-30-recycling-rate', name: 'Row 30: Only 9% recycled globally present', text: 'Only 9% of plastic waste is recycled globally' },
+      { id: 'check-row-31-single-use-recycling', name: 'Row 31: U.S. 9% in 2018 present', text: 'about 9% of plastics were recycled in 2018' },
+      { id: 'check-row-32-volume', name: 'Row 32: billions of single-use cups present', text: 'billions of single-use cups and containers are produced every year' },
+      { id: 'check-row-33-rapidly-filling', name: 'Row 33: landfills rapidly reaching capacity present', text: 'landfills rapidly reaching capacity' },
+      { id: 'check-row-35-regulatory-intro', name: 'Row 35: recognize reuse compliance pathway present', text: 'Several states have enacted extended producer responsibility (EPR) laws that recognize reuse as a way for producers to comply' },
+      { id: 'check-row-37-pending-bills', name: 'Row 37: 12+ other states present without fines', text: 'EPR bills have been introduced in 12+ other states' },
+      { id: 'check-row-44-closed-loop-soften', name: 'Row 44: We believe r.World has solved closed-loop reuse present', text: 'We believe r.World has solved closed-loop reuse' },
+      { id: 'check-row-45-loss-fees', name: 'Row 45: No upfront cost and no loss fees present', text: 'No upfront cost and no loss fees.' },
+      { id: 'check-row-46-ecolab', name: 'Row 46: Ecolab Science Certified link present', text: 'Ecolab Science Certified' },
+      { id: 'check-row-47-rfid', name: 'Row 47: item tracking and automated impact reports present', text: 'item tracking, automated impact reports' },
+      { id: 'check-row-49-why-now-h3', name: 'Row 49: Several States Now Require H3 present', text: 'Several States Now Require What r.World Has Been Working On Since 2017' }
+    ];
+
+    for (const uc of updatedChecks) {
+      const present = normalizedAllText.toLowerCase().includes(normalize(uc.text).toLowerCase());
+      addResult(uc.id, uc.name, 'PRESENT', present);
+    }
   }
 
   // ---------------------------------------------------------
@@ -490,7 +534,13 @@ async function checkUrlStatus(url) {
   for (const u of sourceUrls) {
     const urlObj = new URL(u);
     const isBare = urlObj.pathname === '/' || urlObj.pathname === '';
-    addResult(`check-footnote-not-bare-${u.substring(0, 30)}`, `Footnote link is not a bare homepage: ${u}`, 'STRUCTURE', !isBare);
+    const isPendingCompetitorUrl = u.includes('boldreuse.com');
+
+    if (isPendingCompetitorUrl) {
+      addResult(`check-footnote-not-bare-${u.substring(0, 30)}`, `Footnote link is pending specific competitor page/press release (Kate/Annie): ${u}`, 'STRUCTURE', false, 'Open pending specific competitor press release/page from Annie/Kate', true);
+    } else {
+      addResult(`check-footnote-not-bare-${u.substring(0, 30)}`, `Footnote link is not a bare homepage: ${u}`, 'STRUCTURE', !isBare);
+    }
 
     const netResult = await checkUrlStatus(u);
     if (netResult.pass) {

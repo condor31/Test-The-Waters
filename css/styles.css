@@ -698,6 +698,24 @@ p:last-child {
 
 /* ---------- How it works / Reuse infrastructure & Map ---------- */
 
+.how-it-works__intro {
+  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--grey);
+  margin-top: -24px;
+}
+
+.how-it-works__map-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.how-it-works__map-container .reuse-map-wrapper {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
 .reuse-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -862,6 +880,45 @@ p:last-child {
 .reuse-legend-label {
   font-size: 13px;
   color: var(--grey);
+}
+
+.reuse-legend-swatch--hub {
+  background-color: #ffd100;
+  border: 2px solid #ff0099;
+  border-radius: 50% !important;
+}
+
+.wash-hub-marker {
+  cursor: pointer;
+}
+
+.wash-hub-marker:hover .wash-hub-pin {
+  transform: scale(1.3);
+  transform-origin: center;
+}
+
+.wash-hub-pin {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wash-hub-pulse {
+  animation: washHubPulse 2.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform-origin: center;
+}
+
+@keyframes washHubPulse {
+  0% {
+    r: 6px;
+    opacity: 0.9;
+  }
+  60% {
+    r: 16px;
+    opacity: 0;
+  }
+  100% {
+    r: 16px;
+    opacity: 0;
+  }
 }
 
 .reuse-map__tooltip {
@@ -1352,19 +1409,21 @@ p:last-child {
   display: flex;
   flex-wrap: wrap;
   gap: 64px;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
 .two-col__text {
-  flex: 1 1 480px;
+  flex: 1 1 440px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;
+  position: sticky;
+  top: 90px;
 }
 
 .two-col__media {
-  flex: 1 1 320px;
+  flex: 1 1 360px;
   display: flex;
   justify-content: center;
 }
@@ -1372,10 +1431,42 @@ p:last-child {
 .loop-diagrams {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
   width: 100%;
   max-width: 480px;
+}
+
+.loop-continuum-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.loop-continuum-connector__line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.15), transparent);
+}
+
+.loop-continuum-connector__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease;
+}
+
+.loop-continuum-connector__badge:hover {
+  transform: translateY(2px);
 }
 
 .loop-diagram-svg {
@@ -2307,6 +2398,10 @@ p:last-child {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
+  .two-col__text {
+    position: static;
+  }
+
   .site-footer__inner {
     flex-direction: column;
   }
