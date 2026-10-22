@@ -1247,7 +1247,7 @@ p:last-child {
   text-decoration: underline;
 }
 
-/* ---------- Interest card video thumbnail ---------- */
+/* ---------- Interest card video thumbnail & in-page player ---------- */
 
 .interest-card__video {
   display: block;
@@ -1257,18 +1257,31 @@ p:last-child {
   border: none;
   border-radius: 16px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
   position: relative;
   text-decoration: none;
+  background: #000000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, max-height 0.3s ease;
 }
 
-.interest-card__video:hover {
+.interest-card__video:not(.is-playing):hover {
   transform: scale(1.01);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
 }
 
-.interest-card__video img {
+.interest-card__video-thumb-btn {
+  display: block;
+  width: 100%;
+  height: 130px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  font: inherit;
+  color: inherit;
+}
+
+.interest-card__video-thumb-btn img {
   width: 100%;
   height: 130px;
   object-fit: cover;
@@ -1289,6 +1302,70 @@ p:last-child {
   text-align: center;
   backdrop-filter: blur(4px);
   pointer-events: none;
+  transition: background 0.15s ease;
+}
+
+.interest-card__video-thumb-btn:hover .interest-card__video-label {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.interest-card__video.is-playing {
+  max-height: 380px;
+  aspect-ratio: 16 / 9;
+  cursor: default;
+  transform: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24);
+}
+
+.interest-card__video.is-playing .interest-card__video-thumb-btn {
+  display: none;
+}
+
+.interest-card__video-player-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.interest-card__video-iframe-slot {
+  width: 100%;
+  height: 100%;
+}
+
+.interest-card__video-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 16px;
+  display: block;
+}
+
+.interest-card__video-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+  backdrop-filter: blur(4px);
+}
+
+.interest-card__video-close:hover {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.08);
 }
 
 /* ---------- Impact stripes (full-bleed) ---------- */

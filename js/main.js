@@ -724,10 +724,12 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initReuseMap();
     initPersistentCta();
+    initHeroVideoPreview();
   });
 } else {
   initReuseMap();
   initPersistentCta();
+  initHeroVideoPreview();
 }
 
 // Persistent / Sticky CTA Bar
@@ -770,6 +772,45 @@ function initPersistentCta() {
     const firstInput = document.getElementById("interest-first-name");
     if (firstInput) {
       setTimeout(() => firstInput.focus(), 600);
+    }
+  });
+}
+
+// Hero Video In-Page Player
+function initHeroVideoPreview() {
+  const container = document.getElementById("hero-video-player");
+  if (!container) return;
+
+  const trigger = container.querySelector(".interest-card__video-thumb-btn");
+  const playerWrap = container.querySelector(".interest-card__video-player-wrap");
+  const iframeSlot = container.querySelector(".interest-card__video-iframe-slot");
+  const closeBtn = container.querySelector(".interest-card__video-close");
+  const videoId = container.dataset.videoId || "TXxys99LGoM";
+
+  function playVideo() {
+    if (!iframeSlot) return;
+    iframeSlot.innerHTML = `<iframe class="interest-card__video-iframe" src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="How r.World Works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    container.classList.add("is-playing");
+    if (playerWrap) playerWrap.hidden = false;
+  }
+
+  function stopVideo() {
+    if (!iframeSlot) return;
+    iframeSlot.innerHTML = "";
+    container.classList.remove("is-playing");
+    if (playerWrap) playerWrap.hidden = true;
+    trigger?.focus();
+  }
+
+  trigger?.addEventListener("click", playVideo);
+  closeBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    stopVideo();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && container.classList.contains("is-playing")) {
+      stopVideo();
     }
   });
 }
