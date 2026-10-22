@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-21T14:01:47.150Z",
+  "timestamp": "2026-10-21T17:59:25.845Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -313,7 +313,7 @@
     },
     {
       "id": "check-row-45-loss-fees",
-      "name": "Row 45: No upfront cost and no loss fees present",
+      "name": "Row 45: No upfront cost, and no loss fees for most clients present",
       "type": "PRESENT",
       "status": "PASS",
       "details": ""

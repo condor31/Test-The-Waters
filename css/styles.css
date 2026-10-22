@@ -892,18 +892,60 @@ p:last-child {
   cursor: pointer;
 }
 
-.wash-hub-marker:hover .wash-hub-pin {
-  transform: scale(1.3);
-  transform-origin: center;
-}
-
-.wash-hub-pin {
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+.wash-hub-hit {
+  cursor: pointer;
+  pointer-events: all;
 }
 
 .wash-hub-pulse {
+  pointer-events: none;
   animation: washHubPulse 2.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform-origin: center;
+}
+
+.wash-hub-pin {
+  pointer-events: none;
+}
+
+.wash-hub-outer {
+  pointer-events: none;
+  transition: fill 0.15s ease, stroke 0.15s ease, stroke-width 0.15s ease;
+}
+
+.wash-hub-inner {
+  pointer-events: none;
+  transition: fill 0.15s ease;
+}
+
+/* Simplified, calm hover state: zero size change, zero transform, zero bounce */
+.wash-hub-marker:hover .wash-hub-outer {
+  fill: #ffffff;
+  stroke: #ff0099;
+  stroke-width: 2.75px;
+}
+
+.wash-hub-marker:hover .wash-hub-inner {
+  fill: #ff0099;
+}
+
+.wash-hub-marker:hover .wash-hub-pulse {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Legend hover highlight: clean, stationary highlight */
+.wash-hubs-group.is-legend-active .wash-hub-outer {
+  fill: #ffffff;
+  stroke: #ff0099;
+  stroke-width: 3px;
+}
+
+.wash-hubs-group.is-legend-active .wash-hub-inner {
+  fill: #ff0099;
+}
+
+.wash-hubs-group.is-legend-active .wash-hub-pulse {
+  opacity: 0;
+  transition: opacity 0.15s ease;
 }
 
 @keyframes washHubPulse {
@@ -1763,6 +1805,291 @@ p:last-child {
 
   .why-now__circle--right img {
     object-position: center 40%;
+  }
+}
+
+/* ---------- Partner Logos on White Section ---------- */
+
+.partner-logos-section {
+  background: var(--white);
+  color: var(--grey);
+  padding-block: clamp(64px, 7vw, 104px);
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.partner-logos-inner {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(36px, 4.5vw, 52px);
+}
+
+.partner-logos__header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.partner-logos__eyebrow {
+  color: var(--grey);
+  opacity: 0.65;
+  margin: 0;
+}
+
+.partner-logos__lead {
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.5;
+  color: #4a4a4a;
+  max-width: 780px;
+  margin: 0;
+}
+
+.partner-logos__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  column-gap: clamp(16px, 2.5vw, 36px);
+  row-gap: clamp(24px, 3.5vw, 40px);
+  padding-block: 16px;
+}
+
+.partner-logo-item {
+  width: 100%;
+  min-width: 0;
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-logo-item:hover {
+  transform: translateY(-4px);
+}
+
+.partner-logo-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+.partner-logo-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Optical volume normalization - all 15 logos equalized in visual area */
+.partner-logo-item--coke img {
+  max-height: 33px;
+  max-width: 105px;
+}
+
+.partner-logo-item--alaska img {
+  max-height: 48px;
+  max-width: 125px;
+}
+
+.partner-logo-item--u2 img {
+  max-height: 70px;
+  max-width: 82px;
+}
+
+.partner-logo-item--cryptocom img {
+  max-height: 42px;
+  max-width: 142px;
+}
+
+.partner-logo-item--red-rocks img {
+  max-height: 56px;
+  max-width: 108px;
+}
+
+.partner-logo-item--aeg img {
+  max-height: 39px;
+  max-width: 86px;
+}
+
+.partner-logo-item--coliseum img {
+  max-height: 74px;
+  max-width: 84px;
+}
+
+.partner-logo-item--imp img {
+  max-height: 60px;
+  max-width: 98px;
+}
+
+.partner-logo-item--sb-bowl img {
+  max-height: 56px;
+  max-width: 58px;
+}
+
+.partner-logo-item--warped img {
+  max-height: 66px;
+  max-width: 90px;
+}
+
+.partner-logo-item--billie img {
+  max-height: 40px;
+  max-width: 136px;
+}
+
+.partner-logo-item--jack img {
+  max-height: 42px;
+  max-width: 136px;
+}
+
+.partner-logo-item--maggie img {
+  max-height: 40px;
+  max-width: 142px;
+}
+
+.partner-logo-item--saints img {
+  max-height: 68px;
+  max-width: 92px;
+}
+
+.partner-logo-item--flog-gnaw img {
+  max-height: 62px;
+  max-width: 92px;
+}
+
+@media (max-width: 960px) {
+  .partner-logos__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 32px;
+  }
+  .partner-logo-item {
+    height: 84px;
+  }
+}
+
+@media (max-width: 600px) {
+  .partner-logos__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+    row-gap: 24px;
+  }
+  .partner-logo-item {
+    height: 72px;
+    padding: 6px 10px;
+  }
+  .partner-logo-item:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+/* ---------- Partner Quote / Testimonial ---------- */
+
+.partner-quote {
+  margin: 8px 0 0 0;
+  width: 100%;
+  max-width: 980px;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--magenta);
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.partner-quote__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partner-quote__mark {
+  color: var(--magenta);
+  opacity: 0.85;
+}
+
+.partner-quote__text {
+  margin: 0;
+  padding: 0;
+}
+
+.partner-quote__text p {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.6;
+  color: #24272a;
+}
+
+.partner-quote__attribution {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.partner-quote__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.partner-quote__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.partner-quote__author {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--black);
+}
+
+.partner-quote__role {
+  font-size: 14px;
+  color: #616569;
+}
+
+@media (max-width: 600px) {
+  .partner-quote {
+    padding: 22px 18px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+  .partner-quote__attribution {
+    gap: 12px;
+    padding-top: 14px;
+  }
+  .partner-quote__avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .partner-quote__author {
+    font-size: 15px;
+  }
+  .partner-quote__role {
+    font-size: 13px;
+    line-height: 1.35;
   }
 }
 

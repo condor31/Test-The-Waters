@@ -479,7 +479,7 @@ async function checkUrlStatus(url) {
       { id: 'check-row-35-regulatory-intro', name: 'Row 35: recognize reuse compliance pathway present', text: 'Several states have enacted extended producer responsibility (EPR) laws that recognize reuse as a way for producers to comply' },
       { id: 'check-row-37-pending-bills', name: 'Row 37: 12+ other states present without fines', text: 'EPR bills have been introduced in 12+ other states' },
       { id: 'check-row-44-closed-loop-soften', name: 'Row 44: We believe r.World has solved closed-loop reuse present', text: 'We believe r.World has solved closed-loop reuse' },
-      { id: 'check-row-45-loss-fees', name: 'Row 45: No upfront cost and no loss fees present', text: 'No upfront cost and no loss fees.' },
+      { id: 'check-row-45-loss-fees', name: 'Row 45: No upfront cost, and no loss fees for most clients present', text: 'No upfront cost, and no loss fees for most clients.' },
       { id: 'check-row-46-ecolab', name: 'Row 46: Ecolab Science Certified link present', text: 'Ecolab Science Certified' },
       { id: 'check-row-47-rfid', name: 'Row 47: item tracking and automated impact reports present', text: 'item tracking, automated impact reports' },
       { id: 'check-row-49-why-now-h3', name: 'Row 49: Several States Now Require H3 present', text: 'Several States Now Require What r.World Has Been Working On Since 2017' }

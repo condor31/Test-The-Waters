@@ -1,4 +1,4 @@
-import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES, WASH_HUBS } from "./map-config.js?v=20261015_03";
+import { MAP_CATEGORIES, STATE_STATUSES, STATE_NAMES, WASH_HUBS } from "./map-config.js?v=20261021_04";
 import confetti from "./confetti.js";
 
 const announcementBar = document.getElementById("announcement-bar");
@@ -580,11 +580,8 @@ function initReuseMap() {
       const catId = item.getAttribute("data-category");
       item.addEventListener("mouseenter", () => {
         if (catId === "hubs") {
-          const hubs = mapSvg.querySelectorAll(".wash-hub-marker");
-          hubs.forEach(h => {
-            const pin = h.querySelector(".wash-hub-pin");
-            if (pin) pin.style.transform = "scale(1.4)";
-          });
+          const hubsGroup = mapSvg.querySelector(".wash-hubs-group");
+          if (hubsGroup) hubsGroup.classList.add("is-legend-active");
           return;
         }
         stateElements.forEach((el) => {
@@ -595,11 +592,8 @@ function initReuseMap() {
       });
       item.addEventListener("mouseleave", () => {
         if (catId === "hubs") {
-          const hubs = mapSvg.querySelectorAll(".wash-hub-marker");
-          hubs.forEach(h => {
-            const pin = h.querySelector(".wash-hub-pin");
-            if (pin) pin.style.transform = "scale(1)";
-          });
+          const hubsGroup = mapSvg.querySelector(".wash-hubs-group");
+          if (hubsGroup) hubsGroup.classList.remove("is-legend-active");
           return;
         }
         stateElements.forEach((el) => {
@@ -624,7 +618,7 @@ function initReuseMap() {
       g.setAttribute("class", "wash-hub-marker");
       g.setAttribute("data-hub", hub.id);
 
-      // Pulse ring
+      // Pulse ring (decorative, pointer-events: none in CSS)
       const pulse = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       pulse.setAttribute("class", "wash-hub-pulse");
       pulse.setAttribute("cx", hub.x);
@@ -634,11 +628,12 @@ function initReuseMap() {
       pulse.setAttribute("stroke", "#FFD100");
       pulse.setAttribute("stroke-width", "2");
 
-      // Pin body
+      // Pin body (decorative, pointer-events: none in CSS)
       const pin = document.createElementNS("http://www.w3.org/2000/svg", "g");
       pin.setAttribute("class", "wash-hub-pin");
 
       const outerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      outerDot.setAttribute("class", "wash-hub-outer");
       outerDot.setAttribute("cx", hub.x);
       outerDot.setAttribute("cy", hub.y);
       outerDot.setAttribute("r", "7");
@@ -647,10 +642,20 @@ function initReuseMap() {
       outerDot.setAttribute("stroke-width", "2");
 
       const innerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      innerDot.setAttribute("class", "wash-hub-inner");
       innerDot.setAttribute("cx", hub.x);
       innerDot.setAttribute("cy", hub.y);
       innerDot.setAttribute("r", "3");
       innerDot.setAttribute("fill", "#151515");
+
+      // Snug stationary hit target matching the dot (never transforms)
+      const hitArea = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      hitArea.setAttribute("class", "wash-hub-hit");
+      hitArea.setAttribute("cx", hub.x);
+      hitArea.setAttribute("cy", hub.y);
+      hitArea.setAttribute("r", "10");
+      hitArea.setAttribute("fill", "transparent");
+      hitArea.setAttribute("stroke", "none");
 
       const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
       title.textContent = `r.World Wash Hub: ${hub.name}`;
@@ -660,19 +665,17 @@ function initReuseMap() {
       g.appendChild(title);
       g.appendChild(pulse);
       g.appendChild(pin);
+      g.appendChild(hitArea);
 
+      // Anchored tooltip: locks firmly above the hub without cursor jitter/waggling
       g.addEventListener("mouseenter", () => {
         let tt = document.querySelector(".reuse-map__tooltip");
         if (tt) {
           tt.textContent = `r.World Wash Hub: ${hub.name}`;
+          const rect = hitArea.getBoundingClientRect();
+          tt.style.left = `${rect.left + rect.width / 2 + window.scrollX}px`;
+          tt.style.top = `${rect.top + window.scrollY - 6}px`;
           tt.style.opacity = "1";
-        }
-      });
-      g.addEventListener("mousemove", (e) => {
-        let tt = document.querySelector(".reuse-map__tooltip");
-        if (tt) {
-          tt.style.left = `${e.pageX}px`;
-          tt.style.top = `${e.pageY}px`;
         }
       });
       g.addEventListener("mouseleave", () => {

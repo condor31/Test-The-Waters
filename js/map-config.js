@@ -56,11 +56,11 @@ export const STATE_STATUSES = {
 };
 
 export const WASH_HUBS = [
-  { id: "la", name: "Los Angeles", x: 122, y: 378 },
-  { id: "sf", name: "San Francisco Bay Area", x: 58, y: 262 },
-  { id: "den", name: "Denver", x: 366, y: 262 },
-  { id: "msp", name: "Minneapolis", x: 538, y: 178 },
-  { id: "dc", name: "Baltimore / D.C.", x: 806, y: 248 }
+  { id: "la", name: "Los Angeles", x: 86, y: 355 },
+  { id: "sf", name: "San Francisco Bay Area", x: 38, y: 257 },
+  { id: "den", name: "Denver", x: 328, y: 258 },
+  { id: "msp", name: "Minneapolis", x: 526, y: 150 },
+  { id: "dc", name: "Baltimore / D.C.", x: 804, y: 249 }
 ];
 
 export const STATE_NAMES = {
