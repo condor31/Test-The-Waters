@@ -769,6 +769,7 @@ function initPersistentCta() {
 
   const persistentBtn = persistentCta.querySelector(".persistent-cta__btn");
   persistentBtn?.addEventListener("click", () => {
+    persistentCta.classList.add("is-hidden");
     const firstInput = document.getElementById("interest-first-name");
     if (firstInput) {
       setTimeout(() => firstInput.focus(), 600);
