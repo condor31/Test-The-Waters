@@ -393,6 +393,8 @@ p:last-child {
 }
 
 .hero__heading {
+  position: relative;
+  z-index: 1;
   flex: 1 1 400px;
   max-width: 680px;
   display: flex;
