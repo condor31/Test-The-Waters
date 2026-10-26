@@ -2197,6 +2197,25 @@ p:last-child {
   max-width: 92px;
 }
 
+.partner-logo-item--sphere img {
+  max-height: 28px;
+  max-width: 140px;
+}
+
+.partner-logo-item--pga img {
+  max-height: 60px;
+  max-width: 54px;
+}
+
+@media (min-width: 961px) {
+  .partner-logo-item:nth-child(16) {
+    grid-column-start: 2;
+  }
+  .partner-logo-item:nth-child(17) {
+    grid-column-start: 4;
+  }
+}
+
 @media (max-width: 960px) {
   .partner-logos__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
