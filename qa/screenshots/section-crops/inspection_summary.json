@@ -1,0 +1,227 @@
+[
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": -21778,
+      "bottom": -21181.625,
+      "left": 24,
+      "right": 296,
+      "width": 272
+    },
+    "cardRect": {
+      "top": -21157.625,
+      "bottom": -19877.796875,
+      "left": 24,
+      "right": 296,
+      "width": 272
+    },
+    "overlap": false,
+    "viewport": "320"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 114.375,
+    "bottom": 713.9957275390625,
+    "viewport": "320"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": -20192,
+      "bottom": -19659.625,
+      "left": 24,
+      "right": 351,
+      "width": 327
+    },
+    "cardRect": {
+      "top": -19635.625,
+      "bottom": -18434.078125,
+      "left": 24,
+      "right": 351,
+      "width": 327
+    },
+    "overlap": false,
+    "viewport": "375"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 114.375,
+    "bottom": 781.1953735351562,
+    "viewport": "375"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": 137.34375,
+      "bottom": 343.390625,
+      "left": 33.34375,
+      "right": 633.65625,
+      "width": 600.3125
+    },
+    "cardRect": {
+      "top": 370.0625,
+      "bottom": 1205.90625,
+      "left": 33.34375,
+      "right": 633.65625,
+      "width": 600.3125
+    },
+    "overlap": false,
+    "viewport": "667x375_land"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 96.1875,
+    "bottom": 471.1875,
+    "viewport": "667x375_land"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": -16740.609375,
+      "bottom": -16509.109375,
+      "left": 38.390625,
+      "right": 718.390625,
+      "width": 680
+    },
+    "cardRect": {
+      "top": -16478.390625,
+      "bottom": -15686.796875,
+      "left": 38.390625,
+      "right": 658.390625,
+      "width": 620
+    },
+    "overlap": false,
+    "viewport": "768"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 96.1875,
+    "bottom": 1120.1875,
+    "viewport": "768"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": 125,
+      "bottom": 389.78125,
+      "left": 45,
+      "right": 725,
+      "width": 680
+    },
+    "cardRect": {
+      "top": 425.78125,
+      "bottom": 1244.875,
+      "left": 45,
+      "right": 665,
+      "width": 620
+    },
+    "overlap": false,
+    "viewport": "900"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 60,
+    "bottom": 800,
+    "viewport": "900"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": 131.1875,
+      "bottom": 787.296875,
+      "left": 48,
+      "right": 451.515625,
+      "width": 403.515625
+    },
+    "cardRect": {
+      "top": 131.1875,
+      "bottom": 1034.75,
+      "left": 492.46875,
+      "right": 976,
+      "width": 483.53125
+    },
+    "overlap": false,
+    "viewport": "1024x500_short"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 60,
+    "bottom": 500,
+    "viewport": "1024x500_short"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": -17164,
+      "bottom": -16480.90625,
+      "left": 48,
+      "right": 576,
+      "width": 528
+    },
+    "cardRect": {
+      "top": -17164,
+      "bottom": -16304.15625,
+      "left": 624,
+      "right": 1232,
+      "width": 608
+    },
+    "overlap": false,
+    "viewport": "1280"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 60,
+    "bottom": 799.934326171875,
+    "viewport": "1280"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": 144,
+      "bottom": 786.765625,
+      "left": 48,
+      "right": 724,
+      "width": 676
+    },
+    "cardRect": {
+      "top": 144,
+      "bottom": 1003.84375,
+      "left": 772,
+      "right": 1392,
+      "width": 620
+    },
+    "overlap": false,
+    "viewport": "1440"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 60,
+    "bottom": 900,
+    "viewport": "1440"
+  },
+  {
+    "type": "HERO_LAYOUT",
+    "headingRect": {
+      "top": 120,
+      "bottom": 788,
+      "left": 48,
+      "right": 728,
+      "width": 680
+    },
+    "cardRect": {
+      "top": 120,
+      "bottom": 979.84375,
+      "left": 1252,
+      "right": 1872,
+      "width": 620
+    },
+    "overlap": false,
+    "viewport": "1920"
+  },
+  {
+    "type": "PERSISTENT_CTA",
+    "height": 60,
+    "bottom": 1080,
+    "viewport": "1920"
+  }
+]
