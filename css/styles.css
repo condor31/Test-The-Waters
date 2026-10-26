@@ -399,7 +399,25 @@ p:last-child {
   max-width: 680px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
+}
+
+.hero .eyebrow {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero__divider {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--white);
+  border: none;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
@@ -505,9 +523,9 @@ p:last-child {
 
 @media (max-width: 640px) {
   .hero .eyebrow {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.3;
-    letter-spacing: 4px;
+    letter-spacing: normal;
   }
 
   .hero .display {
