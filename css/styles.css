@@ -3219,7 +3219,7 @@ p:last-child {
 .section--sources {
   background-color: #f7f9fa;
   border-top: 1px solid #e2e8f0;
-  padding: 48px 0;
+  padding: 48px var(--section-pad-x);
 }
 
 .sources-heading {
@@ -3227,6 +3227,7 @@ p:last-child {
   font-weight: 700;
   margin-bottom: 16px;
   color: #1a202c;
+  padding-left: 24px;
 }
 
 .sources-list {
