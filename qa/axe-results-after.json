@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-26T02:50:19.322Z",
+  "defaultState": {
+    "violationsCount": 0,
+    "violations": [],
+    "incompleteCount": 3,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "impact": "serious",
+        "description": "Ensure ARIA attributes are not prohibited for an element's role",
+        "nodesCount": 1
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodesCount": 71
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "nodesCount": 1
+      }
+    ],
+    "passesCount": 35
+  },
+  "heroFormErrorState": {
+    "violationsCount": 0,
+    "violations": []
+  },
+  "videoOpenState": {
+    "violationsCount": 0,
+    "violations": []
+  }
+}

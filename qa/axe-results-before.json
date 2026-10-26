@@ -1,0 +1,241 @@
+{
+  "timestamp": "2026-10-26T02:08:31.489Z",
+  "defaultState": {
+    "violationsCount": 3,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "nodesCount": 3,
+        "nodes": [
+          {
+            "html": "<p class=\"impact-stripe__label\">single-use items replaced</p>",
+            "target": [
+              ".impact-stripe--magenta.impact-stripe:nth-child(1) > .impact-stripe__label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #ff0099, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p class=\"impact-stripe__label\">have implemented r.World reuse programs</p>",
+            "target": [
+              ".impact-stripe--magenta.impact-stripe:nth-child(7) > .impact-stripe__label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #ff0099, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p class=\"eyebrow partner-logos__eyebrow\">Proven in the Field</p>",
+            "target": [
+              ".partner-logos__eyebrow"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.13 (foreground color: #8f9294, background color: #ffffff, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "help": "Elements must have their visible text as part of their accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=axeAPI",
+        "tags": [
+          "cat.semantics",
+          "wcag21a",
+          "wcag253",
+          "EN-301-549",
+          "EN-9.2.5.3",
+          "RGAAv4",
+          "RGAA-6.1.5"
+        ],
+        "nodesCount": 1,
+        "nodes": [
+          {
+            "html": "<button class=\"interest-card__video-thumb-btn\" type=\"button\" aria-label=\"Play video: How r.World Works (1:20)\">",
+            "target": [
+              ".interest-card__video-thumb-btn"
+            ],
+            "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+          }
+        ]
+      },
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "description": "Ensure touch targets have sufficient size and space",
+        "help": "All touch targets must be 24px large, or leave sufficient space",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/target-size?application=axeAPI",
+        "tags": [
+          "cat.sensory-and-visual-cues",
+          "wcag22aa",
+          "wcag258",
+          "EN-301-549v4",
+          "EN-9.2.5.8"
+        ],
+        "nodesCount": 13,
+        "nodes": [
+          {
+            "html": "<button class=\"carousel__dot is-active\" type=\"button\" aria-label=\"Go to slide 1\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 1\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 2\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 2\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 3\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 3\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 4\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 4\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 5\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 5\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 6\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 6\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 7\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 7\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 8\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 8\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 9\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 9\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 10\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 10\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 11\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 11\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 12\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 12\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          },
+          {
+            "html": "<button class=\"carousel__dot\" type=\"button\" aria-label=\"Go to slide 13\" data-carousel-dot=\"\"></button>",
+            "target": [
+              "button[aria-label=\"Go to slide 13\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (10px by 10px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+          }
+        ]
+      }
+    ],
+    "incompleteCount": 2,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodesCount": 68
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "nodesCount": 1
+      }
+    ],
+    "passesCount": 33
+  },
+  "heroFormErrorState": {
+    "violationsCount": 3,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodesCount": 3
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "nodesCount": 1
+      },
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "description": "Ensure touch targets have sufficient size and space",
+        "nodesCount": 13
+      }
+    ]
+  },
+  "videoOpenState": {
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodesCount": 3
+      },
+      {
+        "id": "target-size",
+        "impact": "serious",
+        "description": "Ensure touch targets have sufficient size and space",
+        "nodesCount": 13
+      }
+    ]
+  }
+}

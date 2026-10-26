@@ -344,7 +344,8 @@ if (interestForm) {
         if (errorEl) {
           errorEl.textContent = formatMailchimpError(response.msg);
           errorEl.hidden = false;
-          errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          errorEl.setAttribute("tabindex", "-1");
+          errorEl.focus();
         }
         return;
       }
@@ -447,7 +448,8 @@ if (heroInterestForm) {
         if (errorEl) {
           errorEl.textContent = formatMailchimpError(response.msg);
           errorEl.hidden = false;
-          errorEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          errorEl.setAttribute("tabindex", "-1");
+          errorEl.focus();
         }
         return;
       }
@@ -485,6 +487,14 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const dots = [...(carousel.parentElement.querySelectorAll("[data-carousel-dot]") || [])];
   const slides = [...track.children];
 
+  function getStep() {
+    const firstSlide = slides[0];
+    if (!firstSlide) return 320;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.columnGap || style.gap || 24);
+    return firstSlide.offsetWidth + gap;
+  }
+
   function closestIndex() {
     const maxScroll = track.scrollWidth - track.clientWidth;
     if (maxScroll > 0 && track.scrollLeft >= maxScroll - 12) {
@@ -508,17 +518,36 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     if (slide) slide.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
   }
 
+  function scrollStep(direction) {
+    const step = getStep();
+    track.scrollBy({ left: direction * step, behavior: "smooth" });
+  }
+
   function updateUI() {
     const idx = closestIndex();
     const maxScroll = track.scrollWidth - track.clientWidth;
     if (prevBtn) prevBtn.disabled = track.scrollLeft <= 4;
     if (nextBtn) nextBtn.disabled = track.scrollLeft >= maxScroll - 4;
-    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === idx));
+    dots.forEach((dot, i) => {
+      const isActive = i === idx;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+    });
   }
 
-  if (prevBtn) prevBtn.addEventListener("click", () => scrollToIndex(closestIndex() - 1));
-  if (nextBtn) nextBtn.addEventListener("click", () => scrollToIndex(closestIndex() + 1));
+  if (prevBtn) prevBtn.addEventListener("click", () => scrollStep(-1));
+  if (nextBtn) nextBtn.addEventListener("click", () => scrollStep(1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => scrollToIndex(i)));
+
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      scrollStep(-1);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      scrollStep(1);
+    }
+  });
 
   let ticking = false;
   track.addEventListener(
@@ -575,10 +604,14 @@ function initReuseMap() {
 
     legendContainer.innerHTML = categoriesHtml + hubLegendHtml;
 
-    // Interactive highlight on legend hover
+    // Interactive highlight on legend hover & keyboard focus
     legendContainer.querySelectorAll(".reuse-legend-item").forEach((item) => {
       const catId = item.getAttribute("data-category");
-      item.addEventListener("mouseenter", () => {
+      item.setAttribute("tabindex", "0");
+      item.setAttribute("role", "button");
+      item.setAttribute("aria-label", `Filter map by ${item.textContent.trim()}`);
+
+      const activate = () => {
         if (catId === "hubs") {
           const hubsGroup = mapSvg.querySelector(".wash-hubs-group");
           if (hubsGroup) hubsGroup.classList.add("is-legend-active");
@@ -589,8 +622,9 @@ function initReuseMap() {
           const stateCat = STATE_STATUSES[code] || "other";
           el.style.opacity = stateCat === catId ? "1" : "0.35";
         });
-      });
-      item.addEventListener("mouseleave", () => {
+      };
+
+      const deactivate = () => {
         if (catId === "hubs") {
           const hubsGroup = mapSvg.querySelector(".wash-hubs-group");
           if (hubsGroup) hubsGroup.classList.remove("is-legend-active");
@@ -599,6 +633,19 @@ function initReuseMap() {
         stateElements.forEach((el) => {
           el.style.opacity = "1";
         });
+      };
+
+      item.addEventListener("mouseenter", activate);
+      item.addEventListener("mouseleave", deactivate);
+      item.addEventListener("focus", activate);
+      item.addEventListener("blur", deactivate);
+      item.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activate();
+        } else if (e.key === "Escape") {
+          deactivate();
+        }
       });
     });
   }
@@ -617,6 +664,9 @@ function initReuseMap() {
       const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
       g.setAttribute("class", "wash-hub-marker");
       g.setAttribute("data-hub", hub.id);
+      g.setAttribute("tabindex", "0");
+      g.setAttribute("role", "button");
+      g.setAttribute("aria-label", `r.World Wash Hub: ${hub.name}`);
 
       // Pulse ring (decorative, pointer-events: none in CSS)
       const pulse = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -668,7 +718,7 @@ function initReuseMap() {
       g.appendChild(hitArea);
 
       // Anchored tooltip: locks firmly above the hub without cursor jitter/waggling
-      g.addEventListener("mouseenter", () => {
+      const showTooltip = () => {
         let tt = document.querySelector(".reuse-map__tooltip");
         if (tt) {
           tt.textContent = `r.World Wash Hub: ${hub.name}`;
@@ -677,11 +727,25 @@ function initReuseMap() {
           tt.style.top = `${rect.top + window.scrollY - 6}px`;
           tt.style.opacity = "1";
         }
-      });
-      g.addEventListener("mouseleave", () => {
+      };
+
+      const hideTooltip = () => {
         let tt = document.querySelector(".reuse-map__tooltip");
         if (tt) {
           tt.style.opacity = "0";
+        }
+      };
+
+      g.addEventListener("mouseenter", showTooltip);
+      g.addEventListener("mouseleave", hideTooltip);
+      g.addEventListener("focus", showTooltip);
+      g.addEventListener("blur", hideTooltip);
+      g.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          showTooltip();
+        } else if (e.key === "Escape") {
+          hideTooltip();
         }
       });
 
@@ -704,19 +768,23 @@ function initReuseMap() {
     const category = MAP_CATEGORIES.find((c) => c.id === statusId);
     const statusText = category ? category.label.replace(/\s*\(\d+\s*states\)/i, "") : "Other";
 
-    el.addEventListener("mouseenter", () => {
+    const showStateTooltip = (x, y) => {
       tooltip.textContent = `${stateName}: ${statusText}`;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y}px`;
       tooltip.style.opacity = "1";
-    });
+    };
 
+    const hideStateTooltip = () => {
+      tooltip.style.opacity = "0";
+    };
+
+    el.addEventListener("mouseenter", (e) => showStateTooltip(e.pageX, e.pageY));
     el.addEventListener("mousemove", (e) => {
       tooltip.style.left = `${e.pageX}px`;
       tooltip.style.top = `${e.pageY}px`;
     });
-
-    el.addEventListener("mouseleave", () => {
-      tooltip.style.opacity = "0";
-    });
+    el.addEventListener("mouseleave", hideStateTooltip);
   });
 }
 
@@ -792,7 +860,15 @@ function initHeroVideoPreview() {
     if (!iframeSlot) return;
     iframeSlot.innerHTML = `<iframe class="interest-card__video-iframe" src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="How r.World Works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
     container.classList.add("is-playing");
-    if (playerWrap) playerWrap.hidden = false;
+    if (playerWrap) {
+      playerWrap.hidden = false;
+      playerWrap.setAttribute("role", "dialog");
+      playerWrap.setAttribute("aria-modal", "true");
+      playerWrap.setAttribute("aria-label", "How r.World Works video player");
+    }
+    setTimeout(() => {
+      closeBtn?.focus();
+    }, 50);
   }
 
   function stopVideo() {
@@ -809,9 +885,86 @@ function initHeroVideoPreview() {
     stopVideo();
   });
 
+  playerWrap?.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      const focusables = playerWrap.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1']), iframe");
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && container.classList.contains("is-playing")) {
       stopVideo();
     }
   });
 }
+
+// Hero Background Video Pause/Play & prefers-reduced-motion
+function initHeroBackgroundVideo() {
+  const toggleBtn = document.querySelector("[data-video-toggle]");
+  const video = document.querySelector(".hero__media video");
+  if (!toggleBtn || !video) return;
+
+  const pauseIcon = toggleBtn.querySelector(".hero__video-toggle-icon--pause");
+  const playIcon = toggleBtn.querySelector(".hero__video-toggle-icon--play");
+
+  function setPausedState(isPaused) {
+    if (isPaused) {
+      video.pause();
+      toggleBtn.setAttribute("aria-label", "Play background video");
+      if (pauseIcon) pauseIcon.style.display = "none";
+      if (playIcon) playIcon.style.display = "block";
+    } else {
+      video.play().catch(() => {});
+      toggleBtn.setAttribute("aria-label", "Pause background video");
+      if (pauseIcon) pauseIcon.style.display = "block";
+      if (playIcon) playIcon.style.display = "none";
+    }
+  }
+
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motionQuery.matches) {
+    setPausedState(true);
+  }
+
+  motionQuery.addEventListener("change", (e) => {
+    if (e.matches) {
+      setPausedState(true);
+    }
+  });
+
+  toggleBtn.addEventListener("click", () => {
+    setPausedState(!video.paused);
+  });
+}
+
+// Setup live validation accessibility helpers
+[heroInterestForm, interestForm].forEach((form) => {
+  if (!form) return;
+  form.querySelectorAll(".cta-form__input").forEach((input) => {
+    input.addEventListener("input", () => {
+      input.removeAttribute("aria-invalid");
+    });
+    input.addEventListener("invalid", () => {
+      input.setAttribute("aria-invalid", "true");
+    });
+  });
+});
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    initHeroBackgroundVideo();
+  });
+} else {
+  initHeroBackgroundVideo();
+}
+

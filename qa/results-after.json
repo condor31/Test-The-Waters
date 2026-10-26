@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-21T17:59:25.845Z",
+  "timestamp": "2026-10-26T02:42:31.900Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -63,7 +63,7 @@
       "id": "check-row-10-form-disclaimer",
       "name": "Mandated disclaimer directly under form submit buttons",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": "Count: 2"
     },
     {
@@ -112,8 +112,8 @@
       "id": "check-row-20-automation",
       "name": "Automation copy updated to 14M capacity wording",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "A single automated dish line can handle up to 14M items a year on one shift, with capacity in place for the demand ahead."
+      "status": "FAIL",
+      "details": "r.World's automated dish line can handle up to 14M items a year on one shift, with capacity in place for the demand ahead."
     },
     {
       "id": "check-row-21-regulatory-timing",
@@ -154,7 +154,7 @@
       "id": "check-row-34-bins-unchanged",
       "name": "Row 34 copy intact (SKIPPED-not-actionable)",
       "type": "UNCHANGED",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -175,7 +175,7 @@
       "id": "check-row-39-sb54-reuse",
       "name": "SB 54 reuse compliance disclaimer added verbatim",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -196,14 +196,14 @@
       "id": "check-row-42-markets",
       "name": "Markets softened and operating footprint wording present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
       "id": "check-row-43-open-loop",
       "name": "Open loop softened copy present and old claim absent",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -217,7 +217,7 @@
       "id": "check-row-16-hero-superlative",
       "name": "Row 16: Leading reuse infrastructure copy present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -273,21 +273,21 @@
       "id": "check-row-31-single-use-recycling",
       "name": "Row 31: U.S. 9% in 2018 present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
       "id": "check-row-32-volume",
       "name": "Row 32: billions of single-use cups present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
       "id": "check-row-33-rapidly-filling",
       "name": "Row 33: landfills rapidly reaching capacity present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -308,7 +308,7 @@
       "id": "check-row-44-closed-loop-soften",
       "name": "Row 44: We believe r.World has solved closed-loop reuse present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -343,8 +343,8 @@
       "id": "check-global-footnotes-sequence",
       "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
       "type": "STRUCTURE",
-      "status": "PASS",
-      "details": "{\"totalRefs\":33,\"uniqueRefs\":28,\"maxRef\":28,\"continuous\":true,\"uniqueInOrder\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],\"sourceItemCount\":28}"
+      "status": "FAIL",
+      "details": "{\"totalRefs\":31,\"uniqueRefs\":26,\"maxRef\":28,\"continuous\":false,\"uniqueInOrder\":[1,2,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],\"sourceItemCount\":28}"
     },
     {
       "id": "check-footnote-not-bare-https://www.boldreuse.com/",
@@ -651,7 +651,7 @@
       "id": "check-banned-nine-years-ahead",
       "name": "Banned phrase absent: \"nine years ahead\"",
       "type": "ABSENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -666,14 +666,14 @@
       "name": "Clicking banner anchor scrolls toward legend target",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"scrolled\":true,\"scrollY\":778,\"targetTop\":15836.046875}"
+      "details": "{\"scrolled\":true,\"scrollY\":1068,\"targetTop\":17032.390625}"
     },
     {
       "id": "check-viewport-390px",
       "name": "Viewport 390px no overflow, banner & legend visible",
       "type": "STRUCTURE",
-      "status": "PASS",
-      "details": "{\"clientWidth\":390,\"scrollWidth\":390,\"hasHorizontalOverflow\":false,\"barVisible\":true,\"legendVisible\":true}"
+      "status": "FAIL",
+      "details": "{\"clientWidth\":390,\"scrollWidth\":401,\"hasHorizontalOverflow\":true,\"barVisible\":true,\"legendVisible\":true}"
     },
     {
       "id": "check-viewport-1440px",
@@ -706,8 +706,8 @@
   ],
   "summary": {
     "total": 100,
-    "passed": 97,
-    "failed": 0,
+    "passed": 83,
+    "failed": 14,
     "unverified": 3
   }
 }

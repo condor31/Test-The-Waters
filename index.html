@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/styles.css?v=20261021_07" />
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="announcement-bar" id="announcement-bar">
   <p>Testing the waters pursuant to 17 CFR &sect; 227.206. No money is being solicited and none will be accepted. Indicating interest carries no obligation of any kind. <strong><a href="#legal-legend" class="announcement-bar__link">Full disclosure below.</a></strong></p>
@@ -37,6 +38,15 @@
 <header class="hero">
   <div class="hero__media">
     <video src="public/assets/garbage.mp4" poster="public/assets/6cc33021188a46d755c6e159a2f9452a0b31362a.jpg" autoplay loop muted playsinline aria-hidden="true"></video>
+    <button class="hero__video-toggle" type="button" aria-label="Pause background video" data-video-toggle>
+      <svg class="hero__video-toggle-icon hero__video-toggle-icon--pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+        <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+      </svg>
+      <svg class="hero__video-toggle-icon hero__video-toggle-icon--play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </button>
   </div>
   <div class="hero__scrim"></div>
 
@@ -63,17 +73,17 @@
       <div class="cta-form__grid">
         <div class="mc-field-group">
           <label class="visually-hidden" for="hero-first-name">First name *</label>
-          <input class="cta-form__input required text" type="text" id="hero-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required value="" />
+          <input class="cta-form__input required text" type="text" id="hero-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required aria-required="true" value="" />
         </div>
         <div class="mc-field-group">
           <label class="visually-hidden" for="hero-last-name">Last name *</label>
-          <input class="cta-form__input required text" type="text" id="hero-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required value="" />
+          <input class="cta-form__input required text" type="text" id="hero-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required aria-required="true" value="" />
         </div>
       </div>
       <div class="cta-form__grid">
         <div class="mc-field-group">
           <label class="visually-hidden" for="hero-interest-email">Email address *</label>
-          <input class="cta-form__input required email" type="email" id="hero-interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required value="" />
+          <input class="cta-form__input required email" type="email" id="hero-interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required aria-required="true" value="" />
         </div>
         <div class="mc-field-group">
           <label class="visually-hidden" for="hero-phone">Phone number</label>
@@ -92,7 +102,7 @@
         <input type="text" name="b_d16d76c3bd0a764ea148af923_23a13695bf" tabindex="-1" value="" />
       </div>
 
-      <div class="cta-form__error" id="hero-form-error" role="alert" hidden></div>
+      <div class="cta-form__error" id="hero-form-error" role="alert" aria-live="assertive" hidden></div>
 
       <button class="btn btn-solid-blue cta-label cta-form__submit button" type="submit" name="subscribe" id="hero-subscribe-btn">Join the Notification List</button>
 
@@ -106,7 +116,7 @@
       </div>
     </form>
 
-    <div class="cta-form__success" id="hero-interest-success" hidden>
+    <div class="cta-form__success" id="hero-interest-success" role="status" aria-live="polite" hidden>
       <div class="cta-form__success-icon" aria-hidden="true">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"></polyline>
@@ -117,17 +127,19 @@
     </div>
 
     <div class="interest-card__video" id="hero-video-player" data-video-id="TXxys99LGoM">
-      <button class="interest-card__video-thumb-btn" type="button" aria-label="Play video: How r.World Works (1:20)">
-        <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="Watch: an r.cup reusable cup, labeled &ldquo;Please return me, I&rsquo;m reusable!&rdquo;" />
+      <button class="interest-card__video-thumb-btn" type="button" aria-label="Watch: How r.World Works (1:20)">
+        <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="" />
         <span class="interest-card__video-label">Watch: How r.World Works (1:20)</span>
       </button>
-      <div class="interest-card__video-player-wrap" hidden>
+      <div class="interest-card__video-player-wrap" role="dialog" aria-modal="true" aria-label="How r.World Works video player" hidden>
         <div class="interest-card__video-iframe-slot"></div>
         <button class="interest-card__video-close" type="button" aria-label="Close video player" title="Close video">&times;</button>
       </div>
     </div>
   </div>
 </header>
+
+<main id="main-content">
 
 <div class="slide-arrow slide-arrow--cyan">
   <div class="slide-arrow__track">
@@ -191,7 +203,7 @@
             <h3 class="reuse-map-title">The reuse movement is expanding.</h3>
           </div>
           <div class="reuse-map" id="reuse-map">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" width="100%" class="reuse-map-svg" role="img" aria-label="United States map of reuse and EPR legislation">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" width="100%" class="reuse-map-svg" role="group" aria-label="United States map of reuse and EPR legislation">
   
 
 
@@ -501,7 +513,7 @@
   </div>
 
   <div class="impact-stripes-wrap">
-    <div class="impact-carousel" data-carousel>
+    <div class="impact-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Real-world impact metrics">
     <div class="impact-stripes" data-carousel-track>
       <div class="impact-stripe impact-stripe--magenta">
         <span class="impact-stripe__icon"><img src="public/assets/c19bcb8aea237ee61a19a67b1918a83718824bc1.svg" alt="" /></span>
@@ -930,53 +942,63 @@
 
 <section class="section section--grey">
   <div class="section-inner">
-    <h2 class="h2 measure--wide">One proprietary operating system with four key parts working together</h2>
+    <h2 class="h2 measure--wide">One proprietary operating system with five key parts working together</h2>
   </div>
 
   <div class="os-carousel-wrap">
     <div class="os-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="One proprietary operating system key parts">
+      <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous slide" data-carousel-prev>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
       <div class="os-grid" data-carousel-track tabindex="0">
-        <div class="os-card" role="group" aria-roledescription="slide" aria-label="1 of 4: Logistics">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="1 of 5: Logistics">
           <img class="os-card__image" src="public/assets/c397339e4a0f606266950c546b327b841ccd62ae.jpg" alt="r.World driver loading reusable cups onto a delivery truck" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Logistics</h3>
             <p>The reverse-logistics network. r.World delivers. Partners serve. Guests return. r.World collects.</p>
           </div>
         </div>
-        <div class="os-card" role="group" aria-roledescription="slide" aria-label="2 of 4: Sanitization">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="2 of 5: Sanitization">
           <img class="os-card__image" src="public/assets/sanitization.jpg" alt="r.World staff member sanitizing reusable cups at an r.World wash center machine" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Sanitization</h3>
             <p>Regional centers running <a href="https://www.ecolab.com/en-us/offerings/inst/science-certified-program" target="_blank" rel="noopener">Ecolab Science Certified&trade;</a> deep cleaning.<sup class="footnote-ref"><a href="#fn28" id="fnref28">28</a></sup> Every item inspected, then sealed in a tub before it ships.</p>
           </div>
         </div>
-        <div class="os-card" role="group" aria-roledescription="slide" aria-label="3 of 4: Automation">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="3 of 5: Automation">
           <img class="os-card__image" src="public/assets/e0cc720dc0c237c720e8c2bff195b6da3ae230c4.jpg" alt="Racks of washed reusable cups ready for automated quality inspection" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Automation</h3>
             <p>r.World's automated dish line can handle up to 14M items a year on one shift, with capacity in place for the demand ahead.</p>
           </div>
         </div>
-        <div class="os-card" role="group" aria-roledescription="slide" aria-label="4 of 4: Technology">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="4 of 5: Technology">
           <img class="os-card__image" src="public/assets/6fad519a75d46d9cd68ef1bf0a98743897a50299.jpg" alt="Stacks of QR-code tracked r.World reusable cups in wash racks" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Technology</h3>
             <p>r.Turn is our QR- and RFID-enabled platform. Ordering, live inventory, item tracking, automated impact reports.</p>
           </div>
         </div>
-        <div class="os-card" role="group" aria-roledescription="slide" aria-label="5 of 5">
+        <div class="os-card" role="group" aria-roledescription="slide" aria-label="5 of 5: Service">
+          <img class="os-card__image" src="public/assets/service.jpg" alt="r.World operations crew holding collection bags of reusable cups at a venue" loading="lazy" />
           <div class="os-card__info">
+            <h3 class="h3">Service</h3>
             <p>World-class account service, training, inventory management, signage, environmental impact reporting, etc.</p>
           </div>
         </div>
       </div>
+
+      <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next slide" data-carousel-next>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
     <div class="carousel__dots os-dots" data-carousel-dots aria-label="Operating system navigation">
       <button class="carousel__dot is-active" type="button" aria-label="Go to part 1: Logistics" data-carousel-dot></button>
       <button class="carousel__dot" type="button" aria-label="Go to part 2: Sanitization" data-carousel-dot></button>
       <button class="carousel__dot" type="button" aria-label="Go to part 3: Automation" data-carousel-dot></button>
       <button class="carousel__dot" type="button" aria-label="Go to part 4: Technology" data-carousel-dot></button>
-      <button class="carousel__dot" type="button" aria-label="Go to part 5" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to part 5: Service" data-carousel-dot></button>
     </div>
   </div>
 
@@ -1221,7 +1243,7 @@
 <section class="section section--grey" id="interested-form">
   <div class="section-inner section-inner--center">
     <div class="cta-form-card">
-      <h3 class="h3 text-black" id="interest-card-prompt">Want to be the first to know when the raise goes live?</h3>
+      <h2 class="h3 text-black" id="interest-card-prompt">Want to be the first to know when the raise goes live?</h2>
 
       <form
         class="cta-form validate"
@@ -1235,17 +1257,17 @@
         <div class="cta-form__grid">
           <div class="mc-field-group">
             <label class="visually-hidden" for="interest-first-name">First name *</label>
-            <input class="cta-form__input required text" type="text" id="interest-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required value="" />
+            <input class="cta-form__input required text" type="text" id="interest-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required aria-required="true" value="" />
           </div>
           <div class="mc-field-group">
             <label class="visually-hidden" for="interest-last-name">Last name *</label>
-            <input class="cta-form__input required text" type="text" id="interest-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required value="" />
+            <input class="cta-form__input required text" type="text" id="interest-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required aria-required="true" value="" />
           </div>
         </div>
         <div class="cta-form__grid">
           <div class="mc-field-group">
             <label class="visually-hidden" for="interest-email">Email address *</label>
-            <input class="cta-form__input required email" type="email" id="interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required value="" />
+            <input class="cta-form__input required email" type="email" id="interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required aria-required="true" value="" />
           </div>
           <div class="mc-field-group">
             <label class="visually-hidden" for="interest-phone">Phone number</label>
@@ -1286,7 +1308,7 @@
           <input type="text" name="b_d16d76c3bd0a764ea148af923_23a13695bf" tabindex="-1" value="" />
         </div>
 
-        <div class="cta-form__error" id="interest-form-error" role="alert" hidden></div>
+        <div class="cta-form__error" id="interest-form-error" role="alert" aria-live="assertive" hidden></div>
 
         <button class="btn btn-solid-blue cta-label cta-form__submit button" type="submit" name="subscribe" id="interest-subscribe-btn">Join the Notification List</button>
         <p class="form-disclaimer p-small">Joining this list does not reserve shares, allocations, pricing, priority or any investment rights. No money will be accepted.</p>
@@ -1301,7 +1323,7 @@
         </div>
       </form>
 
-      <div class="cta-form__success" id="interest-form-success" hidden>
+      <div class="cta-form__success" id="interest-form-success" role="status" aria-live="polite" hidden>
         <div class="cta-form__success-icon" aria-hidden="true">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
@@ -1316,7 +1338,7 @@
 
 <section class="section section--sources" id="sources-section">
   <div class="section-inner">
-    <h3 class="h4 sources-heading">Sources</h3>
+    <h2 class="h4 sources-heading">Sources</h2>
     <ol class="sources-list" id="sources-list">
       <li id="fn1">&lsquo;Leading&rsquo; and annual volume comparison measured by number of reusable foodware items washed annually by U.S.-based reuse providers. Based on r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records), Sep 2017&ndash;Oct 2026, compared with competitors&rsquo; publicly reported figures as of [DATE]. See <a href="https://www.boldreuse.com/" target="_blank" rel="noopener">Bold Reuse</a>.</li>
       <li id="fn2">OECD (2022), <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf" target="_blank" rel="noopener">Global Plastics Outlook: Economic Drivers, Environmental Impacts and Policy Options</a> &ndash; global plastic waste, 2019 data, p. [__]. U.S.: EPA estimates 8.7% of plastics were recycled in 2018.</li>
@@ -1349,6 +1371,7 @@
     </ol>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="site-footer__inner">
