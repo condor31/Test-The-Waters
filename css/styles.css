@@ -1196,7 +1196,7 @@ p:last-child {
   position: absolute;
   left: clamp(130px, 15vw, 240px);
   top: 50%;
-  width: min(72%, 920px);
+  width: min(84%, 1120px);
   transform: translateY(-50%);
   margin: 0;
   color: var(--white);
@@ -3190,6 +3190,7 @@ p:last-child {
   vertical-align: super;
   font-weight: 700;
   padding-left: 2px;
+  white-space: nowrap;
 }
 
 .footnote-ref a {

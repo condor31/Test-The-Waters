@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-26T03:24:50.011Z",
+  "timestamp": "2026-10-26T03:30:09.460Z",
   "defaultState": {
     "violationsCount": 0,
     "violations": [],
@@ -15,7 +15,7 @@
         "id": "color-contrast",
         "impact": "serious",
         "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
-        "nodesCount": 71
+        "nodesCount": 69
       },
       {
         "id": "label-content-name-mismatch",
