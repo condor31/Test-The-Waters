@@ -1035,15 +1035,16 @@ p:last-child {
 .reuse-legend-swatch--hub {
   width: 18px;
   height: 18px;
-  background-color: #151515;
+  background-color: #8a2be2;
   border-radius: 50% !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   vertical-align: middle;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .reuse-legend-swatch--hub svg {
@@ -1063,69 +1064,91 @@ p:last-child {
 
 .wash-hub-pulse {
   pointer-events: none;
+  stroke: rgba(255, 255, 255, 0.7);
   animation: washHubPulse 2.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .wash-hub-pin {
   pointer-events: none;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.75));
 }
 
-.wash-hub-badge,
-.wash-hub-dot,
-.wash-hub-arc,
-.wash-hub-letter,
-.wash-hub-outer,
-.wash-hub-inner {
+/* Default state: pure white */
+.wash-hub-letter {
+  fill: #ffffff !important;
+  stroke: none !important;
   pointer-events: none;
-  transition: fill 0.15s ease, stroke 0.15s ease, stroke-width 0.15s ease;
+  transition: fill 0.18s ease;
 }
 
-/* Simplified, calm hover state: highlight to vibrant r.World yellow */
-.wash-hub-marker:hover .wash-hub-badge {
-  fill: #1f1f1f;
-  stroke: #ffd100;
-  stroke-width: 2.5px;
+.wash-hub-dot {
+  fill: #ffffff !important;
+  stroke: none !important;
+  pointer-events: none;
+  transition: fill 0.18s ease;
 }
 
+.wash-hub-arc {
+  stroke: #ffffff !important;
+  fill: none !important;
+  pointer-events: none;
+  transition: stroke 0.18s ease;
+}
+
+/* Hover state: highlight to vibrant r.World yellow (#FFD100) */
 .wash-hub-marker:hover .wash-hub-letter,
-.wash-hub-marker:hover .wash-hub-dot {
-  fill: #ffd100;
+.wash-hub-marker:focus-visible .wash-hub-letter {
+  fill: #ffd100 !important;
 }
 
-.wash-hub-marker:hover .wash-hub-arc {
+.wash-hub-marker:hover .wash-hub-dot,
+.wash-hub-marker:focus-visible .wash-hub-dot {
+  fill: #ffd100 !important;
+}
+
+.wash-hub-marker:hover .wash-hub-arc,
+.wash-hub-marker:focus-visible .wash-hub-arc {
+  stroke: #ffd100 !important;
+}
+
+.wash-hub-marker:hover .wash-hub-pulse,
+.wash-hub-marker:focus-visible .wash-hub-pulse {
   stroke: #ffd100;
+  opacity: 0.8;
+  animation-duration: 1.6s;
 }
 
-.wash-hub-marker:hover .wash-hub-pulse {
-  opacity: 0;
-  transition: opacity 0.15s ease;
+/* Legend hover highlight: turns brand yellow */
+.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub,
+.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub {
+  background-color: #151515;
+  border-color: #ffd100;
 }
 
-/* Legend hover highlight: clean, stationary highlight */
-.wash-hubs-group.is-legend-active .wash-hub-badge {
-  fill: #1f1f1f;
-  stroke: #ffd100;
-  stroke-width: 3px;
-}
-
+.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-letter,
+.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-dot,
+.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-letter,
+.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-dot,
 .wash-hubs-group.is-legend-active .wash-hub-letter,
 .wash-hubs-group.is-legend-active .wash-hub-dot {
-  fill: #ffd100;
+  fill: #ffd100 !important;
 }
 
+.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-arc,
+.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-arc,
 .wash-hubs-group.is-legend-active .wash-hub-arc {
-  stroke: #ffd100;
+  stroke: #ffd100 !important;
 }
 
 .wash-hubs-group.is-legend-active .wash-hub-pulse {
-  opacity: 0;
-  transition: opacity 0.15s ease;
+  stroke: #ffd100;
+  opacity: 0.9;
 }
 
 @keyframes washHubPulse {
   0% {
     r: 13px;
-    opacity: 0.9;
+    opacity: 0.8;
   }
   60% {
     r: 22px;
@@ -3419,25 +3442,18 @@ p:last-child {
   outline: none;
 }
 
-.wash-hub-marker:focus-visible .wash-hub-badge,
-.wash-hub-marker:focus-visible .wash-hub-outer {
-  fill: #1f1f1f;
-  stroke: var(--yellow);
-  stroke-width: 3px;
-}
-
 .wash-hub-marker:focus-visible .wash-hub-letter,
 .wash-hub-marker:focus-visible .wash-hub-dot {
-  fill: var(--yellow);
+  fill: var(--yellow) !important;
 }
 
 .wash-hub-marker:focus-visible .wash-hub-arc {
-  stroke: var(--yellow);
+  stroke: var(--yellow) !important;
 }
 
 .wash-hub-marker:focus-visible .wash-hub-pulse {
-  stroke: var(--white);
-  stroke-width: 3;
+  stroke: var(--yellow);
+  opacity: 0.9;
 }
 
 .reuse-legend-item:focus-visible {
