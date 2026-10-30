@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-26T02:42:31.900Z",
+  "timestamp": "2026-10-30T10:30:14.644Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -666,7 +666,7 @@
       "name": "Clicking banner anchor scrolls toward legend target",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"scrolled\":true,\"scrollY\":1068,\"targetTop\":17032.390625}"
+      "details": "{\"scrolled\":true,\"scrollY\":1057,\"targetTop\":16863.359375}"
     },
     {
       "id": "check-viewport-390px",

@@ -39,24 +39,6 @@
     "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
     "text": "7",
     "scrollWidth": 23,
     "clientWidth": 10,
@@ -186,78 +168,6 @@
     "text": "15",
     "scrollWidth": 28,
     "clientWidth": 21,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
     "viewport": "320"
   },
   {
@@ -300,7 +210,7 @@
     "type": "TEXT_OVERFLOW",
     "tag": "p",
     "className": "",
-    "text": "Seven states have passed exten",
+    "text": "Seven states have passed Exten",
     "scrollWidth": 227,
     "clientWidth": 224,
     "viewport": "320"
@@ -433,42 +343,6 @@
   },
   {
     "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "13",
@@ -477,134 +351,61 @@
     "viewport": "320"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot is-active",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": -46,
+      "right": -18,
+      "width": 28
+    },
     "viewport": "320"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": -14,
+      "right": 14,
+      "width": 28
+    },
     "viewport": "320"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": 306,
+      "right": 334,
+      "width": 28
+    },
     "viewport": "320"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "320"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": 338,
+      "right": 366,
+      "width": 28
+    },
     "viewport": "320"
   },
   {
     "type": "HERO_LAYOUT",
     "headingRect": {
-      "top": -21429.0625,
-      "bottom": -21229.53125,
+      "top": -22815.0625,
+      "bottom": -22620.125,
       "left": 24,
       "right": 296,
       "width": 272
     },
     "cardRect": {
-      "top": -21205.53125,
-      "bottom": -19897.703125,
+      "top": -22596.125,
+      "bottom": -21434.796875,
       "left": 24,
       "right": 296,
       "width": 272
@@ -615,7 +416,7 @@
   {
     "type": "PERSISTENT_CTA",
     "height": 107.75,
-    "bottom": 707.3926391601562,
+    "bottom": 707.0760498046875,
     "viewport": "320"
   },
   {
@@ -647,27 +448,18 @@
   },
   {
     "type": "TEXT_OVERFLOW",
+    "tag": "p",
+    "className": "",
+    "text": "Despite decades of recycling e",
+    "scrollWidth": 325,
+    "clientWidth": 315,
+    "viewport": "375"
+  },
+  {
+    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "375"
@@ -805,78 +597,6 @@
     "text": "15",
     "scrollWidth": 28,
     "clientWidth": 21,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
     "viewport": "375"
   },
   {
@@ -1025,56 +745,11 @@
   },
   {
     "type": "TEXT_OVERFLOW",
-    "tag": "p",
-    "className": "",
-    "text": "Regional centers running Ecola",
-    "scrollWidth": 269,
-    "clientWidth": 260,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "28",
     "scrollWidth": 26,
     "clientWidth": 17,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
     "viewport": "375"
   },
   {
@@ -1087,134 +762,39 @@
     "viewport": "375"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot is-active",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": -18.5,
+      "right": 9.5,
+      "width": 28
+    },
     "viewport": "375"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
+    "type": "BUTTON_OVERFLOW",
     "className": "carousel__dot",
     "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "375"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
+    "rect": {
+      "left": 365.5,
+      "right": 393.5,
+      "width": 28
+    },
     "viewport": "375"
   },
   {
     "type": "HERO_LAYOUT",
     "headingRect": {
-      "top": -19869.25,
-      "bottom": -19717.140625,
+      "top": -20818.25,
+      "bottom": -20653.84375,
       "left": 24,
       "right": 351,
       "width": 327
     },
     "cardRect": {
-      "top": -19693.140625,
-      "bottom": -18463.59375,
+      "top": -20629.84375,
+      "bottom": -19525.046875,
       "left": 24,
       "right": 351,
       "width": 327
@@ -1225,7 +805,7 @@
   {
     "type": "PERSISTENT_CTA",
     "height": 107.75,
-    "bottom": 774.3924560546875,
+    "bottom": 774.07763671875,
     "viewport": "375"
   },
   {
@@ -1260,24 +840,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "667x375_land"
@@ -1572,178 +1134,25 @@
   },
   {
     "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "13",
     "scrollWidth": 25,
     "clientWidth": 15,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "667x375_land"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
     "viewport": "667x375_land"
   },
   {
     "type": "HERO_LAYOUT",
     "headingRect": {
       "top": 81.71875,
-      "bottom": 287.765625,
+      "bottom": 303.359375,
       "left": 33.34375,
       "right": 633.65625,
       "width": 600.3125
     },
     "cardRect": {
-      "top": 314.4375,
-      "bottom": 1166.28125,
+      "top": 330.03125,
+      "bottom": 1100.625,
       "left": 33.34375,
       "right": 633.65625,
       "width": 600.3125
@@ -1789,24 +1198,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "768"
@@ -2110,42 +1501,6 @@
   },
   {
     "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "13",
@@ -2154,134 +1509,17 @@
     "viewport": "768"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "768"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
-      "top": -16774.109375,
-      "bottom": -16542.609375,
+      "top": -17408.109375,
+      "bottom": -17161.015625,
       "left": 44,
       "right": 724,
       "width": 680
     },
     "cardRect": {
-      "top": -16511.890625,
-      "bottom": -15704.296875,
+      "top": -17130.296875,
+      "bottom": -16382.203125,
       "left": 74,
       "right": 694,
       "width": 620
@@ -2291,8 +1529,8 @@
   },
   {
     "type": "PERSISTENT_CTA",
-    "height": 90.875,
-    "bottom": 1114.7320556640625,
+    "height": 90.87506103515625,
+    "bottom": 1114.573974609375,
     "viewport": "768"
   },
   {
@@ -2327,24 +1565,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "900"
@@ -2651,8 +1871,8 @@
     "tag": "a",
     "className": "",
     "text": "28",
-    "scrollWidth": 28,
-    "clientWidth": 19,
+    "scrollWidth": 26,
+    "clientWidth": 17,
     "viewport": "900"
   },
   {
@@ -2665,134 +1885,17 @@
     "viewport": "900"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "900"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
       "top": 116.5,
-      "bottom": 381.28125,
+      "bottom": 396.875,
       "left": 110,
       "right": 790,
       "width": 680
     },
     "cardRect": {
-      "top": 417.28125,
-      "bottom": 1252.375,
+      "top": 432.875,
+      "bottom": 1208.46875,
       "left": 140,
       "right": 760,
       "width": 620
@@ -2826,6 +1929,15 @@
   },
   {
     "type": "TEXT_OVERFLOW",
+    "tag": "p",
+    "className": "",
+    "text": "Recycled, composted or trashed",
+    "scrollWidth": 494,
+    "clientWidth": 491,
+    "viewport": "1024x500_short"
+  },
+  {
+    "type": "TEXT_OVERFLOW",
     "tag": "a",
     "className": "",
     "text": "3",
@@ -2838,24 +1950,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "1024x500_short"
@@ -3135,8 +2229,8 @@
     "tag": "a",
     "className": "",
     "text": "28",
-    "scrollWidth": 28,
-    "clientWidth": 19,
+    "scrollWidth": 26,
+    "clientWidth": 17,
     "viewport": "1024x500_short"
   },
   {
@@ -3149,134 +2243,17 @@
     "viewport": "1024x500_short"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1024x500_short"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
       "top": 99.5625,
-      "bottom": 755.671875,
+      "bottom": 755.265625,
       "left": 48,
       "right": 451.515625,
       "width": 403.515625
     },
     "cardRect": {
       "top": 99.5625,
-      "bottom": 1019.125,
+      "bottom": 937.875,
       "left": 492.46875,
       "right": 976,
       "width": 483.53125
@@ -3322,24 +2299,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "1280"
@@ -3601,8 +2560,8 @@
     "tag": "a",
     "className": "",
     "text": "28",
-    "scrollWidth": 28,
-    "clientWidth": 19,
+    "scrollWidth": 26,
+    "clientWidth": 17,
     "viewport": "1280"
   },
   {
@@ -3615,134 +2574,17 @@
     "viewport": "1280"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1280"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
-      "top": -17197.5,
-      "bottom": -16514.40625,
+      "top": -17412.5,
+      "bottom": -16711.90625,
       "left": 48,
       "right": 576,
       "width": 528
     },
     "cardRect": {
-      "top": -17197.5,
-      "bottom": -16321.65625,
+      "top": -17412.5,
+      "bottom": -16617.90625,
       "left": 624,
       "right": 1232,
       "width": 608
@@ -3753,7 +2595,7 @@
   {
     "type": "PERSISTENT_CTA",
     "height": 60,
-    "bottom": 799.902587890625,
+    "bottom": 799.779296875,
     "viewport": "1280"
   },
   {
@@ -3788,24 +2630,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "1440"
@@ -4067,8 +2891,8 @@
     "tag": "a",
     "className": "",
     "text": "28",
-    "scrollWidth": 28,
-    "clientWidth": 19,
+    "scrollWidth": 26,
+    "clientWidth": 17,
     "viewport": "1440"
   },
   {
@@ -4081,134 +2905,17 @@
     "viewport": "1440"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1440"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
       "top": 113.75,
-      "bottom": 756.515625,
+      "bottom": 774.90625,
       "left": 48,
       "right": 700,
       "width": 652
     },
     "cardRect": {
       "top": 113.75,
-      "bottom": 989.59375,
+      "bottom": 908.34375,
       "left": 772,
       "right": 1392,
       "width": 620
@@ -4254,24 +2961,6 @@
     "tag": "a",
     "className": "",
     "text": "4",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "5",
-    "scrollWidth": 24,
-    "clientWidth": 12,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "a",
-    "className": "",
-    "text": "6",
     "scrollWidth": 24,
     "clientWidth": 12,
     "viewport": "1920"
@@ -4542,8 +3231,8 @@
     "tag": "a",
     "className": "",
     "text": "28",
-    "scrollWidth": 28,
-    "clientWidth": 19,
+    "scrollWidth": 26,
+    "clientWidth": 17,
     "viewport": "1920"
   },
   {
@@ -4556,134 +3245,17 @@
     "viewport": "1920"
   },
   {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot is-active",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
-    "type": "TEXT_OVERFLOW",
-    "tag": "button",
-    "className": "carousel__dot",
-    "text": "",
-    "scrollWidth": 23,
-    "clientWidth": 10,
-    "viewport": "1920"
-  },
-  {
     "type": "HERO_LAYOUT",
     "headingRect": {
       "top": 113.75,
-      "bottom": 781.75,
+      "bottom": 800.140625,
       "left": 270,
       "right": 950,
       "width": 680
     },
     "cardRect": {
       "top": 113.75,
-      "bottom": 989.59375,
+      "bottom": 908.34375,
       "left": 1030,
       "right": 1650,
       "width": 620

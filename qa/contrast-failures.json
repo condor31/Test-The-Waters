@@ -131,32 +131,6 @@
   },
   {
     "tag": "DIV",
-    "className": "impact-stripe impact-stripe--magenta",
-    "id": "",
-    "textSnippet": "Over 30 million single-use items8 singl",
-    "fg": "rgb(255, 255, 255)",
-    "bg": "rgb(255, 0, 153)",
-    "fontSize": 16,
-    "fontWeight": "400",
-    "isLarge": false,
-    "ratio": 3.68,
-    "required": 4.5
-  },
-  {
-    "tag": "P",
-    "className": "impact-stripe__label",
-    "id": "",
-    "textSnippet": "single-use items replaced",
-    "fg": "rgb(255, 255, 255)",
-    "bg": "rgb(255, 0, 153)",
-    "fontSize": 17,
-    "fontWeight": "700",
-    "isLarge": false,
-    "ratio": 3.68,
-    "required": 4.5
-  },
-  {
-    "tag": "DIV",
     "className": "os-card",
     "id": "",
     "textSnippet": "Logistics The reverse-logistics network",
