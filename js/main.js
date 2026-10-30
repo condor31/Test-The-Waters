@@ -597,7 +597,16 @@ function initReuseMap() {
 
     const hubLegendHtml = `
       <div class="reuse-legend-item reuse-legend-item--hubs" data-category="hubs" title="r.World regional wash hubs operating in 5 major metro areas.">
-        <span class="reuse-legend-swatch reuse-legend-swatch--hub"></span>
+        <span class="reuse-legend-swatch reuse-legend-swatch--hub" aria-hidden="true">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" fill="none" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="#151515"/>
+            <circle cx="12.21" cy="53.97" r="4.8" fill="#ffffff" class="wash-hub-dot"/>
+            <circle cx="87.79" cy="46.03" r="4.8" fill="#ffffff" class="wash-hub-dot"/>
+            <path d="M 12.21 53.97 A 38 38 0 0 1 85.47 36.38" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" class="wash-hub-arc"/>
+            <path d="M 87.79 46.03 A 38 38 0 0 1 14.77 64.24" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" class="wash-hub-arc"/>
+            <path d="M 50.80 73.32 H 39.23 V 51.22 C 39.23 38.41 49.76 27.88 62.57 27.88 V 39.45 C 55.96 39.45 50.59 44.82 50.59 51.42 V 73.32 Z" fill="#ffffff" class="wash-hub-letter"/>
+          </svg>
+        </span>
         <span class="reuse-legend-label"><strong>r.World Wash Hubs (5 locations)</strong></span>
       </div>
     `;
@@ -673,45 +682,76 @@ function initReuseMap() {
       pulse.setAttribute("class", "wash-hub-pulse");
       pulse.setAttribute("cx", hub.x);
       pulse.setAttribute("cy", hub.y);
-      pulse.setAttribute("r", "7");
+      pulse.setAttribute("r", "13");
       pulse.setAttribute("fill", "none");
       pulse.setAttribute("stroke", "#FFD100");
       pulse.setAttribute("stroke-width", "2");
 
-      // Pin body (decorative, pointer-events: none in CSS)
+      // Pin body with r.World mark SVG graphic
       const pin = document.createElementNS("http://www.w3.org/2000/svg", "g");
       pin.setAttribute("class", "wash-hub-pin");
+      pin.setAttribute("transform", `translate(${hub.x}, ${hub.y}) scale(0.28)`);
 
-      const outerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      outerDot.setAttribute("class", "wash-hub-outer");
-      outerDot.setAttribute("cx", hub.x);
-      outerDot.setAttribute("cy", hub.y);
-      outerDot.setAttribute("r", "7");
-      outerDot.setAttribute("fill", "#FFD100");
-      outerDot.setAttribute("stroke", "#ff0099");
-      outerDot.setAttribute("stroke-width", "2");
+      const badge = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      badge.setAttribute("class", "wash-hub-badge wash-hub-outer");
+      badge.setAttribute("cx", "0");
+      badge.setAttribute("cy", "0");
+      badge.setAttribute("r", "44");
+      badge.setAttribute("fill", "#151515");
 
-      const innerDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-      innerDot.setAttribute("class", "wash-hub-inner");
-      innerDot.setAttribute("cx", hub.x);
-      innerDot.setAttribute("cy", hub.y);
-      innerDot.setAttribute("r", "3");
-      innerDot.setAttribute("fill", "#151515");
+      const dotLeft = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      dotLeft.setAttribute("class", "wash-hub-dot wash-hub-dot--left");
+      dotLeft.setAttribute("cx", "-37.79");
+      dotLeft.setAttribute("cy", "3.97");
+      dotLeft.setAttribute("r", "4.8");
+      dotLeft.setAttribute("fill", "#ffffff");
 
-      // Snug stationary hit target matching the dot (never transforms)
+      const dotRight = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      dotRight.setAttribute("class", "wash-hub-dot wash-hub-dot--right");
+      dotRight.setAttribute("cx", "37.79");
+      dotRight.setAttribute("cy", "-3.97");
+      dotRight.setAttribute("r", "4.8");
+      dotRight.setAttribute("fill", "#ffffff");
+
+      const arcTop = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      arcTop.setAttribute("class", "wash-hub-arc wash-hub-arc--top");
+      arcTop.setAttribute("d", "M -37.79 3.97 A 38 38 0 0 1 35.47 -13.62");
+      arcTop.setAttribute("stroke", "#ffffff");
+      arcTop.setAttribute("stroke-width", "3.2");
+      arcTop.setAttribute("stroke-linecap", "round");
+      arcTop.setAttribute("fill", "none");
+
+      const arcBottom = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      arcBottom.setAttribute("class", "wash-hub-arc wash-hub-arc--bottom");
+      arcBottom.setAttribute("d", "M 37.79 -3.97 A 38 38 0 0 1 -35.23 14.24");
+      arcBottom.setAttribute("stroke", "#ffffff");
+      arcBottom.setAttribute("stroke-width", "3.2");
+      arcBottom.setAttribute("stroke-linecap", "round");
+      arcBottom.setAttribute("fill", "none");
+
+      const letterR = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      letterR.setAttribute("class", "wash-hub-letter wash-hub-inner");
+      letterR.setAttribute("d", "M -0.10 22.72 H -11.67 V 0.62 C -11.67 -12.19 -1.14 -22.72 11.67 -22.72 V -11.15 C 5.06 -11.15 -0.31 -5.78 -0.31 0.82 V 22.72 Z");
+      letterR.setAttribute("fill", "#ffffff");
+
+      pin.appendChild(badge);
+      pin.appendChild(dotLeft);
+      pin.appendChild(dotRight);
+      pin.appendChild(arcTop);
+      pin.appendChild(arcBottom);
+      pin.appendChild(letterR);
+
+      // Snug stationary hit target matching the badge (never transforms)
       const hitArea = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       hitArea.setAttribute("class", "wash-hub-hit");
       hitArea.setAttribute("cx", hub.x);
       hitArea.setAttribute("cy", hub.y);
-      hitArea.setAttribute("r", "10");
+      hitArea.setAttribute("r", "14");
       hitArea.setAttribute("fill", "transparent");
       hitArea.setAttribute("stroke", "none");
 
       const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
       title.textContent = `r.World Wash Hub: ${hub.name}`;
-
-      pin.appendChild(outerDot);
-      pin.appendChild(innerDot);
       g.appendChild(title);
       g.appendChild(pulse);
       g.appendChild(pin);
