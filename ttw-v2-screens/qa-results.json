@@ -1,7 +1,5 @@
 {
-  "consoleErrors": [
-    "Permissions policy violation: compute-pressure is not allowed in this document."
-  ],
+  "consoleErrors": [],
   "pageErrors": [],
   "ctas": [
     {
