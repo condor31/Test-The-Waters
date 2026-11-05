@@ -1,0 +1,1209 @@
+/* ==========================================================================
+   TTW v2 Redesign Stylesheet
+   r.World — Testing the Waters (Reg CF, 17 CFR § 227.206)
+   Tokens reconciled with existing css/styles.css
+   ========================================================================== */
+
+/* ---------- Reusable Placeholder Component ---------- */
+.ph {
+  --ph-ratio: 16 / 9;
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ph-ratio);
+  background: #2a2c2e;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #a0aec0;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 16px;
+  user-select: none;
+}
+
+.ph__label {
+  display: inline-block;
+  max-width: 90%;
+  word-break: break-word;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ph--dark {
+  background: #111213;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ph--light {
+  background: #f1f3f5;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #4a5568;
+}
+
+.ph--light .ph__label {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #1a202c;
+}
+
+.ph--circle {
+  border-radius: 50%;
+}
+
+.ph--logo {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+}
+
+.ph--logo .ph__label {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+  color: #1a202c;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.ph--fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+  border: none;
+}
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ph--logo img {
+  object-fit: contain;
+  padding: 12px;
+}
+
+/* ---------- Motion Toggle Button Component ---------- */
+.motion-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  backdrop-filter: blur(4px);
+}
+
+.motion-toggle:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: var(--yellow);
+  transform: scale(1.05);
+}
+
+.motion-toggle:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.motion-toggle[aria-pressed="true"] .motion-toggle__icon--pause {
+  display: none;
+}
+
+.motion-toggle[aria-pressed="true"] .motion-toggle__icon--play {
+  display: block;
+}
+
+.motion-toggle[aria-pressed="false"] .motion-toggle__icon--pause {
+  display: block;
+}
+
+.motion-toggle[aria-pressed="false"] .motion-toggle__icon--play {
+  display: none;
+}
+
+/* ---------- Module Shared Styles ---------- */
+.module-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.module-head--center {
+  align-items: center;
+  text-align: center;
+}
+
+.module-head__sub {
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 940px;
+}
+
+.section--white .module-head__sub {
+  color: #4a4a4a;
+}
+
+.section--grey .module-head__sub {
+  color: #e2e8f0;
+}
+
+.section--yellow .module-head__sub {
+  color: var(--grey);
+}
+
+.module-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: clamp(24px, 4vw, 40px);
+}
+
+.module-footnotes {
+  margin: 32px 0 0 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #6b7280;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 20px;
+  width: 100%;
+}
+
+.placeholder-text {
+  font-style: italic;
+  color: #9ca3af;
+}
+
+/* ==========================================================================
+   MODULE 1 & 2: Hero v2 & Background Reel (Pixel-accurate to Figma node 467:1547)
+   ========================================================================== */
+.hero--v2 {
+  position: relative;
+  background: var(--yellow, #ffd100);
+  color: #000000;
+  padding-top: clamp(48px, 5.5vw, 80px);
+  padding-bottom: clamp(24px, 2vw, 27px);
+  padding-inline: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.hero-v2__layout {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-v2__content {
+  padding-left: clamp(24px, 6.67vw, 96px);
+  padding-right: clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.33vw, 48px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-v2__title {
+  color: #000000;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: clamp(44px, 8.33vw, 120px);
+  line-height: 0.9333;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0;
+  max-width: 854px;
+}
+
+.hero-v2__subhead {
+  color: #000000;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: clamp(20px, 2.5vw, 36px);
+  line-height: 1.111;
+  letter-spacing: -0.005em;
+  font-weight: 700;
+  margin: 0;
+  max-width: 672px;
+}
+
+.hero-v2__cta-wrap {
+  width: 100%;
+  max-width: 639px;
+}
+
+.btn-solid-black {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  max-width: 639px;
+  height: 52px;
+  min-height: 52px;
+  border-radius: 12px;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  box-sizing: border-box;
+}
+
+.btn-solid-black:hover {
+  background: #222222;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-solid-black:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+}
+
+/* Lower section of Hero: Left disclaimer + Right media block with stats */
+.hero-v2__lower {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: clamp(32px, 3.33vw, 48px);
+  width: 100%;
+}
+
+.hero-v2__disclaimer-wrap {
+  padding-left: clamp(24px, 6.67vw, 96px);
+  padding-right: 0;
+  width: 335px;
+  flex: 0 0 335px;
+  box-sizing: content-box;
+}
+
+.hero-v2__disclaimer {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 12px;
+  line-height: 1.2;
+  color: #000000;
+  max-width: 335px;
+}
+
+.hero-v2__disclaimer .legend-citation {
+  color: #000000;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 12px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.hero-v2__disclaimer .legend-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-v2__disclaimer .legend-bullets li {
+  color: #000000;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+}
+
+/* Right Media Frame (Frame 60 in Figma: 901px wide x 778px tall) */
+.hero-v2__media-frame {
+  position: relative;
+  width: 901px;
+  height: 778px;
+  flex: 0 0 901px;
+  margin-left: 69px;
+  margin-right: 39px;
+  background-color: #ffd100;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero-v2__video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffd100;
+  overflow: hidden;
+}
+
+.hero-v2__reel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: url(#hero-yellow-duotone);
+}
+
+.hero-v2__yellow-overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 209, 0, 0.15);
+  pointer-events: none;
+}
+
+.hero-v2__media-frame .hero__video-toggle {
+  bottom: 24px;
+  left: 24px;
+  z-index: 3;
+}
+
+/* Stats inside Media Frame (Frame 61 in Figma: 761px wide x 334px tall) */
+.hero-v2__media-frame .hero-v2__stats {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  padding: 244px 70px 200px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-v2__stat {
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 76px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-v2__stat-text {
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 72px;
+  line-height: 76px;
+  font-weight: 700;
+  letter-spacing: -1.44px;
+  -webkit-text-stroke: 3.5px #ffffff;
+  color: transparent;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  display: block;
+}
+
+.hero-v2__stat.is-highlighted .hero-v2__stat-text {
+  color: #ffffff;
+  -webkit-text-stroke: 3.5px #ffffff;
+}
+
+/* Desktop layout locks (1200px and up) to match Figma 1440px canvas */
+@media (min-width: 1200px) {
+  .hero-v2__title {
+    font-size: 120px;
+    line-height: 112px;
+    letter-spacing: -3.6px;
+    max-width: 854px;
+  }
+
+  .hero-v2__subhead {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.18px;
+    max-width: 672px;
+  }
+}
+
+/* Medium screens & tablets (below 1400px down to 961px) */
+@media (max-width: 1399px) and (min-width: 961px) {
+  .hero-v2__media-frame {
+    width: min(58vw, 800px);
+    height: clamp(520px, 50vw, 700px);
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: 24px;
+  }
+
+  .hero-v2__media-frame .hero-v2__stats {
+    padding: clamp(140px, 16vw, 244px) clamp(24px, 4vw, 70px);
+  }
+
+  .hero-v2__stat {
+    height: auto;
+  }
+
+  .hero-v2__stat-text {
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 1.1;
+  }
+}
+
+/* Mobile & Tablet responsive styling for Hero (960px and below) */
+@media (max-width: 960px) {
+  .hero--v2 {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+
+  .hero-v2__lower {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  .hero-v2__disclaimer-wrap {
+    order: 1;
+    padding-left: clamp(20px, 5vw, 32px);
+    padding-right: clamp(20px, 5vw, 32px);
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+  }
+
+  .hero-v2__media-frame {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(340px, 70vw, 480px);
+    margin-left: 0;
+    margin-right: 0;
+    flex: 1 1 auto;
+  }
+
+  .hero-v2__media-frame .hero-v2__stats {
+    padding: clamp(32px, 8vw, 64px) clamp(20px, 5vw, 32px);
+    gap: 8px;
+  }
+
+  .hero-v2__stat {
+    height: auto;
+  }
+
+  .hero-v2__stat-text {
+    font-size: clamp(28px, 6vw, 44px);
+    line-height: 1.1;
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+}
+
+/* ==========================================================================
+   MODULE 2 (band): Brand Anthem Video
+   ========================================================================== */
+.section--ink {
+  background: #111213;
+  color: var(--white);
+}
+
+.brand-anthem {
+  padding-block: clamp(40px, 6vw, 80px);
+}
+
+.brand-anthem__inner {
+  align-items: center;
+}
+
+.brand-anthem__player {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+
+.brand-anthem__facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.brand-anthem__facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brand-anthem__facade:hover img {
+  transform: scale(1.02);
+}
+
+.brand-anthem__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--blue-cta);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.45);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.brand-anthem__facade:hover .brand-anthem__play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #9b45ea;
+}
+
+.brand-anthem__facade:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: -3px;
+}
+
+.brand-anthem__iframe-slot {
+  width: 100%;
+  height: 100%;
+}
+
+.brand-anthem__iframe-slot iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ==========================================================================
+   MODULE 3: Celebrities Marquee
+   ========================================================================== */
+.celebs {
+  overflow-x: clip;
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.marquee-shell {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+.marquee {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: -3px;
+}
+
+.marquee__track {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--section-pad-x);
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+.celeb-card {
+  flex: 0 0 clamp(240px, 22vw, 320px);
+}
+
+.celeb-card__figure {
+  position: relative;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  background: #1f2123;
+}
+
+.celeb-card__figure .ph {
+  border-radius: 16px;
+}
+
+.celeb-card__name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 16px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.marquee-shell__controls {
+  display: flex;
+  justify-content: flex-end;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding: 12px var(--section-pad-x) 0;
+}
+
+/* Marquee continuous scroll animation via CSS */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--marquee-distance, -50%));
+  }
+}
+
+.marquee.is-animating .marquee__track {
+  animation: marquee-scroll 42s linear infinite;
+}
+
+.marquee.is-animating:hover .marquee__track,
+.marquee.is-animating:focus-within .marquee__track,
+.marquee.is-paused .marquee__track {
+  animation-play-state: paused !important;
+}
+
+/* ==========================================================================
+   MODULE 5: Reuse Loop
+   ========================================================================== */
+.reuse-loop {
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.reuse-loop__inner {
+  align-items: center;
+}
+
+.reuse-loop__diagram {
+  position: relative;
+  width: min(100%, 720px);
+  aspect-ratio: 1 / 1;
+  margin-top: clamp(24px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reuse-loop__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  color: rgba(83, 87, 90, 0.45);
+}
+
+.reuse-loop__arc {
+  fill: none;
+  stroke: rgba(83, 87, 90, 0.55);
+  stroke-width: 2.5;
+  stroke-dasharray: 4 4;
+}
+
+.reuse-loop__highlight {
+  fill: none;
+  stroke: var(--purple);
+  stroke-width: 4;
+  stroke-dasharray: 20 80;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: loop-rotate 10s linear infinite;
+}
+
+@keyframes loop-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.reuse-loop__mark {
+  position: absolute;
+  width: clamp(70px, 12vw, 110px);
+  aspect-ratio: 1;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.reuse-loop__nodes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.loop-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: clamp(120px, 20vw, 160px);
+  transform: translate(-50%, -50%);
+}
+
+.loop-node--pour {
+  top: 14%;
+  left: 50%;
+}
+
+.loop-node--return {
+  top: 50%;
+  left: 86%;
+}
+
+.loop-node--clean {
+  top: 86%;
+  left: 50%;
+}
+
+.loop-node--reuse {
+  top: 50%;
+  left: 14%;
+}
+
+.loop-node .ph {
+  width: clamp(90px, 15vw, 130px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--white);
+  background: #e2e8f0;
+}
+
+.loop-node__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--grey);
+  font-weight: 700;
+  font-size: clamp(14px, 1.4vw, 16px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loop-node__label svg {
+  color: var(--purple);
+}
+
+.loop-node__next {
+  display: none;
+}
+
+.reuse-loop__controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* Loop mobile: stack vertically */
+@media (max-width: 680px) {
+  .reuse-loop__diagram {
+    aspect-ratio: auto;
+    width: 100%;
+    min-height: auto;
+  }
+  .reuse-loop__ring,
+  .reuse-loop__mark {
+    display: none;
+  }
+  .reuse-loop__nodes {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .loop-node {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 240px;
+  }
+  .loop-node__next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--grey);
+    margin-top: 4px;
+  }
+  .loop-node--reuse .loop-node__next {
+    display: none;
+  }
+  .reuse-loop__controls {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MODULE 7: Social Proof (4x2 Venue Grid)
+   ========================================================================== */
+.social-proof {
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.venue-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.venue-card {
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.venue-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.venue-card .ph {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.venue-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.venue-card__name {
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1a202c;
+  margin: 0;
+}
+
+.venue-card__stat {
+  font-size: 14px;
+  font-weight: 600;
+  color: #718096;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .venue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   MODULE 8: Where We Go Next
+   ========================================================================== */
+.where-next {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.where-next__stage {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+.where-next__arrow {
+  position: absolute;
+  top: 50%;
+  left: -4%;
+  width: 108%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.where-next__arrow img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.next-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3.5vw, 36px);
+  position: relative;
+  z-index: 2;
+}
+
+.next-card {
+  background: #1f2123;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.next-card .ph {
+  border-radius: 0;
+  border: none;
+}
+
+.next-card__label {
+  margin: 0;
+  padding: 20px 24px;
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--white);
+  background: #151617;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .next-cards {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-inline: auto;
+  }
+  .where-next__arrow {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MODULE 10: Why It Matters (4 Tiles & Benefit Grid)
+   ========================================================================== */
+.why-matters {
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.why-matters__tiles {
+  margin-top: clamp(40px, 6vw, 64px);
+}
+
+.impact-stripes--four {
+  height: clamp(380px, 36vw, 520px);
+}
+
+@media (min-width: 901px) {
+  .impact-stripes--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.impact-stripe__icon--inline svg {
+  width: 100%;
+  height: 100%;
+}
+
+.why-matters__benefits {
+  margin-top: clamp(48px, 7vw, 80px);
+  gap: 28px;
+}
+
+.benefit-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+.benefit-card {
+  padding: clamp(24px, 3.5vw, 36px);
+  gap: 12px;
+}
+
+.benefit-card__title {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+}
+
+.benefit-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4a5568;
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   MODULE 11: Press Grid
+   ========================================================================== */
+.press {
+  padding-block: clamp(56px, 8vw, 96px);
+}
+
+.press-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.press-logo {
+  display: flex;
+}
+
+.press-logo .ph {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.press-logo .ph:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 860px) {
+  .press-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   MODULE 12: Use of Proceeds (3 Cards)
+   ========================================================================== */
+.proceeds-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.proceeds-card {
+  gap: 16px;
+}
+
+.proceeds-card .h3 {
+  font-size: clamp(22px, 2.2vw, 30px);
+}
+
+.proceeds-card p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.proceeds-card--wide {
+  grid-column: 1 / -1;
+}
+
+.proceeds-note em {
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .proceeds-cards {
+    grid-template-columns: 1fr;
+  }
+  .proceeds-card--wide {
+    grid-column: auto;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Fallbacks (prefers-reduced-motion)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .marquee.is-animating .marquee__track {
+    animation: none !important;
+  }
+  .reuse-loop__highlight {
+    animation: none !important;
+  }
+  .hero-v2__stat {
+    transition: none !important;
+  }
+  .hero-v2__stat.is-highlighted {
+    transform: none !important;
+  }
+}
