@@ -13,18 +13,18 @@ All missing assets are wired up with the reusable `.ph` (Placeholder) component.
 | 2 | 1. Hero | Background Reel Poster | `public/assets/ttw/hero-reel-poster.jpg` | 16:9 (1920×1080) | TBD (Poster frame) | Placeholder |
 | 3 | 2. Brand Anthem | Brand Anthem Video | Embedded iframe (`TXxys99LGoM`) | 16:9 | https://www.youtube.com/watch?v=TXxys99LGoM | Wired / Active |
 | 4 | 2. Brand Anthem | Video Poster Facade | `public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg` | 16:9 (1280×720) | Existing codebase | Active |
-| 5 | 3. Celebrities | Pedro Pascal | `public/assets/ttw/celebs/pedro-pascal.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/1IkxyVl5x4NucUw8pWHXYDXxK1qYdlNop/view) | Placeholder |
-| 6 | 3. Celebrities | Meryl Streep + Martin Short | `public/assets/ttw/celebs/streep-short.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/1GuRoUY4-PSJG7fQ-8Nk2WkvaZ2__Msa-/view) | Placeholder |
-| 7 | 3. Celebrities | Leonardo DiCaprio | `public/assets/ttw/celebs/dicaprio.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/14-H7_Pfba7TyWIyROBsLUnG-INv-bvTr/view) | Placeholder |
-| 8 | 3. Celebrities | Flea | `public/assets/ttw/celebs/flea.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/1pFFFkgUxxnQ8fsXOpbQ2eCLmx1bKIgWS/view) | Placeholder |
-| 9 | 3. Celebrities | Selena Gomez + Benny Blanco | `public/assets/ttw/celebs/gomez-blanco.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/1J8QCf8zwrSxy8sUBbpPQSjso7Gx3GnwD/view) | Placeholder |
-| 10 | 3. Celebrities | Jack Johnson | `public/assets/ttw/celebs/jack-johnson.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/1hfMep-96JWi8R6XsrPL1Uh1aq4a5gUmS/view) | Placeholder |
-| 11 | 3. Celebrities | Rhea Seehorn | `public/assets/ttw/celebs/seehorn.jpg` | 4:5 (800×1000) | [Google Drive](https://drive.google.com/file/d/13tmgknIygkCKWg8MF9EKCpAbszBHDkrq/view) | Placeholder |
+| 5 | 3. Celebrities | Pedro Pascal | `public/assets/ttw/celebs/pedro-pascal.jpg` | 377×417 | Sourced from Figma (`e3394a59...`) | Active |
+| 6 | 3. Celebrities | Meryl Streep + Martin Short | `public/assets/ttw/celebs/streep-short.jpg` | 377×417 | User provided asset / Figma | Active |
+| 7 | 3. Celebrities | Leonardo DiCaprio | `public/assets/ttw/celebs/dicaprio.jpg` | 377×417 | User provided asset / Figma | Active |
+| 8 | 3. Celebrities | Flea | `public/assets/ttw/celebs/flea.jpg` | 377×417 | User provided asset / Figma | Active |
+| 9 | 3. Celebrities | Selena Gomez + Benny Blanco | `public/assets/ttw/celebs/gomez-blanco.jpg` | 377×417 | User provided asset / Figma | Active |
+| 10 | 3. Celebrities | Jack Johnson | `public/assets/ttw/celebs/jack-johnson.jpg` | 377×417 | User provided asset / Figma | Active |
+| 11 | 3. Celebrities | Rhea Seehorn | `public/assets/ttw/celebs/rhea-seehorn.jpg` | 377×417 | Sourced from Figma (`0caba051...`) | Active |
 | 12 | 4. Partner Logos | 18 Partner Logos | `public/assets/*.png` | Various | Existing codebase | Active |
-| 13 | 5. Reuse Loop | Pour | `public/assets/ttw/loop/pour.jpg` | 1:1 (600×600) | [Google Drive](https://drive.google.com/file/d/18q5Ny_PIpPik_DzLtFS2JKcdFB_BaplB/view) | Placeholder |
-| 14 | 5. Reuse Loop | Return | `public/assets/ttw/loop/return.jpg` | 1:1 (600×600) | [Google Drive](https://drive.google.com/file/d/1hfMep-96JWi8R6XsrPL1Uh1aq4a5gUmS/view) | Placeholder |
-| 15 | 5. Reuse Loop | Clean | `public/assets/ttw/loop/clean.jpg` | 1:1 (600×600) | [Google Drive](https://drive.google.com/file/d/19GQWkA-mFJFNCbVD3m0rb3va-tEFU270/view) | Placeholder |
-| 16 | 5. Reuse Loop | Reuse | `public/assets/ttw/loop/reuse.jpg` | 1:1 (600×600) | [Google Drive](https://drive.google.com/file/d/1PWsWuvfDeQbWTWwIzIaV863sgor3Frc8/view) | Placeholder |
+| 13 | 5. Reuse Loop | Pour | `public/assets/ttw/loop/pour.jpg` | 1:1 (600×600) | User provided asset (`media_1793859102068...`) | Active |
+| 14 | 5. Reuse Loop | Return | `public/assets/ttw/loop/return.jpg` | 1:1 (600×600) | Jack Johnson at return bin | Active |
+| 15 | 5. Reuse Loop | Clean | `public/assets/ttw/loop/clean.png` | 1:1 (600×600) | User provided asset (`media_1793859119853...`) | Active |
+| 16 | 5. Reuse Loop | Reuse | `public/assets/ttw/loop/reuse.jpg` | 1:1 (600×600) | User provided asset (`media_1793859102117...`) | Active |
 | 17 | 6. What's Inside | 5 OS Cards | `public/assets/*` | Existing 4:3 | Existing codebase | Active |
 | 18 | 7. Social Proof | Sphere | `public/assets/ttw/venues/sphere.jpg` | 4:3 (800×600) | TBD | Placeholder |
 | 19 | 7. Social Proof | Red Rocks Amphitheatre | `public/assets/ttw/venues/red-rocks.jpg` | 4:3 (800×600) | TBD | Placeholder |

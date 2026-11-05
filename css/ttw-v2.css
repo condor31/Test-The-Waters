@@ -659,7 +659,7 @@
 }
 
 .celeb-card {
-  flex: 0 0 clamp(240px, 22vw, 320px);
+  flex: 0 0 clamp(260px, 24vw, 360px);
 }
 
 .celeb-card__figure {
@@ -669,10 +669,19 @@
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   background: #1f2123;
+  aspect-ratio: 377 / 417;
+}
+
+.celeb-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .celeb-card__figure .ph {
   border-radius: 16px;
+  height: 100%;
 }
 
 .celeb-card__name {
@@ -818,13 +827,30 @@
   left: 14%;
 }
 
+.loop-node__thumb,
 .loop-node .ph {
   width: clamp(90px, 15vw, 130px);
+  height: clamp(90px, 15vw, 130px);
   aspect-ratio: 1;
   border-radius: 50%;
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
   border: 3px solid var(--white);
-  background: #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loop-node__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.loop-node__img--return {
+  object-position: center 25%;
 }
 
 .loop-node__label {
