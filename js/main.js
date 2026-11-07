@@ -937,7 +937,7 @@ function initHeroVideoPreview() {
 // Hero Background Video Pause/Play & prefers-reduced-motion
 function initHeroBackgroundVideo() {
   const toggleBtn = document.querySelector("[data-video-toggle]");
-  const video = document.querySelector(".hero__media video");
+  const video = document.querySelector(".hero__media video, .hero-v2__reel, .hero-pre-reel__video");
   if (!toggleBtn || !video) return;
 
   const pauseIcon = toggleBtn.querySelector(".hero__video-toggle-icon--pause");

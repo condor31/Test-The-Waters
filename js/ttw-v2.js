@@ -15,7 +15,31 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroStats(prefersReducedMotion);
   initBrandAnthem();
   initMotionToggles();
+  initStatBand(prefersReducedMotion);
 });
+
+/**
+ * Stat Band (Why It Matters) in-view animation
+ */
+function initStatBand(prefersReducedMotion) {
+  if (prefersReducedMotion) return;
+  const statBand = document.querySelector(".impact-stripes--four");
+  if (!statBand) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          statBand.classList.add("is-in-view");
+          observer.unobserve(statBand);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(statBand);
+}
 
 /**
  * 1. Placeholders: Displays labeled neutral placeholder box with target path.

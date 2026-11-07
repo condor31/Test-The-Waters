@@ -59,6 +59,7 @@ async function run() {
     { id: "why-it-matters", name: "10-why-it-matters" },
     { id: "press", name: "11-press" },
     { id: "use-of-proceeds", name: "12-use-of-proceeds" },
+    { id: "leadership", name: "12b-leadership" },
     { id: "whats-next", name: "13-next-steps" },
     { id: "interested-form", name: "14-final-cta" },
     { selector: ".site-footer", name: "15-footer" },

@@ -5,6 +5,31 @@
    ========================================================================== */
 
 /* ---------- Reusable Placeholder Component ---------- */
+.img-todo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #e6007e;
+  background-color: #f7f7f9;
+  color: #111111;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 16px;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.data-todo {
+  display: inline-block;
+  background: rgba(230, 0, 126, 0.12);
+  color: #c00068;
+  border-bottom: 1.5px dashed #c00068;
+  padding: 0 4px;
+  font-weight: 700;
+}
+
 .ph {
   --ph-ratio: 16 / 9;
   position: relative;
@@ -172,6 +197,30 @@
   color: var(--grey);
 }
 
+.site-disclaimer--depicted {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #718096;
+  margin-top: 16px;
+  max-width: 800px;
+}
+
+.site-disclaimer--legal {
+  margin-top: 12px;
+  color: #a0aec0;
+}
+
+.fn-backref {
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 4px;
+  color: var(--blue, #0099ff);
+}
+
+.fn-backref:hover {
+  text-decoration: underline;
+}
+
 .module-cta {
   display: flex;
   justify-content: center;
@@ -199,7 +248,245 @@
 }
 
 /* ==========================================================================
-   MODULE 1 & 2: Hero v2 & Background Reel (Pixel-accurate to Figma node 467:1547)
+   MODULE 1 & 2: Pre-Hero Reel (T01) & Composed Hero Module (T02)
+   ========================================================================== */
+
+/* ---------- Pre-Hero Reel Strip (T01) ---------- */
+.hero-pre-reel {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 28vw, 400px);
+  overflow: hidden;
+  background: var(--yellow, #ffd100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-pre-reel__video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--yellow, #ffd100);
+  overflow: hidden;
+}
+
+.hero-pre-reel__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: url(#hero-yellow-duotone);
+}
+
+.hero-pre-reel__toggle {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 5;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+  backdrop-filter: blur(4px);
+}
+
+.hero-pre-reel__toggle:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+.hero-pre-reel__overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 20px;
+  pointer-events: none;
+}
+
+.hero-pre-reel__stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(4px, 1vw, 10px);
+  width: 100%;
+}
+
+.hero-pre-reel .hero-v2__stat {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-pre-reel .hero-v2__stat-text {
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: clamp(32px, 5.5vw, 68px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 3.2px #ffffff;
+  color: transparent;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+  display: block;
+  text-align: center;
+}
+
+.hero-pre-reel .hero-v2__stat.is-highlighted .hero-v2__stat-text {
+  color: #ffffff;
+  -webkit-text-stroke: 3.2px #ffffff;
+}
+
+/* ---------- Composed Hero Module (T02) ---------- */
+.hero--composed {
+  position: relative;
+  background: var(--yellow, #ffd100);
+  color: #000000;
+  padding-top: clamp(40px, 5vw, 72px);
+  padding-bottom: clamp(48px, 6vw, 84px);
+  overflow: hidden;
+}
+
+.hero-composed__inner {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(28px, 3.5vw, 44px);
+}
+
+.hero-composed__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 2vw, 24px);
+  max-width: 920px;
+}
+
+.hero-composed__title {
+  color: #000000;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: clamp(38px, 6.2vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-composed__subhead {
+  color: #111111;
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: clamp(18px, 2.2vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin: 0;
+  max-width: 740px;
+  text-align: center;
+}
+
+.hero-composed__media {
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-composed__player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+.hero-composed__cta-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.hero-composed__cta {
+  width: 100%;
+  max-width: 480px;
+  height: 54px;
+  min-height: 54px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.hero-composed__disclaimer-wrap {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.hero-composed__disclaimer {
+  font-family: var(--font-body, "Inclusive Sans", sans-serif);
+  font-size: 12px;
+  line-height: 1.35;
+  color: #222222;
+  text-align: left;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-composed__disclaimer .legend-citation {
+  color: #111111;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.hero-composed__disclaimer .legend-bullets {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-composed__disclaimer .legend-bullets li {
+  color: #222222;
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Legacy Hero v2 Layout (Fallback)
    ========================================================================== */
 .hero--v2 {
   position: relative;
@@ -880,49 +1167,74 @@
   right: 0;
 }
 
-/* Loop mobile: stack vertically */
+/* Loop mobile: maintain circular/elliptical path (T04) */
 @media (max-width: 680px) {
   .reuse-loop__diagram {
-    aspect-ratio: auto;
-    width: 100%;
-    min-height: auto;
+    width: min(100%, 360px);
+    aspect-ratio: 1 / 1;
+    margin-top: 24px;
   }
   .reuse-loop__ring,
   .reuse-loop__mark {
-    display: none;
+    display: block;
+  }
+  .reuse-loop__mark {
+    width: 44px;
   }
   .reuse-loop__nodes {
-    position: relative;
-    inset: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
+    position: absolute;
+    inset: 0;
   }
   .loop-node {
-    position: static;
-    transform: none;
-    width: 100%;
-    max-width: 240px;
+    position: absolute;
+    width: 86px;
+    gap: 4px;
+    transform: translate(-50%, -50%);
+  }
+  .loop-node--pour {
+    top: 14%;
+    left: 50%;
+  }
+  .loop-node--return {
+    top: 50%;
+    left: 86%;
+  }
+  .loop-node--clean {
+    top: 86%;
+    left: 50%;
+  }
+  .loop-node--reuse {
+    top: 50%;
+    left: 14%;
+  }
+  .loop-node__thumb {
+    width: 64px;
+    height: 64px;
+  }
+  .loop-node__img {
+    width: 64px;
+    height: 64px;
+  }
+  .loop-node__label {
+    padding: 3px 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
+  .loop-node__label svg {
+    width: 14px;
+    height: 14px;
   }
   .loop-node__next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--grey);
-    margin-top: 4px;
-  }
-  .loop-node--reuse .loop-node__next {
     display: none;
   }
   .reuse-loop__controls {
-    display: none;
+    bottom: -16px;
+    right: 0;
   }
 }
 
 /* ==========================================================================
-   MODULE 7: Social Proof (4x2 Venue Grid)
+   MODULE 7: Social Proof (3x2 Venue Grid - T08)
    ========================================================================== */
 .social-proof {
   padding-block: clamp(56px, 8vw, 96px);
@@ -934,8 +1246,20 @@
   padding: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(16px, 2.5vw, 24px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+@media (max-width: 960px) {
+  .venue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .venue-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .venue-card {
@@ -1120,6 +1444,36 @@
   gap: 28px;
 }
 
+/* Stat band animation (T13) */
+.impact-stripes--four .impact-stripe {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.impact-stripes--four .impact-stripe:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.impact-stripes--four.is-in-view .impact-stripe {
+  animation: stat-tile-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(1) { animation-delay: 0.05s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(2) { animation-delay: 0.15s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(3) { animation-delay: 0.25s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes stat-tile-pop {
+  0% {
+    opacity: 0.4;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .benefit-grid {
   list-style: none;
   margin: 0;
@@ -1150,7 +1504,37 @@
 }
 
 @media (max-width: 680px) {
-  .benefit-grid {
+  /* Stat band animation (T13) */
+.impact-stripes--four .impact-stripe {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.impact-stripes--four .impact-stripe:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.impact-stripes--four.is-in-view .impact-stripe {
+  animation: stat-tile-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(1) { animation-delay: 0.05s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(2) { animation-delay: 0.15s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(3) { animation-delay: 0.25s; }
+.impact-stripes--four.is-in-view .impact-stripe:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes stat-tile-pop {
+  0% {
+    opacity: 0.4;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.benefit-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1251,6 +1635,10 @@
     transition: none !important;
   }
   .hero-v2__stat.is-highlighted {
+    transform: none !important;
+  }
+  .impact-stripes--four.is-in-view .impact-stripe {
+    animation: none !important;
     transform: none !important;
   }
 }

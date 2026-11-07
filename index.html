@@ -37,67 +37,81 @@
 </script>
 
 
-<!-- ===== MODULE 1: Hero + background reel (NEW) / MODULE 2: Hero copy (REWORK) ===== -->
-<header class="hero hero--v2" id="top">
-  <div class="hero-v2__layout">
-    <div class="hero-v2__content">
-      <h1 class="hero-v2__title">r.World Turned Reuse Into a Headliner</h1>
-      <p class="hero-v2__subhead">We&rsquo;ve been crushing single-use waste with a nationwide movement toward reuse. Help us crush it more.</p>
-      <div class="hero-v2__cta-wrap">
-        <a class="btn btn-solid-black cta-label hero-v2__cta" href="#interested-form">GET ON THE LIST</a>
+<!-- ===== PRE-HERO: Crowd Reel Strip (T01) ===== -->
+<div class="hero-pre-reel" id="crowd-reel" aria-label="r.World crowd reel and by the numbers">
+  <svg class="hero-v2__svg-filters" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <filter id="hero-yellow-duotone" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="
+        0.2126 0.7152 0.0722 0 0
+        0.2126 0.7152 0.0722 0 0
+        0.2126 0.7152 0.0722 0 0
+        0      0      0      1 0" result="gray" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.28 1.0" />
+        <feFuncG type="table" tableValues="0.22 0.8196" />
+        <feFuncB type="table" tableValues="0.00 0.0" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <div class="hero-v2__video-wrapper hero-pre-reel__video-wrapper">
+    <video class="hero-v2__reel hero-pre-reel__video" poster="public/assets/ttw/hero-crowd-yellow.jpg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+      <source src="public/assets/ttw/hero-reel.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-v2__yellow-overlay" aria-hidden="true"></div>
+  </div>
+
+  <button class="hero__video-toggle hero-pre-reel__toggle" type="button" aria-label="Pause background video" data-video-toggle>
+    <svg class="hero__video-toggle-icon hero__video-toggle-icon--pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+      <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+    </svg>
+    <svg class="hero__video-toggle-icon hero__video-toggle-icon--play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </svg>
+  </button>
+
+  <div class="hero-pre-reel__overlay">
+    <ul class="hero-v2__stats hero-pre-reel__stats" aria-label="r.World by the numbers">
+      <li class="hero-v2__stat is-highlighted"><span class="hero-v2__stat-text">30M DRINKS SERVED</span></li>
+      <li class="hero-v2__stat"><span class="hero-v2__stat-text">150+ CITIES</span></li>
+      <li class="hero-v2__stat"><span class="hero-v2__stat-text">30+ STATES</span></li>
+      <li class="hero-v2__stat"><span class="hero-v2__stat-text">10,000+ LIVE EVENTS</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MODULE 1 & 2: Composed Hero Module (T02) ===== -->
+<header class="hero hero--v2 hero--composed" id="top">
+  <div class="section-inner hero-composed__inner">
+    <div class="hero-composed__header">
+      <h1 class="hero-v2__title hero-composed__title">r.World Turned Reuse Into a Headliner</h1>
+      <p class="hero-v2__subhead hero-composed__subhead">We&rsquo;ve been crushing single-use waste with a nationwide movement toward reuse. Help us crush it more.</p>
+    </div>
+
+    <div class="hero-composed__media" id="brand-anthem">
+      <div class="brand-anthem__player hero-composed__player" id="brand-anthem-player" data-video-id="TXxys99LGoM" data-video-title="r.World brand anthem">
+        <button class="brand-anthem__facade" type="button" aria-label="Play video: r.World brand anthem">
+          <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="" loading="lazy" />
+          <span class="brand-anthem__play" aria-hidden="true">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
+          </span>
+        </button>
+        <div class="brand-anthem__iframe-slot"></div>
       </div>
     </div>
 
-    <div class="hero-v2__lower">
-      <div class="hero-v2__disclaimer-wrap">
-        <div class="rule-206-legend hero-v2__disclaimer" data-rule-206-legend>
-          <p class="legend-citation">This communication is being used for &ldquo;testing the waters&rdquo; pursuant to 17 CFR &sect; 227.206.</p>
-          <ul class="legend-bullets">
-            <li>No money or other consideration is being solicited, and if sent in response, will not be accepted;</li>
-            <li>No offer to buy the securities can be accepted and no part of the purchase price can be received until the offering statement is filed and only through the platform of an intermediary (funding portal or broker-dealer); and</li>
-            <li>A person&rsquo;s indication of interest includes no obligation or commitment of any kind.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="hero-composed__cta-wrap">
+      <a class="btn btn-solid-black cta-label hero-v2__cta hero-composed__cta" href="#interested-form">GET ON THE LIST</a>
+    </div>
 
-      <div class="hero-v2__media-frame">
-        <svg class="hero-v2__svg-filters" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
-          <filter id="hero-yellow-duotone" color-interpolation-filters="sRGB">
-            <feColorMatrix type="matrix" values="
-              0.2126 0.7152 0.0722 0 0
-              0.2126 0.7152 0.0722 0 0
-              0.2126 0.7152 0.0722 0 0
-              0      0      0      1 0" result="gray" />
-            <feComponentTransfer>
-              <feFuncR type="table" tableValues="0.28 1.0" />
-              <feFuncG type="table" tableValues="0.22 0.8196" />
-              <feFuncB type="table" tableValues="0.00 0.0" />
-            </feComponentTransfer>
-          </filter>
-        </svg>
-
-        <div class="hero-v2__video-wrapper">
-          <video class="hero-v2__reel" poster="public/assets/ttw/hero-crowd-yellow.jpg" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
-            <source src="public/assets/ttw/hero-reel.mp4" type="video/mp4" />
-          </video>
-          <div class="hero-v2__yellow-overlay" aria-hidden="true"></div>
-        </div>
-
-        <button class="hero__video-toggle" type="button" aria-label="Pause background video" data-video-toggle>
-          <svg class="hero__video-toggle-icon hero__video-toggle-icon--pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
-            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
-          </svg>
-          <svg class="hero__video-toggle-icon hero__video-toggle-icon--play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </button>
-
-        <ul class="hero-v2__stats" aria-label="r.World by the numbers">
-          <li class="hero-v2__stat is-highlighted"><span class="hero-v2__stat-text">30M DRINKS SERVED</span></li>
-          <li class="hero-v2__stat"><span class="hero-v2__stat-text">150+ CITIES</span></li>
-          <li class="hero-v2__stat"><span class="hero-v2__stat-text">30+ STATES</span></li>
-          <li class="hero-v2__stat"><span class="hero-v2__stat-text">10,000+ LIVE EVENTS</span></li>
+    <div class="hero-composed__disclaimer-wrap">
+      <div class="rule-206-legend hero-v2__disclaimer hero-composed__disclaimer" data-rule-206-legend>
+        <p class="legend-citation">This communication is being used for &ldquo;testing the waters&rdquo; pursuant to 17 CFR &sect; 227.206.</p>
+        <ul class="legend-bullets">
+          <li>No money or other consideration is being solicited, and if sent in response, will not be accepted;</li>
+          <li>No offer to buy the securities can be accepted and no part of the purchase price can be received until the offering statement is filed and only through the platform of an intermediary (funding portal or broker-dealer); and</li>
+          <li>A person&rsquo;s indication of interest includes no obligation or commitment of any kind.</li>
         </ul>
       </div>
     </div>
@@ -105,21 +119,6 @@
 </header>
 
 <main id="main-content">
-
-<!-- ===== MODULE 2 (cont.): Brand Anthem video band (REWORK of the existing YouTube facade) ===== -->
-<section class="section section--ink brand-anthem" id="brand-anthem" aria-label="r.World brand anthem video">
-  <div class="section-inner brand-anthem__inner">
-    <div class="brand-anthem__player" id="brand-anthem-player" data-video-id="TXxys99LGoM" data-video-title="r.World brand anthem">
-      <button class="brand-anthem__facade" type="button" aria-label="Play video: r.World brand anthem">
-        <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="" loading="lazy" />
-        <span class="brand-anthem__play" aria-hidden="true">
-          <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
-        </span>
-      </button>
-      <div class="brand-anthem__iframe-slot"></div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ===== MODULE 3: Celebrities (NEW) ===== -->
@@ -306,7 +305,11 @@
           <div class="loop-node__thumb">
             <img class="loop-node__img" src="public/assets/ttw/loop/reuse.jpg" alt="Reuse: attendee enjoying drinks in reusable r.Cup" loading="lazy" width="130" height="130" />
           </div>
-          <span class="loop-node__label"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.4 6.4L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.4-6.4L21 8"/><path d="M21 3v5h-5"/></svg><span>Reuse</span></span>
+          <span class="loop-node__label">
+            <!-- IMAGE-TODO: IMG-05 | International reuse symbol icon (SVG) | Connor to source / approve | Match current icon size | alt: "Reuse symbol" -->
+            <span class="img-todo img-todo--icon" data-image-todo="IMG-05" style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; padding: 2px; font-size: 8px; border: 1.5px dashed #e6007e; border-radius: 4px; background: #ffffff; color: #111111; font-weight: 700; box-sizing: border-box;" aria-label="Reuse symbol" title="IMG-05: Reuse symbol">IMG-05</span>
+            <span>Reuse</span>
+          </span>
           <span class="loop-node__next" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M5 13l7 7 7-7"/></svg></span>
         </li>
       </ol>
@@ -348,7 +351,7 @@
           <img class="os-card__image" src="public/assets/sanitization.jpg" alt="r.World staff member sanitizing reusable cups at an r.World wash center machine" loading="lazy" />
           <div class="os-card__info">
             <h3 class="h3">Sanitization</h3>
-            <p>Regional centers running <a href="https://www.ecolab.com/en-us/offerings/inst/science-certified-program" target="_blank" rel="noopener">Ecolab Science Certified&trade;</a> deep cleaning.<sup class="footnote-ref"><a href="#fn28" id="fnref28">28</a></sup> Every item inspected, then sealed in a tub before it ships.</p>
+            <p>Regional centers running <a href="https://www.ecolab.com/en-us/offerings/inst/science-certified-program" target="_blank" rel="noopener">Ecolab Science Certified&trade;</a> deep cleaning.<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup> Every item inspected, then sealed in a tub before it ships.</p>
           </div>
         </div>
         <div class="os-card" role="group" aria-roledescription="slide" aria-label="3 of 5: Automation">
@@ -360,7 +363,10 @@
         </div>
         <div class="os-card os-card--technology" role="group" aria-roledescription="slide" aria-label="4 of 5: Technology">
           <div class="os-card__image os-card__image--technology">
-            <img class="os-card__logo" src="public/assets/rturn-logo.png" alt="r.Turn logo" width="758" height="222" loading="lazy" />
+            <!-- IMAGE-TODO: IMG-04 | New r.Turn screenshot | From Mac | Match current r.Turn graphic | alt: "r.Turn platform screenshot" -->
+            <div class="img-todo" data-image-todo="IMG-04" style="aspect-ratio: 16 / 9; width: 100%; height: 100%; min-height: 200px;">
+              IMG-04: New r.Turn screenshot
+            </div>
           </div>
           <div class="os-card__info">
             <h3 class="h3">Technology</h3>
@@ -400,7 +406,7 @@
   <div class="section-inner">
     <div class="module-head">
       <h2 class="h2 measure--wide">Proof From Some of the Biggest Stages</h2>
-      <p class="module-head__sub">High-volume venues with massive crowds. On average, 90% of r.World reuse products are returned<sup class="footnote-ref"><a href="#proof-fn1" id="proof-fnref1">1</a></sup>, and 90% of r.World&rsquo;s clients stay for more reuse, too.<sup class="footnote-ref"><a href="#proof-fn2" id="proof-fnref2">2</a></sup></p>
+      <p class="module-head__sub">High-volume venues with massive crowds. On average, 90% of r.World reuse products are returned<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup>, and 90% of r.World&rsquo;s clients stay for more reuse, too.<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup></p>
     </div>
     <!-- TODO(connor): "X,XXX cups returned" values are pending. Keep the literal placeholder until real numbers are approved. -->
     <ul class="venue-grid">
@@ -410,7 +416,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">Sphere</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
       <li class="venue-card">
@@ -419,7 +425,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">Red Rocks Amphitheatre</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
       <li class="venue-card">
@@ -428,16 +434,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">Merriweather Post Pavilion</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
-        </div>
-      </li>
-      <li class="venue-card">
-        <figure class="venue-card__figure">
-          <img class="venue-card__img" src="public/assets/ttw/venues/sap-center.jpg" alt="SAP Center arena in San Jose" loading="lazy" width="800" height="600" />
-        </figure>
-        <div class="venue-card__body">
-          <h3 class="venue-card__name">SAP Center</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
       <li class="venue-card">
@@ -446,7 +443,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">Crypto.com Arena</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
       <li class="venue-card">
@@ -455,7 +452,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">CHS Field</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
       <li class="venue-card">
@@ -464,16 +461,7 @@
         </figure>
         <div class="venue-card__body">
           <h3 class="venue-card__name">LA Memorial Coliseum</h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
-        </div>
-      </li>
-      <li class="venue-card">
-        <figure class="venue-card__figure">
-          <img class="venue-card__img" src="public/assets/ttw/venues/tpc-twin-cities.jpg" alt="TPC Twin Cities championship golf course" loading="lazy" width="800" height="600" />
-        </figure>
-        <div class="venue-card__body">
-          <h3 class="venue-card__name">TPC Twin Cities<sup class="footnote-ref"><a href="#proof-fn3" id="proof-fnref3">3</a></sup></h3>
-          <p class="venue-card__stat">X,XXX cups returned</p>
+          <p class="venue-card__stat"><span class="data-todo" data-todo="cups-returned">[DATA TBD]</span> cups returned</p>
         </div>
       </li>
     </ul>
@@ -494,12 +482,6 @@
         </div>
       </figcaption>
     </figure>
-    <ol class="module-footnotes" aria-label="Social proof footnotes">
-      <li id="proof-fn1">Average share of delivered reusable items returned, Nov 2021&ndash;Oct 2026 (start date reflects r.World&rsquo;s 2021 shift to a full reuse model). Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
-      <li id="proof-fn2">Share of customers who continued their programs vs. those who ended them, Nov 2021&ndash;Oct 2026. Source: r.World internal customer data and contract renewals.</li>
-      <!-- TODO(connor): Footnote 3 (TPC Twin Cities) pending. Wireframe says "TBD from Mac". -->
-      <li id="proof-fn3"><span class="placeholder-text">[TODO: footnote pending]</span></li>
-    </ol>
   </div>
 </section>
 
@@ -509,7 +491,7 @@
   <div class="section-inner">
     <div class="module-head">
       <h2 class="h2 measure--wide">r.World Goes Way Beyond the Stage Too</h2>
-      <p class="module-head__sub">Same engine. Bigger stages. The system that works at the arena works everywhere people gather and single-use waste is created.</p>
+      <p class="module-head__sub">Same engine. Bigger settings.</p>
     </div>
   </div>
   <div class="where-next__stage">
@@ -519,15 +501,24 @@
     </div>
     <ul class="next-cards">
       <li class="next-card">
-        <div class="ph" style="--ph-ratio: 4 / 5;" data-ph-src="public/assets/ttw/next/healthcare.jpg" data-ph-alt="Healthcare setting" aria-hidden="true"><span class="ph__label">[STOCK PHOTO: Healthcare]</span></div>
+        <!-- IMAGE-TODO: IMG-01 | Healthcare vertical stock image | Match existing vertical cards | alt: "TBD" -->
+        <div class="img-todo" data-image-todo="IMG-01" style="aspect-ratio: 4 / 5; border-radius: 12px; width: 100%;">
+          IMG-01: Healthcare vertical stock image
+        </div>
         <h3 class="next-card__label">Healthcare</h3>
       </li>
       <li class="next-card">
-        <div class="ph" style="--ph-ratio: 4 / 5;" data-ph-src="public/assets/ttw/next/campuses.jpg" data-ph-alt="Corporate &amp; College Campuses setting" aria-hidden="true"><span class="ph__label">[STOCK PHOTO: Corporate &amp; College Campuses]</span></div>
+        <!-- IMAGE-TODO: IMG-02 | Corporate & University vertical stock image | Match existing vertical cards | alt: "TBD" -->
+        <div class="img-todo" data-image-todo="IMG-02" style="aspect-ratio: 4 / 5; border-radius: 12px; width: 100%;">
+          IMG-02: Corporate &amp; University vertical stock image
+        </div>
         <h3 class="next-card__label">Corporate &amp; College Campuses</h3>
       </li>
       <li class="next-card">
-        <div class="ph" style="--ph-ratio: 4 / 5;" data-ph-src="public/assets/ttw/next/travel-hospitality.jpg" data-ph-alt="Travel &amp; Hospitality setting" aria-hidden="true"><span class="ph__label">[STOCK PHOTO: Travel &amp; Hospitality]</span></div>
+        <!-- IMAGE-TODO: IMG-03 | Travel & Hospitality vertical stock image | Match existing vertical cards | alt: "TBD" -->
+        <div class="img-todo" data-image-todo="IMG-03" style="aspect-ratio: 4 / 5; border-radius: 12px; width: 100%;">
+          IMG-03: Travel &amp; Hospitality vertical stock image
+        </div>
         <h3 class="next-card__label">Travel &amp; Hospitality</h3>
       </li>
     </ul>
@@ -543,7 +534,7 @@
     <p class="measure measure--wide how-it-works__intro">Reuse-friendly legislation and EPR are fueling a growing nationwide movement.</p>
 
     <div class="how-it-works__map-container">
-        <!-- TODO: [CONFIRM] State list and status categories (for color coding) pending from Mac Sellars / Jessica Johnston. Map component built with configurable state data and legend (see js/map-config.js). -->
+        <!-- TODO: [CONFIRM] State list and status categories (for color coding) pending from Mac Sellars. Map component built with configurable state data and legend (see js/map-config.js). -->
         <div class="reuse-map-wrapper">
           <div class="reuse-map-header">
             <h3 class="reuse-map-title">The reuse movement is expanding.</h3>
@@ -874,19 +865,19 @@
     <div class="impact-stripes impact-stripes--four">
       <div class="impact-stripe impact-stripe--magenta">
         <span class="impact-stripe__icon"><img src="public/assets/c19bcb8aea237ee61a19a67b1918a83718824bc1.svg" alt="" /></span>
-        <p class="impact-stripe__number">Over 30 million single-use items<sup class="footnote-ref"><a href="#fn8" id="fnref8">8</a></sup></p>
+        <p class="impact-stripe__number">Over 30 million single-use items<sup class="footnote-ref"><a href="#fn4" id="fnref4">4</a></sup></p>
         <p class="impact-stripe__label">single-use items replaced</p>
       </div>
 
       <div class="impact-stripe impact-stripe--cyan">
         <span class="impact-stripe__icon"><img src="public/assets/3c0290c3cf0b8f8ab27a075b2502f2866caf381e.svg" alt="" /></span>
-        <p class="impact-stripe__number">145 tons of single-use waste<sup class="footnote-ref"><a href="#fn10" id="fnref10">10</a></sup></p>
+        <p class="impact-stripe__number">145 tons of single-use waste<sup class="footnote-ref"><a href="#fn5" id="fnref5">5</a></sup></p>
         <p class="impact-stripe__label">diverted from landfills and the environment</p>
       </div>
 
       <div class="impact-stripe impact-stripe--purple">
         <span class="impact-stripe__icon"><img src="public/assets/44bfdd3294ae4fe6344c32e9aad6b0a7a20d016e.svg" alt="" /></span>
-        <p class="impact-stripe__number">5.89M<sup class="footnote-ref"><a href="#fn11" id="fnref11">11</a></sup></p>
+        <p class="impact-stripe__number">5.89M<sup class="footnote-ref"><a href="#fn6" id="fnref6">6</a></sup></p>
         <p class="impact-stripe__label">gallons of water saved</p>
       </div>
 
@@ -902,12 +893,12 @@
   </div>
 
   <div class="section-inner why-matters__benefits">
-    <h3 class="h3">Reuse Pays for Itself and Then Some</h3>
+    <h3 class="h3">Reuse pays off and then some.</h3>
     <ul class="benefit-grid">
-      <li class="info-card benefit-card"><h4 class="benefit-card__title">Lower costs</h4><p>Less waste hauling and less labor spent on cleanup.</p></li>
-      <li class="info-card benefit-card"><h4 class="benefit-card__title">More revenue</h4><p>Potential sales lift, sponsorships on every cup, and a sustainability fee.</p></li>
-      <li class="info-card benefit-card"><h4 class="benefit-card__title">Built for you</h4><p>We design each program to make the numbers work.</p></li>
-      <li class="info-card benefit-card"><h4 class="benefit-card__title">Getting cheaper</h4><p>We&rsquo;re driving costs down every year toward single-use parity.</p></li>
+      <li class="info-card benefit-card"><h4 class="benefit-card__title">Lower costs<sup class="fn-ref" data-footnote-todo="FN-LOWER-COSTS"><a href="#fn7" id="fnref7">7</a></sup></h4><p>Less waste hauling and less labor spent on cleanup.</p></li>
+      <li class="info-card benefit-card"><h4 class="benefit-card__title">More revenue<sup class="fn-ref" data-footnote-todo="FN-MORE-REVENUE"><a href="#fn8" id="fnref8">8</a></sup></h4><p>Potential sales lift, sponsorships on every cup, and a sustainability fee.</p></li>
+      <li class="info-card benefit-card"><h4 class="benefit-card__title">Built for you<sup class="fn-ref" data-footnote-todo="FN-BUILT-FOR-YOU"><a href="#fn9" id="fnref9">9</a></sup></h4><p>We design each program to make the numbers work.</p></li>
+      <li class="info-card benefit-card"><h4 class="benefit-card__title">Getting cheaper<sup class="fn-ref" data-footnote-todo="FN-GETTING-CHEAPER"><a href="#fn10" id="fnref10">10</a></sup></h4><p>We&rsquo;re driving costs down every year toward single-use parity.</p></li>
     </ul>
   </div>
 </section>
@@ -966,6 +957,209 @@
       <div class="jobs-disclaimer-wrap">
         <p class="jobs-disclaimer-pill proceeds-note"><em>The full allocation will be in r.World&rsquo;s offering statement when filed with the SEC.</em></p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== LEADERSHIP & BOARD MODULE (T14: Restored from old TTW) ===== -->
+<section class="section section--grey leadership-module" id="leadership">
+  <div class="section-inner">
+    <h2 class="h2 measure--wide">Leadership Built for the Industries We Serve</h2>
+    <p class="measure--wide">r.World's leadership brings deep experience from the industries we serve and are helping transform, including beverage distribution, concessions, industrial manufacturing, and food service logistics.</p>
+    <p class="measure--wide">Our board brings together expertise in the four areas critical to scaling r.World: operational excellence, enterprise sales, sustainability, and brand leadership. Together, they provide the experience, relationships, and strategic vision to make reuse the new standard.</p>
+
+    <h3 class="h3">Leadership &amp; Board</h3>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel carousel--leader" data-carousel role="region" aria-roledescription="carousel" aria-label="Leadership and board members">
+      <button class="carousel__nav carousel__nav--prev" type="button" aria-label="Previous slide" data-carousel-prev>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <ul class="carousel__track" data-carousel-track tabindex="0">
+        <!-- Slide 1: Michael Martin -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/4115c8629db714eda1c800f6b091aad276665889.jpg" alt="Michael Martin" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Michael Martin</h4>
+              <p class="leader-card__title">Founder &amp; CEO</p>
+            </div>
+            <p>Has advised artists, global organizations and Fortune 500 companies on sustainability for 27 years, and has implemented reuse nationwide for nearly a decade.</p>
+          </div>
+        </li>
+
+        <!-- Slide 2: Grace Lee -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/201cedc36fe7d01c2c79c19be48fa501cee58307.jpg" alt="Grace Lee" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Grace Lee</h4>
+              <p class="leader-card__title">Head of Account Management</p>
+            </div>
+            <p>Brings decades of experience in sustainability innovation, running the client relationships behind r.World's 90% customer retention.<sup class="footnote-ref"><a href="#fn3" id="fnref3-leader">3</a></sup></p>
+          </div>
+        </li>
+
+        <!-- Slide 3: Annie Wesen -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/23f9910083603796ab19ed7a33a98702d64399e2.jpg" alt="Annie Wesen" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Annie Wesen</h4>
+              <p class="leader-card__title">Controller</p>
+            </div>
+            <p>Keeps the books on a business that owns and tracks millions of individual assets in circulation.</p>
+          </div>
+        </li>
+
+        <!-- Slide 4: Craig Swanson -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/craig-swanson.jpg" alt="Craig Swanson" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Craig Swanson</h4>
+              <p class="leader-card__title">President &amp; CFO</p>
+            </div>
+            <p>Thirty years spent on the unglamorous side of growth: Turnarounds, operating discipline and M&amp;A, plus many board seats before joining r.World.</p>
+          </div>
+        </li>
+
+        <!-- Slide 5: Tim Webert -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/f28dfa13625700647e64666ce3f7411045aa6362.jpg" alt="Tim Webert" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Tim Webert</h4>
+              <p class="leader-card__title">Chief Operating Officer</p>
+            </div>
+            <p>Built new products and markets across food, travel and medtech, and founded a company of his own, before running r.World's operations.</p>
+          </div>
+        </li>
+
+        <!-- Slide 6: Ed DeFraine -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/c2987eff36db6d658304ec49bce1eb81d35a5d84.jpg" alt="Ed DeFraine" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Ed DeFraine</h4>
+              <p class="leader-card__title">Chief Sales Officer</p>
+            </div>
+            <p>Came from the Coca-Cola System where he led food service and on-premise sales to the same enterprise clients r.World now serves.</p>
+          </div>
+        </li>
+
+        <!-- Slide 7: Mac Sellars -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/72c26b8f5e5ddd7637da69684409dcd250e1c5e8.jpg" alt="Mac Sellars" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Mac Sellars</h4>
+              <p class="leader-card__title">VP Strategy and Innovation</p>
+            </div>
+            <p>Specializes in innovation and strategy while advising state, national and international bodies on reuse policy, and contributed to the Green Sports Alliance Reuse Playbook.</p>
+          </div>
+        </li>
+
+        <!-- Slide 8: Kate Rusciano -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/kate.jpg" alt="Kate Rusciano" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Kate Rusciano</h4>
+              <p class="leader-card__title">Head of Content and Brand</p>
+            </div>
+            <p>Two decades of corporate and agency marketing experience across retail, healthcare and technology, with specialities in content strategy and brand storytelling.</p>
+          </div>
+        </li>
+
+        <!-- Slide 9: Jess Haap -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/jess-haap.jpg" alt="Jess Haap" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Jess Haap</h4>
+              <p class="leader-card__title">Head of Talent</p>
+            </div>
+            <p>Industrial and organizational psychologist who runs People Operations across r.World&rsquo;s 10-state workforce, after a decade building HR foundations for high-growth, mission-driven companies.</p>
+          </div>
+        </li>
+
+        <!-- Slide 10: Tom Sellars -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/2a638ba76140469f5e62d00dcc9fa1af13a419f0.jpg" alt="Tom Sellars" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <div>
+              <h4 class="leader-card__name">Tom Sellars</h4>
+              <p class="leader-card__title">Chair &amp; Co-Founder</p>
+            </div>
+            <p>Chairman and CEO of Sellars Absorbent Materials, a Milwaukee manufacturer he has run at industrial scale for decades.</p>
+          </div>
+        </li>
+
+        <!-- Slide 11: Brian Yost -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/11efe0692277a9cd0dca0fc6582b0478b2397516.jpg" alt="Brian Yost" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <h4 class="leader-card__name">Brian Yost</h4>
+            <p class="leader-card__title">Board Member</p>
+            <p>Former Chief Operating Officer of the Las Vegas Convention &amp; Visitors Authority, and formerly of Live Nation, Disney and Marriott, he has sat on the buying side of this exact decision.</p>
+          </div>
+        </li>
+
+        <!-- Slide 12: Mark Addicks -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/mark-addicks.jpg" alt="Mark Addicks" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <h4 class="leader-card__name">Mark Addicks</h4>
+            <p class="leader-card__title">Board Member</p>
+            <p>Retired General Mills CMO with decades of entrepreneurial success who now teaches marketing and entrepreneurship at the University of St. Thomas.</p>
+          </div>
+        </li>
+
+        <!-- Slide 13: Daniel Yarano -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/daniel-yarano.jpg" alt="Daniel Yarano" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <h4 class="leader-card__name">Daniel Yarano</h4>
+            <p class="leader-card__title">Board Member</p>
+            <p>Attorney and shareholder at Fredrikson &amp; Byron where he chairs the firm's energy and real estate practice groups.</p>
+          </div>
+        </li>
+
+        <!-- Slide 14: Kari Niedfeldt-Thomas -->
+        <li class="carousel__slide carousel__slide--leader">
+          <img class="carousel__image" src="public/assets/eff642cb65a39a60b97d7e78b6bbb6e57c1f5f4d.jpg" alt="Kari Niedfeldt-Thomas" loading="lazy" />
+          <div class="carousel__card carousel__card--leader">
+            <h4 class="leader-card__name">Kari Niedfeldt-Thomas</h4>
+            <p class="leader-card__title">Board Member</p>
+            <p>President and CEO of the Better Business Bureau of Minnesota and North Dakota, mayor of New Brighton, Minnesota and former COO of Chief Executives for Corporate Purpose.</p>
+          </div>
+        </li>
+      </ul>
+
+      <button class="carousel__nav carousel__nav--next" type="button" aria-label="Next slide" data-carousel-next>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="carousel__dots" data-carousel-dots>
+      <button class="carousel__dot is-active" type="button" aria-label="Go to slide 1" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 2" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 3" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 4" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 5" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 6" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 7" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 8" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 9" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 10" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 11" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 12" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 13" data-carousel-dot></button>
+      <button class="carousel__dot" type="button" aria-label="Go to slide 14" data-carousel-dot></button>
     </div>
   </div>
 </section>
@@ -1095,37 +1289,22 @@
 
 <section class="section section--sources" id="sources-section">
   <div class="section-inner">
-    <h2 class="h4 sources-heading">Sources</h2>
+    <h2 class="h4 sources-heading">Sources &amp; Disclosures</h2>
     <ol class="sources-list" id="sources-list">
-      <li id="fn1">&lsquo;Leading&rsquo; and annual volume comparison measured by number of reusable foodware items washed annually by U.S.-based reuse providers. Based on r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records), Sep 2017&ndash;Oct 2026, compared with competitors&rsquo; publicly reported figures as of [DATE]. See <a href="https://www.boldreuse.com/" target="_blank" rel="noopener">Bold Reuse</a>.</li>
-      <li id="fn2">OECD (2022), <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf" target="_blank" rel="noopener">Global Plastics Outlook: Economic Drivers, Environmental Impacts and Policy Options</a> &ndash; global plastic waste, 2019 data, p. [__]. U.S.: EPA estimates 8.7% of plastics were recycled in 2018.</li>
-      <li id="fn3"><a href="https://upstreamsolutions.org/reuse-wins-report" target="_blank" rel="noopener">Upstream Solutions, Reuse Wins Report</a>.</li>
-      <li id="fn4">U.S. EPA, <a href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data" target="_blank" rel="noopener">Plastics: Material-Specific Data</a> (2018 data, estimating 8.7% of plastics were recycled).</li>
-      <li id="fn5">Food Cycle Science, <a href="https://foodcyclescience.com/blogs/food-waste-industry/trash-trouble-our-landfills-are-rapidly-reaching-capacity" target="_blank" rel="noopener">Trash Trouble: Our Landfills are Rapidly Reaching Capacity</a>.</li>
-      <li id="fn6">Studies from SWANA and Sustainable Packaging Coalition/SSI indicate effective public and venue container recycling recovery rates typically range from 5% to 28% due to contamination and sorting losses.</li>
-      <li id="fn7">Based on r.World customer contracts and invoices as of Oct 2026; terms vary by contract.</li>
-      <li id="fn8">Reusable items delivered to customers, Sep 2017&ndash;Oct 2026; each assumed to displace one single-use item. Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
-      <li id="fn9">Events served Sep 2017&ndash;Oct 2026, counted from customer pickups. Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
-      <li id="fn10">Short tons, Sep 2017&ndash;Oct 2026. Calculated with r.World's impact calculator using actual weights of r.World reusable items, industry-average weights of single-use PET items replaced, 9% plastic recycling rate (OECD/EPA), third-party LCAs and EPA WARM model. See r.World Environmental Impact Methodology.</li>
-      <li id="fn11">Sep 2017&ndash;Oct 2026. Calculated with r.World's impact calculator: weight of single-use PET items replaced, converted using industry-average water use per ton of plastic produced; EPA datasets, WARM model and third-party LCAs. See r.World Environmental Impact Methodology.</li>
-      <li id="fn12">Average share of delivered reusable items returned, Nov 2021&ndash;Oct 2026 (start date reflects r.World&rsquo;s 2021 shift to a full reuse model). Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
-      <li id="fn13">Share of customers who continued their programs vs. those who ended them, Nov 2021&ndash;Oct 2026. Source: r.World internal customer data and contract renewals.</li>
-      <li id="fn14">Cities with at least one r.World customer site, Sep 2017&ndash;Oct 2026. Source: customer invoices and r.Turn log of customer site addresses.</li>
-      <li id="fn15">States with at least one r.World customer site, Sep 2017&ndash;Oct 2026. Source: customer invoices and r.Turn log of customer site addresses.</li>
-      <li id="fn16">r.World began operations Sep 2017 (r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records)). First state packaging EPR laws: <a href="https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582" target="_blank" rel="noopener">Oregon SB 582</a> and <a href="https://www.maine.gov/dep/waste/recycle/epr.html" target="_blank" rel="noopener">Maine LD 1541 (2021)</a>.</li>
-      <li id="fn17"><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB54" target="_blank" rel="noopener">California SB 54 (2022)</a>, Plastic Pollution Prevention and Packaging Producer Responsibility Act.</li>
-      <li id="fn18"><a href="https://leg.colorado.gov/bills/hb22-1355" target="_blank" rel="noopener">Colorado HB 22-1355 (2022)</a>, Producer Responsibility Program for Worldwide Recycling.</li>
-      <li id="fn19"><a href="https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582" target="_blank" rel="noopener">Oregon SB 582 (2021)</a>, Plastic Pollution and Recycling Modernization Act.</li>
-      <li id="fn20"><a href="https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF3911&ssn=0&y=2024" target="_blank" rel="noopener">Minnesota HF 3911 (2024)</a>, Packaging Waste and Cost Reduction Act.</li>
-      <li id="fn21"><a href="https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS" target="_blank" rel="noopener">Maryland SB 901 (2025), Ch. 431</a>, Producer Responsibility for Packaging Materials.</li>
-      <li id="fn22"><a href="https://app.leg.wa.gov/billsummary?BillNumber=5284&Year=2025" target="_blank" rel="noopener">Washington E2SSB 5284 (2025)</a>, Concerning packaging and paper products management.</li>
-      <li id="fn23"><a href="https://www.maine.gov/dep/waste/recycle/epr.html" target="_blank" rel="noopener">Maine LD 1541 (2021), amended by LD 1423 (2025)</a>; see also <a href="https://epratlas.com/epr-laws-by-state/" target="_blank" rel="noopener">EPR Atlas: EPR Laws by State</a>.</li>
-      <li id="fn24">States with EPR bills introduced: CT, GA, HI, IL, MA, NE, NJ, NY, NC, RI, TN, WI (as of [DATE]).</li>
-      <li id="fn25">Cal. SB 54 (2022), Plastic Pollution Prevention and Packaging Producer Responsibility Act; <a href="https://content.govdelivery.com/accounts/CALRECYCLE/bulletins/4157d91" target="_blank" rel="noopener">CalRecycle bulletin</a>; <a href="https://oceanconservancy.org/wp-content/uploads/2024/02/24.02.25-OC-SB-54-Source-Reduction-Fact-Sheet.pdf" target="_blank" rel="noopener">Ocean Conservancy SB 54 Source Reduction Fact Sheet</a>.</li>
-      <li id="fn26"><a href="https://california.public.law/codes/public_resources_code_section_42081" target="_blank" rel="noopener">Cal. Public Resources Code &sect; 42081</a>.</li>
-      <li id="fn27">r.World operates wash hubs in five metro areas: Denver, Los Angeles, DC/Baltimore, Minneapolis and San Francisco (as of Oct 2026).</li>
-      <li id="fn28">Ecolab Science Certified&trade; is a trademark of Ecolab. Certification applies to [which] r.World wash hubs as of [DATE] and does not constitute an endorsement of r.World or this offering. See <a href="https://www.ecolab.com/en-us/offerings/inst/science-certified-program" target="_blank" rel="noopener">Ecolab Science Certified Program</a>.</li>
+      <li id="fn1"><a href="#fnref1" class="fn-backref" aria-label="Jump back to reference 1">&uarr;</a> Ecolab Science Certified&trade; is a trademark of Ecolab. Certification applies to r.World wash hubs and does not constitute an endorsement of r.World or this offering. See <a href="https://www.ecolab.com/en-us/offerings/inst/science-certified-program" target="_blank" rel="noopener">Ecolab Science Certified Program</a>.</li>
+      <li id="fn2"><a href="#fnref2" class="fn-backref" aria-label="Jump back to reference 2">&uarr;</a> Average share of delivered reusable items returned, Nov 2021&ndash;Oct 2026 (start date reflects r.World&rsquo;s 2021 shift to a full reuse model). Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
+      <li id="fn3"><a href="#fnref3" class="fn-backref" aria-label="Jump back to reference 3">&uarr;</a> Share of customers who continued their programs vs. those who ended them, Nov 2021&ndash;Oct 2026. Source: r.World internal customer data and contract renewals.</li>
+      <li id="fn4"><a href="#fnref4" class="fn-backref" aria-label="Jump back to reference 4">&uarr;</a> Reusable items delivered to customers, Sep 2017&ndash;Oct 2026; each assumed to displace one single-use item. Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).</li>
+      <li id="fn5"><a href="#fnref5" class="fn-backref" aria-label="Jump back to reference 5">&uarr;</a> Short tons, Sep 2017&ndash;Oct 2026. Calculated with r.World's impact calculator using actual weights of r.World reusable items, industry-average weights of single-use PET items replaced, 9% plastic recycling rate (OECD/EPA), third-party LCAs and EPA WARM model. See r.World Environmental Impact Methodology.</li>
+      <li id="fn6"><a href="#fnref6" class="fn-backref" aria-label="Jump back to reference 6">&uarr;</a> Sep 2017&ndash;Oct 2026. Calculated with r.World's impact calculator: weight of single-use PET items replaced, converted using industry-average water use per ton of plastic produced; EPA datasets, WARM model and third-party LCAs. See r.World Environmental Impact Methodology.</li>
+      <li id="fn7" data-footnote-todo="FN-LOWER-COSTS"><a href="#fnref7" class="fn-backref" aria-label="Jump back to reference 7">&uarr;</a> [FOOTNOTE TBD: Lower costs claim. Source needed.]</li>
+      <li id="fn8" data-footnote-todo="FN-MORE-REVENUE"><a href="#fnref8" class="fn-backref" aria-label="Jump back to reference 8">&uarr;</a> [FOOTNOTE TBD: More revenue claim. Source needed.]</li>
+      <li id="fn9" data-footnote-todo="FN-BUILT-FOR-YOU"><a href="#fnref9" class="fn-backref" aria-label="Jump back to reference 9">&uarr;</a> [FOOTNOTE TBD: Built for you claim. Source needed.]</li>
+      <li id="fn10" data-footnote-todo="FN-GETTING-CHEAPER"><a href="#fnref10" class="fn-backref" aria-label="Jump back to reference 10">&uarr;</a> [FOOTNOTE TBD: Getting cheaper claim. Source needed.]</li>
     </ol>
+    <div class="site-disclaimer-wrap">
+      <p class="site-disclaimer site-disclaimer--depicted">No person depicted has endorsed or sponsored r.World or this offering. Images are used for illustrative purposes and remain the property of their respective owners.</p>
+    </div>
   </div>
 </section>
 </main>
@@ -1146,7 +1325,10 @@
           <li>No offer to buy the securities can be accepted and no part of the purchase price can be received until the offering statement is filed and only through the platform of an intermediary (funding portal or broker-dealer); and</li>
           <li>A person&rsquo;s indication of interest includes no obligation or commitment of any kind.</li>
         </ul>
+        <p class="site-disclaimer site-disclaimer--depicted site-disclaimer--legal">No person depicted has endorsed or sponsored r.World or this offering. Images are used for illustrative purposes and remain the property of their respective owners.</p>
       </div>
+      <p class="site-footer__address"><a href="mailto:hello@rworldreuse.com">hello@rworldreuse.com</a> &middot; &copy;2026 r.World. All rights reserved.</p>
+    </div>
       <p class="site-footer__address"><a href="mailto:hello@rworldreuse.com">hello@rworldreuse.com</a> &middot; &copy;2026 r.World. All rights reserved.</p>
     </div>
 

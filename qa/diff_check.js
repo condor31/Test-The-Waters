@@ -6,6 +6,7 @@ const html = fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
 // Normalize curly vs straight quotes and html entities for testing match
 function norm(str) {
   return str
+    .replace(/<[^>]+>/g, " ")
     .replace(/[‘’]/g, "'")
     .replace(/[“”]/g, '"')
     .replace(/&rsquo;/g, "'")
@@ -72,19 +73,16 @@ const expectedStrings = [
   "Sphere",
   "Red Rocks Amphitheatre",
   "Merriweather Post Pavilion",
-  "SAP Center",
   "Crypto.com Arena",
   "CHS Field",
   "LA Memorial Coliseum",
-  "TPC Twin Cities",
-  "X,XXX cups returned",
+  "[DATA TBD] cups returned",
   "Average share of delivered reusable items returned, Nov 2021–Oct 2026 (start date reflects r.World's 2021 shift to a full reuse model). Source: r.World internal operational data (r.Turn platform, customer invoices and delivery/pickup records).",
   "Share of customers who continued their programs vs. those who ended them, Nov 2021–Oct 2026. Source: r.World internal customer data and contract renewals.",
-  "[TODO: footnote pending]",
 
   // Module 8
   "r.World Goes Way Beyond the Stage Too",
-  "Same engine. Bigger stages. The system that works at the arena works everywhere people gather and single-use waste is created.",
+  "Same engine. Bigger settings.",
   "Healthcare",
   "Corporate & College Campuses",
   "Travel & Hospitality",
@@ -98,7 +96,7 @@ const expectedStrings = [
   "Reuse keeps single-use waste out of landfills and the environment, saves cost on disposables and helps users consume with less hesitation.",
   "More than 1M pounds of CO2",
   "never generated",
-  "Reuse Pays for Itself and Then Some",
+  "Reuse pays off and then some.",
   "Lower costs",
   "Less waste hauling and less labor spent on cleanup.",
   "More revenue",
@@ -123,11 +121,20 @@ const expectedStrings = [
   "As Extended Producer Responsibility rules land, beginning in California, reuse could extend to categories that don't have it yet, including consumer packaged goods.",
   "The full allocation will be in r.World's offering statement when filed with the SEC.",
 
+  // Module 12.5: Leadership (T14)
+  "Leadership Built for the Industries We Serve",
+  "Leadership & Board",
+  "Michael Martin",
+  "Founder & CEO",
+
   // Module 13
   "Ok, Cool. What Happens Now?",
 
   // Module 14
   "Ready to Help r.World Crush It Some More?",
+
+  // Disclaimer (T21 / C03)
+  "No person depicted has endorsed or sponsored r.World or this offering. Images are used for illustrative purposes and remain the property of their respective owners.",
 ];
 
 let failures = [];
