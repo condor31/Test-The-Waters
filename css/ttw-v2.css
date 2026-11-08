@@ -391,34 +391,20 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(-50%, calc(-50% + 50px));
-  opacity: 0;
+  pointer-events: none;
   visibility: hidden;
-  pointer-events: none;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, visibility 0.6s;
-  will-change: transform, opacity;
 }
 
-.hero-pre-reel .hero-v2__stat.is-active {
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
-}
-
+.hero-pre-reel .hero-v2__stat.is-active,
 .hero-pre-reel .hero-v2__stat.is-leaving {
-  transform: translate(-50%, calc(-50% - 50px));
-  opacity: 0;
   visibility: visible;
-  pointer-events: none;
-  transition: transform 0.5s ease-in, opacity 0.45s ease-in;
 }
 
 .hero-pre-reel .hero-v2__stat-text {
@@ -433,6 +419,41 @@
   white-space: nowrap;
   display: block;
   text-align: center;
+}
+
+/* Split-text character & word wrappers (Motion.dev style) */
+.hero-pre-reel .split-word {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.hero-pre-reel .split-space {
+  display: inline-block;
+  width: 0.28em;
+}
+
+.hero-pre-reel .split-char {
+  display: inline-block;
+  transform: translateY(36px);
+  opacity: 0;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+  will-change: transform, opacity;
+}
+
+/* Active line: characters ripple up into place with stagger */
+.hero-pre-reel .hero-v2__stat.is-active .split-char {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: calc(var(--char-index, 0) * 0.032s);
+}
+
+/* Leaving line: characters ripple upward and dissolve out */
+.hero-pre-reel .hero-v2__stat.is-leaving .split-char {
+  transform: translateY(-36px);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.38s ease;
+  transition-delay: calc(var(--char-index, 0) * 0.02s);
 }
 
 @media (max-width: 640px) {
@@ -454,11 +475,11 @@
     white-space: normal;
     padding-inline: 12px;
   }
-  .hero-pre-reel .hero-v2__stat {
-    transform: translate(-50%, calc(-50% + 35px));
+  .hero-pre-reel .split-char {
+    transform: translateY(28px);
   }
-  .hero-pre-reel .hero-v2__stat.is-leaving {
-    transform: translate(-50%, calc(-50% - 35px));
+  .hero-pre-reel .hero-v2__stat.is-leaving .split-char {
+    transform: translateY(-28px);
   }
 }
 
@@ -466,13 +487,15 @@
   .hero-pre-reel__scroll-hint {
     animation: none;
   }
-  .hero-pre-reel .hero-v2__stat {
+  .hero-pre-reel .split-char {
+    transform: none !important;
     transition: opacity 0.3s ease !important;
-    transform: translate(-50%, -50%) !important;
+    transition-delay: 0s !important;
   }
-  .hero-pre-reel .hero-v2__stat.is-leaving {
-    transform: translate(-50%, -50%) !important;
+  .hero-pre-reel .hero-v2__stat.is-leaving .split-char {
+    transform: none !important;
     opacity: 0 !important;
+    transition-delay: 0s !important;
   }
 }
 

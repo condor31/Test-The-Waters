@@ -98,17 +98,54 @@ function initMarquee(prefersReducedMotion) {
 }
 
 /**
- * 3. Hero Stats: displays one line at a time, gliding in from below,
- * holding, and exiting upward into the next line.
+ * 3. Hero Stats: Split-text character-staggered kinetic typography loop (Motion.dev style)
  */
 function initHeroStats(prefersReducedMotion) {
-  const stats = Array.from(document.querySelectorAll(".hero-pre-reel .hero-v2__stat"));
-  if (!stats.length) return;
+  const statItems = Array.from(document.querySelectorAll(".hero-pre-reel .hero-v2__stat"));
+  if (!statItems.length) return;
+
+  // Split each stat line into words and characters with staggered CSS indices
+  statItems.forEach((item) => {
+    const textEl = item.querySelector(".hero-v2__stat-text");
+    if (!textEl) return;
+
+    const rawText = textEl.textContent.trim();
+    item.setAttribute("aria-label", rawText);
+    textEl.innerHTML = "";
+
+    const words = rawText.split(" ");
+    let globalCharIndex = 0;
+
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "split-word";
+      wordSpan.setAttribute("aria-hidden", "true");
+
+      for (let i = 0; i < word.length; i++) {
+        const charSpan = document.createElement("span");
+        charSpan.className = "split-char";
+        charSpan.textContent = word[i];
+        charSpan.style.setProperty("--char-index", globalCharIndex);
+        wordSpan.appendChild(charSpan);
+        globalCharIndex++;
+      }
+      textEl.appendChild(wordSpan);
+
+      if (wordIndex < words.length - 1) {
+        const spaceSpan = document.createElement("span");
+        spaceSpan.className = "split-space";
+        spaceSpan.innerHTML = "&nbsp;";
+        spaceSpan.setAttribute("aria-hidden", "true");
+        textEl.appendChild(spaceSpan);
+        globalCharIndex++;
+      }
+    });
+  });
 
   let currentIndex = 0;
 
   // Initialize: first item active, others reset
-  stats.forEach((stat, idx) => {
+  statItems.forEach((stat, idx) => {
     stat.classList.remove("is-highlighted", "is-leaving");
     if (idx === 0) {
       stat.classList.add("is-active");
@@ -119,28 +156,27 @@ function initHeroStats(prefersReducedMotion) {
 
   if (prefersReducedMotion) return;
 
-  const HOLD_DURATION = 2800; // Hold visible time
-  const EXIT_DURATION = 600;  // Cleanup time after exit transition
+  const HOLD_DURATION = 3200; // Duration each line remains featured
+  const EXIT_CLEANUP = 800;   // Cleanup after exit animation completes
 
   setInterval(() => {
-    const currentStat = stats[currentIndex];
-    const nextIndex = (currentIndex + 1) % stats.length;
-    const nextStat = stats[nextIndex];
+    const currentStat = statItems[currentIndex];
+    const nextIndex = (currentIndex + 1) % statItems.length;
+    const nextStat = statItems[nextIndex];
 
-    // Current stat glides upward and fades out
+    // Current line ripples upward and fades out
     currentStat.classList.remove("is-active");
     currentStat.classList.add("is-leaving");
 
-    // Next stat glides into center from below
+    // Next line ripples in from below with staggered characters
     nextStat.classList.remove("is-leaving");
-    // Trigger layout reflow so entrance transition fires reliably
-    void nextStat.offsetWidth;
+    void nextStat.offsetWidth; // force reflow for smooth start
     nextStat.classList.add("is-active");
 
-    // Clean up leaving state
+    // Clean up leaving state after transition completes
     setTimeout(() => {
       currentStat.classList.remove("is-leaving");
-    }, EXIT_DURATION);
+    }, EXIT_CLEANUP);
 
     currentIndex = nextIndex;
   }, HOLD_DURATION);
