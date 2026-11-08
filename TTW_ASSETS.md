@@ -25,7 +25,8 @@ All missing assets are wired up with the reusable `.ph` (Placeholder) component.
 | 14 | 5. Reuse Loop | Return | `public/assets/ttw/loop/return.jpg` | 1:1 (600×600) | Jack Johnson at return bin | Active |
 | 15 | 5. Reuse Loop | Clean | `public/assets/ttw/loop/clean.png` | 1:1 (600×600) | User provided asset (`media_1793859119853...`) | Active |
 | 16 | 5. Reuse Loop | Reuse | `public/assets/ttw/loop/reuse.jpg` | 1:1 (600×600) | User provided asset (`media_1793859102117...`) | Active |
-| 17 | 6. What's Inside | 5 OS Cards | `public/assets/*` | Existing 4:3 | Existing codebase | Active |
+| 17 | 6. What's Inside | 4 Photography OS Cards | `public/assets/*` | Existing 563:640 | Existing codebase | Active |
+| 17b | 6. What's Inside | Technology: r.Turn App Screenshot (T07) | `public/assets/ttw/rturn-app.jpg` | 636×1024 | User provided asset (media_1794150325995_883b7754) | Active |
 | 18 | 7. Social Proof | Sphere | `public/assets/ttw/venues/sphere.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY 2.0 / Thomas Hawk) | Active |
 | 19 | 7. Social Proof | Red Rocks Amphitheatre | `public/assets/ttw/venues/red-rocks.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY-SA 4.0 / Carol M. Highsmith Archive) | Active |
 | 20 | 7. Social Proof | Merriweather Post Pavilion | `public/assets/ttw/venues/merriweather.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY-SA 4.0 / Famartin) | Active |
