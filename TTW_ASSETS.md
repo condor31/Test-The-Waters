@@ -36,9 +36,9 @@ All missing assets are wired up with the reusable `.ph` (Placeholder) component.
 | 24 | 7. Social Proof | LA Memorial Coliseum | `public/assets/ttw/venues/la-coliseum.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY-SA 3.0 / Coliseum Peristyle) | Active |
 | 25 | 7. Social Proof | TPC Twin Cities | `public/assets/ttw/venues/tpc-twin-cities.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY-SA 2.0 / TPC Championship Green) | Active |
 | 26 | 7. Social Proof | Eric Shiflett Testimonial Avatar | `public/assets/santa-barbara-bowl.png` | 1:1 | Existing codebase | Active |
-| 27 | 8. Where We Go Next | Healthcare | `public/assets/ttw/next/healthcare.jpg` | 4:5 (800×1000) | Stock TBD | Placeholder |
-| 28 | 8. Where We Go Next | Corporate & College Campuses | `public/assets/ttw/next/campuses.jpg` | 4:5 (800×1000) | Stock TBD | Placeholder |
-| 29 | 8. Where We Go Next | Travel & Hospitality | `public/assets/ttw/next/travel-hospitality.jpg` | 4:5 (800×1000) | Stock TBD | Placeholder |
+| 27 | 8. Where We Go Next | Healthcare | `public/assets/ttw/next/healthcare.jpg` | 4:5 (1200×800 resampled) | Pexels (photo 11782003) | Active |
+| 28 | 8. Where We Go Next | Corporate & College Campuses | `public/assets/ttw/next/campuses.jpg` | 4:5 (1200×800 resampled) | Pexels (photo 31039051) | Active |
+| 29 | 8. Where We Go Next | Travel & Hospitality | `public/assets/ttw/next/travel-hospitality.jpg` | 4:5 (1335×1780) | Unsplash (photo 1606046604972) | Active |
 | 30 | 8. Where We Go Next | Pink Arrow Brand Graphic | `public/assets/f525cc1ae2d374e515a07e53cd50020a3adcfe92.svg` | Vector | Existing codebase | Active |
 | 31 | 9. State Legislation | US Map SVG + Wash Hub Icons | Inline SVG | Vector | Existing codebase | Active |
 | 32 | 10. Why It Matters | 3 Existing Metric Icons | `public/assets/*.svg` | 1:1 | Existing codebase | Active |

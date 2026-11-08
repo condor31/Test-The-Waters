@@ -1550,6 +1550,14 @@
   flex-direction: column;
 }
 
+.next-card__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .next-card .ph {
   border-radius: 0;
   border: none;
