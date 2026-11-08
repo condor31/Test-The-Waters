@@ -200,19 +200,19 @@
 .site-disclaimer--depicted {
   font-size: 11px;
   line-height: 1.4;
-  color: #000000;
+  color: #000000 !important;
   margin-top: 16px;
   max-width: 800px;
 }
 
 .sources-section .site-disclaimer--depicted {
-  color: #000000;
+  color: #000000 !important;
 }
 
 .site-disclaimer--legal,
 .site-footer .site-disclaimer--depicted {
   margin-top: 12px;
-  color: #000000;
+  color: #000000 !important;
   font-size: clamp(11px, 1.1vw, 12px);
   line-height: 1.55;
   font-weight: 400;
