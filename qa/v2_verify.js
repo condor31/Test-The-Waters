@@ -122,7 +122,7 @@ async function run() {
     reducedMotion: "reduce",
   });
   const rmPage = await reducedMotionContext.newPage();
-  await rmPage.goto("http://localhost:8080/", { waitUntil: "networkidle" });
+  await rmPage.goto("http://localhost:8080/", { waitUntil: "load" });
   const marqueeAnimation = await rmPage.$eval(".marquee", (el) => el.classList.contains("is-animating")).catch(() => false);
   results.reducedMotion = {
     marqueeAnimated: marqueeAnimation, // should be false

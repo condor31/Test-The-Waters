@@ -10,6 +10,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  initAnnouncementOffset();
   initPlaceholders();
   initMarquee(prefersReducedMotion);
   initHeroStats(prefersReducedMotion);
@@ -97,20 +98,74 @@ function initMarquee(prefersReducedMotion) {
 }
 
 /**
- * 3. Hero Stats: loops subtle highlight through the 4 stats every 3 seconds.
+ * 3. Hero Stats: displays one line at a time, gliding in from below,
+ * holding, and exiting upward into the next line.
  */
 function initHeroStats(prefersReducedMotion) {
-  const stats = document.querySelectorAll(".hero-v2__stat");
-  if (!stats.length || prefersReducedMotion) return;
+  const stats = Array.from(document.querySelectorAll(".hero-pre-reel .hero-v2__stat"));
+  if (!stats.length) return;
 
   let currentIndex = 0;
-  stats[0].classList.add("is-highlighted");
+
+  // Initialize: first item active, others reset
+  stats.forEach((stat, idx) => {
+    stat.classList.remove("is-highlighted", "is-leaving");
+    if (idx === 0) {
+      stat.classList.add("is-active");
+    } else {
+      stat.classList.remove("is-active");
+    }
+  });
+
+  if (prefersReducedMotion) return;
+
+  const HOLD_DURATION = 2800; // Hold visible time
+  const EXIT_DURATION = 600;  // Cleanup time after exit transition
 
   setInterval(() => {
-    stats[currentIndex].classList.remove("is-highlighted");
-    currentIndex = (currentIndex + 1) % stats.length;
-    stats[currentIndex].classList.add("is-highlighted");
-  }, 3000);
+    const currentStat = stats[currentIndex];
+    const nextIndex = (currentIndex + 1) % stats.length;
+    const nextStat = stats[nextIndex];
+
+    // Current stat glides upward and fades out
+    currentStat.classList.remove("is-active");
+    currentStat.classList.add("is-leaving");
+
+    // Next stat glides into center from below
+    nextStat.classList.remove("is-leaving");
+    // Trigger layout reflow so entrance transition fires reliably
+    void nextStat.offsetWidth;
+    nextStat.classList.add("is-active");
+
+    // Clean up leaving state
+    setTimeout(() => {
+      currentStat.classList.remove("is-leaving");
+    }, EXIT_DURATION);
+
+    currentIndex = nextIndex;
+  }, HOLD_DURATION);
+}
+
+/**
+ * Sync dynamic announcement bar height with CSS custom property
+ */
+function initAnnouncementOffset() {
+  const bar = document.getElementById("announcement-bar");
+  function syncHeight() {
+    if (bar && bar.offsetHeight > 0 && getComputedStyle(bar).display !== "none") {
+      document.documentElement.style.setProperty("--announcement-bar-height", `${bar.offsetHeight}px`);
+    } else {
+      document.documentElement.style.setProperty("--announcement-bar-height", "0px");
+    }
+  }
+
+  syncHeight();
+  window.addEventListener("resize", syncHeight, { passive: true });
+
+  const closeBtn = bar?.querySelector("[data-dismiss-bar]");
+  closeBtn?.addEventListener("click", () => {
+    setTimeout(syncHeight, 200);
+  });
 }
 
 /**
