@@ -25,6 +25,7 @@ All missing assets are wired up with the reusable `.ph` (Placeholder) component.
 | 14 | 5. Reuse Loop | Return | `public/assets/ttw/loop/return.jpg` | 1:1 (600×600) | Jack Johnson at return bin | Active |
 | 15 | 5. Reuse Loop | Clean | `public/assets/ttw/loop/clean.png` | 1:1 (600×600) | User provided asset (`media_1793859119853...`) | Active |
 | 16 | 5. Reuse Loop | Reuse | `public/assets/ttw/loop/reuse.jpg` | 1:1 (600×600) | User provided asset (`media_1793859102117...`) | Active |
+| 16b | 5. Reuse Loop | International Reuse Symbol Icon (IMG-05) | `public/assets/ttw/reuse-symbol.svg` | Vector (22×22) | PR3 Standards (pr3standards.org/the-reuse-symbol) | Active |
 | 17 | 6. What's Inside | 4 Photography OS Cards | `public/assets/*` | Existing 563:640 | Existing codebase | Active |
 | 17b | 6. What's Inside | Technology: r.Turn App Screenshot (T07) | `public/assets/ttw/rturn-app.jpg` | 636×1024 | User provided asset (media_1794150325995_883b7754) | Active |
 | 18 | 7. Social Proof | Sphere | `public/assets/ttw/venues/sphere.jpg` | 4:3 (800×600) | Wikimedia Commons (CC BY 2.0 / Thomas Hawk) | Active |
