@@ -73,18 +73,6 @@ function initMarquee(prefersReducedMotion) {
   const track = marquee.querySelector("[data-marquee-track]");
   if (!track) return;
 
-  // Clone track items for seamless loop if not reduced motion
-  const originalCards = [...track.children];
-  originalCards.forEach((card) => {
-    const clone = card.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    track.appendChild(clone);
-  });
-
-  if (!prefersReducedMotion) {
-    marquee.classList.add("is-animating");
-  }
-
   // Keyboard navigation for marquee
   marquee.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
@@ -95,6 +83,41 @@ function initMarquee(prefersReducedMotion) {
       marquee.scrollBy({ left: 260, behavior: "smooth" });
     }
   });
+
+  // Reduced motion: static, manually scrollable strip. No duplicate set, nothing moves.
+  if (prefersReducedMotion) return;
+
+  // Seamless loop: a second copy of the set sits in the same track. Every card carries its own
+  // trailing gap (margin, not flex gap/padding), so one set is exactly half of the track and
+  // translateX(-50%) lands precisely on the start of the duplicate.
+  const originalCards = [...track.children];
+  originalCards.forEach((card) => {
+    card.querySelectorAll("img").forEach((img) => (img.loading = "eager"));
+    const clone = card.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    clone.querySelectorAll("img").forEach((img) => {
+      img.loading = "eager";
+      img.alt = "";
+    });
+    clone.querySelectorAll("a, button, [tabindex]").forEach((el) => el.setAttribute("tabindex", "-1"));
+    track.appendChild(clone);
+  });
+
+  // Constant speed (px/second) at every breakpoint: duration follows the measured loop distance.
+  const SPEED_PX_PER_SEC = 60;
+  const syncLoop = () => {
+    const distance = track.scrollWidth / 2;
+    if (!distance) return;
+    marquee.style.setProperty("--marquee-distance", `-${distance}px`);
+    marquee.style.setProperty("--marquee-duration", `${(distance / SPEED_PX_PER_SEC).toFixed(2)}s`);
+  };
+  syncLoop();
+  window.addEventListener("resize", syncLoop, { passive: true });
+  track.querySelectorAll("img").forEach((img) => {
+    if (!img.complete) img.addEventListener("load", syncLoop, { once: true });
+  });
+
+  marquee.classList.add("is-animating");
 }
 
 /**
@@ -109,6 +132,9 @@ function initHeroStats(prefersReducedMotion) {
     const textEl = item.querySelector(".hero-v2__stat-text");
     if (!textEl) return;
 
+    // Keep an optional footnote reference (sup.hero-fn) intact: it is not split or animated per character.
+    const fnRef = textEl.querySelector(".hero-fn");
+    if (fnRef) fnRef.remove();
     const rawText = textEl.textContent.trim();
     item.setAttribute("aria-label", rawText);
     textEl.innerHTML = "";
@@ -140,6 +166,8 @@ function initHeroStats(prefersReducedMotion) {
         globalCharIndex++;
       }
     });
+
+    if (fnRef) textEl.appendChild(fnRef);
   });
 
   let currentIndex = 0;

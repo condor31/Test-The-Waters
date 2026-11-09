@@ -818,11 +818,13 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
     initReuseMap();
     initPersistentCta();
+    initFloatingForm();
     initHeroVideoPreview();
   });
 } else {
   initReuseMap();
   initPersistentCta();
+  initFloatingForm();
   initHeroVideoPreview();
 }
 
@@ -861,12 +863,152 @@ function initPersistentCta() {
   window.addEventListener("resize", updateVisibility, { passive: true });
   updateVisibility();
 
-  const persistentBtn = persistentCta.querySelector(".persistent-cta__btn");
-  persistentBtn?.addEventListener("click", () => {
-    persistentCta.classList.add("is-hidden");
-    const firstInput = document.getElementById("interest-first-name");
-    if (firstInput) {
-      setTimeout(() => firstInput.focus(), 600);
+}
+
+// T28: Floating notification-list form (native <dialog>: focus trap, Esc, and focus-return come with showModal()).
+// Uses the same fields and the same Mailchimp + backup-sheet pipeline as the main #interest-form.
+function initFloatingForm() {
+  const dialog = document.getElementById("floating-form-dialog");
+  const form = document.getElementById("floating-interest-form");
+  if (!dialog || !form || typeof dialog.showModal !== "function") return;
+
+  const successEl = document.getElementById("floating-form-success");
+  const errorEl = document.getElementById("floating-form-error");
+  const titleEl = document.getElementById("floating-form-title");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent : "Join the Notification List";
+
+  const reset = () => {
+    form.reset();
+    form.hidden = false;
+    if (titleEl) titleEl.hidden = false;
+    if (successEl) successEl.hidden = true;
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = "";
+    }
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  };
+
+  document.querySelectorAll("[data-float-open]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      if (!dialog.open) {
+        dialog.showModal();
+        const firstInput = form.querySelector("input:not([type=hidden])");
+        if (firstInput) firstInput.focus();
+      }
+    });
+  });
+
+  // Airtight modal focus trap
+  dialog.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    const focusable = dialog.querySelectorAll(
+      'button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  dialog.querySelectorAll("[data-float-close]").forEach((btn) => btn.addEventListener("click", () => dialog.close()));
+  // Click on the dimmed backdrop (outside the panel) closes it.
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    // Fresh form next time (e.g. after a successful signup on a shared device)
+    if (successEl && !successEl.hidden) reset();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    if (errorEl) {
+      errorEl.hidden = true;
+      errorEl.textContent = "";
+    }
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+    }
+
+    const val = (name) => (form.querySelector(`[name="${name}"]`)?.value || "").trim();
+    const firstNameVal = val("FNAME");
+    const lastNameVal = val("LNAME");
+    const emailVal = val("EMAIL");
+    const phoneVal = val("MMERGE4");
+    const honeypotVal = val("b_d16d76c3bd0a764ea148af923_23a13695bf");
+    const rangeVal = form.querySelector('[name="MMERGE5"]:checked')?.value || "";
+
+    const mailchimpParams = {
+      EMAIL: emailVal,
+      FNAME: firstNameVal,
+      LNAME: lastNameVal,
+      tags: "1743734",
+      b_d16d76c3bd0a764ea148af923_23a13695bf: honeypotVal,
+    };
+    addPhoneParams(mailchimpParams, phoneVal, form);
+    if (rangeVal) mailchimpParams.MMERGE5 = rangeVal;
+
+    const googlePayload = {
+      first_name: firstNameVal,
+      firstName: firstNameVal,
+      last_name: lastNameVal,
+      lastName: lastNameVal,
+      email: emailVal,
+      phone: phoneVal,
+      phone_number: phoneVal,
+      phoneNumber: phoneVal,
+      investment_range: rangeVal || "None selected",
+      source: "Floating Form (Mailchimp)",
+      timestamp: new Date().toLocaleString(),
+    };
+
+    try {
+      const response = await submitLeadToMailchimp(mailchimpParams);
+      if (response && response.result === "error") {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        if (errorEl) {
+          errorEl.textContent = formatMailchimpError(response.msg);
+          errorEl.hidden = false;
+          errorEl.setAttribute("tabindex", "-1");
+          errorEl.focus();
+        }
+        return;
+      }
+    } catch (err) {
+      console.warn("[Mailchimp] JSONP blocked or failed, falling back to iframe POST:", err);
+      submitViaHiddenIframe(mailchimpParams);
+    }
+
+    triggerCelebrationConfetti(submitBtn);
+    if (titleEl) titleEl.hidden = true;
+    form.hidden = true;
+    if (successEl) {
+      successEl.hidden = false;
+      successEl.setAttribute("tabindex", "-1");
+      successEl.focus();
+    }
+
+    try {
+      submitLeadToGoogleSheet(googlePayload);
+    } catch (err) {
+      console.error("Backup Google Sheet submission failed:", err);
     }
   });
 }

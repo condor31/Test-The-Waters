@@ -28,8 +28,7 @@ const expectedStrings = [
   "r.World Turned Reuse Into a Headliner",
   "We've been crushing single-use waste with a nationwide movement toward reuse. Help us crush it more.",
   "GET ON THE LIST",
-  "30M",
-  "DRINKS SERVED",
+  "30M single-use cups eliminated.",
   "150+",
   "CITIES",
   "30+",
@@ -39,7 +38,7 @@ const expectedStrings = [
 
   // Module 3
   "The Biggest Names in Sports and Entertainment Drink With Us",
-  "From courtside to front-row center, r.World's reusable r.Cups are in the hands of some of your favorite celebrities.",
+  "From courtside to front-row center, r.World's reusable r.Cups, plates and other foodware are in the hands of some of your favorite celebrities.",
   "Pedro Pascal",
   "Meryl Streep and Martin Short",
   "Leonardo DiCaprio",
@@ -117,13 +116,15 @@ const expectedStrings = [
 
   // Module 12
   "Where Your Investment Goes to Work",
-  "Two priorities to make reuse mainstream nationwide.",
+  "Four ways your investment makes reuse mainstream nationwide.",
   "More Sanitization Centers",
   "Sanitization centers are what open new markets. The network can only serve what it can reach and wash, so adding centers is what lets r.World say yes to a new city.",
   "Deeper Automation",
-  "Automation lowers the cost per item. Every touch an item needs adds cost, so fewer touches is what lets reuse compete with single-use on price.",
-  "Potential for New Categories",
-  "As Extended Producer Responsibility rules land, beginning in California, reuse could extend to categories that don't have it yet, including consumer packaged goods.",
+  "Automation lowers the cost per item. Every touch an item needs adds cost, so fewer touches is what lets r.World compete with single-use on price.",
+  "Legislation Is Here, and More Is Coming",
+  "Extended Producer Responsibility rules are landing, beginning in California. More policy is on the way that will help reuse scale.",
+  "Reuse Expands Into Consumer Packaged Goods",
+  "Reuse could extend to categories that don't have it yet, starting with consumer packaged goods.",
   "The full allocation will be in r.World's offering statement when filed with the SEC.",
 
   // Module 12.5: Leadership (T14)
@@ -131,6 +132,7 @@ const expectedStrings = [
   "Leadership & Board",
   "Michael Martin",
   "Founder & CEO",
+  "Founder and Chair of Concerts For the Environment",
 
   // Module 13
   "Ok, Cool. What Happens Now?",
@@ -142,7 +144,17 @@ const expectedStrings = [
   "No person depicted has endorsed or sponsored r.World or this offering. Images are used for illustrative purposes and remain the property of their respective owners.",
 ];
 
+// Batch 2: strings that must keep their CURLY apostrophe (U+2019) as literal characters in the source,
+// compared WITHOUT the quote normalization used above.
+const exactCurlyStrings = [
+  "From courtside to front-row center, r.World\u2019s reusable r.Cups, plates and other foodware are in the hands of some of your favorite celebrities.",
+  "Reuse could extend to categories that don\u2019t have it yet, starting with consumer packaged goods.",
+];
+
 let failures = [];
+for (const str of exactCurlyStrings) {
+  if (!html.includes(str)) failures.push("[curly apostrophe preserved] " + str);
+}
 for (const str of expectedStrings) {
   if (!normHtml.includes(norm(str))) {
     failures.push(str);
@@ -150,7 +162,7 @@ for (const str of expectedStrings) {
 }
 
 if (failures.length === 0) {
-  console.log(`PASS: All ${expectedStrings.length} copy strings verified verbatim in index.html!`);
+  console.log(`PASS: All ${expectedStrings.length} copy strings (+ ${exactCurlyStrings.length} exact curly-apostrophe strings) verified verbatim in index.html!`);
 } else {
   console.error(`FAIL: ${failures.length} strings not found:`);
   failures.forEach((f) => console.error(" - " + f));
