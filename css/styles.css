@@ -2331,17 +2331,6 @@ p:last-child {
     height: 72px;
     padding: 6px 10px;
   }
-  .partner-logo-item--fifa,
-  .partner-logo-item--billie {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 100%;
-    max-width: 240px;
-  }
-  .partner-logo-item:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
 }
 
 /* ---------- Partner Quote / Testimonial ---------- */
