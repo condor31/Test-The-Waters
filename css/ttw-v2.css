@@ -1069,6 +1069,11 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.marquee.is-animating {
+  overflow-x: hidden;
+  user-select: none;
+}
+
 .marquee::-webkit-scrollbar {
   display: none;
 }
@@ -1086,6 +1091,9 @@
   gap: 0;
   width: max-content;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Static (reduced-motion / no-JS) strip keeps its side padding; the animated loop must have none so
@@ -1115,6 +1123,9 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 .celeb-card__figure .ph {
@@ -1146,10 +1157,10 @@
 /* Marquee continuous scroll animation via CSS */
 @keyframes marquee-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(var(--marquee-distance, -50%));
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
@@ -1158,7 +1169,7 @@
 }
 
 .marquee.is-animating:hover .marquee__track,
-.marquee.is-animating:focus-within .marquee__track,
+.marquee.is-animating:focus-visible .marquee__track,
 .marquee.is-paused .marquee__track {
   animation-play-state: paused !important;
 }

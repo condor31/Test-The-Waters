@@ -89,14 +89,18 @@ function initMarquee(prefersReducedMotion) {
 
   // Seamless loop: a second copy of the set sits in the same track. Every card carries its own
   // trailing gap (margin, not flex gap/padding), so one set is exactly half of the track and
-  // translateX(-50%) lands precisely on the start of the duplicate.
+  // translate3d(-50%, 0, 0) lands precisely on the start of the duplicate.
   const originalCards = [...track.children];
   originalCards.forEach((card) => {
-    card.querySelectorAll("img").forEach((img) => (img.loading = "eager"));
+    card.querySelectorAll("img").forEach((img) => {
+      img.loading = "eager";
+      img.decoding = "async";
+    });
     const clone = card.cloneNode(true);
     clone.setAttribute("aria-hidden", "true");
     clone.querySelectorAll("img").forEach((img) => {
       img.loading = "eager";
+      img.decoding = "async";
       img.alt = "";
     });
     clone.querySelectorAll("a, button, [tabindex]").forEach((el) => el.setAttribute("tabindex", "-1"));
@@ -106,9 +110,15 @@ function initMarquee(prefersReducedMotion) {
   // Constant speed (px/second) at every breakpoint: duration follows the measured loop distance.
   const SPEED_PX_PER_SEC = 60;
   const syncLoop = () => {
-    const distance = track.scrollWidth / 2;
+    const cards = track.children;
+    const n = originalCards.length;
+    if (cards.length < n * 2) return;
+    const a = cards[0].getBoundingClientRect().left;
+    const b = cards[n].getBoundingClientRect().left;
+    const distance = b - a;
     if (!distance) return;
-    marquee.style.setProperty("--marquee-distance", `-${distance}px`);
+    marquee.scrollLeft = 0;
+    marquee.style.setProperty("--marquee-distance", `-${distance.toFixed(3)}px`);
     marquee.style.setProperty("--marquee-duration", `${(distance / SPEED_PX_PER_SEC).toFixed(2)}s`);
   };
   syncLoop();

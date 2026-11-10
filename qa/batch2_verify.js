@@ -171,7 +171,7 @@ async function newPage(browser, width, height, opts = {}) {
 
     // --- T27 + T26 venue cards
     const venues = await page.$$eval(".venue-card__name", (els) => els.map((e) => e.textContent.trim()));
-    const expectedVenues = ["Sphere", "Red Rocks Amphitheatre", "Merriweather Post Pavilion", "LA Memorial Coliseum", "CHS Field", "Crypto.com Arena"];
+    const expectedVenues = ["Sphere", "Red Rocks Amphitheatre", "Merriweather Post Pavilion", "Crypto.com Arena", "CHS Field", "LA Memorial Coliseum"];
     check(`[${vp.n}] T27 venue order (DOM)`, venues.join("|") === expectedVenues.join("|"), venues.join(" | "));
     const stats = await page.$$eval(".venue-card", (cs) => cs.map((c) => c.querySelector(".venue-card__name").textContent.trim() + " = " + c.querySelector(".venue-card__stat").textContent.trim()));
     if (vp.n === "1440") console.log("   venue cards:", stats);
