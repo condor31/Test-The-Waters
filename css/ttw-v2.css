@@ -1103,7 +1103,7 @@
 }
 
 .celeb-card {
-  flex: 0 0 clamp(260px, 24vw, 360px);
+  flex: 0 0 var(--celeb-card-width, clamp(260px, 24vw, 360px));
   /* trailing gap lives on the card so the duplicate set repeats with identical spacing at the seam */
   margin-right: 20px;
 }
@@ -1168,8 +1168,16 @@
   animation: marquee-scroll var(--marquee-duration, 42s) linear infinite;
 }
 
-.marquee.is-animating:hover .marquee__track,
+/* Pause on hover only on devices with fine pointer (mouse).
+   This avoids mobile touch lockup while keeping desktop hover-to-pause and compliance intact. */
+@media (hover: hover) and (pointer: fine) {
+  .marquee.is-animating:hover .marquee__track {
+    animation-play-state: paused !important;
+  }
+}
+
 .marquee.is-animating:focus-visible .marquee__track,
+.marquee.is-animating:focus-within .marquee__track,
 .marquee.is-paused .marquee__track {
   animation-play-state: paused !important;
 }
