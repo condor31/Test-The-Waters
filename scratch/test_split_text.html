@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin: 0;
+    background: #ffd100;
+    font-family: "Inclusive Sans", -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .stage {
+    position: relative;
+    width: 90vw;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stat-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+    text-shadow: 0 4px 28px rgba(0,0,0,0.45);
+    white-space: nowrap;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .stat-line.is-active,
+  .stat-line.is-leaving {
+    visibility: visible;
+  }
+
+  .split-word {
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+  .split-space {
+    display: inline-block;
+    width: 0.28em;
+  }
+  .split-char {
+    display: inline-block;
+    transform: translateY(42px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    will-change: transform, opacity;
+  }
+
+  /* Active: chars slide into place with stagger */
+  .stat-line.is-active .split-char {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(var(--char-index) * 0.035s);
+  }
+
+  /* Leaving: chars slide up and fade out with stagger */
+  .stat-line.is-leaving .split-char {
+    transform: translateY(-42px);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+    transition-delay: calc(var(--char-index) * 0.022s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .split-char {
+      transform: none !important;
+      transition: opacity 0.3s ease !important;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="stat-line" id="line0">30M DRINKS SERVED</div>
+    <div class="stat-line" id="line1">150+ CITIES</div>
+    <div class="stat-line" id="line2">30+ STATES</div>
+    <div class="stat-line" id="line3">10,000+ LIVE EVENTS</div>
+  </div>
+
+  <script>
+    function splitTextToSpans(el) {
+      const text = el.textContent.trim();
+      el.setAttribute("aria-label", text);
+      el.innerHTML = "";
+      const words = text.split(" ");
+      let globalCharIndex = 0;
+
+      words.forEach((word, wIdx) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.className = "split-word";
+        wordSpan.setAttribute("aria-hidden", "true");
+
+        for (let i = 0; i < word.length; i++) {
+          const charSpan = document.createElement("span");
+          charSpan.className = "split-char";
+          charSpan.textContent = word[i];
+          charSpan.style.setProperty("--char-index", globalCharIndex);
+          wordSpan.appendChild(charSpan);
+          globalCharIndex++;
+        }
+        el.appendChild(wordSpan);
+
+        if (wIdx < words.length - 1) {
+          const spaceSpan = document.createElement("span");
+          spaceSpan.className = "split-space";
+          spaceSpan.innerHTML = "&nbsp;";
+          spaceSpan.setAttribute("aria-hidden", "true");
+          el.appendChild(spaceSpan);
+          globalCharIndex++;
+        }
+      });
+    }
+
+    const lines = Array.from(document.querySelectorAll(".stat-line"));
+    lines.forEach(splitTextToSpans);
+
+    let current = 0;
+    lines[0].classList.add("is-active");
+
+    setInterval(() => {
+      const curLine = lines[current];
+      const nextIdx = (current + 1) % lines.length;
+      const nextLine = lines[nextIdx];
+
+      curLine.classList.remove("is-active");
+      curLine.classList.add("is-leaving");
+
+      nextLine.classList.remove("is-leaving");
+      void nextLine.offsetWidth;
+      nextLine.classList.add("is-active");
+
+      setTimeout(() => {
+        curLine.classList.remove("is-leaving");
+      }, 700);
+
+      current = nextIdx;
+    }, 3000);
+  </script>
+</body>
+</html>

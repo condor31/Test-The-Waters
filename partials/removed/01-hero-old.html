@@ -1,0 +1,105 @@
+<!-- Archived from index.html @ 386d323 (ttw-v2-redesign). Unmounted from the page, kept for reuse. Source lines: 38,141 -->
+<header class="hero">
+  <div class="hero__media">
+    <video src="public/assets/garbage.mp4" poster="public/assets/6cc33021188a46d755c6e159a2f9452a0b31362a.jpg" autoplay loop muted playsinline aria-hidden="true"></video>
+    <button class="hero__video-toggle" type="button" aria-label="Pause background video" data-video-toggle>
+      <svg class="hero__video-toggle-icon hero__video-toggle-icon--pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+        <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+      </svg>
+      <svg class="hero__video-toggle-icon hero__video-toggle-icon--play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    </button>
+  </div>
+  <div class="hero__scrim"></div>
+
+  <div class="hero__heading">
+    <p class="eyebrow">Coming soon to StartEngine</p>
+    <div class="hero__divider" aria-hidden="true"></div>
+    <h1 class="display">Help r.World build a world free of single-use waste.</h1>
+  </div>
+
+  <div class="interest-card" id="interested">
+    <p>r.World operates the nation's leading reuse infrastructure and successfully implements reuse at corporations, schools, major live events, stadiums, arenas, etc. wherever single-use waste is served.<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup></p>
+    <p class="p-bold">For the first time in nine years, r.World is opening up a public opportunity to invest.</p>
+    <p class="h5" id="hero-interest-prompt">Ready to be the first to know when the investment round opens?</p>
+
+    <!-- TODO: [DECISION NEEDED] Confirm whether the form should collect credit card info per StartEngine guidance. If not, keep current contact-only fields. -->
+    <form
+      class="cta-form cta-form--hero validate"
+      id="hero-interest-form"
+      action="https://rworldreuse.us15.list-manage.com/subscribe/post?u=d16d76c3bd0a764ea148af923&amp;id=23a13695bf&amp;f_id=00ad9fe1f0"
+      method="post"
+      name="mc-embedded-subscribe-form"
+      target="_blank"
+      novalidate
+    >
+      <div class="cta-form__grid">
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-first-name">First name *</label>
+          <input class="cta-form__input required text" type="text" id="hero-first-name" name="FNAME" placeholder="First name *" autocomplete="given-name" required aria-required="true" value="" />
+        </div>
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-last-name">Last name *</label>
+          <input class="cta-form__input required text" type="text" id="hero-last-name" name="LNAME" placeholder="Last name *" autocomplete="family-name" required aria-required="true" value="" />
+        </div>
+      </div>
+      <div class="cta-form__grid">
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-interest-email">Email address *</label>
+          <input class="cta-form__input required email" type="email" id="hero-interest-email" name="EMAIL" placeholder="Email address *" autocomplete="email" required aria-required="true" value="" />
+        </div>
+        <div class="mc-field-group">
+          <label class="visually-hidden" for="hero-phone">Phone number</label>
+          <input class="cta-form__input text" type="tel" id="hero-phone" name="MMERGE4" placeholder="Phone (optional)" autocomplete="tel" value="" />
+          <input type="hidden" name="MMERGE4[area]" id="hero-phone-area" value="" />
+          <input type="hidden" name="MMERGE4[detail1]" id="hero-phone-detail1" value="" />
+          <input type="hidden" name="MMERGE4[detail2]" id="hero-phone-detail2" value="" />
+        </div>
+      </div>
+
+      <!-- Mailchimp Audience Tags -->
+      <div hidden><input type="hidden" name="tags" value="1743734" /></div>
+
+      <!-- Mailchimp Bot Protection Honeypot -->
+      <div aria-hidden="true" style="position: absolute; left: -5000px;">
+        <input type="text" name="b_d16d76c3bd0a764ea148af923_23a13695bf" tabindex="-1" value="" />
+      </div>
+
+      <div class="cta-form__error" id="hero-form-error" role="alert" aria-live="assertive" hidden></div>
+
+      <button class="btn btn-solid-blue cta-label cta-form__submit button" type="submit" name="subscribe" id="hero-subscribe-btn">Join the Notification List</button>
+
+      <div class="rule-206-legend" data-rule-206-legend>
+        <p class="legend-citation">This communication is being used for &ldquo;testing the waters&rdquo; pursuant to 17 CFR &sect; 227.206.</p>
+        <ul class="legend-bullets">
+          <li>No money or other consideration is being solicited, and if sent in response, will not be accepted;</li>
+          <li>No offer to buy the securities can be accepted and no part of the purchase price can be received until the offering statement is filed and only through the platform of an intermediary (funding portal or broker-dealer); and</li>
+          <li>A person&rsquo;s indication of interest includes no obligation or commitment of any kind.</li>
+        </ul>
+      </div>
+    </form>
+
+    <div class="cta-form__success" id="hero-interest-success" role="status" aria-live="polite" hidden>
+      <div class="cta-form__success-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <p class="cta-form__success-title">You&rsquo;re on the list.</p>
+      <p class="cta-form__success-desc">No payment. No commitment. We&rsquo;ll email you when the offering opens.</p>
+    </div>
+
+    <div class="interest-card__video" id="hero-video-player" data-video-id="TXxys99LGoM">
+      <button class="interest-card__video-thumb-btn" type="button" aria-label="Watch: How r.World Works (1:20)">
+        <img src="public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg" alt="" />
+        <span class="interest-card__video-label">Watch: How r.World Works (1:20)</span>
+      </button>
+      <div class="interest-card__video-player-wrap" role="dialog" aria-modal="true" aria-label="How r.World Works video player" hidden>
+        <div class="interest-card__video-iframe-slot"></div>
+        <button class="interest-card__video-close" type="button" aria-label="Close video player" title="Close video">&times;</button>
+      </div>
+    </div>
+  </div>
+</header>

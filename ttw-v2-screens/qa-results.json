@@ -1,0 +1,116 @@
+{
+  "consoleErrors": [],
+  "pageErrors": [],
+  "ctas": [
+    {
+      "text": "GET ON THE LIST",
+      "href": "#interested-form",
+      "visible": true
+    },
+    {
+      "text": "JOIN NOTIFICATION LIST",
+      "href": "#interested-form",
+      "visible": true
+    },
+    {
+      "text": "JOIN THE NOTIFICATION LIST",
+      "href": "#interested-form",
+      "visible": true
+    }
+  ],
+  "disclaimers": {
+    "underHeroCTA": true,
+    "inFooter": true
+  },
+  "horizontalOverflow": {
+    "viewport": 375,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalScroll": false
+  },
+  "modulesScreenshots": [
+    {
+      "name": "01-hero-v2",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-01-hero-v2-1440.png"
+    },
+    {
+      "name": "02-brand-anthem",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-02-brand-anthem-1440.png"
+    },
+    {
+      "name": "03-celebrities",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-03-celebrities-1440.png"
+    },
+    {
+      "name": "04-partner-logos",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-04-partner-logos-1440.png"
+    },
+    {
+      "name": "05-reuse-loop",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-05-reuse-loop-1440.png"
+    },
+    {
+      "name": "06-whats-inside",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-06-whats-inside-1440.png"
+    },
+    {
+      "name": "07-social-proof",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-07-social-proof-1440.png"
+    },
+    {
+      "name": "08-where-we-go-next",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-08-where-we-go-next-1440.png"
+    },
+    {
+      "name": "09-state-legislation",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-09-state-legislation-1440.png"
+    },
+    {
+      "name": "10-why-it-matters",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-10-why-it-matters-1440.png"
+    },
+    {
+      "name": "11-press",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-11-press-1440.png"
+    },
+    {
+      "name": "12-use-of-proceeds",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-12-use-of-proceeds-1440.png"
+    },
+    {
+      "name": "12b-leadership",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-12b-leadership-1440.png"
+    },
+    {
+      "name": "13-next-steps",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-13-next-steps-1440.png"
+    },
+    {
+      "name": "14-final-cta",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-14-final-cta-1440.png"
+    },
+    {
+      "name": "15-footer",
+      "status": "captured",
+      "path": "/Users/connorblacksher/Documents/GitHub/Test-The-Waters/ttw-v2-screens/module-15-footer-1440.png"
+    }
+  ],
+  "reducedMotion": {
+    "marqueeAnimated": false
+  }
+}

@@ -1,7 +1,7 @@
 {
   "targetUrl": "http://localhost:8080/",
   "mode": "EDITED_PAGE",
-  "timestamp": "2026-10-30T10:30:14.644Z",
+  "timestamp": "2026-11-10T02:00:22.793Z",
   "checks": [
     {
       "id": "check-row-3-sources-list",
@@ -56,14 +56,14 @@
       "id": "check-row-9-cta-buttons",
       "name": "All CTA buttons changed to \"Join the Notification List\"",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "{\"hero\":\"Join the Notification List\",\"interest\":\"Join the Notification List\",\"mid\":\"Join the Notification List\",\"persist\":\"Join the Notification List\"}"
+      "status": "FAIL",
+      "details": "{\"hero\":null,\"interest\":\"Join the Notification List\",\"mid\":null,\"persist\":\"Join the Notification List\"}"
     },
     {
       "id": "check-row-10-form-disclaimer",
       "name": "Mandated disclaimer directly under form submit buttons",
       "type": "PRESENT",
-      "status": "FAIL",
+      "status": "PASS",
       "details": "Count: 2"
     },
     {
@@ -98,15 +98,15 @@
       "id": "check-row-19-10-times-cut",
       "name": "Active in roughly 10 times deleted without 3x replacement",
       "type": "ABSENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": "tenTimesAbsent=true, threeXNotInserted=true"
     },
     {
       "id": "check-superlative-leader-footnote",
       "name": "Decisive leader annual volume claim has footnote ref 1",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "{\"found\":true,\"text\":\"1\",\"href\":\"#fn1\"}"
+      "status": "FAIL",
+      "details": "{\"found\":false}"
     },
     {
       "id": "check-row-20-automation",
@@ -119,36 +119,36 @@
       "id": "check-row-21-regulatory-timing",
       "name": "Timing claim updated to 2017 infrastructure wording and \"nine years ahead\" absent",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "r.World saw it coming. r.World began building reuse infrastructure in 2017, years before the first state EPR laws passed.16 Now, the regulations are kicking in."
+      "status": "FAIL",
+      "details": ""
     },
     {
       "id": "check-row-26-return-rate-footnote",
       "name": "90% return rate has superscript footnote ref",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "sup: 12"
+      "status": "FAIL",
+      "details": "sup: "
     },
     {
       "id": "check-row-27-retention",
       "name": "Retention shows 90% everywhere without \"+\" and has footnote ref",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "retentionPlusAbsent: true, sup: 13"
+      "status": "FAIL",
+      "details": "retentionPlusAbsent: true, sup: "
     },
     {
       "id": "check-row-28-cities-footnote",
       "name": "150+ cities retained and has footnote ref",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "citiesNumberKept: true, sup: 14"
+      "status": "FAIL",
+      "details": "citiesNumberKept: false, sup: "
     },
     {
       "id": "check-row-29-states-footnote",
       "name": "Across 35 states retained and has footnote ref",
       "type": "PRESENT",
-      "status": "PASS",
-      "details": "statesNumberKept: true, sup: 15"
+      "status": "FAIL",
+      "details": "statesNumberKept: false, sup: "
     },
     {
       "id": "check-row-34-bins-unchanged",
@@ -161,14 +161,14 @@
       "id": "check-row-36-epr-states",
       "name": "EPR states have \"as of [month 2026]\" placeholder and individual state footnotes",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": "monthPlaceholder: true"
     },
     {
       "id": "check-row-38-sb54-target",
       "name": "SB 54 target revised verbatim with 2023 levels",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -182,7 +182,7 @@
       "id": "check-row-40-penalties",
       "name": "Penalties revised verbatim and old phrase absent",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -210,7 +210,7 @@
       "id": "check-row-50-use-of-funds",
       "name": "Row 50: \"How r.World plans to use the funds\" heading updated and old copy absent",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -224,14 +224,14 @@
       "id": "check-row-17-network-superlatives",
       "name": "Row 17: First, largest and most advanced present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
       "id": "check-row-18-annually-superlative",
       "name": "Row 18: processing more reusable foodware annually present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -245,7 +245,7 @@
       "id": "check-row-23-events-metric",
       "name": "Row 23: 10,000+ events standardized",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -266,7 +266,7 @@
       "id": "check-row-30-recycling-rate",
       "name": "Row 30: Only 9% recycled globally present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -294,14 +294,14 @@
       "id": "check-row-35-regulatory-intro",
       "name": "Row 35: recognize reuse compliance pathway present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
       "id": "check-row-37-pending-bills",
       "name": "Row 37: 12+ other states present without fines",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -315,7 +315,7 @@
       "id": "check-row-45-loss-fees",
       "name": "Row 45: No upfront cost, and no loss fees for most clients present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -336,7 +336,7 @@
       "id": "check-row-49-why-now-h3",
       "name": "Row 49: Several States Now Require H3 present",
       "type": "PRESENT",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
@@ -344,256 +344,32 @@
       "name": "Footnotes run 1..N in DOM order with no gaps or orphans",
       "type": "STRUCTURE",
       "status": "FAIL",
-      "details": "{\"totalRefs\":31,\"uniqueRefs\":26,\"maxRef\":28,\"continuous\":false,\"uniqueInOrder\":[1,2,3,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28],\"sourceItemCount\":28}"
+      "details": "{\"totalRefs\":7,\"uniqueRefs\":6,\"maxRef\":7,\"continuous\":false,\"uniqueInOrder\":[2,3,4,5,6,7],\"sourceItemCount\":11}"
     },
     {
-      "id": "check-footnote-not-bare-https://www.boldreuse.com/",
-      "name": "Footnote link is pending specific competitor page/press release (Kate/Annie): https://www.boldreuse.com/",
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref1",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref1",
       "type": "STRUCTURE",
-      "status": "UNVERIFIED",
-      "details": "Open pending specific competitor press release/page from Annie/Kate"
+      "status": "FAIL",
+      "details": ""
     },
     {
-      "id": "check-footnote-http-https://www.boldreuse.com/",
-      "name": "HTTP 200 for https://www.boldreuse.com/",
+      "id": "check-footnote-http-http://localhost:8080/#fnref1",
+      "name": "HTTP 200 for http://localhost:8080/#fnref1",
       "type": "PRESENT",
       "status": "PASS",
       "details": "status: 200"
     },
     {
-      "id": "check-footnote-not-bare-https://www.oecd.org/content/d",
-      "name": "Footnote link is not a bare homepage: https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf",
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref2",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref2",
       "type": "STRUCTURE",
-      "status": "PASS",
+      "status": "FAIL",
       "details": ""
     },
     {
-      "id": "check-footnote-http-https://www.oecd.org/content/d",
-      "name": "HTTP 200 for https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/02/global-plastics-outlook_a653d1c9/de747aef-en.pdf",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://upstreamsolutions.org/",
-      "name": "Footnote link is not a bare homepage: https://upstreamsolutions.org/reuse-wins-report",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://upstreamsolutions.org/",
-      "name": "HTTP 200 for https://upstreamsolutions.org/reuse-wins-report",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://www.epa.gov/facts-and-",
-      "name": "Footnote link is not a bare homepage: https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://www.epa.gov/facts-and-",
-      "name": "HTTP 200 for https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/plastics-material-specific-data",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://foodcyclescience.com/b",
-      "name": "Footnote link is not a bare homepage: https://foodcyclescience.com/blogs/food-waste-industry/trash-trouble-our-landfills-are-rapidly-reaching-capacity",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://foodcyclescience.com/b",
-      "name": "HTTP 200 for https://foodcyclescience.com/blogs/food-waste-industry/trash-trouble-our-landfills-are-rapidly-reaching-capacity",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://olis.oregonlegislature",
-      "name": "Footnote link is not a bare homepage: https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://olis.oregonlegislature",
-      "name": "HTTP 200 for https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://www.maine.gov/dep/wast",
-      "name": "Footnote link is not a bare homepage: https://www.maine.gov/dep/waste/recycle/epr.html",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://www.maine.gov/dep/wast",
-      "name": "HTTP 200 for https://www.maine.gov/dep/waste/recycle/epr.html",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://leginfo.legislature.ca",
-      "name": "Footnote link is not a bare homepage: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB54",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://leginfo.legislature.ca",
-      "name": "HTTP check for https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220SB54",
-      "type": "PRESENT",
-      "status": "UNVERIFIED",
-      "details": "status: 403, error: HTTP 403"
-    },
-    {
-      "id": "check-footnote-not-bare-https://leg.colorado.gov/bills",
-      "name": "Footnote link is not a bare homepage: https://leg.colorado.gov/bills/hb22-1355",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://leg.colorado.gov/bills",
-      "name": "HTTP 200 for https://leg.colorado.gov/bills/hb22-1355",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://olis.oregonlegislature",
-      "name": "Footnote link is not a bare homepage: https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://olis.oregonlegislature",
-      "name": "HTTP 200 for https://olis.oregonlegislature.gov/liz/2021R1/Measures/Overview/SB582",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://www.revisor.mn.gov/bil",
-      "name": "Footnote link is not a bare homepage: https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF3911&ssn=0&y=2024",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://www.revisor.mn.gov/bil",
-      "name": "HTTP 200 for https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF3911&ssn=0&y=2024",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 301"
-    },
-    {
-      "id": "check-footnote-not-bare-https://mgaleg.maryland.gov/mg",
-      "name": "Footnote link is not a bare homepage: https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://mgaleg.maryland.gov/mg",
-      "name": "HTTP 200 for https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0901?ys=2025RS",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://app.leg.wa.gov/billsum",
-      "name": "Footnote link is not a bare homepage: https://app.leg.wa.gov/billsummary?BillNumber=5284&Year=2025",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://app.leg.wa.gov/billsum",
-      "name": "HTTP 200 for https://app.leg.wa.gov/billsummary?BillNumber=5284&Year=2025",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://www.maine.gov/dep/wast",
-      "name": "Footnote link is not a bare homepage: https://www.maine.gov/dep/waste/recycle/epr.html",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://www.maine.gov/dep/wast",
-      "name": "HTTP 200 for https://www.maine.gov/dep/waste/recycle/epr.html",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://epratlas.com/epr-laws-",
-      "name": "Footnote link is not a bare homepage: https://epratlas.com/epr-laws-by-state/",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://epratlas.com/epr-laws-",
-      "name": "HTTP 200 for https://epratlas.com/epr-laws-by-state/",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://content.govdelivery.co",
-      "name": "Footnote link is not a bare homepage: https://content.govdelivery.com/accounts/CALRECYCLE/bulletins/4157d91",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://content.govdelivery.co",
-      "name": "HTTP 200 for https://content.govdelivery.com/accounts/CALRECYCLE/bulletins/4157d91",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://oceanconservancy.org/w",
-      "name": "Footnote link is not a bare homepage: https://oceanconservancy.org/wp-content/uploads/2024/02/24.02.25-OC-SB-54-Source-Reduction-Fact-Sheet.pdf",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://oceanconservancy.org/w",
-      "name": "HTTP 200 for https://oceanconservancy.org/wp-content/uploads/2024/02/24.02.25-OC-SB-54-Source-Reduction-Fact-Sheet.pdf",
-      "type": "PRESENT",
-      "status": "PASS",
-      "details": "status: 200"
-    },
-    {
-      "id": "check-footnote-not-bare-https://california.public.law/",
-      "name": "Footnote link is not a bare homepage: https://california.public.law/codes/public_resources_code_section_42081",
-      "type": "STRUCTURE",
-      "status": "PASS",
-      "details": ""
-    },
-    {
-      "id": "check-footnote-http-https://california.public.law/",
-      "name": "HTTP 200 for https://california.public.law/codes/public_resources_code_section_42081",
+      "id": "check-footnote-http-http://localhost:8080/#fnref2",
+      "name": "HTTP 200 for http://localhost:8080/#fnref2",
       "type": "PRESENT",
       "status": "PASS",
       "details": "status: 200"
@@ -611,6 +387,132 @@
       "type": "PRESENT",
       "status": "UNVERIFIED",
       "details": "status: 403, error: HTTP 403"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref3",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref3",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref3",
+      "name": "HTTP 200 for http://localhost:8080/#fnref3",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref4",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref4",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref4",
+      "name": "HTTP 200 for http://localhost:8080/#fnref4",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref5",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref5",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref5",
+      "name": "HTTP 200 for http://localhost:8080/#fnref5",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref6",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref6",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref6",
+      "name": "HTTP 200 for http://localhost:8080/#fnref6",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref7",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref7",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref7",
+      "name": "HTTP 200 for http://localhost:8080/#fnref7",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref8",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref8",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref8",
+      "name": "HTTP 200 for http://localhost:8080/#fnref8",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref9",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref9",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref9",
+      "name": "HTTP 200 for http://localhost:8080/#fnref9",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref10",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref10",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref10",
+      "name": "HTTP 200 for http://localhost:8080/#fnref10",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
+    },
+    {
+      "id": "check-footnote-not-bare-http://localhost:8080/#fnref11",
+      "name": "Footnote link is not a bare homepage: http://localhost:8080/#fnref11",
+      "type": "STRUCTURE",
+      "status": "FAIL",
+      "details": ""
+    },
+    {
+      "id": "check-footnote-http-http://localhost:8080/#fnref11",
+      "name": "HTTP 200 for http://localhost:8080/#fnref11",
+      "type": "PRESENT",
+      "status": "PASS",
+      "details": "status: 200"
     },
     {
       "id": "check-banned-reserve",
@@ -651,7 +553,7 @@
       "id": "check-banned-nine-years-ahead",
       "name": "Banned phrase absent: \"nine years ahead\"",
       "type": "ABSENT",
-      "status": "FAIL",
+      "status": "PASS",
       "details": ""
     },
     {
@@ -666,14 +568,14 @@
       "name": "Clicking banner anchor scrolls toward legend target",
       "type": "STRUCTURE",
       "status": "PASS",
-      "details": "{\"scrolled\":true,\"scrollY\":1057,\"targetTop\":16863.359375}"
+      "details": "{\"scrolled\":true,\"scrollY\":833,\"targetTop\":16728.65625}"
     },
     {
       "id": "check-viewport-390px",
       "name": "Viewport 390px no overflow, banner & legend visible",
       "type": "STRUCTURE",
       "status": "FAIL",
-      "details": "{\"clientWidth\":390,\"scrollWidth\":401,\"hasHorizontalOverflow\":true,\"barVisible\":true,\"legendVisible\":true}"
+      "details": "{\"clientWidth\":390,\"scrollWidth\":417,\"hasHorizontalOverflow\":true,\"barVisible\":true,\"legendVisible\":true}"
     },
     {
       "id": "check-viewport-1440px",
@@ -705,9 +607,9 @@
     }
   ],
   "summary": {
-    "total": 100,
-    "passed": 83,
-    "failed": 14,
-    "unverified": 3
+    "total": 86,
+    "passed": 42,
+    "failed": 43,
+    "unverified": 1
   }
 }
