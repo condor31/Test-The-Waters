@@ -191,6 +191,8 @@ p:last-child {
   border: 3px solid transparent;
   cursor: pointer;
   text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
@@ -1035,14 +1037,14 @@ p:last-child {
 .reuse-legend-swatch--hub {
   width: 18px;
   height: 18px;
-  background-color: #8a2be2;
+  background-color: #53575a;
   border-radius: 50% !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   vertical-align: middle;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -1070,18 +1072,24 @@ p:last-child {
 
 .wash-hub-pin {
   pointer-events: none;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* Subtle grey circle underneath the wash hub logo */
+.wash-hub-bg {
+  fill: #53575a;
+  stroke: rgba(255, 255, 255, 0.45);
+  stroke-width: 2px;
+  pointer-events: none;
+  transition: fill 0.18s ease, stroke 0.18s ease;
 }
 
 /* Default state: pure white */
-.wash-hub-letter {
-  fill: #ffffff !important;
-  stroke: none !important;
-  pointer-events: none;
-  transition: fill 0.18s ease;
-}
-
-.wash-hub-dot {
+.wash-hub-logo path,
+.wash-hub-path,
+.wash-hub-letter,
+.wash-hub-dot,
+.reuse-legend-swatch--hub svg path {
   fill: #ffffff !important;
   stroke: none !important;
   pointer-events: none;
@@ -1096,14 +1104,21 @@ p:last-child {
 }
 
 /* Hover state: highlight to vibrant r.World yellow (#FFD100) */
+.wash-hub-marker:hover .wash-hub-logo path,
+.wash-hub-marker:focus-visible .wash-hub-logo path,
+.wash-hub-marker:hover .wash-hub-path,
+.wash-hub-marker:focus-visible .wash-hub-path,
 .wash-hub-marker:hover .wash-hub-letter,
-.wash-hub-marker:focus-visible .wash-hub-letter {
-  fill: #ffd100 !important;
-}
-
+.wash-hub-marker:focus-visible .wash-hub-letter,
 .wash-hub-marker:hover .wash-hub-dot,
 .wash-hub-marker:focus-visible .wash-hub-dot {
   fill: #ffd100 !important;
+}
+
+.wash-hub-marker:hover .wash-hub-bg,
+.wash-hub-marker:focus-visible .wash-hub-bg {
+  stroke: #ffd100;
+  fill: #424649;
 }
 
 .wash-hub-marker:hover .wash-hub-arc,
@@ -1121,21 +1136,24 @@ p:last-child {
 /* Legend hover highlight: turns brand yellow */
 .reuse-legend-item--hubs:hover .reuse-legend-swatch--hub,
 .reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub {
-  background-color: #151515;
+  background-color: #424649;
   border-color: #ffd100;
 }
 
-.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-letter,
-.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-dot,
-.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-letter,
-.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-dot,
+.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub svg path,
+.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub svg path,
+.wash-hubs-group.is-legend-active .wash-hub-logo path,
+.wash-hubs-group.is-legend-active .wash-hub-path,
 .wash-hubs-group.is-legend-active .wash-hub-letter,
 .wash-hubs-group.is-legend-active .wash-hub-dot {
   fill: #ffd100 !important;
 }
 
-.reuse-legend-item--hubs:hover .reuse-legend-swatch--hub .wash-hub-arc,
-.reuse-legend-item--hubs:focus-visible .reuse-legend-swatch--hub .wash-hub-arc,
+.wash-hubs-group.is-legend-active .wash-hub-bg {
+  stroke: #ffd100;
+  fill: #424649;
+}
+
 .wash-hubs-group.is-legend-active .wash-hub-arc {
   stroke: #ffd100 !important;
 }
@@ -1147,15 +1165,15 @@ p:last-child {
 
 @keyframes washHubPulse {
   0% {
-    r: 13px;
+    r: 23px;
     opacity: 0.8;
   }
   60% {
-    r: 22px;
+    r: 38px;
     opacity: 0;
   }
   100% {
-    r: 22px;
+    r: 38px;
     opacity: 0;
   }
 }
@@ -3438,9 +3456,16 @@ p:last-child {
   outline: none;
 }
 
+.wash-hub-marker:focus-visible .wash-hub-logo path,
+.wash-hub-marker:focus-visible .wash-hub-path,
 .wash-hub-marker:focus-visible .wash-hub-letter,
 .wash-hub-marker:focus-visible .wash-hub-dot {
   fill: var(--yellow) !important;
+}
+
+.wash-hub-marker:focus-visible .wash-hub-bg {
+  stroke: var(--yellow);
+  fill: #424649;
 }
 
 .wash-hub-marker:focus-visible .wash-hub-arc {
