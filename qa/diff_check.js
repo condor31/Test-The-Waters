@@ -108,7 +108,7 @@ const expectedStrings = [
   "Built for you",
   "We design each program to make the numbers work.",
   "Getting cheaper",
-  "We're driving costs down every year toward single-use parity.",
+  "r.World is driving costs down every year toward single-use cost parity.", // Batch 3 C12 (supersedes earlier copy)
 
   // Module 11
   "Recognized for Doing It Right",
@@ -124,7 +124,7 @@ const expectedStrings = [
   "Legislation Is Here, and More Is Coming",
   "Extended Producer Responsibility rules are landing, beginning in California. More policy is on the way that will help reuse scale.",
   "Reuse Expands Into Consumer Packaged Goods",
-  "Reuse could extend to categories that don't have it yet, starting with consumer packaged goods.",
+  "Reuse is now expanding into consumer packaged goods, with more categories coming.", // Batch 3 C13 (supersedes Batch 2 C09 body)
   "The full allocation will be in r.World's offering statement when filed with the SEC.",
 
   // Module 12.5: Leadership (T14)
@@ -148,7 +148,6 @@ const expectedStrings = [
 // compared WITHOUT the quote normalization used above.
 const exactCurlyStrings = [
   "From courtside to front-row center, r.World\u2019s reusable r.Cups, plates and other foodware are in the hands of some of your favorite celebrities.",
-  "Reuse could extend to categories that don\u2019t have it yet, starting with consumer packaged goods.",
 ];
 
 let failures = [];
