@@ -50,7 +50,7 @@ const expectedStrings = [
 
   // Module 4
   "You've Probably Seen Us Live",
-  "From airlines and 70,000-seat stadiums to iconic concert venues and nationwide tours, corporate and university campuses, conference centers, hospitals, and more r.World powers reuse wherever single-use waste is created.",
+  "From airlines and 70,000-seat stadiums to iconic concert venues and nationwide tours, corporate and university campuses, conference centers, hospitals and more, r.World powers reuse wherever single-use waste is created.", // Batch 4 C1
 
   // Module 5
   "Reuse Wins. Here's the Loop.",
@@ -100,13 +100,13 @@ const expectedStrings = [
   "Reuse keeps single-use waste out of landfills and the environment, saves cost on disposables and helps users consume with less hesitation.",
   "More than 1M pounds of CO2",
   "never generated",
-  "Reuse pays off and then some.",
+  "Why Operators Love r.World.", // Batch 4 C2
   "Lower costs",
   "Less waste hauling and less labor spent on cleanup.",
   "More revenue",
   "Potential sales lift, sponsorships on every cup, and a sustainability fee.",
   "Built for you",
-  "We design each program to make the numbers work.",
+  "r.World customizes every program for every client.", // Batch 4 C3
   "Getting cheaper",
   "r.World is driving costs down every year toward single-use cost parity.", // Batch 3 C12 (supersedes earlier copy)
 
