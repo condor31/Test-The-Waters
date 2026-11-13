@@ -50,7 +50,7 @@ const expectedStrings = [
 
   // Module 4
   "You've Probably Seen Us Live",
-  "From airlines and 70,000-seat stadiums to iconic concert venues and nationwide tours, corporate and university campuses, conference centers, hospitals, and more r.World powers reuse wherever single-use waste is created.",
+  "From airlines and 70,000-seat stadiums to iconic concert venues and nationwide tours, corporate and university campuses, conference centers, hospitals and more, r.World powers reuse wherever single-use waste is created.", // Batch 4 C1
 
   // Module 5
   "Reuse Wins. Here's the Loop.",
@@ -100,15 +100,15 @@ const expectedStrings = [
   "Reuse keeps single-use waste out of landfills and the environment, saves cost on disposables and helps users consume with less hesitation.",
   "More than 1M pounds of CO2",
   "never generated",
-  "Reuse pays off and then some.",
+  "Why Operators Love r.World.", // Batch 4 C2
   "Lower costs",
   "Less waste hauling and less labor spent on cleanup.",
   "More revenue",
   "Potential sales lift, sponsorships on every cup, and a sustainability fee.",
   "Built for you",
-  "We design each program to make the numbers work.",
+  "r.World customizes every program for every client.", // Batch 4 C3
   "Getting cheaper",
-  "We're driving costs down every year toward single-use parity.",
+  "r.World is driving costs down every year toward single-use cost parity.", // Batch 3 C12 (supersedes earlier copy)
 
   // Module 11
   "Recognized for Doing It Right",
@@ -124,7 +124,7 @@ const expectedStrings = [
   "Legislation Is Here, and More Is Coming",
   "Extended Producer Responsibility rules are landing, beginning in California. More policy is on the way that will help reuse scale.",
   "Reuse Expands Into Consumer Packaged Goods",
-  "Reuse could extend to categories that don't have it yet, starting with consumer packaged goods.",
+  "Reuse is now expanding into consumer packaged goods, with more categories coming.", // Batch 3 C13 (supersedes Batch 2 C09 body)
   "The full allocation will be in r.World's offering statement when filed with the SEC.",
 
   // Module 12.5: Leadership (T14)
@@ -148,7 +148,6 @@ const expectedStrings = [
 // compared WITHOUT the quote normalization used above.
 const exactCurlyStrings = [
   "From courtside to front-row center, r.World\u2019s reusable r.Cups, plates and other foodware are in the hands of some of your favorite celebrities.",
-  "Reuse could extend to categories that don\u2019t have it yet, starting with consumer packaged goods.",
 ];
 
 let failures = [];

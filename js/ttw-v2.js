@@ -87,10 +87,15 @@ function initMarquee(prefersReducedMotion) {
   // Reduced motion: static, manually scrollable strip. No duplicate set, nothing moves.
   if (prefersReducedMotion) return;
 
+  marquee.scrollLeft = 0;
+
   // Seamless loop: a second copy of the set sits in the same track. Every card carries its own
   // trailing gap (margin, not flex gap/padding), so one set is exactly half of the track and
   // translate3d(-50%, 0, 0) lands precisely on the start of the duplicate.
   const originalCards = [...track.children];
+  const n = originalCards.length;
+  if (!n) return;
+
   originalCards.forEach((card) => {
     card.querySelectorAll("img").forEach((img) => {
       img.loading = "eager";
@@ -107,27 +112,43 @@ function initMarquee(prefersReducedMotion) {
     track.appendChild(clone);
   });
 
+  // Enable animation state first so track padding is stripped consistently before measuring
+  marquee.classList.add("is-animating");
+
   // Constant speed (px/second) at every breakpoint: duration follows the measured loop distance.
   const SPEED_PX_PER_SEC = 60;
   const syncLoop = () => {
     const cards = track.children;
-    const n = originalCards.length;
     if (cards.length < n * 2) return;
+
+    // Reset card width override to read the responsive flex measurement, then round to integer pixels
+    // to prevent fractional subpixel rounding mismatch at the loop seam
+    marquee.style.removeProperty("--celeb-card-width");
+    const rawCardWidth = cards[0].getBoundingClientRect().width;
+    const cardWidth = Math.round(rawCardWidth);
+    marquee.style.setProperty("--celeb-card-width", `${cardWidth}px`);
+
+    // Measure exact integer distance between original set and clone set
     const a = cards[0].getBoundingClientRect().left;
     const b = cards[n].getBoundingClientRect().left;
-    const distance = b - a;
+    const distance = Math.round(Math.abs(b - a));
     if (!distance) return;
+
     marquee.scrollLeft = 0;
-    marquee.style.setProperty("--marquee-distance", `-${distance.toFixed(3)}px`);
+    marquee.style.setProperty("--marquee-distance", `-${distance}px`);
     marquee.style.setProperty("--marquee-duration", `${(distance / SPEED_PX_PER_SEC).toFixed(2)}s`);
   };
-  syncLoop();
-  window.addEventListener("resize", syncLoop, { passive: true });
-  track.querySelectorAll("img").forEach((img) => {
-    if (!img.complete) img.addEventListener("load", syncLoop, { once: true });
-  });
 
-  marquee.classList.add("is-animating");
+  syncLoop();
+
+  // Debounced resize handler so window changes don't cause animation timeline jitter
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      requestAnimationFrame(syncLoop);
+    }, 100);
+  }, { passive: true });
 }
 
 /**
@@ -251,7 +272,7 @@ function initBrandAnthem() {
 
   const facade = player.querySelector(".brand-anthem__facade");
   const iframeSlot = player.querySelector(".brand-anthem__iframe-slot");
-  const videoId = player.dataset.videoId || "TXxys99LGoM";
+  const videoId = player.dataset.videoId || "yAKUKKdTXBw";
   let hasLoaded = false;
 
   function loadIframe(autoplayMuted = false) {
