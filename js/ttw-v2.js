@@ -272,7 +272,7 @@ function initBrandAnthem() {
 
   const facade = player.querySelector(".brand-anthem__facade");
   const iframeSlot = player.querySelector(".brand-anthem__iframe-slot");
-  const videoId = player.dataset.videoId || "TXxys99LGoM";
+  const videoId = player.dataset.videoId || "yAKUKKdTXBw";
   let hasLoaded = false;
 
   function loadIframe(autoplayMuted = false) {

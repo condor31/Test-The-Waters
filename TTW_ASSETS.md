@@ -11,8 +11,8 @@ All missing assets are wired up with the reusable `.ph` (Placeholder) component.
 |---|---|---|---|---|---|---|
 | 1 | 1. Hero | Background Reel Video | `public/assets/ttw/hero-reel.mp4` | 16:9 (1920×1080) | User provided crowd reel (`14445520_1920_1080_30fps.mp4`) | Active |
 | 2 | 1. Hero | Background Reel Poster | `public/assets/ttw/hero-reel-poster.jpg` | 16:9 (1920×1080) | Poster frame generated from reel | Active |
-| 3 | 2. Brand Anthem | Brand Anthem Video | Embedded iframe (`TXxys99LGoM`) | 16:9 | https://www.youtube.com/watch?v=TXxys99LGoM | Wired / Active |
-| 4 | 2. Brand Anthem | Video Poster Facade | `public/assets/2c11abe08b4d2d9f648efc1fb6a6dfac1671bdf4.jpg` | 16:9 (1280×720) | Existing codebase | Active |
+| 3 | 2. Brand Anthem | Brand Anthem Video | Embedded iframe (`yAKUKKdTXBw`) | 16:9 | https://www.youtube.com/watch?v=yAKUKKdTXBw | Wired / Active |
+| 4 | 2. Brand Anthem | Video Poster Facade | `public/assets/ttw/brand-anthem-poster.jpg` | 16:9 (1280×720) | YouTube thumbnail of yAKUKKdTXBw | Active |
 | 5 | 3. Celebrities | Pedro Pascal | `public/assets/ttw/celebs/pedro-pascal.jpg` | 377×417 | Sourced from Figma (`e3394a59...`) | Active |
 | 6 | 3. Celebrities | Meryl Streep + Martin Short | `public/assets/ttw/celebs/streep-short.jpg` | 377×417 | User provided asset / Figma | Active |
 | 7 | 3. Celebrities | Leonardo DiCaprio | `public/assets/ttw/celebs/dicaprio.jpg` | 377×417 | User provided asset / Figma | Active |
