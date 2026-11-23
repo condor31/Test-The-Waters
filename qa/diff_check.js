@@ -62,8 +62,9 @@ const expectedStrings = [
 
   // Module 6
   "Five Parts. One Machine. Built to Scale.",
+  "r.World has a 145% annual growth rate (CAGR) over four years.",
+  "Compounded annual growth rate in revenue, fiscal year 2021–fiscal year 2025.",
   "The same proprietary process runs everywhere single-use waste is created.",
-  "JOIN THE NOTIFICATION LIST",
 
   // Module 7
   "Proof From Some of the Biggest Stages",
@@ -125,7 +126,6 @@ const expectedStrings = [
   "Extended Producer Responsibility rules are landing, beginning in California. More policy is on the way that will help reuse scale.",
   "Reuse Expands Into Consumer Packaged Goods",
   "Reuse is now expanding into consumer packaged goods, with more categories coming.", // Batch 3 C13 (supersedes Batch 2 C09 body)
-  "The full allocation will be in r.World's offering statement when filed with the SEC.",
 
   // Module 12.5: Leadership (T14)
   "Leadership Built for the Industries We Serve",
